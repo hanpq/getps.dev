@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'My Site',
+    title: 'GetPS.dev',
     tagline: 'The tagline of my site',
     url: 'https://optimistic-benz-9cc6ad.netlify.app',
     baseUrl: '/',
