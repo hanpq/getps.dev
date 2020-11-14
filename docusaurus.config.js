@@ -8,6 +8,17 @@ module.exports = {
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
+        announcementBar: {
+            id: 'underdev', // Any value that will identify this message.
+            content:
+                'This site is still under development',
+            backgroundColor: '#fafbfc', // Defaults to `#fff`.
+            textColor: '#091E42', // Defaults to `#000`.
+            isCloseable: true, // Defaults to `true`.
+        },
+        colorMode: {
+            defaultMode: 'dark',
+        },
         prism: {
             additionalLanguages: ['powershell'],
         },
