@@ -1,4 +1,11 @@
-﻿# Casting DateTime objects
+﻿---
+id: casting_datetime
+title: Casting DateTime Objects
+sidebar_label: Casting DateTime Objects
+slug: /
+---
+
+# Casting DateTime objects
 When casting data (converting it to a different data type), PowerShell supports two approaches that can differ considerably.
 
 [DateTime]'12.1.2017'
