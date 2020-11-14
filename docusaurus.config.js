@@ -1,15 +1,15 @@
 module.exports = {
-    title: 'GetPS.dev',
+    title: 'GetPS',
     tagline: 'The tagline of my site',
     url: 'https://optimistic-benz-9cc6ad.netlify.app',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     favicon: 'img/favicon.ico',
-    organizationName: 'facebook', // Usually your GitHub org/user name.
-    projectName: 'docusaurus', // Usually your repo name.
+    organizationName: 'hanpq', // Usually your GitHub org/user name.
+    projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
         navbar: {
-            title: 'My Site',
+            title: 'getps.dev',
             logo: {
                 alt: 'My Site Logo',
                 src: 'img/logo.svg',
