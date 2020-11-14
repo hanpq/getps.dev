@@ -1,8 +1,6 @@
 ﻿---
 id: casting_datetime
 title: Casting DateTime Objects
-sidebar_label: Casting DateTime Objects
-slug: /
 ---
 
 # Casting DateTime objects
