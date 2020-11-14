@@ -8,6 +8,9 @@ module.exports = {
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
+        prism: {
+            additionalLanguages: ['powershell'],
+        },
         navbar: {
             title: 'getps.dev',
             logo: {
