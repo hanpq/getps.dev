@@ -10,4 +10,9 @@ Hannes work as a senior consultant at Crayon Sweden primarily within Messaging, 
 
 ## Contact information
 
-hannes.palmquist@outlook.com
+Email | hannes.palmquist@outlook.com
+--- | ---
+Email | hannes.palmquist@crayon.com
+Facebook | https://www.facebook.com/hannes.palmquist
+LinkedIn | https://www.linkedin.com/in/hannes-palmquist-732b5647/
+IM | sip:hannes.palmquist@crayon.com
