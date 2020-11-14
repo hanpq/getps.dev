@@ -4,7 +4,7 @@ module.exports = {
     url: 'https://pensive-darwin-90a9ff.netlify.app',
     baseUrl: '/',
     onBrokenLinks: 'throw',
-    favicon: 'img/favicon.ico',
+    favicon: 'img/powershell_orange.ico',
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
@@ -12,7 +12,7 @@ module.exports = {
             title: 'getps.dev',
             logo: {
                 alt: 'My Site Logo',
-                src: 'img/logo.svg',
+                src: 'img/powershell_orange.png',
             },
             items: [
                 {
