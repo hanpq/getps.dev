@@ -27,6 +27,11 @@ module.exports = {
                     position: 'left'
                 },
                 {
+                    to: 'about',
+                    label: 'About',
+                    position: 'left'
+                },
+                {
                     href: 'https://github.com/hanpq/getps.dev',
                     label: 'GitHub',
                     position: 'right',
