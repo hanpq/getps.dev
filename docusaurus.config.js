@@ -87,13 +87,13 @@ module.exports = {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
                     editUrl:
-                        'https://github.com/hanpq/getps.dev/tree/main/docs/',
+                        'https://github.com/hanpq/getps.dev/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     editUrl:
-                        'https://github.com/hanpq/getps.dev/tree/main/blog/',
+                        'https://github.com/hanpq/getps.dev/tree/main/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
