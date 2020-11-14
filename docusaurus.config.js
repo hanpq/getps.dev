@@ -1,7 +1,7 @@
 module.exports = {
     title: 'GetPS',
     tagline: 'The tagline of my site',
-    url: 'https://optimistic-benz-9cc6ad.netlify.app',
+    url: 'https://pensive-darwin-90a9ff.netlify.app',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     favicon: 'img/favicon.ico',
@@ -87,13 +87,13 @@ module.exports = {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
                     editUrl:
-                        'https://github.com/facebook/docusaurus/edit/master/website/',
+                        'https://github.com/hanpq/getps.dev/tree/main/docs/',
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     editUrl:
-                        'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+                        'https://github.com/hanpq/getps.dev/tree/main/blog/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
