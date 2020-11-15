@@ -115,8 +115,7 @@ module.exports = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl:
-                        'https://github.com/hanpq/getps.dev/tree/main/',
+                    editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
@@ -135,6 +134,10 @@ module.exports = {
             '@docusaurus/plugin-content-docs',
             {
                 path: 'modules',
+                routeBasePath: 'modules',
+                include: ['**/*.md', '**/*.mdx'],
+                sidebarPath: require.resolve('./sidebars_modules.js'),
+                id: 'modules',
                 editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
             }
         ],
