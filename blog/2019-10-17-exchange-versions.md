@@ -3,6 +3,7 @@ slug: exchange-versions
 title: Exchange Versions
 author: Hannes Palmquist
 author_title: Senior Consultant Cloud
+author_image_url: 'img/Hannes_Profil_HighContrast.jpg'
 author_url: https://netlify.getps.dev/about
 tags: [powershell, check-profilestatus, function, profile]
 ---

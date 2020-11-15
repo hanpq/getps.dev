@@ -3,6 +3,7 @@ slug: where-object-is-slow
 title: Where-Object is slow...
 author: Hannes Palmquist
 author_title: Senior Consultant Cloud
+author_image_url: 'img/Hannes_Profil_HighContrast.jpg'
 author_url: https://netlify.getps.dev/about
 tags: [powershell, where-object, function, performance, optimization]
 ---

@@ -8,6 +8,7 @@ module.exports = {
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
+        hideableSidebar: true,
         announcementBar: {
             id: 'underdev', // Any value that will identify this message.
             content:
@@ -33,6 +34,12 @@ module.exports = {
                     to: 'docs/',
                     activeBasePath: 'docs',
                     label: 'Docs',
+                    position: 'left',
+                },
+                {
+                    to: 'modules/',
+                    activeBasePath: 'modules',
+                    label: 'Modules',
                     position: 'left',
                 },
                 {
@@ -114,5 +121,16 @@ module.exports = {
                 },
             },
         ],
+    ],
+    plugins: [
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'modules_docs',
+                path: './modules',
+                routeBasePath: 'modules',
+                sidebarPath: './sidebars_modules.js',
+            }
+        ]
     ],
 };

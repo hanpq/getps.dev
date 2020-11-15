@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'Scripts and Snippets',
+        imageUrl: 'img/misc-teleportation-script-imbued.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        GetPS.dev hosts a knowledgebase with misc scripts and snippets  
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Modules',
+      imageUrl: 'img/redes-colores.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+            Here you will find <code>docs</code> for the modules developed and published by getps.dev
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Guides and tutorials',
+      imageUrl: 'img/Question-Girl.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+            Within the <code>blog</code> getps.dev publishes in dept guides and tutorials 
       </>
     ),
   },
