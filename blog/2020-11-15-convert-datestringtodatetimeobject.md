@@ -34,7 +34,7 @@ function Convert-DateStringToDateTimeObject {
     .NOTES
         AUTHOR Hannes Palmquist
         AUTHOREMAIL hannes.palmquist@outlook.com
-        COPYRIGHT © 2019, Hannes Palmquist, All Rights Reserved        
+        COPYRIGHT © 2019, Hannes Palmquist, All Rights Reserved
     #>
     param(
         [Parameter(Mandatory)][string]$DateString,
