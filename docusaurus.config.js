@@ -129,30 +129,14 @@ module.exports = {
                 },
             },
         ],
+    ],
+    plugins: [
         [
             '@docusaurus/plugin-content-docs',
             {
                 path: 'modules',
                 editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
-                routeBasePath: 'modules',
-                include: ['**/*.md', '**/*.mdx'],
-                sidebarPath: '',
-                disableVersioning: undefined,
-                onlyIncludeVersions: undefined,
-                versions: {
-                    /*
-                    Example configuration: 
-                    current: {
-                      label: 'Android SDK v2.0.0 (WIP)',
-                      path: 'android-2.0.0',
-                    },
-                    '1.0.0': {
-                      label: 'Android SDK v1.0.0',
-                      path: 'android-1.0.0',
-                    },
-                    */
-                },
             }
         ],
-    ],
+    ]
 };
