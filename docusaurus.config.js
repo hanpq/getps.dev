@@ -118,12 +118,6 @@ module.exports = {
                     editUrl:
                         'https://github.com/hanpq/getps.dev/tree/main/',
                 },
-                modules: {
-                    sidebarPath: require.resolve('./sidebars_modules.js'),
-                    // Please change this to your repo.
-                    editUrl:
-                        'https://github.com/hanpq/getps.dev/tree/main/',
-                },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
