@@ -15,22 +15,23 @@ Add-DataSetTable [-DataSet] <DataSet> [-DataTable] <DataTable> [<CommonParameter
 
 ## DESCRIPTION
 
-asd
+Add DataTable to a DataSet
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-DataSetTable
-Description of example
+Add-DataSetTable -DataSet $DataSet -DataTable $DataTable
 ```
+
+This example shows how to add a datatable object to a dataset
 
 ## PARAMETERS
 
 ### -DataSet
 
-{{ Fill DataSet Description }}
+Supply the dataset object
 
 ```yaml
 Type: DataSet
@@ -46,7 +47,7 @@ Accept wildcard characters: False
 
 ### -DataTable
 
-{{ Fill DataTable Description }}
+Supply the datatable that should be added to the dataset
 
 ```yaml
 Type: DataTable
