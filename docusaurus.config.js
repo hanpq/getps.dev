@@ -137,7 +137,8 @@ module.exports = {
                 routeBasePath: 'modules',
                 include: ['**/*.md', '**/*.mdx'],
                 sidebarPath: '',
-                disableVersioning: true,
+                disableVersioning: undefined,
+                onlyIncludeVersions: undefined,
             }
         ],
     ],
