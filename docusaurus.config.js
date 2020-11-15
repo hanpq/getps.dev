@@ -36,12 +36,6 @@ module.exports = {
                     position: 'left',
                 },
                 {
-                    to: 'modules/',
-                    activeBasePath: 'modules',
-                    label: 'Modules',
-                    position: 'left',
-                },
-                {
                     to: 'blog',
                     label: 'Blog',
                     position: 'left'
