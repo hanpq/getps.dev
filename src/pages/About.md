@@ -1,6 +1,6 @@
 ﻿---
-title: my hello page title
-description: my hello page description
+title: About
+description: About
 hide_table_of_contents: true
 ---
 
