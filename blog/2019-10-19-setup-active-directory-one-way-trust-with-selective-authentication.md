@@ -40,7 +40,11 @@ In this scenario “Selective Authentication” is selected.
 
 Most likely there is a firewall between the two organizations and active directory by nature uses a lot of different ports for different type of communication. There are many blogs, articles that try to summarize whats ports are needed for a forest trust but all of them manage to include a lot of ports that are often not needed or for specific scenarios or types of trusts. In our scenario I didn’t want to order port openings that I couldn’t motivate that we needed in this specific case. Below is a list of the ports that I ended up with a bare minimum to setup the a working trust according to our requirements.
 
-(Note that even though the trust is one-way does not mean that the communication is. These ports needs to be opened from domain controllers in ForestA to domain controllers in ForestB and vice versa)
+:::important
+
+Note that even though the trust is one-way does not mean that the communication is. These ports needs to be opened from domain controllers in ForestA to domain controllers in ForestB and vice versa
+
+:::
 
 Port|Protocol|Service|Description|Type
 ---|---|---|---|---
