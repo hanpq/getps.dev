@@ -36,6 +36,12 @@ module.exports = {
                     position: 'left',
                 },
                 {
+                    to: 'modules/',
+                    activeBasePath: 'modules',
+                    label: 'Modules',
+                    position: 'left',
+                },
+                {
                     to: 'blog',
                     label: 'Blog',
                     position: 'left'
@@ -108,6 +114,12 @@ module.exports = {
             {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
+                    // Please change this to your repo.
+                    editUrl:
+                        'https://github.com/hanpq/getps.dev/tree/main/',
+                },
+                docs: {
+                    sidebarPath: require.resolve('./sidebars_modules.js'),
                     // Please change this to your repo.
                     editUrl:
                         'https://github.com/hanpq/getps.dev/tree/main/',
