@@ -118,7 +118,7 @@ module.exports = {
                     editUrl:
                         'https://github.com/hanpq/getps.dev/tree/main/',
                 },
-                docs: {
+                modules: {
                     sidebarPath: require.resolve('./sidebars_modules.js'),
                     // Please change this to your repo.
                     editUrl:
