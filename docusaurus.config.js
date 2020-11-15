@@ -128,18 +128,15 @@ module.exports = {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
             },
+        ],
+        [
             '@docusaurus/plugin-content-docs',
             {
-                docs: {
-                    path: 'modules',
-                    editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
-                    routeBasePath: 'modules',
-                    include: ['**/*.md', '**/*.mdx'],
-                    sidebarPath: ''
-                },
-                theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                },
+                path: 'modules',
+                editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
+                routeBasePath: 'modules',
+                include: ['**/*.md', '**/*.mdx'],
+                sidebarPath: ''
             }
         ],
     ],
