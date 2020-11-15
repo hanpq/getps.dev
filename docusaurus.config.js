@@ -136,7 +136,8 @@ module.exports = {
                 editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
                 routeBasePath: 'modules',
                 include: ['**/*.md', '**/*.mdx'],
-                sidebarPath: ''
+                sidebarPath: '',
+                disableVersioning: true,
             }
         ],
     ],
