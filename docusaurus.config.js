@@ -68,14 +68,6 @@ module.exports = {
                     title: 'Community',
                     items: [
                         {
-                            label: 'Stack Overflow',
-                            href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-                        },
-                        {
-                            label: 'Discord',
-                            href: 'https://discordapp.com/invite/docusaurus',
-                        },
-                        {
                             label: 'Twitter',
                             href: 'https://twitter.com/docusaurus',
                         },
@@ -95,7 +87,7 @@ module.exports = {
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} GetPS.dev`,
         },
     },
     presets: [
@@ -112,6 +104,10 @@ module.exports = {
                     // Please change this to your repo.
                     editUrl:
                         'https://github.com/hanpq/getps.dev/tree/main/',
+                    feedOptions: {
+                        type: 'all',
+                        copyright: `Copyright © ${new Date().getFullYear()} Hannes Palmquist`,
+                    },
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
