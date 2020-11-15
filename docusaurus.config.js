@@ -36,6 +36,12 @@ module.exports = {
                     position: 'left',
                 },
                 {
+                    to: 'modules/',
+                    activeBasePath: 'modules',
+                    label: 'Modules',
+                    position: 'left',
+                },
+                {
                     to: 'blog',
                     label: 'Blog',
                     position: 'left'
@@ -122,6 +128,14 @@ module.exports = {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
             },
+            '@docusaurus/plugin-content-docs',
+            {
+                path: 'modules',
+                editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
+                routeBasePath: 'modules',
+                include: ['**/*.md', '**/*.mdx'],
+                sidebarPath: ''
+            }
         ],
     ],
 };
