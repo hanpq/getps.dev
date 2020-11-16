@@ -16,4 +16,4 @@ I’ve summarized a table with all versions released of Exchange Server that sho
 
 I’ll try to keep the file updated as often as I can, but if you got data you want to add please send me a message.
 
-![Open Excel file](/img/exchangeversions.xlsx
+![Open Excel file](/img/ExchangeVersions.xlsx
