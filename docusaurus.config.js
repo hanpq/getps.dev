@@ -9,14 +9,14 @@ module.exports = {
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
         hideableSidebar: true,
-        announcementBar: {
-            id: 'underdev', // Any value that will identify this message.
-            content:
-                'This site is still under development',
-            backgroundColor: '#ffdab3', // Defaults to `#fff`.
-            textColor: '#000', // Defaults to `#000`.
-            isCloseable: true, // Defaults to `true`.
-        },
+        //announcementBar: {
+        //    id: 'underdev', // Any value that will identify this message.
+        //    content:
+        //        'This site is still under development',
+        //    backgroundColor: '#ffdab3', // Defaults to `#fff`.
+        //    textColor: '#000', // Defaults to `#000`.
+        //    isCloseable: true, // Defaults to `true`.
+        //},
         colorMode: {
             defaultMode: 'dark',
         },
