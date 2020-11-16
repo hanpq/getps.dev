@@ -1,7 +1,7 @@
 ﻿---
 title: Downloads
 description: Downloads
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 ## Downloads
