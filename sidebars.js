@@ -1,6 +1,6 @@
 module.exports = {
     someSidebar: {
-        Docusaurus: ['doc1'],
+        Introduction: ['GetStartedDocs'],
         Snippets: ['casting_datetime'],
     }
 };
