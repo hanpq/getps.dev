@@ -33,7 +33,7 @@ module.exports = {
                 {
                     to: 'docs/',
                     activeBasePath: 'docs',
-                    label: 'Docs',
+                    label: 'Knowledge Base',
                     position: 'left',
                 },
                 {
@@ -53,7 +53,7 @@ module.exports = {
                     position: 'left'
                 },
                 {
-                    href: 'https://github.com/hanpq/getps.dev',
+                    href: 'https://github.com/hanpq',
                     label: 'GitHub',
                     position: 'right',
                 },
@@ -63,20 +63,28 @@ module.exports = {
             style: 'dark',
             links: [
                 {
-                    title: 'Docs',
+                    title: 'Shortcuts',
                     items: [
                         {
-                            label: 'Style Guide',
+                            label: 'Knowledge Base',
                             to: 'docs/',
+                        },
+                        {
+                            label: 'Module documentation',
+                            to: 'modules/',
+                        },
+                        {
+                            label: 'Blog',
+                            to: 'blog/',
                         },
                     ],
                 },
                 {
-                    title: 'Community',
+                    title: 'Contact',
                     items: [
                         {
-                            label: 'Twitter',
-                            href: 'https://twitter.com/docusaurus',
+                            label: 'About',
+                            to: 'about/',
                         },
                     ],
                 },
@@ -84,12 +92,8 @@ module.exports = {
                     title: 'More',
                     items: [
                         {
-                            label: 'Blog',
-                            to: 'blog',
-                        },
-                        {
                             label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus',
+                            href: 'https://github.com/hanpq',
                         },
                     ],
                 },
