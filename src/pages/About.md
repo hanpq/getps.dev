@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 ## Hannes Palmquist
 
-<a class="avatar__photo-link avatar__photo" href="https://netlify.getps.dev/about" target="_blank" rel="noreferrer noopener">
+<a class="avatar__photo-link avatar__photo" href="https://getps.dev/about" target="_blank" rel="noreferrer noopener">
     <img src="img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist"/>
 </a>
 
