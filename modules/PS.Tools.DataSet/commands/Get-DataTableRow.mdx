@@ -15,22 +15,23 @@ Get-DataTableRow [[-DataTable] <DataTable>] [[-Query] <String>] [<CommonParamete
 
 ## DESCRIPTION
 
-asd
+Retreive rows from DataTable
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-DataTableRow
-Description of example
+Get-DataTableRow -DataTable $DataTable -Query '[OrderID] = 123456789'
 ```
+
+This example demonstrates how to retreive rows from data table.
 
 ## PARAMETERS
 
 ### -DataTable
 
-{{ Fill DataTable Description }}
+Pass the data table object to get rows from
 
 ```yaml
 Type: DataTable
@@ -46,7 +47,15 @@ Accept wildcard characters: False
 
 ### -Query
 
-{{ Fill Query Description }}
+Define a query.
+
+-like : like
+-gt   : \>
+-lt   : \<
+-eq   : =
+
+Values should be enclosed with single qoutation marks
+Columns should not be enclosed with quotation marks
 
 ```yaml
 Type: String
