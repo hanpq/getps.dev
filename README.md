@@ -2,6 +2,9 @@
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
+## Build status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7d952783-debe-4cca-bdd5-1a468f32baed/deploy-status)](https://app.netlify.com/sites/pensive-darwin-90a9ff/deploys)
+
 ## Installation
 
 ```console
