@@ -48,6 +48,10 @@ module.exports = {
                     position: 'left'
                 },
                 {
+                    to: 'downloads',
+                    label: 'Downloads',
+                    position: 'left'
+                },                {
                     to: 'about',
                     label: 'About',
                     position: 'left'
@@ -76,6 +80,10 @@ module.exports = {
                         {
                             label: 'Blog',
                             to: 'blog/',
+                        },
+                        {
+                            label: 'Downloads',
+                            to: 'downloads/',
                         },
                     ],
                 },
