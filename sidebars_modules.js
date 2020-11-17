@@ -13,7 +13,8 @@ module.exports = {
                         collapsed: false,
                         items: [
                             'PS.Tools.DataSet/quickstart',
-                            'PS.Tools.DataSet/installation'
+                            'PS.Tools.DataSet/installation',
+                            'PS.Tools.DataSet/devstatus',
                         ]
                     },
                     {
