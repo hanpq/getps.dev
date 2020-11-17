@@ -8,15 +8,15 @@ title: Quick start
 This modules provides tools for interacting with .NET datasets 
 from powershell. .NET 5.0 (and earlier) provides resource to work 
 with data sets and tables. To make it easier to interact with the 
-constructors, methods, properties etc this module was developed to
+constructors, methods, properties, this module was developed to
 powershell-ify the syntax of working with these resources.
 
 ## Why should I use DataSets and DataTables?
 
-Powershell provides built-in methods of working with, manipulating and 
-store data. Array, Collections, Lists, HashTables, Dictionaries etc. 
-They all have their use cases, strengts and weaknesses. One of the 
-weeknesses that all of them suffers from is very large data structures 
+Powershell provides built-in methods of managing data like; Arrays, 
+Collections, Lists, HashTables, Dictionaries etc. 
+They all have their use cases, strengths and weaknesses. One of the 
+weeknesses that all of them suffers from is managing very large data structures 
 and the resulting resource utilization and performance limitations.
 
 When working with datatables with let's say 20 000 items and 60 properties each 
