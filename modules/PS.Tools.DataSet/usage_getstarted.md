@@ -13,12 +13,16 @@ $DataTable = New-DataTable -TableName 'UsersTable'
 
 ## Add columns to tables
 
-Next we need to add a few columns to the table
+Next we need to add a few columns to the table. First we'll 
+add a few plain columns. Secondly we will add a column with 
+an expression. This expression concatinates firstname and 
+lastname to a displayname. Last we will add a column that has 
+a default value in case nothing is set. 
 
 ```powershell
 Add-DataTableColumn -DataTable $DataTable -Names 'ID','FirstName','LastName'
 Add-DataTableColumn -DataTable $DataTable -Names 'DisplayName' -Expression "[FirstName] + ' ' + [LastName]"
-Add-DataTableColumn -DataTable $DataTable -Names 'DefaultTheme' -DefaultValue 'Dark'
+Add-DataTableColumn -DataTable $DataTable -Names 'DefaultTheme' -DefaultValue 'Blue'
 ```
 
 ## Add rows to tables
