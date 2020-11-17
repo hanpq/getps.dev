@@ -21,4 +21,4 @@ title: Development status
 
 ### Other
 [![Learn More](https://img.shields.io/badge/Learn%20More-PS.Tools.DataSet-success)](https://getps.dev/modules/PS.Tools.DataSet/quickstart)
-[![License](https://img.shields.io/github/license/hanpq/PS.Tools.DataSet)](LICENSE)
+[![License](https://img.shields.io/github/license/hanpq/PS.Tools.DataSet)](https://github.com/hanpq/PS.Tools.DataSet/blob/main/LICENSE)
