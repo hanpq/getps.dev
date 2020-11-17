@@ -22,7 +22,7 @@ module.exports = {
                         label: 'Usage',
                         collapsed: false,
                         items: [
-                            'PS.Tools.DataSet/usage_setup',
+                            'PS.Tools.DataSet/usage_getstarted',
                         ]
                     },
                     {
