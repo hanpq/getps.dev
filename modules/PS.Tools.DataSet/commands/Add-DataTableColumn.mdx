@@ -19,7 +19,7 @@ Add-DataTableColumn -DataTable <DataTable> -Names <String[]> [<CommonParameters>
 
 ```powershell
 Add-DataTableColumn -DataTable <DataTable> -Names <String[]> [-Caption <String>] [-DefaultValue <String>]
- [-Expression <String>] [<CommonParameters>]
+ [-Expression <String>] [-AllowDBNull <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,6 +150,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowDBNull
+
+Defaults to true, if set to false column will not allow null values
+
+```yaml
+Type: Boolean
+Parameter Sets: Single
+Aliases:
+
+Required: False
+Position: Named
+Default value: True
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
