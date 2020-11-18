@@ -8,6 +8,11 @@ module.exports = {
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
+        googleAnalytics: {
+            trackingID: 'G-MYR3KXGL15',
+            // Optional fields.
+            anonymizeIP: true, // Should IPs be anonymized?
+        },
         hideableSidebar: true,
         //announcementBar: {
         //    id: 'underdev', // Any value that will identify this message.
@@ -51,7 +56,7 @@ module.exports = {
                     to: 'downloads',
                     label: 'Downloads',
                     position: 'left'
-                },                {
+                }, {
                     to: 'about',
                     label: 'About',
                     position: 'left'
