@@ -13,6 +13,11 @@ module.exports = {
             // Optional fields.
             anonymizeIP: true, // Should IPs be anonymized?
         },
+        gtag: {
+            trackingID: 'G-MYR3KXGL15',
+            // Optional fields.
+            anonymizeIP: true, // Should IPs be anonymized?
+        },
         hideableSidebar: true,
         //announcementBar: {
         //    id: 'underdev', // Any value that will identify this message.
