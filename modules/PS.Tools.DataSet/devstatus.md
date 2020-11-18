@@ -22,3 +22,7 @@ title: Development status
 ### Other
 [![Learn More](https://img.shields.io/badge/Learn%20More-PS.Tools.DataSet-success)](https://getps.dev/modules/PS.Tools.DataSet/quickstart)
 [![License](https://img.shields.io/github/license/hanpq/PS.Tools.DataSet)](https://github.com/hanpq/PS.Tools.DataSet/blob/main/LICENSE)
+
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fb5a919a271c5ca"></script>
