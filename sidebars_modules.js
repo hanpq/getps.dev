@@ -41,21 +41,6 @@ module.exports = {
                     },
                 ]
             },
-            {
-                type: 'category',
-                label: 'PS.Tools.Test',
-                collapsed: true,
-                items: [
-                    {
-                        type: 'category',
-                        label: 'Command Reference',
-                        collapsed: true,
-                        items: [
-                            'PS.Tools.Test/commands/Get-Test',
-                        ]
-                    },
-                ]
-            },
         ],        
     },
 };
