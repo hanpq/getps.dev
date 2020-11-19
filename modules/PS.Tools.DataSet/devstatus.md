@@ -20,6 +20,7 @@ title: Development status
 
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/v/PS.Tools.DataSet?label=PSGallery)](https://www.powershellgallery.com/packages/PS.Tools.DataSet)
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PS.Tools.DataSet?label=PSGallery%20downloads)](https://www.powershellgallery.com/packages/PS.Tools.DataSet)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/p/PS.Tools.DataSet)](https://www.powershellgallery.com/packages/PS.Tools.DataSet)
 
 ### Other
 
