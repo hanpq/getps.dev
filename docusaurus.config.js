@@ -5,7 +5,7 @@ module.exports = {
     url: 'https://getps.dev',
     baseUrl: '/',
     onBrokenLinks: 'throw',
-    favicon: 'img/powershell_orange.ico',
+    favicon: 'img/powershell_orange2.ico',
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
