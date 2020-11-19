@@ -1,7 +1,8 @@
 module.exports = {
     title: 'GetPS.dev',
-    tagline: 'Powershell scripts and modules',
-    url: 'https://pensive-darwin-90a9ff.netlify.app',
+    tagline: 'Powershell scripts, modules, blog, knowledge base, tips and tricks',
+    //url: 'https://pensive-darwin-90a9ff.netlify.app',
+    url: 'https://getps.dev',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     favicon: 'img/powershell_orange.ico',

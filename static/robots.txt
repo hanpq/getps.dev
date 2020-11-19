@@ -1,0 +1,4 @@
+﻿User-Agent: *
+Disallow: 
+
+Sitemap: https://getps.dev/sitemap.xml
