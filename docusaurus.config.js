@@ -33,6 +33,8 @@ module.exports = {
         },
         prism: {
             additionalLanguages: ['powershell'],
+            theme: require('prism-react-renderer/themes/github'),
+            darkTheme: require('prism-react-renderer/themes/dracula'),
         },
         navbar: {
             title: 'getps.dev',
@@ -138,6 +140,8 @@ module.exports = {
                         type: 'all',
                         copyright: `Copyright © ${new Date().getFullYear()} Hannes Palmquist`,
                     },
+                    blogSidebarCount: 'ALL',
+                    blogSidebarTitle: 'All our posts',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
