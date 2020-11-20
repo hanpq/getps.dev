@@ -159,5 +159,10 @@ module.exports = {
         ]
     ],
     scripts: [
+        {
+            src:
+                'https://connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v9.0',
+            async: true,
+        },
     ],
 };
