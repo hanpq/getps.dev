@@ -8,6 +8,8 @@ author_url: https://netlify.getps.dev/about
 tags: [powershell, datetime, function]
 ---
 
+<div class="addthis_inline_share_toolbox"></div>
+
 Eventually you will stumble upon badly formatted date/time strings that you need to parse. Instead of doing a lot of Split, Trim, Substring and what not you can leverage the DateTime class methods Parse/TryParse/ParseExact. To PS-ify the use of this method I wrote this powershell function that can take any date/time string and convert it to either a DateTime object or a new string format.
 
 ```powershell
