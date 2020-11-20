@@ -8,6 +8,8 @@ author_url: https://netlify.getps.dev/about
 tags: [powershell, Set-DesktopWallpaper, function, wallpaper]
 ---
 
+<div class="addthis_inline_share_toolbox"></div>
+
 I’ve seen numerous forums and blog articles trying to to change desktop wallpaper in windows, none of which works reliably. The most common solution is to set a new registry keys and then call user32.dll and the method UpdatePerUserSystemParameters and then quite literally hope that the desktop wallpaper changes. This is not always the case because Windows does not always honor the request to actually update the wallpaper settings when this method is called. The inner working of this method is not completely known and this method has never been advertised by Microsoft to be the way to change wallpaper.
 
 However I came to the conclusion that it must exist a documented windows API to actually set a new wallpaper so I started looking into C# solutions to the same problem and sure thing it was a quite an easy procedure to change the desktop wallpaper. All I had to do was to define the type definition in Powershell and then pass the action values when calling the SystemParametersInfo method.

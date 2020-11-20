@@ -8,6 +8,8 @@ author_url: https://netlify.getps.dev/about
 tags: [powershell, check-profilestatus, function, profile]
 ---
 
+<div class="addthis_inline_share_toolbox"></div>
+
 This function can be used to show the status of the Powershell profile scripts on the computer.
 
 ```powershell

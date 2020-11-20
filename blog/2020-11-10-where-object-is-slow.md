@@ -8,6 +8,8 @@ author_url: https://netlify.getps.dev/about
 tags: [powershell, where-object, function, performance, optimization]
 ---
 
+<div class="addthis_inline_share_toolbox"></div>
+
 One thing that I have been struggling with from time to time is that the cmdlet Where-Object is incredibly slow to filter massive datasets. Lets say you have custom PSObject array with 50000 objects and 20 properties each. If you would cross referencing this table with another large dataset using the Where-Object cmdlet for each lookup it would take ages.
 
 One day I had to do such a comparison and I was forced to come up with an alternate way of retrieving matches, so I developed a new function that is much faster than the Where-Object cmdlet.

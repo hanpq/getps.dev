@@ -8,6 +8,8 @@ author_url: https://netlify.getps.dev/about
 tags: [Active Directory, Trust, ]
 ---
 
+<div class="addthis_inline_share_toolbox"></div>
+
 One of the things I often help clients with is to setup Active Directory Forest Trusts. If the trust can be setup as “Forest trust”, “Two-way”, “Forest-wide auth”, “conditional forward for DNS”, “no firewall” anyone can manage to setup a forest trust. In reality though it rarely is that simple. Recently I was asked to setup a trust in a much more complex scenario.
 
 - Forest trust
