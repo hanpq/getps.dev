@@ -57,7 +57,7 @@ function Home() {
     return (
         <Layout
             //title={`${siteConfig.title}`}
-            title="Welcome"
+            title="$"
             description="Getps.dev provides a portal of powershell scripts, modules, blog, knowledge base, tutorials, guides, tips and tricks">
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">

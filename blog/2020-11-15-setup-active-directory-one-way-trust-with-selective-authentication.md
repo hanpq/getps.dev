@@ -5,10 +5,17 @@ author: Hannes Palmquist
 author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
-tags: [Active Directory, Trust, ]
+tags: [Active Directory, Trust]
+description: Setting up a one-way trust with selective authentication and without DNS conditional forward
 ---
 
-One of the things I often help clients with is to setup Active Directory Forest Trusts. If the trust can be setup as “Forest trust”, “Two-way”, “Forest-wide auth”, “conditional forward for DNS”, “no firewall” anyone can manage to setup a forest trust. In reality though it rarely is that simple. Recently I was asked to setup a trust in a much more complex scenario.
+<div class="fb-share-button" 
+data-href="https://getps.dev/blog/setup-active-directory-one-way-trust-with-selective-authentication" 
+data-layout="button" 
+data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+One of the things I often help clients with is to setup Active Directory Forest Trusts. If the trust can be setup as “Forest trust”, “Two-way”, “Forest-wide auth”, “conditional forward for DNS”, “no firewall” anyone can manage to setup a forest trust. In reality though it rarely is that simple. Recently I was asked to setup a trust in a more complex scenario.
 
 - Forest trust
 - One-way

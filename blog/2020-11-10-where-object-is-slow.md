@@ -6,7 +6,14 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [powershell, where-object, function, performance, optimization]
+description: A faster search function replacing edge cases of where-object
 ---
+
+<div class="fb-share-button" 
+data-href="https://getps.dev/blog/where-object-is-slow" 
+data-layout="button" 
+data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
 One thing that I have been struggling with from time to time is that the cmdlet Where-Object is incredibly slow to filter massive datasets. Lets say you have custom PSObject array with 50000 objects and 20 properties each. If you would cross referencing this table with another large dataset using the Where-Object cmdlet for each lookup it would take ages.
 

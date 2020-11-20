@@ -6,7 +6,15 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [Powershell, week, function]
+description:In some parts of the world it is more common to work with weeks as measurement of time. Unfortunately there are not easy accessible ways to work with weeks in powershell or .NET.
 ---
+
+<div class="fb-share-button" 
+data-href="https://getps.dev/blog/get-weekinfo" 
+data-layout="button" 
+data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
 
 In some parts of the world it is more common to work with weeks as measurement of time. Unfortunately there are not easy accessible ways to work with weeks in powershell or .NET. There is some support of retrieving a week number with the culture datatype however if you have a week number and want to resolve dates relatated to that week number you have to resolve that manually. Here is one example of how to do it.
 
