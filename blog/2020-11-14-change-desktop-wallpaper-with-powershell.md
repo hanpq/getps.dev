@@ -13,7 +13,7 @@ description: I’ve seen numerous forums and blog articles trying to to change d
 data-href="https://getps.dev/blog/change-desktop-wallpaper-with-powershell" 
 data-layout="button" 
 data-size="small">
-<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+</div>
 
 I’ve seen numerous forums and blog articles trying to to change desktop wallpaper in windows, none of which works reliably. The most common solution is to set a new registry keys and then call user32.dll and the method UpdatePerUserSystemParameters and then quite literally hope that the desktop wallpaper changes. This is not always the case because Windows does not always honor the request to actually update the wallpaper settings when this method is called. The inner working of this method is not completely known and this method has never been advertised by Microsoft to be the way to change wallpaper.
 
