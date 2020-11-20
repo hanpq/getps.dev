@@ -8,8 +8,6 @@ author_url: https://getps.dev/about
 tags: [Exchange, RecipientType, Office365, ExchangeOnline]
 ---
 
-<div class="addthis_inline_share_toolbox"></div>
-
 Below are all current recipient types. Please comment below if you miss an entry in any of the tables.
 
 ## msExchRecipientDisplayType

@@ -8,8 +8,6 @@ author_url: https://getps.dev/about
 tags: [powershell, check-profilestatus, function, profile]
 ---
 
-<div class="addthis_inline_share_toolbox"></div>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img alt="Exchange Versions" src={useBaseUrl('img/exchange-versions.png')} />

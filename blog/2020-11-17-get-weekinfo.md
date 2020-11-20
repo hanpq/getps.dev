@@ -8,8 +8,6 @@ author_url: https://getps.dev/about
 tags: [Powershell, week, function]
 ---
 
-<div class="addthis_inline_share_toolbox"></div>
-
 In some parts of the world it is more common to work with weeks as measurement of time. Unfortunately there are not easy accessible ways to work with weeks in powershell or .NET. There is some support of retrieving a week number with the culture datatype however if you have a week number and want to resolve dates relatated to that week number you have to resolve that manually. Here is one example of how to do it.
 
 First we define a supporting function that simply retreives the week number for a given date from the Gregorian calendar.
