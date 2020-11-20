@@ -7,7 +7,7 @@ hide_table_of_contents: true
 ## Hannes Palmquist
 
 <a class="avatar__photo-link avatar__photo" href="https://getps.dev/about" target="_blank" rel="noreferrer noopener">
-    <img src="img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist"/>
+    <img src="https://getps.dev/img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist"/>
 </a>
 
 Hannes work as a senior consultant at Crayon Sweden primarily within Messaging, Automation, Infrastructure, Developing and Identity Management. Hannes has great experience in migration of workloads to and from Office 365.

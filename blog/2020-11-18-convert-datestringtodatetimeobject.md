@@ -3,8 +3,8 @@ slug: convert-datestringtodatetimeobject
 title: Convert-DateStringToDateTimeObject
 author: Hannes Palmquist
 author_title: Senior Consultant Cloud
-author_image_url: 'img/Hannes_Profil_HighContrast.jpg'
-author_url: https://netlify.getps.dev/about
+author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
+author_url: https://getps.dev/about
 tags: [powershell, datetime, function]
 ---
 

@@ -3,8 +3,8 @@ slug: setup-active-directory-one-way-trust-with-selective-authentication
 title: Setup Active Directory One-way Trust With Selective Authentication
 author: Hannes Palmquist
 author_title: Senior Consultant Cloud
-author_image_url: 'img/Hannes_Profil_HighContrast.jpg'
-author_url: https://netlify.getps.dev/about
+author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
+author_url: https://getps.dev/about
 tags: [Active Directory, Trust, ]
 ---
 
