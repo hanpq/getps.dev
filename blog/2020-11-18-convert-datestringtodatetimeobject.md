@@ -14,11 +14,6 @@ data-layout="button"
 data-size="small">
 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
-<div class="fb-share-button" 
-data-href="https://www.your-domain.com/your-page.html" 
-data-layout="button_count">
-</div>
-
 Eventually you will stumble upon badly formatted date/time strings that you need to parse. Instead of doing a lot of Split, Trim, Substring and what not you can leverage the DateTime class methods Parse/TryParse/ParseExact. To PS-ify the use of this method I wrote this powershell function that can take any date/time string and convert it to either a DateTime object or a new string format.
 
 ```powershell
