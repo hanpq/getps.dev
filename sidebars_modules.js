@@ -1,6 +1,6 @@
 module.exports = {
     modulessidebar: {
-        Introduction: ['GetStarted'],
+        Introduction: ['Inventory'],
         Modules: [
             {
                 type: 'category',

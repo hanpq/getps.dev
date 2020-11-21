@@ -1,6 +1,6 @@
 ﻿---
-id: GetStarted
-title: Get started
+id: Inventory
+title: Inventory
 slug : /
 ---
 
