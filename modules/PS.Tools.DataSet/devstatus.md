@@ -5,6 +5,10 @@ title: Development status
 
 ## Build status
 
+### Github
+[![License](https://img.shields.io/github/license/hanpq/PS.Tools.DataSet)](https://github.com/hanpq/PS.Tools.DataSet/blob/main/LICENSE)
+[![Repo](https://img.shields.io/badge/repo-PS.Tools.DataSet-success?logo=github)](https://github.com/hanpq/PS.Tools.DataSet)
+
 ### Pester
 
 ![Pester Desktop Windows](https://github.com/hanpq/PS.Tools.DataSet/workflows/Pester%20Desktop%20Windows/badge.svg?branch=main)
@@ -25,4 +29,3 @@ title: Development status
 ### Other
 
 [![Learn More](https://img.shields.io/badge/Learn%20More-PS.Tools.DataSet-success)](https://getps.dev/modules/PS.Tools.DataSet/quickstart)
-[![License](https://img.shields.io/github/license/hanpq/PS.Tools.DataSet)](https://github.com/hanpq/PS.Tools.DataSet/blob/main/LICENSE)
