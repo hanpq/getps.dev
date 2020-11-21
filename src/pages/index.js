@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
     {
         title: 'Scripts and Snippets',
-        imageUrl: 'img/misc-teleportation-script-imbued.svg',
+        imageUrl: 'img/coding-svgrepo-com.svg',
         description: (
             <>
                 GetPS.dev hosts a knowledgebase with misc scripts and snippets
@@ -18,7 +18,7 @@ const features = [
     },
     {
         title: 'Modules',
-        imageUrl: 'img/redes-colores.svg',
+        imageUrl: 'img/delivery-box-svgrepo-com.svg',
         description: (
             <>
                 Here you will find <code>docs</code> for the modules developed and published by getps.dev
