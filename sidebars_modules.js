@@ -41,6 +41,40 @@ module.exports = {
                     },
                 ]
             },
+            {
+                type: 'category',
+                label: 'PS.Tools.WinUtility',
+                collapsed: true,
+                items: [
+                    {
+                        type: 'category',
+                        label: 'Introduction',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.WinUtility/quickstart',
+                            'PS.Tools.WinUtility/installation',
+                            'PS.Tools.WinUtility/devstatus',
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Usage',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.WinUtility/usage_getstarted',
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Command Reference',
+                        collapsed: true,
+                        items: [
+                            'commands/Add-Shortcut',
+                        ]
+                    },
+                ]
+            },
+
         ],        
     },
 };
