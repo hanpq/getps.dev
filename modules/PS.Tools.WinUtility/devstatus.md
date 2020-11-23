@@ -37,6 +37,6 @@ This module is published on PSGallery
 
 ### Other
 
-Exampled and Get started guides are provided on the projects website getps.dev.
+Examples and Get started guides are provided on the projects website getps.dev.
 
 [![Learn More](https://img.shields.io/badge/Learn%20More-PS.Tools.Utility-success)](https://getps.dev/modules/PS.Tools.Utility/quickstart)
