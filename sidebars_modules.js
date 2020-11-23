@@ -43,6 +43,39 @@ module.exports = {
             },
             {
                 type: 'category',
+                label: 'PS.Tools.Utility',
+                collapsed: true,
+                items: [
+                    {
+                        type: 'category',
+                        label: 'Introduction',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.Utility/quickstart',
+                            'PS.Tools.Utility/installation',
+                            'PS.Tools.Utility/devstatus',
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Usage',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.Utility/usage_getstarted',
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Command Reference',
+                        collapsed: true,
+                        items: [
+                            'PS.Tools.Utility/commands/Out-Animate',
+                        ]
+                    },
+                ]
+            },
+            {
+                type: 'category',
                 label: 'PS.Tools.WinUtility',
                 collapsed: true,
                 items: [
