@@ -69,7 +69,7 @@ module.exports = {
                         label: 'Command Reference',
                         collapsed: true,
                         items: [
-                            'commands/Add-Shortcut',
+                            'PS.Tools.WinUtility/commands/Add-Shortcut',
                         ]
                     },
                 ]
