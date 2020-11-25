@@ -21,22 +21,23 @@ Add-Shortcut [-Target] <String> [-ShortcutDirectory] <String> [-Name] <String> [
 
 ## DESCRIPTION
 
-asd
+Adds a windows shortcut
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-Shortcut
-Description of example
+Add-Shortcut -Name 'Notepad' -Directory C:\Temp -Target C:\Windows\System32\notepad.exe
 ```
+
+Creates the shortcut for notepad
 
 ## PARAMETERS
 
 ### -Target
 
-{{ Fill Target Description }}
+Sets the target for the shortcut
 
 ```yaml
 Type: String
@@ -52,7 +53,7 @@ Accept wildcard characters: False
 
 ### -ShortcutDirectory
 
-{{ Fill ShortcutDirectory Description }}
+Sets the directory where the lnk file should be created.
 
 ```yaml
 Type: String
@@ -68,7 +69,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Description
+Sets the name of the lnk file.
 
 ```yaml
 Type: String
