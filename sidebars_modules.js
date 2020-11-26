@@ -53,8 +53,7 @@ module.exports = {
                         items: [
                             'PS.Tools.Utility/quickstart',
                             'PS.Tools.Utility/installation',
-                            'PS.Tools.Utility/devstatus',
-                            'PS.Tools.Utility/changelog'
+                            'PS.Tools.Utility/devstatus'
                         ]
                     },
                     {
