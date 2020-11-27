@@ -15,6 +15,7 @@ module.exports = {
                             'PS.Tools.DataSet/quickstart',
                             'PS.Tools.DataSet/installation',
                             'PS.Tools.DataSet/devstatus',
+                            'PS.Tools.DataSet/changelog'
                         ]
                     },
                     {
