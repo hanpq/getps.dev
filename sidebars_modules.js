@@ -54,7 +54,8 @@ module.exports = {
                         items: [
                             'PS.Tools.Utility/quickstart',
                             'PS.Tools.Utility/installation',
-                            'PS.Tools.Utility/devstatus'
+                            'PS.Tools.Utility/devstatus',
+                            'PS.Tools.Utility/changelog'
                         ]
                     },
                     {
@@ -88,6 +89,7 @@ module.exports = {
                             'PS.Tools.WinUtility/quickstart',
                             'PS.Tools.WinUtility/installation',
                             'PS.Tools.WinUtility/devstatus',
+                            'PS.Tools.WinUtility/changelog'
                         ]
                     },
                     {
