@@ -4,110 +4,170 @@ title: Changelog
 ---
 
 
-## 1.2.31
-
-2020-11-27
-
-<div class="container">
-<div class="row">
-<div class="col col--2"><span class="badge badge--secondary">other</span></div>
-<div class="col">Updated docs</div>
-</div>
-</div>
-
-
-## 1.2.28
+## 2.138.6
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Updated supported operating systems to include linux and macos</div>
+<div class="col">friendly names in LicenseServiceInventory mapping file</div>
 </div>
 </div>
 
 
-## 1.2.27
+## 2.138.5
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Added parameter AllowDBNull to Add-DataTableColumn</div>
+<div class="col">Added parameter to configure outputdirectory, defaults to previous output folder of the powershell module directory</div>
 </div>
 </div>
 
 
-## 1.2.17
+## 2.138.4
+
+
+
+<div class="container">
+<div class="row">
+<div class="col col--2"><span class="badge badge--success">bug</span></div>
+<div class="col">Added better error message for when IE never been started.</div>
+</div>
+</div>
+
+
+## 2.138.1
+
+
+
+<div class="container">
+<div class="row">
+<div class="col col--2"><span class="badge badge--success">bug</span></div>
+<div class="col">An issue where included dependecy modules were not loaded.</div>
+</div>
+</div>
+
+
+## 2.138
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Added help for New-DataTable</div>
+<div class="col">Added backward compatibility for reports created with older versions of the reporter script that delivers the Users file in a single JSON. The newer versions of reporter splits the users file in to smaller parts to conserv memory.</div>
 </div>
 </div>
 
 
-## 1.2.16
+## 2.137
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Updated help for add-datasettable</div>
+<div class="col">Analyzer now verifies the version of reporter used to create the input zip-file. Script will halt if an unsupported version is used. If the script is unable to determine if the reporter version used is compatibile the script will continue with a warning.</div>
 </div>
 </div>
 
 
-## 1.2.15
+## 2.136.2
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Updated help for add-datasettable</div>
+<div class="col">Script now prints module version when started.</div>
 </div>
 </div>
 
 
-## 1.2.14
+## 2.136.1
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Updated help for add-datasettable</div>
+<div class="col">Major rewrite of the analyzer script.</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--primary">feature</span></div>
+<div class="col">All data storage during runtime is now done in .NET DataTables. This allows much more efficient memory usage and the script is now capable of handling much larger tenanants.</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--primary">feature</span></div>
+<div class="col">Thanks to the new way data is stored the script can now automatically determine if a user is double licensed without the need to create predefined rules. The script will report all users that has services enabled that is assigned by more than one SKU.</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--primary">feature</span></div>
+<div class="col">Telemetry data is now sent to azure.</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--success">bug</span></div>
+<div class="col">Yammer and groups headings is removed from the HTML report</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--primary">feature</span></div>
+<div class="col">Teams usage statistics has been added to the HTML report</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--primary">feature</span></div>
+<div class="col">LicenseOverview has been cleaned up and some unused columns removed. (The data can still be found in the JSON report xlsx file.)</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--info">optimization</span></div>
+<div class="col">A complete walktrough of the script with memory optimizations and general performance enhancments.</div>
 </div>
 </div>
 
 
-## 1.2.13
+## 2.130
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Updated help for add-datasettable</div>
+<div class="col">Creation of the lookup table have been moved to Analyzer from Reporter</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--primary">feature</span></div>
+<div class="col">Analyzer has been modified to accept user lists in file batches instead of one large file. This lowers the risk of OutOfMemory Exceptions</div>
 </div>
 </div>
 
 
-## 1.2.5
+## 2.116
+
+
+
+<div class="container">
+<div class="row">
+<div class="col col--2"><span class="badge badge--success">bug</span></div>
+<div class="col">New crayon logo added to HTML report summery</div>
+</div>
+</div>
+
+
+## 2.114
 
 
 
 <div class="container">
 <div class="row">
 <div class="col col--2"><span class="badge badge--primary">feature</span></div>
-<div class="col">Updated test files to load function file independently from module</div>
+<div class="col">Updated version of LicenseOverview mapping table, added skus, services</div>
+</div>
+<div class="row">
+<div class="col col--2"><span class="badge badge--success">bug</span></div>
+<div class="col">Friendly Names in LicenseOverview now all comply with Pascal Casing naming schema, (of every word, first letter is uppercase and the rest is lower case.)</div>
 </div>
 </div>
 
