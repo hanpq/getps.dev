@@ -37,7 +37,7 @@ Describe -Name "Foo" -Fixture {
 }
 ```
 
-The same method can be applied when mocking a built in cmdlet but has will fail parameter validation which happends even though the cmdlets is mocked
+The same method can be applied when mocking a built in cmdlet that will fail parameter validation which happends even though the cmdlets is mocked
 
 ```powershell
 function Get-Foo {
