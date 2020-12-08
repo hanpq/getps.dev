@@ -9,9 +9,9 @@ tags: [powershell, check-profilestatus, function, profile]
 description: This function can be used to show the status of the Powershell profile scripts on the computer.
 ---
 
-<div class="fb-share-button" 
-data-href="https://getps.dev/blog/check-profile-status" 
-data-layout="button" 
+<div class="fb-share-button"
+data-href="https://getps.dev/blog/check-profile-status"
+data-layout="button"
 data-size="small">
 </div>
 

@@ -9,9 +9,9 @@ tags: [Active Directory, Trust]
 description: Setting up a one-way trust with selective authentication and without DNS conditional forward
 ---
 
-<div class="fb-share-button" 
-data-href="https://getps.dev/blog/setup-active-directory-one-way-trust-with-selective-authentication" 
-data-layout="button" 
+<div class="fb-share-button"
+data-href="https://getps.dev/blog/setup-active-directory-one-way-trust-with-selective-authentication"
+data-layout="button"
 data-size="small">
 </div>
 
@@ -65,9 +65,11 @@ Port|Protocol|Service|Description|Type
 1024-65535|TCP|RPC|RPC High ports returned by RPC Endpoint mapper|Mandatory
 
 ## Configure DNS records
+
 Often DNS can be configured by just setting up a AD DNS conditional forward for the other forest. This will allow all necessary DNS records to be resolved by the respective forest. In this scenario though we were not allowed to do that and instead create the DNS records manually. Almost no documentation exists for this scenario so here comes the least amount of DNS records required to successfully set up the forest trust.
 
 ### A-records
+
 Name|Target
 ---|---
 domain.com|DC1-IP
@@ -78,10 +80,12 @@ DC2.domain.com|DC2-IP
 DC3.domain.com|DC3-IP
 
 Notes
+
 - All domain controllers that should serve the trust needs to be added as A records.
 - Make sure that the KDC and PDC are among these domain controllers.
 
 ### SRV-records
+
 - Subdomain “_msdcs” of “domain.com” needs to be created
 - Subdomain “dc” of domain “_msdcs.domain.com” needs to be created
 - Subdomain “pdc” of domain “_msdcs.domain.com” needs to be created if both sides of the forest trust should be created from one of the sides.
@@ -100,6 +104,7 @@ _ldap._tcp.pdc._msdcs.domain.com|_ldap|_tcp|389|0|100|DC1.domain.com(PDC domain 
 If conditional forwards are used, make sure that all domain controllers that are resolvable are added with port openings and that they are reachable.
 
 ## Other notes
+
 - Make sure that all clients where users from ForestA can reach the domain controllers published in DNS for ForestB.
 - Use PortQry to test all ports from all domain controllers.
   - Note that 88:UDP don’t give any response so that port cannot be tested.

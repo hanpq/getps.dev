@@ -9,9 +9,9 @@ tags: [powershell, pester, mock, remote, cmdlets]
 description: Mocking the unmockable, mocking remote or unavailable cmdlets.
 ---
 
-<div class="fb-share-button" 
-data-href="https://getps.dev/blog/convert-datestringtodatetimeobject" 
-data-layout="button" 
+<div class="fb-share-button"
+data-href="https://getps.dev/blog/convert-datestringtodatetimeobject"
+data-layout="button"
 data-size="small">
 </div>
 
@@ -86,4 +86,3 @@ Describe -Name "Foo" -Fixture {
     }
 }
 ```
-

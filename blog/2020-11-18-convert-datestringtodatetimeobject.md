@@ -9,9 +9,9 @@ tags: [powershell, datetime, function]
 description: Eventually you will stumble upon badly formatted date/time strings that you need to parse. Instead of doing a lot of Split, Trim, Substring and what not you can leverage the DateTime class methods Parse/TryParse/ParseExact. 
 ---
 
-<div class="fb-share-button" 
-data-href="https://getps.dev/blog/convert-datestringtodatetimeobject" 
-data-layout="button" 
+<div class="fb-share-button"
+data-href="https://getps.dev/blog/convert-datestringtodatetimeobject"
+data-layout="button"
 data-size="small">
 </div>
 

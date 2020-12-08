@@ -71,7 +71,7 @@ function Home() {
                             )}
                             to={useBaseUrl('blog/')}>
                             Get Started
-            </Link>
+                        </Link>
                     </div>
                 </div>
             </header>

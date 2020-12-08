@@ -9,9 +9,9 @@ tags: [Exchange, RecipientType, Office365, ExchangeOnline]
 description: Below are all current recipient types. Please comment below if you miss an entry in any of the tables.
 ---
 
-<div class="fb-share-button" 
-data-href="https://getps.dev/blog/exchange-recipienttypes" 
-data-layout="button" 
+<div class="fb-share-button"
+data-href="https://getps.dev/blog/exchange-recipienttypes"
+data-layout="button"
 data-size="small">
 </div>
 

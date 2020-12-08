@@ -9,9 +9,9 @@ tags: [powershell, Set-DesktopWallpaper, function, wallpaper]
 description: I’ve seen numerous forums and blog articles trying to to change desktop wallpaper in windows, none of which works reliably.
 ---
 
-<div class="fb-share-button" 
-data-href="https://getps.dev/blog/change-desktop-wallpaper-with-powershell" 
-data-layout="button" 
+<div class="fb-share-button"
+data-href="https://getps.dev/blog/change-desktop-wallpaper-with-powershell"
+data-layout="button"
 data-size="small">
 </div>
 
