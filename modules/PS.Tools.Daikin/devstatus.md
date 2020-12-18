@@ -18,8 +18,6 @@ Unit, Integration and Acceptance tests is provided by pester and triggered by wo
 
 ![Pester Desktop Windows](https://github.com/hanpq/PS.Tools.Daikin/workflows/Pester%20Desktop%20Windows/badge.svg?branch=main)
 ![Pester Core Windows](https://github.com/hanpq/PS.Tools.Daikin/workflows/Pester%20Core%20Windows/badge.svg?branch=main)
-![Pester Core Windows](https://github.com/hanpq/PS.Tools.Daikin/workflows/Pester%20Core%20MacOS/badge.svg?branch=main)
-![Pester Core Windows](https://github.com/hanpq/PS.Tools.Daikin/workflows/Pester%20Core%20Linux/badge.svg?branch=main)
 
 ### Codecov
 
