@@ -4,6 +4,41 @@ module.exports = {
         Modules: [
             {
                 type: 'category',
+                label: 'PS.Tools.Daikin',
+                collapsed: true,
+                items: [
+                    {
+                        type: 'category',
+                        label: 'Introduction',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.Daikin/quickstart',
+                            'PS.Tools.Daikin/installation',
+                            'PS.Tools.Daikin/devstatus',
+                            'PS.Tools.Daikin/changelog'
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Usage',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.Daikin/usage_getstarted',
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Command Reference',
+                        collapsed: true,
+                        items: [
+                            'PS.Tools.Daikin/commands/Get-DaikinStatus',
+                            'PS.Tools.Daikin/commands/Set-DaikinAirCon'
+                        ]
+                    },
+                ]
+            },
+            {
+                type: 'category',
                 label: 'PS.Tools.DataSet',
                 collapsed: true,
                 items: [
