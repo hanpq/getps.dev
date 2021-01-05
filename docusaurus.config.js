@@ -9,6 +9,18 @@ module.exports = {
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
+        algolia: {
+            apiKey: '52b9733e43527ce875978926ad245de2',
+            indexName: 'getps',
+
+            // Optional: see doc section bellow
+            contextualSearch: true,
+
+            // Optional: Algolia search parameters
+            searchParameters: {},
+
+            //... other Algolia params
+        },
         googleAnalytics: {
             trackingID: 'G-MYR3KXGL15',
             // Optional fields.
