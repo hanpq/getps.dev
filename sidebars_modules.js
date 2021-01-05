@@ -79,6 +79,41 @@ module.exports = {
             },
             {
                 type: 'category',
+                label: 'PS.Tools.SortLibrary',
+                collapsed: true,
+                items: [
+                    {
+                        type: 'category',
+                        label: 'Introduction',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.SortLibrary/quickstart',
+                            'PS.Tools.SortLibrary/installation',
+                            'PS.Tools.SortLibrary/devstatus',
+                            'PS.Tools.SortLibrary/changelog'
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Usage',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.SortLibrary/usage_getstarted',
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Command Reference',
+                        collapsed: true,
+                        items: [
+                            'PS.Tools.SortLibrary/commands/Sort-UsingQuickSort',
+                            'PS.Tools.SortLibrary/commands/Test-SortingAlgorithms'
+                        ]
+                    },
+                ]
+            },
+            {
+                type: 'category',
                 label: 'PS.Tools.Utility',
                 collapsed: true,
                 items: [
