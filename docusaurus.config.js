@@ -12,7 +12,7 @@ module.exports = {
         algolia: {
             apiKey: '52b9733e43527ce875978926ad245de2',
             indexName: 'getps',
-            contextualSearch: true,
+            contextualSearch: false,
             searchParameters: {},
         },
         googleAnalytics: {
