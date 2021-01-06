@@ -1,7 +1,9 @@
 ﻿---
 id: generate_sids
-title: How to generate SIDs for domain and local identities
+title: Generate SIDs
 ---
+
+# How to generate SIDs for domain and local identities
 
 Use the below command to create a SID object for a domain user
 
