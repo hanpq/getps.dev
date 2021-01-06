@@ -21,22 +21,26 @@ Get-DaikinStatus [[-HostName] <Object>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-asd
+Retreives the current configuration of the Daikin AirCon device
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-DaikinStatus
-Description of example
+Get-DaikinStatus -Hostname daikin.local.network
 ```
+
+PowerOn        : True
+Mode           : HEAT
+TargetTemp     : 22.0
+...
 
 ## PARAMETERS
 
 ### -HostName
 
-{{ Fill HostName Description }}
+Hostname or IP of the Daikin Aircon device.
 
 ```yaml
 Type: Object

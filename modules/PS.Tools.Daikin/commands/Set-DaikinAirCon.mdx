@@ -22,22 +22,23 @@ Set-DaikinAirCon [[-HostName] <Object>] [[-PowerOn] <Boolean>] [[-Temp] <Int32>]
 
 ## DESCRIPTION
 
-asd
+Cmdlet allows to configure the aircon device to the desired setting.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Set-DaikinAirCon
-Description of example
+Set-DaikinAirCon -HostName daikin.local.network -PowerOn:$true -Temp 19 -Mode AUTO -FanSpeed AUTO -FanDirection Stopped
 ```
+
+This example configures the aircon device to the specified parameter values.
 
 ## PARAMETERS
 
 ### -HostName
 
-{{ Fill HostName Description }}
+Hostname or IP of the Daikin AirCon device.
 
 ```yaml
 Type: Object
@@ -53,7 +54,8 @@ Accept wildcard characters: False
 
 ### -PowerOn
 
-{{ Fill PowerOn Description }}
+Set to $true or $false to specify if the master power should be on or off.
+This does not the affect the connectivity of the control surfice.
 
 ```yaml
 Type: Boolean
@@ -69,7 +71,7 @@ Accept wildcard characters: False
 
 ### -Temp
 
-{{ Fill Temp Description }}
+Specified the target temperature in celcius.
 
 ```yaml
 Type: Int32
@@ -85,7 +87,15 @@ Accept wildcard characters: False
 
 ### -Mode
 
-{{ Fill Mode Description }}
+Specifies the operating mode of the aircon device.
+Allowed values are;
+AUTO  : Switches between heat and cold depending on the current and target temperature.
+DRY   : Sets the device lower the humidity of the air.
+COLD  : Sets the device chill the air if needed.
+No heat will be provided.
+HEAT  : Sets the device heat the air if needed.
+No chilling of air will be provided.
+FAN   : Sets the device to only circulate air without affecting temperature or humidity.
 
 ```yaml
 Type: Object
@@ -101,7 +111,11 @@ Accept wildcard characters: False
 
 ### -FanSpeed
 
-{{ Fill FanSpeed Description }}
+Specifies the strenght of the fan.
+Allowed values are;
+AUTO   : Sets the device to manage fan speed to keep the target climate.
+SILENT : Sets the fan speed to minimize noise.
+Level_1 -\> Level_5 : Sets the fan speed to the target level.
 
 ```yaml
 Type: Object
@@ -117,7 +131,9 @@ Accept wildcard characters: False
 
 ### -FanDirection
 
-{{ Fill FanDirection Description }}
+Specifies how the direction of airflow is controlled.
+Allowed values are
+Stopped, VerticalSwing, HorizontalSwing and BothSwing
 
 ```yaml
 Type: Object
