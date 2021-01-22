@@ -10,7 +10,7 @@ description: Mocking the unmockable, mocking remote or unavailable cmdlets.
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/convert-datestringtodatetimeobject"
+data-href="https://getps.dev/blog/pester-mock-remote-cmdlets"
 data-layout="button"
 data-size="small">
 </div>
