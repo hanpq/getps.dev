@@ -114,6 +114,46 @@ module.exports = {
             },
             {
                 type: 'category',
+                label: 'PS.Tools.Queue',
+                collapsed: true,
+                items: [
+                    {
+                        type: 'category',
+                        label: 'Introduction',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.Queue/quickstart',
+                            'PS.Tools.Queue/installation',
+                            'PS.Tools.Queue/devstatus',
+                            'PS.Tools.Queue/changelog'
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Usage',
+                        collapsed: false,
+                        items: [
+                            'PS.Tools.Queue/usage_getstarted',
+                        ]
+                    },
+                    {
+                        type: 'category',
+                        label: 'Command Reference',
+                        collapsed: true,
+                        items: [
+                            'PS.Tools.Queue/commands/Add-QueueItem',
+                            'PS.Tools.Queue/commands/Clear-AllQueueItems',
+                            'PS.Tools.Queue/commands/Get-AllQueueItems',
+                            'PS.Tools.Queue/commands/Get-NextQueueItem',
+                            'PS.Tools.Queue/commands/Initialize-Queue',
+                            'PS.Tools.Queue/commands/Measure-Queue',
+                            'PS.Tools.Queue/commands/Show-NextQueueItem',
+                        ]
+                    },
+                ]
+            },
+            {
+                type: 'category',
                 label: 'PS.Tools.Utility',
                 collapsed: true,
                 items: [
