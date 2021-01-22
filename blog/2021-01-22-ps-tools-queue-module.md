@@ -19,7 +19,7 @@ Recently I developed a tool that utilizes the .NET class system.collections.queu
 
 For fun I wanted to create a wrapper for the queue class so that it can be used in a powershell style syntax. Additionally i missed functionality to see the rate and velocity that items were added and removed to the queue.
 
-Queue objected created with this module contains metrics for count of added and removed items, rate of added and removed items and velocity.
+Queue objects created with this module contains metrics for count of added and removed items, rate of added and removed items and velocity.
 
 [![Repo](https://img.shields.io/badge/Repo-PS.Tools.Queue-success?logo=github)](https://github.com/hanpq/PS.Tools.Queue) <br/> 
 [![Docs](https://img.shields.io/badge/Docs-PS.Tools.Queue-success?logo=read-the-docs)](https://getps.dev/modules/PS.Tools.Queue/quickstart) <br/> 
