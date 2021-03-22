@@ -1,6 +1,6 @@
 module.exports = {
     modulessidebar: {
-        Introduction: ['Inventory'],
+        Introduction: ['Inventory', 'Matrix'],
         Modules: [
             {
                 type: 'category',
@@ -221,6 +221,6 @@ module.exports = {
                 ]
             },
 
-        ],        
+        ],
     },
 };
