@@ -3,7 +3,7 @@ id: quickstart
 title: Quick start
 ---
 
-# What is PS.Tools.DataSet
+# What is pstools.dataset
 
 This modules provides tools for interacting with .NET datasets 
 from powershell. .NET 5.0 (and earlier) provides resource to work 
