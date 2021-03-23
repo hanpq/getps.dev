@@ -19,3 +19,35 @@ This topic provides a development status overview
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | pstools.daikin  | ![Test](https://github.com/hanpq/pstools.daikin/workflows/Desk%20Win/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.daikin/workflows/Core%20Win/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.daikin/workflows/Core%20Lin/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.daikin/workflows/Core%20Mac/badge.svg?branch=main)                                                        | [![codecov](https://codecov.io/gh/hanpq/pstools.daikin/branch/main/graph/badge.svg)](https://codecov.io/gh/hanpq/pstools.daikin)   | [![PSGallery](https://img.shields.io/powershellgallery/v/pstools.daikin?label=PSGallery)](https://www.powershellgallery.com/packages/pstools.daikin)<br/>[![PSGalleryDL](https://img.shields.io/powershellgallery/dt/pstools.daikin?label=PSGallery%20downloads)](https://www.powershellgallery.com/packages/pstools.daikin)     |
 | pstools.dataset | ![Test](https://github.com/hanpq/pstools.dataset/workflows/Desk%20Win/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.dataset/workflows/Core%20Win/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.dataset/workflows/Core%20Lin/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.dataset/workflows/Core%20Mac/badge.svg?branch=main) | [![codecov](https://codecov.io/gh/hanpq/pstools.dataset/branch/main/graph/badge.svg)](https://codecov.io/gh/hanpq/pstools.dataset) | [![PSGallery](https://img.shields.io/powershellgallery/v/pstools.dataset?label=PSGallery)](https://www.powershellgallery.com/packages/pstools.dataset)<br/>[![PSGalleryDL](https://img.shields.io/powershellgallery/dt/pstools.dataset?label=PSGallery%20downloads)](https://www.powershellgallery.com/packages/pstools.dataset) |
+
+
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>CI</th>
+    <th>Coverage</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>pstools.daikin</td>
+    <td>![Test](https://github.com/hanpq/pstools.daikin/workflows/Desk%20Win/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.daikin/workflows/Core%20Win/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.daikin/workflows/Core%20Lin/badge.svg?branch=main)<br/>![Test](https://github.com/hanpq/pstools.daikin/workflows/Core%20Mac/badge.svg?branch=main)</td>
+    <td>[![codecov](https://codecov.io/gh/hanpq/pstools.daikin/branch/main/graph/badge.svg)](https://codecov.io/gh/hanpq/pstools.daikin)</td>
+    <td>[![PSGallery](https://img.shields.io/powershellgallery/v/pstools.daikin?label=PSGallery)](https://www.powershellgallery.com/packages/pstools.daikin)<br/>[![PSGalleryDL](https://img.shields.io/powershellgallery/dt/pstools.daikin?label=PSGallery%20downloads)](https://www.powershellgallery.com/packages/pstools.daikin)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
