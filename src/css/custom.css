@@ -19,6 +19,12 @@
     --ifm-code-font-size: 95%;
 }
 
+.alert--secondary {
+    --ifm-alert-background-color: #bbbbbb;
+    --ifm-alert-border-color: #bbbbbb;
+    --ifm-alert-color: #000000;
+}
+
 .docusaurus-highlight-code-line {
     background-color: rgb(72, 77, 91);
     display: block;
