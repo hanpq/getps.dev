@@ -20,8 +20,8 @@
 }
 
 .alert--secondary {
-    --ifm-alert-background-color: #bbbbbb;
-    --ifm-alert-border-color: #bbbbbb;
+    --ifm-alert-background-color: #dca788;
+    --ifm-alert-border-color: #dca788;
     --ifm-alert-color: #000000;
 }
 
