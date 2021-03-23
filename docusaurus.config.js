@@ -36,6 +36,7 @@ module.exports = {
         //},
         colorMode: {
             defaultMode: 'dark',
+            disableSwitch: true,
         },
         prism: {
             additionalLanguages: ['powershell'],

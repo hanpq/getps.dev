@@ -20,9 +20,11 @@
 }
 
 .alert--secondary {
-    --ifm-alert-background-color: #dca788;
+    --ifm-alert-background-color: var(--docsearch-modal-shadow);
     --ifm-alert-border-color: #dca788;
-    --ifm-alert-color: #000000;
+    --ifm-alert-color: #FFFFFF;
+    --ifm-alert-border-radius: 10px;
+    --ifm-alert-border-width: 2px;
 }
 
 .docusaurus-highlight-code-line {
