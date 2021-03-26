@@ -17,12 +17,3 @@ jobs:
     steps:
     - name: Run Broken Links Checker
       run: npx broken-link-checker $WEBSITE_URL --ordered --recursive --exclude https://twitter.com
-
-    - uses: actions/checkout@v2
-      if: failure()
-
-    - uses: JasonEtco/create-an-issue@main
-      with:
-        filename: ${{ env.ISSUE_TEMPLATE }}
-      if: failure()
-
