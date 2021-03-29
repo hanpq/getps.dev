@@ -20,6 +20,13 @@ This topic provides documentation for all PowerShell modules published by getps.
 
 :::
 
+:::note PSTOOLS.PSSCRIPTINFO
+| CI | Coverage | PSGallery | Resources |
+| - | - | - | - |
+|[![](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_core_windows.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_core_windows.yml)<br/>[![](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_core_linux.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_core_linux.yml)<br/>[![](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_core_macos.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_core_macos.yml)<br/>[![](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_desktop_windows.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.psscriptinfo/actions/workflows/pester_desktop_windows.yml)|[![codecov](https://codecov.io/gh/hanpq/pstools.psscriptinfo/branch/main/graph/badge.svg)](https://codecov.io/gh/hanpq/pstools.psscriptinfo)|[![PSGallery](https://img.shields.io/powershellgallery/v/pstools.psscriptinfo?label=PSGallery)](https://www.powershellgallery.com/packages/pstools.psscriptinfo)<br/>[![PSGalleryDL](https://img.shields.io/powershellgallery/dt/pstools.daikin?label=PSGallery%20downloads)](https://www.powershellgallery.com/packages/pstools.daikin)     | [![Repo](https://img.shields.io/badge/Repo-pstools.daikin-success?logo=github)](https://github.com/hanpq/pstools.daikin) <br/> [![Docs](https://img.shields.io/badge/Docs-pstools.psscriptinfo-success?logo=read-the-docs)](https://getps.dev/modules/pstools.psscriptinfo/quickstart)|[![Repo](https://img.shields.io/badge/Repo-pstools.psscriptinfo-success?logo=github)](https://github.com/hanpq/pstools.psscriptinfo)<br/>[![Docs](https://img.shields.io/badge/Docs-pstools.psscriptinfo-success?logo=read-the-docs)](https://getps.dev/modules/pstools.psscriptinfo/quickstart)|
+
+:::
+
 :::note PSTOOLS.QUEUE
 | CI | Coverage | PSGallery | Resources |
 | - | - | - | - |
