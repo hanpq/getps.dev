@@ -1,6 +1,6 @@
 ---
 slug: ps-tools-queue-module
-title: Introducing PS.Tools.Queue
+title: Introducing pstools.queue
 author: Hannes Palmquist
 author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
@@ -21,6 +21,6 @@ For fun I wanted to create a wrapper for the queue class so that it can be used 
 
 Queue objects created with this module contains metrics for count of added and removed items, rate of added and removed items and velocity.
 
-[![Repo](https://img.shields.io/badge/Repo-PS.Tools.Queue-success?logo=github)](https://github.com/hanpq/PS.Tools.Queue) <br/> 
-[![Docs](https://img.shields.io/badge/Docs-PS.Tools.Queue-success?logo=read-the-docs)](https://getps.dev/modules/PS.Tools.Queue/quickstart) <br/> 
-[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/PS.Tools.Queue?label=PSGallery&logo=powershell)](https://www.powershellgallery.com/packages/PS.Tools.Queue)
+[![Repo](https://img.shields.io/badge/Repo-pstools.queue-success?logo=github)](https://github.com/hanpq/pstools.queue) <br/> 
+[![Docs](https://img.shields.io/badge/Docs-pstools.queue-success?logo=read-the-docs)](https://getps.dev/modules/pstools.queue/quickstart) <br/> 
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/pstools.queue?label=PSGallery&logo=powershell)](https://www.powershellgallery.com/packages/pstools.queue)
