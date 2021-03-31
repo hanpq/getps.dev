@@ -1,10 +1,10 @@
 ---
-id: Get-NextQueueItem
-title: Get-NextQueueItem
-description: Help page for the Powershell "Get-NextQueueItem" command
+id: Sort-UsingBubbleSort
+title: Sort-UsingBubbleSort
+description: Help page for the Powershell "Sort-UsingBubbleSort" command
 keywords:
   - Powershell
-  - pstools.queue
+  - pstools.sortlibrary
   - Help
   - Documentation
 hide_title: false
@@ -16,38 +16,38 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-NextQueueItem [-Queue] <ExtendedQueue> [<CommonParameters>]
+Sort-UsingBubbleSort [-InputObject] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Returns the next object from queue.
-That object will be removed from the queue.
+This function sorts objects using the bubble sort algorithm.
+This is the optimized version of 
+bubblesort where already sorted items are skipped every pass.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-NextQueueItem -Queue $Queue
-This example with return the next item in queue.
+3,2,1 | Sort-UsingBubbleSort
 ```
 
 ## PARAMETERS
 
-### -Queue
+### -InputObject
 
-{{ Fill Queue Description }}
+Specify array of items to be sorted
 
 ```yaml
-Type: ExtendedQueue
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -65,4 +65,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## EDIT THIS DOC 
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/pstools.queue)
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/pstools.sortlibrary)

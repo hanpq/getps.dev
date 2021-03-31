@@ -9,6 +9,7 @@
  */
 
 module.exports = [
+    'pstools.sortlibrary/commands/Sort-UsingBubbleSort',
     'pstools.sortlibrary/commands/Sort-UsingQuickSort',
     'pstools.sortlibrary/commands/Test-SortingAlgorithms'
 ];

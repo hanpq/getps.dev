@@ -1,4 +1,4 @@
-﻿// Start of file
+// Start of file
 const pstoolsdaikin = require('./modules/pstools.daikin/sidebar.js');
 const pstoolsdataset = require('./modules/pstools.dataset/sidebar.js');
 const pstoolspsscriptinfo = require('./modules/pstools.psscriptinfo/sidebar.js');
