@@ -26,11 +26,6 @@ The below Powershell function will reliably change the desktop wallpaper and you
     .VERSION 1.0.0.0
     .GUID cfc2e719-67d8-4722-b594-3d198a1206c7
     .FILENAME Set-DesktopWallpaper.ps1
-    .AUTHOR Hannes Palmquist
-    .AUTHOREMAIL hannes.palmquist@outlook.com
-    .CREATEDDATE 2019-10-14
-    .COMPANYNAME Personal
-    .COPYRIGHT (c) 2019, Hannes Palmquist, All Rights Reserved
 #>
 function Set-DesktopWallpaper {
     <#
@@ -45,10 +40,6 @@ function Set-DesktopWallpaper {
     .EXAMPLE
         Set-DesktopWallpaper -PicturePath "C:\pictures\picture2.png" -Style Centered
     .NOTES
-        Author: Hannes Palmquist
-        AuthorEmail: hannes.palmquist@outlook.com
-        COPYRIGHT: © 2019, Hannes Palmquist, All Rights Reserved
- 
         Supports jpg, png and bmp files.
     #>
  
