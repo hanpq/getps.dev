@@ -22,19 +22,19 @@ One of the things I often help clients with is to setup Active Directory Forest 
 - Selective Authentication
 - No AD DNS (Third party DNS in both organizations).
   - Not allowed to setup a stub zone or conditional forward
-- And last but not least a very strict security team that was not so keen on opening all port required for the AD trust.
+- And last but not least strict security policies for firewall policies 
 
 ## Scenario and definitions
 
 The scenario came from the acquisition of another company and during the consolidation of the two organization the trust was setup so that the migrated users could access a few legacy systems until all resources was migrated. In the table below the scenario is defined.
 
-Property | Forest A | Forest B
---- | --- | ---
-Containing|Users| Resources
-Trust Direction | Incoming | Outgoing
-Trust | Trusted | Trusting
-Direction of Access | -> |
-Direction of Trust | <- |
+| Property            | Forest A | Forest B  |
+| ------------------- | -------- | --------- |
+| Containing          | Users    | Resources |
+| Trust Direction     | Incoming | Outgoing  |
+| Trust               | Trusted  | Trusting  |
+| Direction of Access | ->       | ->        |
+| Direction of Trust  | <-       | <-        |
 
 ## Configure trust options
 
@@ -54,15 +54,15 @@ Note that even though the trust is one-way does not mean that the communication 
 
 :::
 
-Port|Protocol|Service|Description|Type
----|---|---|---|---
-88|TCP|Kerberos|Used for DC Auth|Mandatory
-88|UDP|Kerberos|Used for DC Auth|Mandatory
-135|TCP|RPC Endpoint Mapper|Used to establish a RPC endpoint|Mandatory
-389|TCP|LDAP|Used for LDAP comm|Mandatory
-389|UDP|LDAP|Used for LDAP comm|Mandatory
-455|TCP|SMB|Used for trust establishment. Can be removed post trust configuration.| Mandatory during setup
-1024-65535|TCP|RPC|RPC High ports returned by RPC Endpoint mapper|Mandatory
+| Port       | Protocol | Service             | Description                                                            | Type                   |
+| ---------- | -------- | ------------------- | ---------------------------------------------------------------------- | ---------------------- |
+| 88         | TCP      | Kerberos            | Used for DC Auth                                                       | Mandatory              |
+| 88         | UDP      | Kerberos            | Used for DC Auth                                                       | Mandatory              |
+| 135        | TCP      | RPC Endpoint Mapper | Used to establish a RPC endpoint                                       | Mandatory              |
+| 389        | TCP      | LDAP                | Used for LDAP comm                                                     | Mandatory              |
+| 389        | UDP      | LDAP                | Used for LDAP comm                                                     | Mandatory              |
+| 455        | TCP      | SMB                 | Used for trust establishment. Can be removed post trust configuration. | Mandatory during setup |
+| 1024-65535 | TCP      | RPC                 | RPC High ports returned by RPC Endpoint mapper                         | Mandatory              |
 
 ## Configure DNS records
 
@@ -70,14 +70,14 @@ Often DNS can be configured by just setting up a AD DNS conditional forward for 
 
 ### A-records
 
-Name|Target
----|---
-domain.com|DC1-IP
-domain.com|DC2-IP
-domain.com|DC3-IP
-DC1.domain.com|DC1-IP
-DC2.domain.com|DC2-IP
-DC3.domain.com|DC3-IP
+| Name           | Target |
+| -------------- | ------ |
+| domain.com     | DC1-IP |
+| domain.com     | DC2-IP |
+| domain.com     | DC3-IP |
+| DC1.domain.com | DC1-IP |
+| DC2.domain.com | DC2-IP |
+| DC3.domain.com | DC3-IP |
 
 Notes
 
@@ -91,15 +91,15 @@ Notes
 - Subdomain “pdc” of domain “_msdcs.domain.com” needs to be created if both sides of the forest trust should be created from one of the sides.
 - Note the trailing “.” (period) of the host names
 
-Full name|Service|Protocol|Port|Priority|Weight|Host
----|---|---|---|---|---|---
-_ldap._tcp.dc_msdcs.domain.com|_ldap|_tcp|389|0|100|DC1.domain.com
-_ldap._tcp.dc_msdcs.domain.com|_ldap|_tcp|389|0|100|DC2.domain.com
-_ldap._tcp.dc_msdcs.domain.com|_ldap|_tcp|389|0|100|DC3.domain.com
-_kerberos._tcp.dc._msdcs.domain.com|_kerberos|_tcp|88|0|100|DC1.domain.com
-_kerberos._tcp.dc._msdcs.domain.com|_kerberos|_tcp|88|0|100|DC2.domain.com
-_kerberos._tcp.dc._msdcs.domain.com|_kerberos|_tcp|88|0|100|DC3.domain.com
-_ldap._tcp.pdc._msdcs.domain.com|_ldap|_tcp|389|0|100|DC1.domain.com(PDC domain controller)
+| Full name                           | Service   | Protocol | Port | Priority | Weight | Host                                  |
+| ----------------------------------- | --------- | -------- | ---- | -------- | ------ | ------------------------------------- |
+| _ldap._tcp.dc_msdcs.domain.com      | _ldap     | _tcp     | 389  | 0        | 100    | DC1.domain.com                        |
+| _ldap._tcp.dc_msdcs.domain.com      | _ldap     | _tcp     | 389  | 0        | 100    | DC2.domain.com                        |
+| _ldap._tcp.dc_msdcs.domain.com      | _ldap     | _tcp     | 389  | 0        | 100    | DC3.domain.com                        |
+| _kerberos._tcp.dc._msdcs.domain.com | _kerberos | _tcp     | 88   | 0        | 100    | DC1.domain.com                        |
+| _kerberos._tcp.dc._msdcs.domain.com | _kerberos | _tcp     | 88   | 0        | 100    | DC2.domain.com                        |
+| _kerberos._tcp.dc._msdcs.domain.com | _kerberos | _tcp     | 88   | 0        | 100    | DC3.domain.com                        |
+| _ldap._tcp.pdc._msdcs.domain.com    | _ldap     | _tcp     | 389  | 0        | 100    | DC1.domain.com(PDC domain controller) |
 
 If conditional forwards are used, make sure that all domain controllers that are resolvable are added with port openings and that they are reachable.
 
