@@ -45,9 +45,10 @@ param(
    $Index = 0
  
    while ($Index -ne -1) {
-      $Index = system.array]::IndexOf($DatabaseIndex,$SearchString,$Index+1)
+      $Index = system.array]::IndexOf($DatabaseIndex,$SearchString,$Index)
       if ($Index -ne -1) {
          $Array += $Index
+         $Index++
       }
    }
    $Array | ForEach-Object {
