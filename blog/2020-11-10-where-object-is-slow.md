@@ -69,7 +69,7 @@ We then have an array of indexes with the “index numbers” of the rows that m
 $SomeArray[$TheIndexThatWeWantToRetreive]
 ```
 
-And last but now least, we return all the objects from the dataset.
+And last but not least, we return all the objects from the dataset.
 
 In some cases I have had performance benefits by using this method by up to 80 times compared to using Where-Object. The drawback is that it isn’t a built-in cmdlet so you have to declare the function and also you need to build an index manually and last that you can only search in one property at a time, the index that you created. You should only use this method for the specific use cases when you have two very large datasets where the key isn’t unique. The function can also be developed further to accept two or more indexes in case you need to search for more than one property.
 
