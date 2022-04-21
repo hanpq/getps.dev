@@ -19,7 +19,7 @@ One thing that I have been struggling with from time to time is that the cmdlet 
 
 One day I had to do such a comparison and I was forced to come up with an alternate way of retrieving matches, so I developed a new function that is much faster than the Where-Object cmdlet.
 
-Lets say you have a CSV-file containing 50000 rows and 20 columns with one column being a QUID. First you need to create an index:
+Lets say you have a CSV-file containing 50000 rows and 20 columns with one column being a GUID. First you need to create an index:
 
 ```powershell
 $CSVIndex = $CSV.GUID.ToLower()
