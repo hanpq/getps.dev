@@ -10,22 +10,13 @@ module.exports = {
     projectName: 'getps.dev', // Usually your repo name.
     themeConfig: {
         algolia: {
-            apiKey: '52b9733e43527ce875978926ad245de2',
             indexName: 'getps',
-            contextualSearch: false,
-            searchParameters: {},
+            appId: 'JW8FXUKUSV',
+            apiKey: '5f1b4925f6675a91a4e7ddcefb438b9b',
         },
-        googleAnalytics: {
-            trackingID: 'G-MYR3KXGL15',
-            // Optional fields.
-            anonymizeIP: true, // Should IPs be anonymized?
+        sidebar: {
+            hideable: true,
         },
-        gtag: {
-            trackingID: 'G-MYR3KXGL15',
-            // Optional fields.
-            anonymizeIP: true, // Should IPs be anonymized?
-        },
-        hideableSidebar: true,
         //announcementBar: {
         //    id: 'underdev', // Any value that will identify this message.
         //    content:
@@ -150,6 +141,16 @@ module.exports = {
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
+                },
+                gtag: {
+                    trackingID: 'G-MYR3KXGL15',
+                    // Optional fields.
+                    anonymizeIP: true, // Should IPs be anonymized?
+                },
+                googleAnalytics: {
+                    trackingID: 'G-MYR3KXGL15',
+                    // Optional fields.
+                    anonymizeIP: true, // Should IPs be anonymized?
                 },
             },
         ],
