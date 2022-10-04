@@ -23,7 +23,43 @@ Microsoft has also published documentation with all steps required to set this u
 
 ![Picture1](./CreateEXOUnattendedAzureApp_1.jpg)
 
+## Connect to Exchange Online using a certificate
+
+You can cannot to Exchange Online with a certificate in three ways.
+- Passing a certificate object to Connect-ExchangeOnline
+- Providing the thumbprint of the certificate. In this case the certificate must be stored in Windows Certificate Store under CurrentUser\My
+- And last by providing the path to the pfx-file and the password
+
+### By Certificate object
+
+```powershell
+$Cert = Get-Item cert:\CurrentUser\My\'<thumbprint>'
+Connect-ExchangeOnline -Certificate $Cert -AppId '<appid>'
+```
+
+### By Certificate thumbprint
+```powershell
+Connect-ExchangeOnline -CertificateThumbprint '<thumbprint>' -AppId '<appid>'
+```
+
+### By Certificate file
+```powershell
+Connect-ExchangeOnline -CertificateFilePath '<path to file.pfx' -CertificatePassword (ConvertTo-SecureString -String '<password>' -AsPlainText -Force) -AppId '<appid>'
+```
+
+### Considerations for unattended scripts
+In the case where you run a script as a service account with Task Scheduler for instance I would recommend to use the thumbprint method and make sure the certificate is stored in the Windows Certificate Store (This script imports the certificate to the store automatically). In this case you would not need to care about handling passwords for the certificate pfx file. Access to the certificate is based on the fact that the process running the script is authenicated as the service account which is the only account that can access the certificates in the users CurrentUser\My store. Make sure that you import the certificate to the Certificate Store of the service account. This can be acheived by running mmc.exe "as a different user" and adding the certificate snapin.
+
+In case the script runs on linux the thumbprint method is not an option, instead use the certificate by object or file methods.
+
+## Script
+
+:::important
+
 The script is available on github where you are welcome to contribute or report issues.
+
+:::
+
 
 ```powershell
 <#PSLicenseInfo
