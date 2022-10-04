@@ -10,6 +10,7 @@ export default function Comments() {
             category="comments"
             categoryId="DIC_kwDOEqZgNM4CRzAp"
             mapping="pathname"
+            strict="1"
             term="Comments"
             reactionsEnabled="1"
             emitMetadata="0"
