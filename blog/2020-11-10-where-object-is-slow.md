@@ -40,10 +40,10 @@ param(
    $DatabaseIndex,
    $SearchString
 )
- 
+
    $Array = @()
    $Index = 0
- 
+
    while ($Index -ne -1) {
       $Index = system.array]::IndexOf($DatabaseIndex,$SearchString,$Index)
       if ($Index -ne -1) {
@@ -74,3 +74,5 @@ And last but not least, we return all the objects from the dataset.
 In some cases I have had performance benefits by using this method by up to 80 times compared to using Where-Object. The drawback is that it isn’t a built-in cmdlet so you have to declare the function and also you need to build an index manually and last that you can only search in one property at a time, the index that you created. You should only use this method for the specific use cases when you have two very large datasets where the key isn’t unique. The function can also be developed further to accept two or more indexes in case you need to search for more than one property.
 
 A similar solution is to use a hashtable as dataset index lookup table and simply store the index value as key and the whole object as the value of the key. This method is quite easy to use however it has one drawback; keys must be unique. So if you need to search a large dataset fast where you expect more than one result based on the index this function give you really fast searches.
+
+<Comments />

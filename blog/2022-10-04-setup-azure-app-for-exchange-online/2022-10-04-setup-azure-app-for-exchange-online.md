@@ -202,6 +202,4 @@ else
 }
 ```
 
-## Comments
-
 <Comments />

@@ -16,3 +16,5 @@ Use the below command to create a SID object for a local user
 ```powershell
 $sid = (New-Object -TypeName Security.Principal.NTAccount -ArgumentList ('computer01', 'User01')).Translate([Security.Principal.SecurityIdentifier]).Value
 ```
+
+<Comments />

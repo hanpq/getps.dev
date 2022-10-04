@@ -18,14 +18,16 @@ data-size="small">
 This function can be used to show the status of the Powershell profile scripts on the computer.
 
 ```powershell
-function Check-ProfileStatus { 
-   ($profile | Get-Member -MemberType NoteProperty).Name | 
-   ForEach-Object { 
+function Check-ProfileStatus {
+   ($profile | Get-Member -MemberType NoteProperty).Name |
+   ForEach-Object {
       $CurrentProfile = $_
       $path = $profile.$_
       [pscustomobject]([Ordered]@{Profile=$CurrentProfile;Path=$Path;Exists=(Test-Path $Path)})
-    } 
-} 
- 
+    }
+}
+
 Check-ProfileStatus
 ```
+
+<Comments />

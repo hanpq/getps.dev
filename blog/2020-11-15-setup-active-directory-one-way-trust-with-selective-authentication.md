@@ -22,7 +22,7 @@ One of the things I often help clients with is to setup Active Directory Forest 
 - Selective Authentication
 - No AD DNS (Third party DNS in both organizations).
   - Not allowed to setup a stub zone or conditional forward
-- And last but not least strict security policies for firewall policies 
+- And last but not least strict security policies for firewall policies
 
 ## Scenario and definitions
 
@@ -112,3 +112,5 @@ If conditional forwards are used, make sure that all domain controllers that are
   - Port openings for client computers and resource services.
   - Configuration of permissions to authenticate through the trust.
   - Configuration of permissions to access resources in ForestB.
+
+<Comments />
