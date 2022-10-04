@@ -187,7 +187,6 @@ Write-Verbose 'Added role assignment'
 if ($PassThru)
 {
     Write-Output ([pscustomobject]$ResultObjectHash)
-    Remove-Variable ResultObjectHash -ErrorAction SilentlyContinue
 }
 else
 {
@@ -200,6 +199,7 @@ else
     Write-Host '   NOTE: It could take some time before the added roles are effective. If you get an error regarding missing permissions, please wait a minute and try again.' -ForegroundColor Yellow
     Write-Host ''
 }
+Remove-Variable ResultObjectHash -ErrorAction SilentlyContinue
 ```
 
 <Comments />
