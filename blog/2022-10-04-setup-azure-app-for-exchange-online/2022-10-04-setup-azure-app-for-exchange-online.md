@@ -10,7 +10,7 @@ description: Script to configure and setup Azure App for unattended access to Ex
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/ps-tools-queue-module"
+data-href="https://getps.dev/blog/setup-azure-app-for-exchange-online"
 data-layout="button"
 data-size="small">
 </div>
