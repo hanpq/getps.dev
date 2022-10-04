@@ -7,7 +7,7 @@ export default function Comments() {
             id="comments"
             repo="hanpq/getps.dev"
             repoId="MDEwOlJlcG9zaXRvcnkzMTI4OTM0OTI="
-            category="comments"
+            category="Comments"
             categoryId="DIC_kwDOEqZgNM4CRzAp"
             mapping="pathname"
             strict="1"
