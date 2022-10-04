@@ -15,12 +15,12 @@ data-layout="button"
 data-size="small">
 </div>
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+[Download CreateEXOUnattendedAzureApp.ps1](./CreateEXOUnattendedAzureApp.ps1)
 
 Microsoft has recently released (GA) version 3.0.0 of the ExchangeOnlineManagement powershell module. One of the new features is certificate based authentication which will allow unattended scripts to authenticate with Exchange Online without an interactive login prompt. Up until now you had to use basic authentication to connect to Exchange Online unattended.
 
 Microsoft has also published documentation with all steps required to set this up. To simplify this process I wrote the script CreateEXOUnattendedAzureApp.ps1 which walks you through the process.
 
-<img alt="CreateEXOUnattendedAzureApp" src={useBaseUrl('img/CreateEXOUnattendedAzureApp_1.jpg')} />
+![Picture1](./CreateEXOUnattendedAzureApp_1.jpg)
 
 The script is available on github where you are welcome to contribute or report issues.
