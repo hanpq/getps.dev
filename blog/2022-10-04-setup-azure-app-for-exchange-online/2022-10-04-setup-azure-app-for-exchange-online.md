@@ -15,7 +15,7 @@ data-layout="button"
 data-size="small">
 </div>
 
-[Download CreateEXOUnattendedAzureApp.ps1](./CreateEXOUnattendedAzureApp.ps1)
+[Download CreateEXOUnattendedAzureApp.ps1](https://github.com/hanpq/getps.scripts/blob/main/CreateEXOUnattendedAzureApp.ps1)
 
 Microsoft has recently released (GA) version 3.0.0 of the ExchangeOnlineManagement powershell module. One of the new features is certificate based authentication which will allow unattended scripts to authenticate with Exchange Online without an interactive login prompt. Up until now you had to use basic authentication to connect to Exchange Online unattended.
 
