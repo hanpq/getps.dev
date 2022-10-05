@@ -45,7 +45,7 @@ function Set-DesktopWallpaper {
 
     [CmdletBinding()]
     param(
-        [Parameter(Mandatory)][string]$PicturePath,
+        [Parameter(Mandatory)][String]$PicturePath,
         [ValidateSet('Tiled', 'Centered', 'Stretched', 'Fill', 'Fit', 'Span')]$Style = 'Fill'
     )
 
@@ -54,7 +54,6 @@ function Set-DesktopWallpaper {
         $Definition = @"
 [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
 public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
-
 "@
 
         Add-Type -MemberDefinition $Definition -Name Win32SystemParametersInfo -Namespace Win32Functions
@@ -85,12 +84,8 @@ public static extern int SystemParametersInfo(int uAction, int uParam, string lp
 
     PROCESS {
         Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name wallpaperstyle -Value $HT_WallPaperStyle[$Style]
-        Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name wallpaperstyle -Value $HT_TileWallPaper[$Style]
+        Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name tilewallpaper -Value $HT_TileWallPaper[$Style]
         $null = [Win32Functions.Win32SystemParametersInfo]::SystemParametersInfo($Action_SetDeskWallpaper, 0, $PicturePath, ($Action_UpdateIniFile -bor $Action_SendWinIniChangeEvent))
-    }
-
-    END {
-
     }
 }
 ```
