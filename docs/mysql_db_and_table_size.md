@@ -1,7 +1,6 @@
 ﻿---
 id: mysql_db_and_table_size
 title: Get database and table sizes
-slug: /
 ---
 
 ## Single database size

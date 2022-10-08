@@ -1,6 +1,10 @@
 module.exports = {
     someSidebar: {
         Introduction: ['GetStartedDocs'],
-        Snippets: ['casting_datetime','generate_sids'],
+        Powershell: ['casting_datetime', 'generate_sids'],
+        Database: {
+            MySQL: ['mysql_db_and_table_size']
+        }
+
     }
 };
