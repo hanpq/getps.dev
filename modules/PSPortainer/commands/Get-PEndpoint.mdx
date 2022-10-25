@@ -1,10 +1,10 @@
 ---
-id: Add-PSScriptInfo
-title: Add-PSScriptInfo
-description: Help page for the Powershell "Add-PSScriptInfo" command
+id: Get-PEndpoint
+title: Get-PEndpoint
+description: Help page for the Powershell "Get-PEndpoint" command
 keywords:
   - Powershell
-  - pstools.psscriptinfo
+  - PSPortainer
   - Help
   - Documentation
 hide_title: false
@@ -15,79 +15,84 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### List (Default)
+
 ```powershell
-Add-PSScriptInfo [-FilePath] <FileInfo> [[-Properties] <Hashtable>] [-Force] [<CommonParameters>]
+Get-PEndpoint [-Session <PortainerSession>] [<CommonParameters>]
+```
+
+### Search
+
+```powershell
+Get-PEndpoint [-SearchString <String>] [-Session <PortainerSession>] [<CommonParameters>]
+```
+
+### Id
+
+```powershell
+Get-PEndpoint [-Id <Int32>] [-Session <PortainerSession>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Add new PSScriptInfo to file
+Retreive endpoints
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-PSScriptInfo -FilePath C:\Scripts\Do-Something.ps1 -Properties @{Version='1.0.0';Author='Jane Doe';DateCreated='2021-01-01'}
-Adds a PSScriptInfo block containing the properties version and author. Resulting PSScriptInfo block
-that would be added to the beginning of the file would look like:
+Get-PEndpoint
+Description of example
 ```
-
-\<#PSScriptInfo
-{
-    "Version" : "1.0.0",
-    "Author" : "Jane Doe",
-    "DateCreated" : "2021-01-01"
-}
-PSScriptInfo
-\>
 
 ## PARAMETERS
 
-### -FilePath
+### -SearchString
 
-File to add PSScriptInfo to
-
-```yaml
-Type: FileInfo
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Properties
-
-HashTable (ordered dictionary) containing key value pairs for properties that should be included in PSScriptInfo
+{{ Fill SearchString Description }}
 
 ```yaml
-Type: Hashtable
-Parameter Sets: (All)
+Type: String
+Parameter Sets: Search
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
+### -Id
 
-Use force to replace any existing PSScriptInfo block
+{{ Fill Id Description }}
 
 ```yaml
-Type: SwitchParameter
+Type: Int32
+Parameter Sets: Id
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Session
+
+Does not work for some reason, regardless of input to the API parameter name, all endpoints are returned...
+[Parameter(ParameterSetName = 'Name')][string]$Name
+
+```yaml
+Type: PortainerSession
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

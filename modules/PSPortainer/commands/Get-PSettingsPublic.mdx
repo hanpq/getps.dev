@@ -1,10 +1,10 @@
 ---
-id: Clear-AllQueueItems
-title: Clear-AllQueueItems
-description: Help page for the Powershell "Clear-AllQueueItems" command
+id: Get-PSettingsPublic
+title: Get-PSettingsPublic
+description: Help page for the Powershell "Get-PSettingsPublic" command
 keywords:
   - Powershell
-  - pstools.queue
+  - PSPortainer
   - Help
   - Documentation
 hide_title: false
@@ -16,35 +16,35 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Clear-AllQueueItems [-Queue] <ExtendedQueue> [<CommonParameters>]
+Get-PSettingsPublic [[-Session] <PortainerSession>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Discard all queued items.
+Retreives Portainer Public Settings
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Clear-AllQueueItems -Queue $Queue
+Get-PSettingsPublic
 ```
 
-This example shows how to discard all items of the provided queue
+Retreives Portainer Public Settings
 
 ## PARAMETERS
 
-### -Queue
+### -Session
 
-Queue object to discard all items in
+{{ Fill Session Description }}
 
 ```yaml
-Type: ExtendedQueue
+Type: PortainerSession
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False

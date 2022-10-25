@@ -1,10 +1,10 @@
 ---
-id: Add-PSScriptInfo
-title: Add-PSScriptInfo
-description: Help page for the Powershell "Add-PSScriptInfo" command
+id: Connect-Portainer
+title: Connect-Portainer
+description: Help page for the Powershell "Connect-Portainer" command
 keywords:
   - Powershell
-  - pstools.psscriptinfo
+  - PSPortainer
   - Help
   - Documentation
 hide_title: false
@@ -15,70 +15,84 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### AccessToken
+
 ```powershell
-Add-PSScriptInfo [-FilePath] <FileInfo> [[-Properties] <Hashtable>] [-Force] [<CommonParameters>]
+Connect-Portainer -BaseURL <String> [-AccessToken <String>] [-PassThru] [<CommonParameters>]
+```
+
+### Credentials
+
+```powershell
+Connect-Portainer -BaseURL <String> [-Credential <PSCredential>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Add new PSScriptInfo to file
+Powershell Module for interaction with Portainer API
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-PSScriptInfo -FilePath C:\Scripts\Do-Something.ps1 -Properties @{Version='1.0.0';Author='Jane Doe';DateCreated='2021-01-01'}
-Adds a PSScriptInfo block containing the properties version and author. Resulting PSScriptInfo block
-that would be added to the beginning of the file would look like:
+Connect-Portainer
+Description of example
 ```
-
-\<#PSScriptInfo
-{
-    "Version" : "1.0.0",
-    "Author" : "Jane Doe",
-    "DateCreated" : "2021-01-01"
-}
-PSScriptInfo
-\>
 
 ## PARAMETERS
 
-### -FilePath
+### -BaseURL
 
-File to add PSScriptInfo to
+{{ Fill BaseURL Description }}
 
 ```yaml
-Type: FileInfo
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Properties
+### -AccessToken
 
-HashTable (ordered dictionary) containing key value pairs for properties that should be included in PSScriptInfo
+{{ Fill AccessToken Description }}
 
 ```yaml
-Type: Hashtable
-Parameter Sets: (All)
+Type: String
+Parameter Sets: AccessToken
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
+### -Credential
 
-Use force to replace any existing PSScriptInfo block
+{{ Fill Credential Description }}
+
+```yaml
+Type: PSCredential
+Parameter Sets: Credentials
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+
+{{ Fill PassThru Description }}
 
 ```yaml
 Type: SwitchParameter

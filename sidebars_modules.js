@@ -1,4 +1,5 @@
 // Start of file
+const PSPortainer = require('./modules/PSPortainer/sidebar.js');
 const pstoolsdaikin = require('./modules/pstools.daikin/sidebar.js');
 const pstoolsdataset = require('./modules/pstools.dataset/sidebar.js');
 const pstoolspsscriptinfo = require('./modules/pstools.psscriptinfo/sidebar.js');
@@ -8,6 +9,12 @@ module.exports = {
     modulessidebar: {
         Introduction: ['Inventory'],
         Modules: [
+            {
+                type: 'category',
+                label: 'PSPortainer',
+                collapsed: true,
+                items: PSPortainer
+            },
             {
                 type: 'category',
                 label: 'pstools.daikin',

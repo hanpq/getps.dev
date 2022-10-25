@@ -1,10 +1,10 @@
 ---
-id: Clear-AllQueueItems
-title: Clear-AllQueueItems
-description: Help page for the Powershell "Clear-AllQueueItems" command
+id: Get-PContainer
+title: Get-PContainer
+description: Help page for the Powershell "Get-PContainer" command
 keywords:
   - Powershell
-  - pstools.queue
+  - PSPortainer
   - Help
   - Documentation
 hide_title: false
@@ -15,37 +15,76 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### list (Default)
+
 ```powershell
-Clear-AllQueueItems [-Queue] <ExtendedQueue> [<CommonParameters>]
+Get-PContainer [-Endpoint <String>] [-Session <PortainerSession>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-PContainer [-Endpoint <String>] [-Id <String>] [-Session <PortainerSession>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Discard all queued items.
+Retreives containers
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Clear-AllQueueItems -Queue $Queue
+Get-PContainer
+Description of example
 ```
-
-This example shows how to discard all items of the provided queue
 
 ## PARAMETERS
 
-### -Queue
+### -Endpoint
 
-Queue object to discard all items in
+{{ Fill Endpoint Description }}
 
 ```yaml
-Type: ExtendedQueue
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: 1
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+{{ Fill Id Description }}
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Session
+
+{{ Fill Session Description }}
+
+```yaml
+Type: PortainerSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

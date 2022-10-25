@@ -31,8 +31,7 @@ Adds a row to a table row
 Get-Service | Add-DataTableRow -DataTable $DataTable
 ```
 
-This example demonstrates how a preexisting object array
-can be passed to add rows.
+This example demonstrates how a preexisting object array can be passed to add rows.
 
 ### EXAMPLE 2
 
@@ -67,13 +66,9 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Provides an object array with objects thats 
-has properties corresponding to the table columns. 
-Note that the object can contain more properties 
-than columns, they will simply be ignored during 
-matching.
-On the other side, if the object is missing
-properties for all columns, the addition will fail.
+Provides an object array with objects thats  has properties corresponding to the table columns. 
+Note that the object can contain more properties  than columns, they will simply be ignored during  matching.
+On the other side, if the object is missing properties for all columns, the addition will fail.
 
 ```yaml
 Type: Object[]

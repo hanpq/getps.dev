@@ -1,10 +1,10 @@
 ---
-id: Clear-AllQueueItems
-title: Clear-AllQueueItems
-description: Help page for the Powershell "Clear-AllQueueItems" command
+id: Select-PEndpoint
+title: Select-PEndpoint
+description: Help page for the Powershell "Select-PEndpoint" command
 keywords:
   - Powershell
-  - pstools.queue
+  - PSPortainer
   - Help
   - Documentation
 hide_title: false
@@ -16,36 +16,51 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Clear-AllQueueItems [-Queue] <ExtendedQueue> [<CommonParameters>]
+Select-PEndpoint [[-Endpoint] <String>] [[-Session] <PortainerSession>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Discard all queued items.
+.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Clear-AllQueueItems -Queue $Queue
+Select-PEndpoint
+Description of example
 ```
-
-This example shows how to discard all items of the provided queue
 
 ## PARAMETERS
 
-### -Queue
+### -Endpoint
 
-Queue object to discard all items in
+{{ Fill Endpoint Description }}
 
 ```yaml
-Type: ExtendedQueue
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Session
+
+{{ Fill Session Description }}
+
+```yaml
+Type: PortainerSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
