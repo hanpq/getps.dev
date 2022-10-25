@@ -16,8 +16,9 @@ This powershell modules source code is stored and managed on GitHub.
 
 Unit, Integration and Acceptance tests is provided by pester and triggered by workflows on GitHub.
 
-![Pester Desktop Windows](https://github.com/hanpq/PSPortainer/workflows/Pester%20Desktop%20Windows/badge.svg?branch=main)
-![Pester Core Windows](https://github.com/hanpq/PSPortainer/workflows/Pester%20Core%20Windows/badge.svg?branch=main)
+[![Core Win](https://github.com/hanpq/PSPortainer/actions/workflows/pester_core_windows_codecov.yml/badge.svg)](https://github.com/hanpq/PSPortainer/actions/workflows/pester_core_windows_codecov.yml)
+[![Core Mac](https://github.com/hanpq/PSPortainer/actions/workflows/pester_core_macos.yml/badge.svg)](https://github.com/hanpq/PSPortainer/actions/workflows/pester_core_macos.yml)
+[![Core Lin](https://github.com/hanpq/PSPortainer/actions/workflows/pester_core_linux.yml/badge.svg)](https://github.com/hanpq/PSPortainer/actions/workflows/pester_core_linux.yml)
 
 ### Codecov
 
