@@ -16,7 +16,7 @@ This powershell modules source code is stored and managed on GitHub.
 
 Unit, Integration and Acceptance tests is provided by pester and triggered by workflows on GitHub.
 
-[![](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_windows.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_windows.yml)
+[![](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_windows_codecov.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_windows_codecov.yml)
 [![](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_linux.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_linux.yml)
 [![](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_macos.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_core_macos.yml)
 [![](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_desktop_windows.yml/badge.svg?branch=main)](https://github.com/hanpq/pstools.daikin/actions/workflows/pester_desktop_windows.yml)
