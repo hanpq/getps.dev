@@ -15,7 +15,7 @@ data-layout="button"
 data-size="small">
 </div>
 
-Some time ago I wanted to automate a process where I needed check status of a few docker containers managed with Portainer and noticed that there was no powershell module available on the gallery. A couple of minutes later I had discovered a Portainer Rest API and though that it could be a fun project to provide powershell users with the ability to manage their Portainer and Docker instances.
+Some time ago I wanted to automate a process where I needed check status of a few docker containers managed with Portainer and noticed that there was no powershell module available on the gallery for portainer. A couple of minutes later I had discovered the Portainer Rest API and though that it could be a fun project to provide powershell users with the ability to manage their Portainer and Docker instances with powershell.
 
 So here it is, an early pre-release/work in progress powershell module for Portainer, ***PSPortainer***
 
