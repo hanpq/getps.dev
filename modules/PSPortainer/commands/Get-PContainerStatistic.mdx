@@ -1,7 +1,7 @@
 ---
-id: Get-PSettingsPublic
-title: Get-PSettingsPublic
-description: Help page for the Powershell "Get-PSettingsPublic" command
+id: Get-PContainerStatistic
+title: Get-PContainerStatistic
+description: Help page for the Powershell "Get-PContainerStatistic" command
 keywords:
   - Powershell
   - PSPortainer
@@ -16,24 +16,64 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-PSettingsPublic [[-Session] <PortainerSession>] [<CommonParameters>]
+Get-PContainerStatistic [[-Endpoint] <String>] [[-Id] <Object[]>] [[-Session] <PortainerSession>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives Portainer Public Settings
+Retreives container statistics
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-PSettingsPublic
+' | Get-PContainerStatistic
 ```
 
-Retreives Portainer Public Settings
-
 ## PARAMETERS
+
+### -Endpoint
+
+Defines the portainer endpoint to use when retreiving containers.
+If not specified the portainer sessions default docker endpoint value is used.
+
+Use Get-PSession to see what endpoint is selected
+
+Use Select-PEndpoint to change the default docker endpoint in the portainer session.
+
+-Endpoint 'local'
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+Defines the id of the container to retreive.
+
+-Id '\<Id\>'
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -Session
 
@@ -48,7 +88,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

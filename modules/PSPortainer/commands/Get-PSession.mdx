@@ -16,12 +16,12 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-PSession [<CommonParameters>]
+Get-PSession [[-Session] <PortainerSession>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-.
+Displays the Portainer Session object.
 
 ## EXAMPLES
 
@@ -29,10 +29,30 @@ Get-PSession [<CommonParameters>]
 
 ```powershell
 Get-PSession
-Description of example
 ```
 
+Returns the PortainerSession, if none is specified, it tries to retreive the default
+
 ## PARAMETERS
+
+### -Session
+
+Optionally define a portainer session object to use.
+This is useful when you are connected to more than one portainer instance.
+
+-Session $Session
+
+```yaml
+Type: PortainerSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 
