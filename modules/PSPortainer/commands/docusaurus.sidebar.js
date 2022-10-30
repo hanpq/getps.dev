@@ -18,8 +18,13 @@ module.exports = [
     'PSPortainer/commands/Get-PSession',
     'PSPortainer/commands/Get-PSettingsPublic',
     'PSPortainer/commands/Get-PStatus',
+    'PSPortainer/commands/Rename-PContainer',
+    'PSPortainer/commands/Resize-PContainerTTY',
     'PSPortainer/commands/Restart-PContainer',
+    'PSPortainer/commands/Resume-PContainer',
     'PSPortainer/commands/Select-PEndpoint',
     'PSPortainer/commands/Start-PContainer',
-    'PSPortainer/commands/Stop-PContainer'
+    'PSPortainer/commands/Stop-PContainer',
+    'PSPortainer/commands/Suspend-PContainer',
+    'PSPortainer/commands/Wait-PContainer'
 ];
