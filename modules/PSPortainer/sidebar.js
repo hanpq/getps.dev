@@ -5,18 +5,8 @@ module.exports = [
         label: 'Introduction',
         collapsed: false,
         items: [
-            'PSPortainer/quickstart',
-            'PSPortainer/installation',
-            'PSPortainer/devstatus',
+            'PSPortainer/getstarted',
             'PSPortainer/changelog'
-        ]
-    },
-    {
-        type: 'category',
-        label: 'Usage',
-        collapsed: false,
-        items: [
-            'PSPortainer/usage_getstarted',
         ]
     },
     {
@@ -26,5 +16,3 @@ module.exports = [
         items: commands
     },
 ];
-
-
