@@ -29,9 +29,9 @@ module.exports = {
             },
             {
                 type: 'category',
-                label: 'pstools.dataset',
+                label: 'PSDataSet',
                 collapsed: true,
-                items: pstoolsdataset
+                items: PSDataSet
             },
             {
                 type: 'category',

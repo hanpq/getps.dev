@@ -1,0 +1,104 @@
+---
+id: Add-DataTableRow
+title: Add-DataTableRow
+description: Help page for the Powershell "Add-DataTableRow" command
+keywords:
+  - Powershell
+  - PSDataSet
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Add-DataTableRow [[-DataTable] <DataTable>] [[-InputObject] <Object[]>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+This function adds a row to a table
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-Service | Add-DataTableRow -DataTable $DataTable
+```
+
+This example demonstrates how a preexisting object array
+can be passed to add rows.
+
+### EXAMPLE 2
+
+```powershell
+$Object = [pscustomobject]@{
+    Property1 = 'Value'
+    Property2 = 'Value'
+    Property3 = 'Value'
+}
+Add-DataTableRow -DataTable $DateTable -InputObject $Object
+```
+
+This example demonstrates how a single object can be passed to add a new row.
+
+## PARAMETERS
+
+### -DataTable
+
+Pass the data table object to add rows to
+
+```yaml
+Type: DataTable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+
+Provides an object array with objects thats
+has properties corresponding to the table columns.
+Note that the object can contain more properties
+than columns, they will simply be ignored during
+matching.
+On the other side, if the object is missing
+properties for all columns, the addition will fail.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDataSet)
