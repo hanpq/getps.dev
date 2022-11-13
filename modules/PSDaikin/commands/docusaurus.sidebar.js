@@ -9,7 +9,6 @@
  */
 
 module.exports = [
-    'pstools.sortlibrary/commands/Sort-UsingBubbleSort',
-    'pstools.sortlibrary/commands/Sort-UsingQuickSort',
-    'pstools.sortlibrary/commands/Test-SortingAlgorithms'
+    'PSDaikin/commands/Get-DaikinStatus',
+    'PSDaikin/commands/Set-DaikinAirCon'
 ];

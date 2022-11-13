@@ -9,6 +9,7 @@
  */
 
 module.exports = [
-    'pstools.daikin/commands/Get-DaikinStatus',
-    'pstools.daikin/commands/Set-DaikinAirCon'
+    'PSSort/commands/Test-SortingAlgorithms',
+    'PSSort/commands/Use-BubbleSort',
+    'PSSort/commands/Use-QuickSort'
 ];

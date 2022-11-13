@@ -1,10 +1,10 @@
 ---
-id: Sort-UsingBubbleSort
-title: Sort-UsingBubbleSort
-description: Help page for the Powershell "Sort-UsingBubbleSort" command
+id: Use-BubbleSort
+title: Use-BubbleSort
+description: Help page for the Powershell "Use-BubbleSort" command
 keywords:
   - Powershell
-  - pstools.sortlibrary
+  - PSSort
   - Help
   - Documentation
 hide_title: false
@@ -16,20 +16,21 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Sort-UsingBubbleSort [-InputObject] <Object> [<CommonParameters>]
+Use-BubbleSort [-InputObject] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 This function sorts objects using the bubble sort algorithm.
-This is the optimized version of  bubblesort where already sorted items are skipped every pass.
+This is the optimized version of
+bubblesort where already sorted items are skipped every pass.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-3,2,1 | Sort-UsingBubbleSort
+3,2,1 | Use-BubbleSort
 ```
 
 ## PARAMETERS
@@ -57,6 +58,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ## OUTPUTS
+
+### System.Collections.ArrayList
 
 ## NOTES
 
