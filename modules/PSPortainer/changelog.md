@@ -2,24 +2,10 @@
 id: changelog
 title: Changelog
 ---
+
 # Changelog for PSPortainer
 
 ## [Unreleased]
-
-### Added
-
-- TBD
-
-### Deprecated
-
-### Removed
-
-### Changed
-
-### Fixed
-
-### Security
-
 
 ## [0.1.4] - 2022-11-12
 
