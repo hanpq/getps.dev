@@ -2,7 +2,7 @@
 const PSPortainer = require('./modules/PSPortainer/sidebar.js');
 const PSDaikin = require('./modules/PSDaikin/sidebar.js');
 const PSSort = require('./modules/PSSort/sidebar.js');
-const pstoolsdataset = require('./modules/pstools.dataset/sidebar.js');
+const PSDataSet = require('./modules/PSDataSet/sidebar.js');
 const pstoolspsscriptinfo = require('./modules/pstools.psscriptinfo/sidebar.js');
 const pstoolsqueue = require('./modules/pstools.queue/sidebar.js');
 module.exports = {
