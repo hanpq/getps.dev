@@ -21,7 +21,7 @@ So here it is, an early pre-release/work in progress powershell module for Porta
 
 If you want to contribute to the project it is publically available on GitHub [here](https://github.com/hanpq/PSPortainer)
 
-To get started, visit the docs for the module at [getps.dev](https://getps.dev/modules/PSPortainer/usage_getstarted) or start exploring directly by installing the module from PSGallery
+To get started, visit the docs for the module at [getps.dev](https://getps.dev/modules/PSPortainer/getstarted) or start exploring directly by installing the module from PSGallery
 
 ```powershell
 Install-Module PSPortainer -Scope CurrentUser
