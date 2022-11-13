@@ -22,6 +22,16 @@ This command starts a local development server and open up a browser window. Mos
 ## Build
 
 ```console
+yarn install
+yarn run build
+```
+
+## Update
+
+Update package.json with new versions
+
+```console
+yarn install
 yarn run build
 ```
 
