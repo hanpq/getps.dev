@@ -1,10 +1,10 @@
 // Start of file
 const PSPortainer = require('./modules/PSPortainer/sidebar.js');
-const pstoolsdaikin = require('./modules/pstools.daikin/sidebar.js');
+const PSDaikin = require('./modules/PSDaikin/sidebar.js');
+const PSSort = require('./modules/PSSort/sidebar.js');
 const pstoolsdataset = require('./modules/pstools.dataset/sidebar.js');
 const pstoolspsscriptinfo = require('./modules/pstools.psscriptinfo/sidebar.js');
 const pstoolsqueue = require('./modules/pstools.queue/sidebar.js');
-const pstoolssortlibrary = require('./modules/pstools.sortlibrary/sidebar.js');
 module.exports = {
     modulessidebar: {
         Introduction: ['Inventory'],
@@ -17,9 +17,15 @@ module.exports = {
             },
             {
                 type: 'category',
-                label: 'pstools.daikin',
+                label: 'PSDaikin',
                 collapsed: true,
-                items: pstoolsdaikin
+                items: PSDaikin
+            },
+            {
+                type: 'category',
+                label: 'PSSort',
+                collapsed: true,
+                items: PSSort
             },
             {
                 type: 'category',
@@ -39,13 +45,6 @@ module.exports = {
                 collapsed: true,
                 items: pstoolsqueue
             },
-            {
-                type: 'category',
-                label: 'pstools.sortlibrary',
-                collapsed: true,
-                items: pstoolssortlibrary
-            },
         ],
     },
 };
-
