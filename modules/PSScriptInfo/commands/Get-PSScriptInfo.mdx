@@ -1,10 +1,10 @@
 ---
-id: New-DataTable
-title: New-DataTable
-description: Help page for the Powershell "New-DataTable" command
+id: Get-PSScriptInfo
+title: Get-PSScriptInfo
+description: Help page for the Powershell "Get-PSScriptInfo" command
 keywords:
   - Powershell
-  - pstools.dataset
+  - PSScriptInfo
   - Help
   - Documentation
 hide_title: false
@@ -16,32 +16,29 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-DataTable [-TableName] <String> [<CommonParameters>]
+Get-PSScriptInfo [-FilePath] <FileInfo> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Creating a DataTable object
+Collect and parse psscriptinfo from file
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-$OrderTable = New-DataTable -TableName 'Orders'
+Get-PSScriptInfo -FilePath C:\temp\file.ps1
 ```
-
-This example will create a datatable and return the datatable object.
 
 ## PARAMETERS
 
-### -TableName
+### -FilePath
 
-Defines the data table name.
-This property is used when referencing the table in a dataset for instance.
+Defines the path to the file from which to get psscriptinfo from.
 
 ```yaml
-Type: String
+Type: FileInfo
 Parameter Sets: (All)
 Aliases:
 
@@ -66,4 +63,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## EDIT THIS DOC 
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/)
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSScriptInfo)

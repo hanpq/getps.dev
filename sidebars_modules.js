@@ -35,9 +35,9 @@ module.exports = {
             },
             {
                 type: 'category',
-                label: 'pstools.psscriptinfo',
+                label: 'PSScriptInfo',
                 collapsed: true,
-                items: pstoolspsscriptinfo
+                items: PSScriptInfo
             },
             {
                 type: 'category',

@@ -9,8 +9,8 @@
  */
 
 module.exports = [
-    'pstools.psscriptinfo/commands/Add-PSScriptInfo',
-    'pstools.psscriptinfo/commands/Get-PSScriptInfo',
-    'pstools.psscriptinfo/commands/Remove-PSScriptInfo',
-    'pstools.psscriptinfo/commands/Update-PSScriptInfo'
+    'PSScriptInfo/commands/Add-PSScriptInfo',
+    'PSScriptInfo/commands/Get-PSScriptInfo',
+    'PSScriptInfo/commands/Remove-PSScriptInfo',
+    'PSScriptInfo/commands/Update-PSScriptInfo'
 ];
