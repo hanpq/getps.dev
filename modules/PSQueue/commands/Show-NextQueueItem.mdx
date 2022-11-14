@@ -1,10 +1,10 @@
 ---
-id: Initialize-Queue
-title: Initialize-Queue
-description: Help page for the Powershell "Initialize-Queue" command
+id: Show-NextQueueItem
+title: Show-NextQueueItem
+description: Help page for the Powershell "Show-NextQueueItem" command
 keywords:
   - Powershell
-  - pstools.queue
+  - PSQueue
   - Help
   - Documentation
 hide_title: false
@@ -16,33 +16,39 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Initialize-Queue [<CommonParameters>]
+Show-NextQueueItem [-Queue] <ExtendedQueue> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-This cmdlet initializes a new queue object.
-
-The returned object is a wrapper class for the System.Collection.Queue class.
-This class (ExtendedQueue)
-provides additional functionality compared to the standard Queue class.
-The Queue object is
-stored as a property of the returned object called "Queue".
-The object returned also contains properties
-containing counts of added items, removed items, additions per sec, removes per sec and
-velocity (delta between add & remove per sec.).
-The module cmdlet Measure-Queue returns these metrics.
+Shows the next item in queue without removing it from queue.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-$Queue = Initialize-Queue
-This example will create a new instance of the queue object
+Show-NextQueueItem
+Description of example
 ```
 
 ## PARAMETERS
+
+### -Queue
+
+Queue object to retreive performance metrics for.
+
+```yaml
+Type: ExtendedQueue
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 

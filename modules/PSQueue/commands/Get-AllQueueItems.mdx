@@ -1,10 +1,10 @@
 ---
-id: Measure-Queue
-title: Measure-Queue
-description: Help page for the Powershell "Measure-Queue" command
+id: Get-AllQueueItems
+title: Get-AllQueueItems
+description: Help page for the Powershell "Get-AllQueueItems" command
 keywords:
   - Powershell
-  - pstools.queue
+  - PSQueue
   - Help
   - Documentation
 hide_title: false
@@ -16,27 +16,27 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Measure-Queue [-Queue] <ExtendedQueue> [<CommonParameters>]
+Get-AllQueueItems [-Queue] <ExtendedQueue> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Returns an object with performance metrics for the provided queue.
+Collect all remaining queue items
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Measure-Queue -Queue $Queue
-This example will return a object containing performance metrics for the provided queue.
+Get-AllQueueItems -Queue $Queue
+This example how to retreive all queue items remaining in the queue
 ```
 
 ## PARAMETERS
 
 ### -Queue
 
-Queue object to retreive performance metrics for.
+Queue object to discard all items in
 
 ```yaml
 Type: ExtendedQueue

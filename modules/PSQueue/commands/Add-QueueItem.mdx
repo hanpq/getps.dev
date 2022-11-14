@@ -1,10 +1,10 @@
 ---
-id: Get-NextQueueItem
-title: Get-NextQueueItem
-description: Help page for the Powershell "Get-NextQueueItem" command
+id: Add-QueueItem
+title: Add-QueueItem
+description: Help page for the Powershell "Add-QueueItem" command
 keywords:
   - Powershell
-  - pstools.queue
+  - PSQueue
   - Help
   - Documentation
 hide_title: false
@@ -16,28 +16,27 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-NextQueueItem [-Queue] <ExtendedQueue> [<CommonParameters>]
+Add-QueueItem [-Queue] <ExtendedQueue> [-Items] <Object[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Returns the next object from queue.
-That object will be removed from the queue.
+Adds a new item to the queue
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-NextQueueItem -Queue $Queue
-This example with return the next item in queue.
+Add-QueueItem -Queue $Queue -Item 'Foo'
+This example shows how to add an item to the queue
 ```
 
 ## PARAMETERS
 
 ### -Queue
 
-{{ Fill Queue Description }}
+Queue object to add items to
 
 ```yaml
 Type: ExtendedQueue
@@ -48,6 +47,22 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Items
+
+Defines the items to add to the queue
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 

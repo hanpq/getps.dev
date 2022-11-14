@@ -1,10 +1,10 @@
 ---
-id: Get-AllQueueItems
-title: Get-AllQueueItems
-description: Help page for the Powershell "Get-AllQueueItems" command
+id: Get-NextQueueItem
+title: Get-NextQueueItem
+description: Help page for the Powershell "Get-NextQueueItem" command
 keywords:
   - Powershell
-  - pstools.queue
+  - PSQueue
   - Help
   - Documentation
 hide_title: false
@@ -16,28 +16,28 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-AllQueueItems [-Queue] <ExtendedQueue> [<CommonParameters>]
+Get-NextQueueItem [-Queue] <ExtendedQueue> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Collect all remaining queue items
+Returns the next object from queue.
+That object will be removed from the queue.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-AllQueueItems -Queue $Queue
+Get-NextQueueItem -Queue $Queue
+This example with return the next item in queue.
 ```
-
-This example how to retreive all queue items remaining in the queue
 
 ## PARAMETERS
 
 ### -Queue
 
-Queue object to discard all items in
+Queue object to retreive next items from
 
 ```yaml
 Type: ExtendedQueue

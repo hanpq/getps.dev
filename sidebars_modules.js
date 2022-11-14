@@ -4,7 +4,7 @@ const PSDaikin = require('./modules/PSDaikin/sidebar.js');
 const PSSort = require('./modules/PSSort/sidebar.js');
 const PSDataSet = require('./modules/PSDataSet/sidebar.js');
 const PSScriptInfo = require('./modules/PSScriptInfo/sidebar.js');
-const pstoolsqueue = require('./modules/pstools.queue/sidebar.js');
+const PSQueue = require('./modules/PSQueue/sidebar.js');
 module.exports = {
     modulessidebar: {
         Introduction: ['Inventory'],
@@ -41,9 +41,9 @@ module.exports = {
             },
             {
                 type: 'category',
-                label: 'pstools.queue',
+                label: 'PSQueue',
                 collapsed: true,
-                items: pstoolsqueue
+                items: PSQueue
             },
         ],
     },
