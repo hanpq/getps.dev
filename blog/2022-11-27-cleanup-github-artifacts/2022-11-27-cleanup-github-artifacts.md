@@ -42,9 +42,9 @@ Repo                                Artifacts_Found Artifacts_Removed Artifacts_
 PSMaintenanceManager                              2                 2               21
 ```
 
-:::important
+:::danger
 
-Note that the script will remove all artifacts for the specified repos. This is destructive and can not be revered.
+The script will remove all artifacts for the specified repo or all repos on the account. This is destructive and can not be reversed.
 
 :::
 
