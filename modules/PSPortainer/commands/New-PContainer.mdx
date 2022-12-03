@@ -1,0 +1,631 @@
+---
+id: New-PContainer
+title: New-PContainer
+description: Help page for the Powershell "New-PContainer" command
+keywords:
+  - Powershell
+  - PSPortainer
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+New-PContainer [[-Endpoint] <String>] [-Name] <String> [[-Platform] <String>] [[-Hostname] <String>]
+ [[-DomainName] <String>] [[-User] <String>] [[-AttachStdin] <Boolean>] [[-AttachStdout] <Boolean>]
+ [[-AttachStderr] <Boolean>] [[-ExposedPorts] <String[]>] [[-Tty] <Boolean>] [[-OpenStdin] <Boolean>]
+ [[-StdinOnce] <Boolean>] [[-Env] <String[]>] [[-Cmd] <String[]>] [[-HealthCheck] <Hashtable>]
+ [[-ArgsEscaped] <Boolean>] [[-Image] <String>] [[-Volumes] <String[]>] [[-WorkingDir] <String>]
+ [[-Entrypoint] <String[]>] [[-NetworkDisabled] <Boolean>] [[-MacAddress] <String>] [[-OnBuild] <String[]>]
+ [[-Labels] <Hashtable>] [[-StopSignal] <String>] [[-StopTimeout] <Int32>] [[-Shell] <String[]>]
+ [[-HostConfig] <Hashtable>] [[-NetworkConfig] <Hashtable>] [[-Session] <PortainerSession>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Create a new container in portainer
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+New-PContainer
+Description of example
+```
+
+## PARAMETERS
+
+### -Endpoint
+
+Defines the portainer endpoint to use when retreiving containers.
+If not specified the portainer sessions default docker endpoint value is used.
+
+Use Get-PSession to see what endpoint is selected
+
+Use Select-PEndpoint to change the default docker endpoint in the portainer session.
+
+-Endpoint 'local'
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Assign the specified name to the container.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Platform
+
+Platform in the format os[/arch[/variant]] used for image lookup.
+
+When specified, the daemon checks if the requested image is present
+in the local image cache with the given OS and Architecture, and
+otherwise returns a 404 status.
+
+If the option is not set, the host's native OS and Architecture are
+used to look up the image in the image cache.
+However, if no platform
+is passed and the given image does exist in the local image cache,
+but its OS or architecture does not match, the container is created
+with the available image, and a warning is added to the Warnings
+field in the response, for example;
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Hostname
+
+The hostname to use for the container, as a valid RFC 1123 hostname.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DomainName
+
+The domain name to use for the container.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -User
+
+The user that commands are run as inside the container.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AttachStdin
+
+Whether to attach to stdin.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AttachStdout
+
+Whether to attach to stdout.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AttachStderr
+
+Whether to attach to stderr.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExposedPorts
+
+Defines exposed ports for the container.
+Accepts a string array where
+each string should be in the following form @("\<port\>/\<tcp|udp|sctp\>","\<port\>/\<tcp|udp|sctp\>")
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 10
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tty
+
+Attach standard streams to a TTY, including stdin if it is not closed.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 11
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OpenStdin
+
+Open stdin for the container
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 12
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StdinOnce
+
+Close stdin after one attached client disconnects
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 13
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Env
+
+A list of environment variables specified as a string array in the
+following form @("\<name\>=\<value\>","\<name\>=\<value\>").
+A variable
+without = is removed from the environment, rather than to have an empty value.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 14
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Cmd
+
+Command to run specified as a string or an array of strings.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 15
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HealthCheck
+
+Defines a hashtable with the configuration items of healthcheck object.
+Use the
+function New-PContainerHealthCheckObject to generate the hashtable.
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 16
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ArgsEscaped
+
+Command is already escaped (Windows only)
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 17
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Image
+
+The name (or reference) of the image to use when creating the container, or which was used when the container was created.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 18
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Volumes
+
+An object mapping mount point paths inside the container to empty objects.
+Accepts a string array in the form @('/volumes/data','/volumes/config')
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 19
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkingDir
+
+The working directory for commands to run in.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 20
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Entrypoint
+
+The entry point for the container as a string or an array of strings.
+
+If the array consists of exactly one empty string ([""]) then the entry point
+is reset to system default (i.e., the entry point used by docker when there
+is no ENTRYPOINT instruction in the Dockerfile).
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 21
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NetworkDisabled
+
+Disable networking for the container.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 22
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MacAddress
+
+MAC address of the container.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 23
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OnBuild
+
+ONBUILD metadata that were defined in the image's Dockerfile.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 24
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Labels
+
+Hashtable of labels.
+@{\<label\>=\<value\>;\<label\>=\<value\>}
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 25
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StopSignal
+
+Signal to stop a container as a string or unsigned integer.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 26
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StopTimeout
+
+Timeout to stop a container in seconds.
+Default is 10.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 27
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Shell
+
+Shell for when RUN, CMD, and ENTRYPOINT uses a shell.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 28
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HostConfig
+
+A container's resources (cgroups config, ulimits, etc).
+Accepts a hashtable.
+Use the function New-PContainerHostConfig to generate the hashtable.
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 29
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NetworkConfig
+
+NetworkingConfig represents the container's networking configuration for
+each of its interfaces.
+It is used for the networking configs specified
+in the docker create and docker network connect commands.
+Use the
+function New-PContainerNetworkConfig to generate the hashtable.
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 30
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Session
+
+Optionally define a portainer session object to use.
+This is useful when you are connected to more than one portainer instance.
+
+-Session $Session
+
+```yaml
+Type: PortainerSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 31
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSPortainer)
