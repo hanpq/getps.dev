@@ -1,10 +1,11 @@
 ---
 slug: setup-azure-app-for-exchange-online
 title: Setup Azure App for Exchange Online unattended access for scripts
-author: Hannes Palmquist
-author_title: Senior Consultant Cloud
-author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
-author_url: https://getps.dev/about
+authors:
+  - name: Hannes Palmquist
+    title: Senior Consultant Cloud
+    url: https://getps.dev/about
+    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
 tags: [powershell,exchangeonline,exchangeonlinemanagement,connect-exchangeonline,azureapp,azure app,unattended,certificate]
 keywords: [powershell,exchangeonline,exchangeonlinemanagement,connect-exchangeonline,azureapp,azure app,unattended,certificate]
 description: Script to configure and setup Azure App for unattended access to Exchange Online

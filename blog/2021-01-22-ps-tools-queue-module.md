@@ -1,10 +1,11 @@
 ---
 slug: ps-tools-queue-module
 title: Introducing pstools.queue
-author: Hannes Palmquist
-author_title: Senior Consultant Cloud
-author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
-author_url: https://getps.dev/about
+authors:
+  - name: Hannes Palmquist
+    title: Senior Consultant Cloud
+    url: https://getps.dev/about
+    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
 tags: [powershell,module,queue,cmdlet,function,system.collection.queue]
 keywords: [powershell,module,queue,cmdlet,function,system.collection.queue]
 description: Introducing wrapper module for queue

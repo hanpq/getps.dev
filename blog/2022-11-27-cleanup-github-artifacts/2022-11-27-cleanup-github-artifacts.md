@@ -1,10 +1,11 @@
 ---
 slug: cleanup-github-artifacts
 title: Cleanup GitHub Artifacts
-author: Hannes Palmquist
-author_title: Senior Consultant Cloud
-author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
-author_url: https://getps.dev/about
+authors:
+  - name: Hannes Palmquist
+    title: Senior Consultant Cloud
+    url: https://getps.dev/about
+    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
 tags: [powershell,github,rest,api,artifact,artifacts]
 keywords: [powershell,github,rest,api,artifact,artifacts]
 description: Script to remove/cleanup github artifacts

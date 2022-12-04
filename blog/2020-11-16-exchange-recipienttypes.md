@@ -1,10 +1,11 @@
 ---
 slug: exchange-recipienttypes
 title: Exchange RecipientTypes
-author: Hannes Palmquist
-author_title: Senior Consultant Cloud
-author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
-author_url: https://getps.dev/about
+authors:
+  - name: Hannes Palmquist
+    title: Senior Consultant Cloud
+    url: https://getps.dev/about
+    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
 tags: [Exchange, RecipientType, Office365, ExchangeOnline]
 keywords: [Exchange, RecipientType, Office365, ExchangeOnline]
 description: Below are all current recipient types. Please comment below if you miss an entry in any of the tables.
