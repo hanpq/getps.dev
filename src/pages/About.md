@@ -22,3 +22,5 @@ Hannes work as a senior consultant at Crayon Sweden and has many years of experi
     <a href="https://twitter.com/PalmquistHannes/"><img src={require('../../static/img/twitter-svgrepo-com.png').default} style={{width: 30, height: 30}} /></a>
     <a href="https://teams.microsoft.com/l/chat/0/0?users=hannes.palmquist@crayon.com"><img src={require('../../static/img/microsoft-teams-1.png').default} style={{width: 30, height: 30}} /></a>
 </div>
+<br/>
+<a href="https://www.credly.com/badges/90033ad9-9856-4b09-9ca2-0d57cf5ad255/public_url"><img src={require('../../static/img/mcsa-office-365-certified-2016.png').default} style={{width: 70, height: 70}} /></a>
