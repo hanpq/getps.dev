@@ -10,9 +10,11 @@ hide_table_of_contents: true
     <img src="https://getps.dev/img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist"/>
 </a>
 
-Hannes work as a senior consultant at Crayon Sweden primarily within Messaging, Automation, Infrastructure, Developing and Identity Management. Hannes has great experience in migration of workloads to and from Office 365.
+Hannes work as a senior consultant at Crayon Sweden with many years of experience in the IT industry and specifically designing, implementing and migrating Microsoft based email solutions including Microsoft 365. Additionally, Hannes has expertise within developing, automation, identity management and security.
 
 ### Contact information
+
+<img src={require('../../static/img/outlook-1.png').default} style={{width: 30, height: 30}}>mailto:hannes.palmquist@outlook.com</img>
 
 |                                                      Service                                                       | Address                                                        |
 | :----------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------- |
