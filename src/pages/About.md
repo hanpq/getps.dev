@@ -14,7 +14,7 @@ Hannes work as a senior consultant at Crayon Sweden with many years of experienc
 
 ### Contact information
 
-<img src={require('../../static/img/outlook-1.png').default} style={{width: 30, height: 30}}>mailto:hannes.palmquist@outlook.com</img>
+<a href="mailto:hannes.palmquist@outlook.com"><img src={require('../../static/img/outlook-1.png').default} style={{width: 30, height: 30}}/></a>
 
 |                                                      Service                                                       | Address                                                        |
 | :----------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------- |
