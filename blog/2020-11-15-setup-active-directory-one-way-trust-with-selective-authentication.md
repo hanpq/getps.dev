@@ -17,14 +17,14 @@ data-layout="button"
 data-size="small">
 </div>
 
-One of the things I often help clients with is to setup Active Directory Forest Trusts. If the trust can be setup as “Forest trust”, “Two-way”, “Forest-wide auth”, “conditional forward for DNS”, “no firewall” anyone can manage to setup a forest trust. In reality though it rarely is that simple. Recently I was asked to setup a trust in a more complex scenario.
+One of the things I have helped clients with is to setup Active Directory Forest Trusts. If the trust can be setup as “Forest trust”, “Two-way”, “Forest-wide auth”, “conditional forward for DNS”, “no firewall” anyone can manage to setup a forest trust. In reality though it rarely is that simple. Recently I was asked to setup a trust in a more complex scenario.
 
 - Forest trust
 - One-way
 - Selective Authentication
 - No AD DNS (Third party DNS in both organizations).
   - Not allowed to setup a stub zone or conditional forward
-- And last but not least strict security policies for firewall policies
+- And last but not least strict security policies for firewall rules
 
 ## Scenario and definitions
 
@@ -40,7 +40,7 @@ The scenario came from the acquisition of another company and during the consoli
 
 ## Configure trust options
 
-For forest trust authentication there is two options. Selective Authentication and Forest-wide authentication. With forest-wide authentication the trusting forest will allow all authentication requests to authenticate. This means that all users in the trusted forest can authenticate in the trusting forest. This also means that all users in the trusted forest implicitly is added to the “Authenticated Users” group in AD. This is not always desirable. Sometimes common file shares has “authenticated users” as an permission group (which is of course is bad). Authenticated users are also granted some read permissions in Active Directory by default. This means that you can enumerate users and quite a lot or their attributes.
+For forest trust authentication there are two options. Selective Authentication and Forest-wide authentication. With forest-wide authentication the trusting forest will allow all authentication requests to authenticate. This means that all users in the trusted forest can authenticate in the trusting forest. This also means that all users in the trusted forest implicitly is added to the “Authenticated Users” group in AD. This is not always desirable. Sometimes common file shares has “authenticated users” as an permission group (which of course is bad). Authenticated users are also granted some read permissions in Active Directory by default. This means that you can enumerate users and quite a lot or their attributes.
 
 To mitigate this the authentication method “Selective Authentication” exists. This mode will deny all authentication requests by default. This means that for a user from the trusted forest to authenticate to a resource, that user needs to be granted the “Allowed to authenticate” permission on the resources active directory computer object. This allows us to control which users can authenticate, to which resource in addition to the standard permission for the resource itself.
 
@@ -48,7 +48,7 @@ In this scenario “Selective Authentication” is selected.
 
 ## Configure network port openings
 
-Most likely there is a firewall between the two organizations and active directory by nature uses a lot of different ports for different type of communication. There are many blogs, articles that try to summarize whats ports are needed for a forest trust but all of them manage to include a lot of ports that are often not needed or for specific scenarios or types of trusts. In our scenario I didn’t want to order port openings that I couldn’t motivate that we needed in this specific case. Below is a list of the ports that I ended up with a bare minimum to setup the a working trust according to our requirements.
+Most likely there is a firewall between the two organizations and active directory by nature uses a lot of different ports for different type of communication. There are many blogs, articles that try to summarize whats ports are needed for a forest trust but all of them manage to include a lot of ports that are often not needed or for specific scenarios or types of trusts. In our scenario I didn’t want to order port openings that I couldn’t motivate that we needed in this specific case. Below is a list of the ports that I ended up with a bare minimum to setup a working trust according to our requirements.
 
 :::important
 
