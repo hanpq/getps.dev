@@ -6,6 +6,7 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [powershell, pester, mock, remote, cmdlets]
+keywords: [powershell, pester, mock, remote, cmdlets]
 description: Mocking the unmockable, mocking remote or unavailable cmdlets.
 ---
 

@@ -6,6 +6,7 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [powershell,module,queue,cmdlet,function,system.collection.queue]
+keywords: [powershell,module,queue,cmdlet,function,system.collection.queue]
 description: Introducing wrapper module for queue
 ---
 

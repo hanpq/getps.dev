@@ -6,6 +6,7 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [powershell,portainer,psportainer,rest,api,docker,module]
+keywords: [powershell,portainer,psportainer,rest,api,docker,module]
 description: Powershell module to interact with Portainer API
 ---
 

@@ -6,6 +6,7 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [powershell,github,rest,api,artifact,artifacts]
+keywords: [powershell,github,rest,api,artifact,artifacts]
 description: Script to remove/cleanup github artifacts
 ---
 

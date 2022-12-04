@@ -1,11 +1,13 @@
 ---
 slug: windows-terminal-unable-to-write-certain-symbols
 title: Unable to write certain characters in Windows Terminal
-author: Hannes Palmquist
-author_title: Senior Consultant Cloud
-author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
-author_url: https://getps.dev/about
+authors:
+  - name: Hannes Palmquist
+    title: Senior Consultant Cloud
+    url: https://getps.dev/about
+    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
 tags: [powershell,windows,terminal,windows terminal,keyboard,character]
+keywords: [powershell,windows,terminal,windows terminal,keyboard,character]
 description: Unable to write certain characters in Windows Terminal
 ---
 

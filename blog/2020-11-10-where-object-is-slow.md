@@ -6,6 +6,7 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [powershell, where-object, function, performance, optimization]
+keywords: [powershell, where-object, function, performance, optimization]
 description: A faster search function replacing edge cases of where-object
 ---
 

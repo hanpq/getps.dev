@@ -6,6 +6,7 @@ author_title: Senior Consultant Cloud
 author_image_url: 'https://getps.dev/img/Hannes_Profil_HighContrast.jpg'
 author_url: https://getps.dev/about
 tags: [powershell, check-profilestatus, function, profile]
+keywords: [powershell, check-profilestatus, function, profile]
 description: This function can be used to show the status of the Powershell profile scripts on the computer.
 ---
 
