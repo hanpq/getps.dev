@@ -17,7 +17,7 @@ data-layout="button"
 data-size="small">
 </div>
 
-Recently I noticed a strange issue within Windows Terminal where I were unable to write the "$" sign using Ctrl+Alt+4. (Swedish keyboard layout has Ctrl+Alt+4 as the key combination to write a $ sign). However a workaround was to use Altgr+4 instead which worked fine. This issue was isolated to Windows Terminal as there were no issue writing $ in any other application, ie, notepad, vscode etc.
+Recently I noticed a strange issue within Windows Terminal where I was unable to write the "$" sign using Ctrl+Alt+4. (Swedish keyboard layout has Ctrl+Alt+4 as the key combination to write a $ sign). However a workaround was to use Altgr+4 instead which worked fine. This issue was isolated to Windows Terminal as there were no issue writing $ in any other application, ie, notepad, vscode etc.
 
 Luckely the issue for me was simple, with some update to Windows Terminal the development team hi-jacked the shortcut Ctrl+Alt+4 for changing to tab number 3. I removed the shortcut keybinding from the settings page and vola, Ctrl+Alt+4 started working as a $-dollar sign again.
 
