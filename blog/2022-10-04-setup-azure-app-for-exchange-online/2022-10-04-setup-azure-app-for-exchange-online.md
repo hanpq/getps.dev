@@ -27,7 +27,7 @@ Microsoft has also published documentation with all steps required to set this u
 
 ## Connect to Exchange Online using a certificate
 
-You can cannot to Exchange Online with a certificate in three ways.
+You can connect to Exchange Online with a certificate in three ways.
 - Passing a certificate object to Connect-ExchangeOnline
 - Providing the thumbprint of the certificate. In this case the certificate must be stored in Windows Certificate Store under CurrentUser\My
 - And last by providing the path to the pfx-file and the password
