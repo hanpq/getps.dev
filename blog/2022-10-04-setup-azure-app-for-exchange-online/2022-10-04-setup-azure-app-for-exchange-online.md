@@ -94,10 +94,11 @@ PSLicenseInfo#>
     "AUTHOREMAIL": "hannes.palmquist@outlook.com",
     "CREATEDDATE": "2022-10-04",
     "COMPANYNAME": "N/A",
-    "COPYRIGHT": "© 2019, Hannes Palmquist, All Rights Reserved"
+    "COPYRIGHT": "© 2022, Hannes Palmquist, All Rights Reserved"
 }
 PSScriptInfo#>
 
+[CmdletBinding()]
 param (
     [Parameter(Mandatory)][string]$Organization,
     [Parameter(Mandatory)][string]$OutputDirectory,
@@ -105,16 +106,17 @@ param (
     [Parameter][switch]$PassThru
 )
 
-$VerbosePreference = 'SilentlyContinue'
 $ErrorActionPreference = 'Stop'
 
+$SavedVerbosePreference = $VerbosePreference
+$VerbosePreference = 'SilentlyContinue'
 Import-Module Microsoft.Graph.Applications, Microsoft.Graph.Authentication, Microsoft.Graph.DeviceManagement.Enrolment -Verbose:$false
-$VerbosePreference = 'Continue'
+$VerbosePreference = $SavedVerbosePreference
 
 function Get-RandomPassword
 {
     param (
-        [int]$length = 16
+        [int]$length = 25
     )
     $Chars = [char[]]([char]33..[char]95) + ([char[]]([char]97..[char]126)) + 0..9
     $Scramble = $Chars | Sort-Object { Get-Random }
@@ -141,7 +143,6 @@ Write-Verbose "Exported certificate with private key (pfx) to: $($ResultObjectHa
 
 $null = $ResultObjectHash.Certificate | Export-Certificate -FilePath $ResultObjectHash.CertificateCERPath
 Write-Verbose "Exported certificate with public key (cer) to: $($ResultObjectHash.CertificateCERPath)"
-
 
 $Web = [Microsoft.Graph.PowerShell.Models.MicrosoftGraphWebApplication]::New()
 $Web.RedirectUris = 'https://localhost'
@@ -201,7 +202,9 @@ else
     Write-Host '   NOTE: It could take some time before the added roles are effective. If you get an error regarding missing permissions, please wait a minute and try again.' -ForegroundColor Yellow
     Write-Host ''
 }
+
 Remove-Variable ResultObjectHash -ErrorAction SilentlyContinue
+
 ```
 
 <Comments />
