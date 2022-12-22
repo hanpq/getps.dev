@@ -1,5 +1,6 @@
 // Start of file
 const PSPortainer = require('./modules/PSPortainer/sidebar.js');
+const PSDev = require('./modules/PSDev/sidebar.js');
 const PSDaikin = require('./modules/PSDaikin/sidebar.js');
 const PSSort = require('./modules/PSSort/sidebar.js');
 const PSDataSet = require('./modules/PSDataSet/sidebar.js');
@@ -14,6 +15,12 @@ module.exports = {
                 label: 'PSPortainer',
                 collapsed: true,
                 items: PSPortainer
+            },
+            {
+                type: 'category',
+                label: 'PSDev',
+                collapsed: true,
+                items: PSDev
             },
             {
                 type: 'category',
