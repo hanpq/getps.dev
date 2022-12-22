@@ -1,0 +1,140 @@
+---
+id: Get-Office365IPURL
+title: Get-Office365IPURL
+description: Help page for the Powershell "Get-Office365IPURL" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Get-Office365IPURL [[-Services] <String[]>] [-OnlyRequired] [[-Types] <String[]>] [[-OutputFormat] <String>]
+ [[-Office365IPURL] <String>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retreive a list of ip and urls required for communication to and from Office 365.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-Office365IPURL -Services Exchange,Skype -OnlyRequired -Types IP4,URL -Outputformat JSON
+```
+
+## PARAMETERS
+
+### -Services
+
+Defines which services to retreive IP and URLs for.
+Valid values are Skype,Exchange,Sharepoint.
+Note that Teams is included in the Skype ruleset and OneDrive is included in the Sharepoint ruleset.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: @('Skype', 'Exchange', 'Sharepoint')
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OnlyRequired
+
+Defines that only rules that are required are returned.
+This will exclude optional optimize rules.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Types
+
+Defines what type of rules to return.
+Valid values are URL,IP4,IP6
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: @('URL', 'IP4', 'IP6')
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutputFormat
+
+Defines the output format, defaults to an array of objects.
+Valid values are Object and JSON as of now.
+If a specific format is
+needed for a firewall please raise a issue with the instructions for the format and it is possible to create preset for it.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: Object
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Office365IPURL
+
+Defines the URL to the Office 365 IP URL Endpoint.
+Defaults to 'https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7'.
+Provided as parameter to allow queries to other environments than worldwide as well as keep agility if Microsoft would change URL.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: Https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)

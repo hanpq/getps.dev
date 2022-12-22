@@ -1,0 +1,276 @@
+---
+id: Debug-String
+title: Debug-String
+description: Help page for the Powershell "Debug-String" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Outputs a string in diagnostic form or as source code.
+
+## SYNTAX
+
+### Standard (Default)
+
+```powershell
+Debug-String [-InputObject] <Object[]> [-Delimiters <String[]>] [-NoSpacesAsDots] [-NoEmphasis] [-SingleLine]
+ [-UnicodeEscapes] [<CommonParameters>]
+```
+
+### AsSourceCode
+
+```powershell
+Debug-String [-InputObject] <Object[]> [-AsSourceCode] [-SingleLine] [-UnicodeEscapes] [<CommonParameters>]
+```
+
+### Caret
+
+```powershell
+Debug-String [-InputObject] <Object[]> [-Delimiters <String[]>] [-CaretNotation] [-NoSpacesAsDots]
+ [-NoEmphasis] [-UnicodeEscapes] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Prints a string with control or hidden characters visualized, and optionally
+all non-ASCII-range Unicode characters represented as escape sequences.
+
+With -AsSourceCode, the result is printed in single-line form as a
+double-quoted PowerShell string literal that is reusable as source code,
+
+Common control characters are visualized using PowerShell's own escaping
+notation by default, such as
+"`t" for a tab, "`r" for a CR, but a LF is visualized as itself, as an
+actual newline, unless you specify -SingleLine.
+
+As an alternative, if you want ASCII-range control characters visualized in caret notation
+(see https://en.wikipedia.org/wiki/Caret_notation), similar to cat -A on Linux,
+use -CaretNotation.
+E.g., ^M then represents a CR; but note that a LF is
+always represented as "$" followed by an actual newline.
+
+Any other control characters as well as otherwise hidden characters or
+format / punctuation characters in the non-ASCII range are represented in
+`u{hex-code-point} notation.
+
+To print space characters as themselves, use -NoSpacesAsDots.
+
+$null inputs are accepted, but a warning is issued.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+"a`ab`t c`0d`r`n" | Debug-String -Delimiters [, ]
+[a`0b`t·c`0d`r`
+]
+```
+
+### EXAMPLE 2
+
+```powershell
+"a`ab`t c`0d`r`n" | Debug-String -CaretNotation
+a^Gb^I c^@d^M$
+```
+
+### EXAMPLE 3
+
+```powershell
+"a-ü`u{2028}" | Debug-String -UnicodeEscapes # The dash is an em-dash (U+2014)
+a·`u{2014}·`u{fc}
+```
+
+### EXAMPLE 4
+
+```powershell
+"a`ab`t c`0d`r`n" | Debug-String -AsSourceCode -SingleLine # roundtrip
+"a`ab`t c`0d`r`n"
+```
+
+## PARAMETERS
+
+### -InputObject
+
+Defines the string to analyze
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Delimiters
+
+You may optionally specify delimiters that the visualization of each input string is enclosed
+in as a a whole its boundaries.
+You may specify a single string or a 2-element array.
+
+```yaml
+Type: String[]
+Parameter Sets: Standard, Caret
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CaretNotation
+
+Causes LF to be visualized as "$" and all other ASCII-range control characters
+in caret notation, similar to `cat -A` on Linux.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Caret
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoSpacesAsDots
+
+By default, space chars.
+are visualized as "·", the MIDDLE DOT char.
+(U+00B7)
+
+Use this switch to represent spaces as themselves.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Standard, Caret
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoEmphasis
+
+By default, those characters (other than spaces) that aren't output as themselves,
+i.e.
+control characters and, if requested with -UnicodeEscapes, non-ASCII-range characters,
+are highlighted by color inversion, using ANSI (VT) escape sequences.
+
+Use this switch to turn off this highlighting.
+
+Note that if $PSStyle.OutputRendering = 'PlainText' is in effect, the highlighting
+isn't *shown* even *without* -NoEmphasis, but the escape sequences are still part
+of the output string.
+Only -NoEmphasis prevents inclusion of these escape sequences.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Standard, Caret
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsSourceCode
+
+Outputs each input string as a double-quoted PowerShell string
+that is reusable in source code, with embedded double quotes, backticks,
+and "$" signs backtick-escaped.
+
+Use -SingleLine to get a single-line representation.
+Control characters that have no native PS escape sequence are represented
+using `u{\<hex-code-point} notation, which will only work in PowerShell *Core*
+(v6+) source code.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: AsSourceCode
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SingleLine
+
+Requests a single-line representation, where LF characters are represented
+as `n instead of actual line breaks.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Standard, AsSourceCode
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnicodeEscapes
+
+Requests that all non-ASCII-range characters - such as accented letters -  in
+the input string be represented as Unicode escape sequences in the form
+`u{hex-code-point}.
+
+Whe cominbed with -AsSourceCode, the result is a PowerShell string literal
+composed of ASCII-range characters only, but note that only PowerShell *Core*
+(v6+) understands such Unicode escapes.
+
+By default, only control characters that don't have a native PS escape
+sequence / cannot be represented with caret notation are represented this way.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)

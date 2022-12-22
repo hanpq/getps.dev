@@ -1,0 +1,84 @@
+---
+id: Add-NumberFormater
+title: Add-NumberFormater
+description: Help page for the Powershell "Add-NumberFormater" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Add-NumberFormater [-InputObject] <Double[]> [[-Type] <String>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Adding formater capabilities by overwriting the ToString method of the input double value
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Add-NumberFormater -InputObject 2138476234 -Type DataSize
+Processes the number 2138476234 and returns the value with the replaced ToString() method. This case would return "1,99 GB"
+```
+
+## PARAMETERS
+
+### -InputObject
+
+Defines the input value to process
+
+```yaml
+Type: Double[]
+Parameter Sets: (All)
+Aliases: Double, Number
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Type
+
+Defines what type of value it is and what units to use.
+Available values is Standard and DataSize
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: Standard
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)
