@@ -35,7 +35,7 @@ Install-Module PSDev -Scope CurrentUser
 Adds a custom ToString() method to the number variable that will print the value with magnitude notation like KB, MB for datasize and general K, M for normal numbers.
 
 #### Debug-String
-This is a function that can analyze a string and show hidden characters like tabs, line feed, carage return etc. This is a script originally written by Michael Klement <mklement0@gmail.com>
+This is a function that can analyze a string and show hidden characters like tabs, line feed, carage return etc. This is a script originally written by Michael Klement
 
 #### Get-Office365IPURL
 This function will call the Microsoft API and retreive all urls, ips and ip-ranges that Office 365 services use.
