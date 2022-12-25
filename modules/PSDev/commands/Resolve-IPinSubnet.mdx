@@ -1,0 +1,101 @@
+---
+id: Resolve-IPinSubnet
+title: Resolve-IPinSubnet
+description: Help page for the Powershell "Resolve-IPinSubnet" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Resolve-IPinSubnet [-IP] <String> [-Network] <String> [-MaskLength] <Int32> [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Checks if a specified IP address is included in the IP range of a specific network.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Resolve-IPinSubnet -IP 213.199.154.5 -Network 213.199.154.0 -MaskLength 24
+Checks if the IP 212.199.154.5 is included in the 213.199.154.0/24 network
+```
+
+## PARAMETERS
+
+### -IP
+
+Defines the IP address to resolve.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Network
+
+Defines the network address to search within
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaskLength
+
+Defines the length of the mask
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### System.Boolean
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)
