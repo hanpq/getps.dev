@@ -1,0 +1,141 @@
+---
+id: Set-EnvironmentVariable
+title: Set-EnvironmentVariable
+description: Help page for the Powershell "Set-EnvironmentVariable" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Set-EnvironmentVariable [-Name] <String> [-Value] <String> [[-Target] <EnvironmentVariableTarget>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Functions that provides a shortcut to create environmental variables
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Set-EnvironmentVariable -Name 'ComputerOwner' -Value 'Will Smith' -Target Machine
+This example creates the environment variable computerowner to the machine
+scope and assigns the value 'Will Smith'
+```
+
+## PARAMETERS
+
+### -Name
+
+Defines the name of the envioronmental variable
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+
+Defines the value of the environmental variable
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Target
+
+Defines the target for the environmental variable.
+Valid values are Machine, User,
+Process.
+Defaults to Process.
+This means that the configured environmental variables
+are non-persistant.
+If persistant environmental variables are desirable user Machine or User.
+
+```yaml
+Type: EnvironmentVariableTarget
+Parameter Sets: (All)
+Aliases:
+Accepted values: Process, User, Machine
+
+Required: False
+Position: 3
+Default value: Process
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)
