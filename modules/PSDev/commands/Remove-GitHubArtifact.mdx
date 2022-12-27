@@ -1,0 +1,164 @@
+---
+id: Remove-GitHubArtifact
+title: Remove-GitHubArtifact
+description: Help page for the Powershell "Remove-GitHubArtifact" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Cleanup artifacts from GitHub repo
+
+## SYNTAX
+
+```powershell
+Remove-GitHubArtifact [-GitHubSecret] <String> [-GitHubOrg] <String> [[-RepoName] <String>]
+ [[-PageSize] <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+This script will remove all artifacts for a single repos or all repos for a given user
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-GitHubArtifact -GitHubSecret "ABC" -GitHubOrg "user"
+```
+
+Running this function without specifying a repo will cleanup all artifacts for all repos
+
+### EXAMPLE 2
+
+```powershell
+Remove-GitHubArtifact -GitHubSecret "ABC" -GitHubOrg "user" -Repo "RepoName"
+```
+
+Running the script with a specified repo will cleanup all artifacts for that repo
+
+## PARAMETERS
+
+### -GitHubSecret
+
+Defines the GitHubSecret (API Key) to use
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GitHubOrg
+
+Defines the GitHub owner user name
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RepoName
+
+Defines a specific repository to remove artifacts for
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PageSize
+
+Optionally specify the PageSize when retreiving repos and artifacts.
+Valid values are in range of 1..100.
+Default is 30.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: 30
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+[https://getps.dev/blog/cleanup-github-artifacts](https://getps.dev/blog/cleanup-github-artifacts)
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)
