@@ -1,0 +1,150 @@
+---
+id: Get-PCustomTemplate
+title: Get-PCustomTemplate
+description: Help page for the Powershell "Get-PCustomTemplate" command
+keywords:
+  - Powershell
+  - PSPortainer
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+### list (Default)
+
+```powershell
+Get-PCustomTemplate [-Session <PortainerSession>] [-Type <Int32>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-PCustomTemplate -Id <Object[]> [-Session <PortainerSession>] [-IncludeStackFile] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retreives custom templates from Portainer
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-PCustomTemplate
+```
+
+Retreives all custom templates from portainer.
+
+### EXAMPLE 2
+
+```powershell
+"
+```
+
+Retreives a single custom template object with the specified Id
+
+### EXAMPLE 3
+
+```powershell
+Get-PContainer -Session $Session
+```
+
+Retreives all custom templates on the portainer instance defined
+
+## PARAMETERS
+
+### -Id
+
+Defines the id of the custom template to retreive.
+
+-Id '\<Id\>'
+
+```yaml
+Type: Object[]
+Parameter Sets: id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Session
+
+Optionally define a portainer session object to use.
+This is useful when you are connected to more than one portainer instance.
+
+-Session $Session
+
+```yaml
+Type: PortainerSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+When listing all custom templates the scope can be limited to a type of template.
+Valid values are 1,2,3
+
+-Type 2
+
+```yaml
+Type: Int32
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeStackFile
+
+When specifying ids or piping templates/ids this parameter can be used to retreive the content of the stack configuration file.
+
+-IncludeStackFile
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSPortainer)
