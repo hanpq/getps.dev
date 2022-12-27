@@ -19,6 +19,7 @@ module.exports = [
     'PSDev/commands/Get-StringHash',
     'PSDev/commands/Group-ObjectEvenly',
     'PSDev/commands/New-Password',
+    'PSDev/commands/Remove-GitHubArtifact',
     'PSDev/commands/Resolve-IPinSubnet',
     'PSDev/commands/Set-EnvironmentVariable',
     'PSDev/commands/Switch-Object',
