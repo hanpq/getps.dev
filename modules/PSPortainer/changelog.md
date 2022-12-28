@@ -6,7 +6,7 @@ title: Changelog
 
 ## [Unreleased]
 
-## [0.4.1] - 2022-12-27
+## [0.4.2] - 2022-12-28
 
 ### Added
 
