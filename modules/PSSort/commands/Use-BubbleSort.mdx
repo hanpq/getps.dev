@@ -16,7 +16,7 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Use-BubbleSort [-InputObject] <Object> [<CommonParameters>]
+Use-BubbleSort [-InputObject] <Object> [-ReturnDiagnostics] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,6 +51,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -ReturnDiagnostics
+
+Specifies that instead of returning the sorted array, an object containing sort diagnostic data will be return.
+The sorted array will stored as an property of that object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
@@ -67,4 +84,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## EDIT THIS DOC 
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/)
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSSort)

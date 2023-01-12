@@ -2,13 +2,34 @@
 id: changelog
 title: Changelog
 ---
-
 # Changelog for PSSort
 
 The format is based on and uses the types of changes according to [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Fixed
+
+- Added back license URI i module manifest as the bug causing PowershellGet to fail packageing the module in beta17 is resolved.
+
+## [1.13.0] - 2022-12-15
+
+### Added
+
+- Added Use-SelectionSort
+
+## [1.12.1] - 2022-11-14
+
+### Fixed
+
+- Fixed an issue where test-sortingalgorithms called Sort-Object with the parameter ReturnDiagnostic which is exclusive to the module provided functions.
+
+## [1.11.0] - 2022-11-14
+
+### Added
+
+- Added parameter ReturnDiagnostic on sort functions. This switch will make the returned object contain information about the sorting operation performed. The sorted array will be included as an parameter of that object.
 
 ## [1.10.3] - 2022-11-13
 
@@ -63,3 +84,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### added
 
 - First version
+
