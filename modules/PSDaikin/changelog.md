@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.12.0] - 2023-01-12
+
+### Fixed
+
+- Added back license URI i module manifest as the bug causing PowershellGet to fail packageing the module in beta17 is resolved.
+
 ## [1.11.2] - 2022-11-13
 
 ### Changed
