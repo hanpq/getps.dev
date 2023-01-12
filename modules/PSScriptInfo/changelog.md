@@ -2,13 +2,16 @@
 id: changelog
 title: Changelog
 ---
-
 # Changelog for PSScriptInfo
 
 The format is based on and uses the types of changes according to [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Fixed
+
+- Added back license URI i module manifest as the bug causing PowershellGet to fail packageing the module in beta17 is resolved.
 
 ## [1.3.12] - 2022-11-14
 
@@ -79,3 +82,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### other
 
 - First version
+
