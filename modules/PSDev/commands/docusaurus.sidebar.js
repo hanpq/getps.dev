@@ -10,6 +10,7 @@
 
 module.exports = [
     'PSDev/commands/Add-NumberFormater',
+    'PSDev/commands/Convert-Metric',
     'PSDev/commands/Convert-Object',
     'PSDev/commands/Debug-String',
     'PSDev/commands/Get-Color',

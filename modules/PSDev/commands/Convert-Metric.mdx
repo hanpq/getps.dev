@@ -1,0 +1,470 @@
+---
+id: Convert-Metric
+title: Convert-Metric
+description: Help page for the Powershell "Convert-Metric" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+### Bps
+
+```powershell
+Convert-Metric -Bps <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Bpm
+
+```powershell
+Convert-Metric -Bpm <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Bph
+
+```powershell
+Convert-Metric -Bph <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Bit
+
+```powershell
+Convert-Metric -Bit <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Kbps
+
+```powershell
+Convert-Metric -Kbps <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Kbpm
+
+```powershell
+Convert-Metric -Kbpm <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Kbph
+
+```powershell
+Convert-Metric -Kbph <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Kbit
+
+```powershell
+Convert-Metric -Kbit <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Mbps
+
+```powershell
+Convert-Metric -Mbps <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Mbpm
+
+```powershell
+Convert-Metric -Mbpm <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Mbph
+
+```powershell
+Convert-Metric -Mbph <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Mbit
+
+```powershell
+Convert-Metric -Mbit <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Gbps
+
+```powershell
+Convert-Metric -Gbps <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Gbpm
+
+```powershell
+Convert-Metric -Gbpm <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Gbph
+
+```powershell
+Convert-Metric -Gbph <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+### Gbit
+
+```powershell
+Convert-Metric -Gbit <Double> [-ShortUnits] [-Round] [-RoundMethod <String>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Function that converts speed metrics
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Convert-Metric -Gbph 40 -ShortUnits -RoundToNearestInteger
+```
+
+Name      Value
+----      -----
+Bps       11930465
+Bpm       715827883
+Bph       42949672960
+Bit       95443718
+KBps      11651
+KBpm      699051
+KBph      41943040
+KBit      93207
+MBps      11
+MBpm      683
+MBph      40960
+MBit      91
+GBps      0
+GBpm      1
+GBph      40
+GBit      0
+
+This commands converts "40 gigabyte per hour" to all the other metrics in the table and rounds the value.
+
+## PARAMETERS
+
+### -Bps
+
+Defines bytes per second value
+
+```yaml
+Type: Double
+Parameter Sets: Bps
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Bpm
+
+Defines bytes per minute value
+
+```yaml
+Type: Double
+Parameter Sets: Bpm
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Bph
+
+Defines bytes per hour value
+
+```yaml
+Type: Double
+Parameter Sets: Bph
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Bit
+
+Defines bits per second value
+
+```yaml
+Type: Double
+Parameter Sets: Bit
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Kbps
+
+Defines kilobytes per second value
+
+```yaml
+Type: Double
+Parameter Sets: Kbps
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Kbpm
+
+Defines kilobytes per minute value
+
+```yaml
+Type: Double
+Parameter Sets: Kbpm
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Kbph
+
+Defines kilobytes per hour value
+
+```yaml
+Type: Double
+Parameter Sets: Kbph
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Kbit
+
+Defines kilobits per second value
+
+```yaml
+Type: Double
+Parameter Sets: Kbit
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Mbps
+
+Defines megabytes per second value
+
+```yaml
+Type: Double
+Parameter Sets: Mbps
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Mbpm
+
+Defines megabytes per minute value
+
+```yaml
+Type: Double
+Parameter Sets: Mbpm
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Mbph
+
+Defines megabytes per hour value
+
+```yaml
+Type: Double
+Parameter Sets: Mbph
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Mbit
+
+Defines megabits per second value
+
+```yaml
+Type: Double
+Parameter Sets: Mbit
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Gbps
+
+Defines gigabytes per second value
+
+```yaml
+Type: Double
+Parameter Sets: Gbps
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Gbpm
+
+Defines gigabytes per minute value
+
+```yaml
+Type: Double
+Parameter Sets: Gbpm
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Gbph
+
+Defines gigabytes per hour value
+
+```yaml
+Type: Double
+Parameter Sets: Gbph
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Gbit
+
+Defines gigabits per second value
+
+```yaml
+Type: Double
+Parameter Sets: Gbit
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ShortUnits
+
+Specifies that the resulting object specifies the metrics with short units i.e.
+"Mbps" instead of "MB per sec"
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Round
+
+Defines that the values should be rounded
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RoundMethod
+
+Defines what rounding method should be used, valid values are FindScale and MathRound
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: FindScale
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### System.Collections.Specialized.OrderedDictionary
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)

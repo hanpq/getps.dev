@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2023-01-19
+
+### Addded
+
+- New function: Convert-Metric
+
 ## [1.3.0] - 2023-01-12
 
 ### Fixed
