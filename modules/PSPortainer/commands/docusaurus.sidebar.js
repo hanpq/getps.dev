@@ -18,6 +18,7 @@ module.exports = [
     'PSPortainer/commands/Get-PEndpoint',
     'PSPortainer/commands/Get-PSession',
     'PSPortainer/commands/Get-PSettingsPublic',
+    'PSPortainer/commands/Get-PStack',
     'PSPortainer/commands/Get-PStatus',
     'PSPortainer/commands/New-PContainer',
     'PSPortainer/commands/Rename-PContainer',

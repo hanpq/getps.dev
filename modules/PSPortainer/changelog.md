@@ -6,6 +6,13 @@ title: Changelog
 
 ## [Unreleased]
 
+## [0.4.4] - 2023-02-12
+
+### Added
+
+- New function; Get-PStack
+- Get-PContainer; Accepts a PortainerStack as pipeline input for container enumeration  
+
 ## [0.4.2] - 2022-12-28
 
 ### Added
