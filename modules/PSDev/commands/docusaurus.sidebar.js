@@ -17,6 +17,7 @@ module.exports = [
     'PSDev/commands/Get-DotNetVersion',
     'PSDev/commands/Get-Office365IPURL',
     'PSDev/commands/Get-PublicIP',
+    'PSDev/commands/Get-Selector',
     'PSDev/commands/Get-StringHash',
     'PSDev/commands/Group-ObjectEvenly',
     'PSDev/commands/New-Password',
