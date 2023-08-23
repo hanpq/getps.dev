@@ -60,7 +60,7 @@ always represented as "$" followed by an actual newline.
 
 Any other control characters as well as otherwise hidden characters or
 format / punctuation characters in the non-ASCII range are represented in
-`u{hex-code-point} notation.
+`u\{hex-code-point\} notation.
 
 To print space characters as themselves, use -NoSpacesAsDots.
 
@@ -204,7 +204,7 @@ and "$" signs backtick-escaped.
 
 Use -SingleLine to get a single-line representation.
 Control characters that have no native PS escape sequence are represented
-using `u{\<hex-code-point} notation, which will only work in PowerShell *Core*
+using `u\{&lt;hex-code-point\} notation, which will only work in PowerShell *Core*
 (v6+) source code.
 
 ```yaml
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 
 Requests that all non-ASCII-range characters - such as accented letters -  in
 the input string be represented as Unicode escape sequences in the form
-`u{hex-code-point}.
+`u\{hex-code-point\}.
 
 Whe cominbed with -AsSourceCode, the result is a PowerShell string literal
 composed of ASCII-range characters only, but note that only PowerShell *Core*
