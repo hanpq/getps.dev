@@ -209,7 +209,7 @@ Accept wildcard characters: False
 
 Defines exposed ports for the container.
 Accepts a string array where
-each string should be in the following form @("\<port\>/\<tcp|udp|sctp\>","\<port\>/\<tcp|udp|sctp\>")
+each string should be in the following form @("&lt;port&gt;/&lt;tcp|udp|sctp&gt;","&lt;port&gt;/&lt;tcp|udp|sctp&gt;")
 
 ```yaml
 Type: String[]
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 ### -Env
 
 A list of environment variables specified as a string array in the
-following form @("\<name\>=\<value\>","\<name\>=\<value\>").
+following form @("&lt;name&gt;=&lt;value&gt;","&lt;name&gt;=&lt;value&gt;").
 A variable
 without = is removed from the environment, rather than to have an empty value.
 
@@ -460,7 +460,7 @@ Accept wildcard characters: False
 ### -Labels
 
 Hashtable of labels.
-@{\<label\>=\<value\>;\<label\>=\<value\>}
+@\{&lt;label&gt;=&lt;value&gt;;&lt;label&gt;=&lt;value&gt;\}
 
 ```yaml
 Type: Hashtable
