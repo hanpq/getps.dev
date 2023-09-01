@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.2] - 2023-09-01
+
+### Fixed
+
+- Bumped dependency PowershellGet to PSResourceGet
+
 ## [1.4.1] - 2023-08-23
 
 ### Fixed
