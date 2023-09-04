@@ -501,9 +501,9 @@ Write-Log -Level 'WARNING' -Message 'Hello, Powershell!' -Body { Computer = $env
 
 ## Contributing
 
-Please use [issues](https://github.com/EsOsO/Logging/issues) system or GitHub pull requests to contribute to the project.
+Please use [issues](https://github.com/hanpq/PSLogs/issues) system or GitHub pull requests to contribute to the project.
 
-For more information, see [CONTRIBUTING](CONTRIBUTING.md)
+For more information, see [CONTRIBUTING](https://github.com/hanpq/PSLogs/blob/main/.github/CONTRIBUTING.md)
 
 ## Notes
 
@@ -527,4 +527,3 @@ Special thanks to:
 [module]: https://github.com/EsOsO/Logging
 [runspaces]: https://learn-powershell.net/tag/runspace/
 [license]: https://github.com/EsOsO/Logging/blob/main/docs/LICENSE.md
-
