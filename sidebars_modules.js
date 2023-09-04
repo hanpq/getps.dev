@@ -1,4 +1,5 @@
 // Start of file
+const PSLogs = require('./modules/PSLogs/sidebar.js');
 const PSPortainer = require('./modules/PSPortainer/sidebar.js');
 const PSDev = require('./modules/PSDev/sidebar.js');
 const PSDaikin = require('./modules/PSDaikin/sidebar.js');
@@ -10,6 +11,12 @@ module.exports = {
     modulessidebar: {
         Introduction: ['Inventory'],
         Modules: [
+            {
+                type: 'category',
+                label: 'PSLogs',
+                collapsed: true,
+                items: PSLogs
+            },
             {
                 type: 'category',
                 label: 'PSPortainer',
