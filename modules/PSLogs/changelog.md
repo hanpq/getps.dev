@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [5.0.1] - 2023-09-04
+### Fixed
+
+- Fixed an issue where the logging manager was not always disposed when the module was removed.
 
 ### Changed
 
