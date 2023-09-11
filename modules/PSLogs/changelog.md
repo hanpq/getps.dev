@@ -9,9 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added configuration parameters to console plugin to only colorize level. This is false by default.
+
 ### Fixed
 
 - Typos in comment based help fixed.
+- Fixed typo on critical logging level defintion.
 
 ## [5.0.3] - 2023-09-07
 
