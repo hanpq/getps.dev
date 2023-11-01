@@ -63,7 +63,7 @@ Note that even though the trust is one-way does not mean that the communication 
 | 135        | TCP      | RPC Endpoint Mapper | Used to establish a RPC endpoint                                       | Mandatory              |
 | 389        | TCP      | LDAP                | Used for LDAP comm                                                     | Mandatory              |
 | 389        | UDP      | LDAP                | Used for LDAP comm                                                     | Mandatory              |
-| 455        | TCP      | SMB                 | Used for trust establishment. Can be removed post trust configuration. | Mandatory during setup |
+| 445        | TCP      | SMB                 | Used for trust establishment. Can be removed post trust configuration. | Mandatory during setup |
 | 1024-65535 | TCP      | RPC                 | RPC High ports returned by RPC Endpoint mapper                         | Mandatory              |
 
 ## Configure DNS records
