@@ -10,6 +10,7 @@ This topic provides documentation for all PowerShell modules published by getps.
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hanpq/PSMQTT/build.yml?branch=main&label=build&logo=github)](https://github.com/hanpq/PSMQTT/actions/workflows/build.yml) [![Codecov](https://img.shields.io/codecov/c/github/hanpq/PSMQTT?logo=codecov&token=qJqWlwMAiD)](https://codecov.io/gh/hanpq/PSMQTT) [![Platform](https://img.shields.io/powershellgallery/p/PSMQTT?logo=ReasonStudios)](https://img.shields.io/powershellgallery/p/PSMQTT) [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PSMQTT?label=downloads)](https://www.powershellgallery.com/packages/PSMQTT) [![License](https://img.shields.io/github/license/hanpq/PSMQTT)](https://github.com/hanpq/PSMQTT/blob/main/LICENSE) [![docs](https://img.shields.io/badge/docs-getps.dev-blueviolet)](https://getps.dev/modules/PSMQTT/getstarted) [![changelog](https://img.shields.io/badge/changelog-getps.dev-blueviolet)](https://github.com/hanpq/PSMQTT/blob/main/CHANGELOG.md) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/hanpq/PSMQTT?label=version&sort=semver) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/hanpq/PSMQTT?include_prereleases&label=prerelease&sort=semver)
 
+:::
 
 :::note PSLogs
 
