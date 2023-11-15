@@ -1,5 +1,5 @@
 // Start of file
-const PSLogs = require('./modules/PSMQTT/sidebar.js');
+const PSMQTT = require('./modules/PSMQTT/sidebar.js');
 const PSLogs = require('./modules/PSLogs/sidebar.js');
 const PSPortainer = require('./modules/PSPortainer/sidebar.js');
 const PSDev = require('./modules/PSDev/sidebar.js');
