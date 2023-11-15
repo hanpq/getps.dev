@@ -1,7 +1,7 @@
 ---
-id: Send-MQTTMessage
-title: Send-MQTTMessage
-description: Help page for the Powershell "Send-MQTTMessage" command
+id: Watch-MQTTTopic
+title: Watch-MQTTTopic
+description: Help page for the Powershell "Watch-MQTTTopic" command
 keywords:
   - Powershell
   - PSMQTT
@@ -16,7 +16,7 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Send-MQTTMessage [-Session] <MqttClient> [-Topic] <String> [[-Payload] <String>] [<CommonParameters>]
+Watch-MQTTTopic [-Session] <MqttClient> [-Topic] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +28,7 @@ This function will publish a message to a MQTT topic.
 ### EXAMPLE 1
 
 ```powershell
-Get-Something -Data 'Get me this text'
+Watch-MQTTTopic -Session $Session -Topic "topic/#"
 ```
 
 ## PARAMETERS
@@ -60,22 +60,6 @@ Aliases:
 
 Required: True
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Payload
-
-Defines the message as a string
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

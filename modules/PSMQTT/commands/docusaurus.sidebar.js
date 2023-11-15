@@ -11,5 +11,6 @@
 module.exports = [
     'PSMQTT/commands/Connect-MQTTBroker',
     'PSMQTT/commands/Disconnect-MQTTBroker',
-    'PSMQTT/commands/Send-MQTTMessage'
+    'PSMQTT/commands/Send-MQTTMessage',
+    'PSMQTT/commands/Watch-MQTTTopic'
 ];
