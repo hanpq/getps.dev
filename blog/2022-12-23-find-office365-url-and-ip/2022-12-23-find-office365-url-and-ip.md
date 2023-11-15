@@ -12,7 +12,7 @@ description: Script to get office 365 url and ip
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/cleanup-github-artifacts"
+data-href="https://getps.dev/blog/find-office365-url-and-ip"
 data-layout="button"
 data-size="small">
 </div>
