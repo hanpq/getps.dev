@@ -28,7 +28,7 @@ This function will publish a message to a MQTT topic.
 ### EXAMPLE 1
 
 ```powershell
-Get-Something -Data 'Get me this text'
+Send-MQTTMEssage -Session $Session -Topic 'foo' -Payload '{"attribute":"value"}'
 ```
 
 ## PARAMETERS

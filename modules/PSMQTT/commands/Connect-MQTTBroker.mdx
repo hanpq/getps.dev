@@ -29,7 +29,7 @@ This function establishes a session with the MQTT broker and returns a session o
 ### EXAMPLE 1
 
 ```powershell
-$MQTTSession = Connect-MQTTBroker -Hostname mqttbroker.contoso.com -Port 1234 -Username mqttuser -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
+$Session = Connect-MQTTBroker -Hostname mqttbroker.contoso.com -Port 1234 -Username mqttuser -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
 ```
 
 ## PARAMETERS
