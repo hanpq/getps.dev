@@ -14,7 +14,7 @@ This project has adopted the following policies [![CodeOfConduct](https://img.sh
 
 ## About
 
-PSMQTT is a...
+PSMQTT is powershell module wrapper for the M2MQTT library. Currently the module provides functionality for publishing MQTT messages and listening for messages.
 
 ## Installation
 
@@ -28,5 +28,26 @@ Install-Module PSMQTT -Scope CurrentUser
 
 ## Usage
 
+First, establish a session to the MQTT broker
 
+```powershell
+$Session = Connect-MQTTBroker -Hostname mqttbroker.contoso.com -Port 1234 -Username mqttuser -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
+```
 
+Once a session is established a message can be published to the MQTT broker. The payload is a plain string however many systems expects json.
+
+```powershell
+Send-MQTTMEssage -Session $Session -Topic 'foo' -Payload '{"attribute":"value"}'
+```
+
+With Watch-MQTTTopic you can subscribe to messages. Notice that you can use a hash-sign as a wildcard for subscribing to a topic and all child-topics.
+
+```powershell
+Watch-MQTTTopic -Session $Session -Topic "topic/#"
+```
+
+Once finished the session can be disconnected.
+
+```powershell
+Disconnect-MQTTBroker -Session $Session
+```
