@@ -29,7 +29,7 @@ In the case of Scandinavian keyboard layouts the following characters is probabl
 - Ctrl+Alt+2 -> @
 - Ctrl+Alt+3 -> £
 - Ctrl+Alt+4 -> $
-- Ctrl+Alt+7 -> {
+- Ctrl+Alt+7 -> \{
 - Ctrl+Alt+8 -> [
 - Ctrl+Alt+9 -> ]
 

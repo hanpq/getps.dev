@@ -35,8 +35,8 @@ The scenario came from the acquisition of another company and during the consoli
 | Containing          | Users    | Resources |
 | Trust Direction     | Incoming | Outgoing  |
 | Trust               | Trusted  | Trusting  |
-| Direction of Access | ->       | ->        |
-| Direction of Trust  | <-       | <-        |
+| Direction of Access | >       | >        |
+| Direction of Trust  | \<       | \<        |
 
 ## Configure trust options
 
