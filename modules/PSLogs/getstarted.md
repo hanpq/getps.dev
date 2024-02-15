@@ -19,6 +19,40 @@ I've written a couple of targets myself like SQLite and GELF.
 
 Another reason I really like this logging module is that the logging is disconnected from the script that requests logs to be written. The logging is performed in another thread and therefore the execution of the main script is much less impacted by each logging operation.
 
+- [PSLogs](#pslogs)
+  - [Project status](#project-status)
+  - [About](#about)
+  - [Installation](#installation)
+    - [PowerShell Gallery](#powershell-gallery)
+  - [Usage](#usage)
+    - [TL;DR](#tldr)
+      - [NOTE](#note)
+    - [Configuration](#configuration)
+      - [Level](#level)
+      - [Format](#format)
+        - [Padding](#padding)
+        - [Date format string](#date-format-string)
+        - [Caller](#caller)
+      - [Targets](#targets)
+        - [Console](#console)
+          - [Colors](#colors)
+        - [File](#file)
+          - [Rotation](#rotation)
+        - [ElasticSearch](#elasticsearch)
+          - [NoFlatten](#noflatten)
+          - [Flatten](#flatten)
+        - [Slack](#slack)
+        - [Email](#email)
+        - [Seq](#seq)
+        - [WinEventLog](#wineventlog)
+        - [Teams](#teams)
+      - [CustomTargets](#customtargets)
+        - [AzureLogAnalytics](#azureloganalytics)
+  - [Contributing](#contributing)
+  - [Notes](#notes)
+  - [License](#license)
+  - [Included attributions from orginal repo](#included-attributions-from-orginal-repo)
+
 ## Installation
 
 ### PowerShell Gallery
@@ -29,9 +63,9 @@ To install from the PowerShell gallery using PowerShellGet run the following com
 Install-Module PSLogs -Scope CurrentUser
 ```
 
-# Usage
+## Usage
 
-## TL;DR
+### TL;DR
 
 ```powershell
 Set-LoggingDefaultLevel -Level 'WARNING'
@@ -47,11 +81,11 @@ foreach ($i in 1..100) {
 Wait-Logging        # See Note
 ```
 
-### NOTE
+#### NOTE
 
 When used in *unattended* scripts (scheduled tasks, spawned process) you need to call `Wait-Logging` to avoid loosing messages. If you run your main script in an interactive shell that stays open at the end of the execution you could avoid using it (keep in mind that if there are messeages in the queue when you close the shell, you'll lose them)
 
-## Configuration
+### Configuration
 
 The following section describe how to configure the Logging module.
 
@@ -60,7 +94,7 @@ The following section describe how to configure the Logging module.
 - Targets
 - CustomTargets
 
-### Level
+#### Level
 
 The _Level_ property defines the default logging level.
 Valid values are:
@@ -83,7 +117,7 @@ NOTSET                                          # NOTSET level
 ERROR
 ```
 
-### Format
+#### Format
 
 The _Format_ property defines how the message is rendered.
 
@@ -108,7 +142,7 @@ The Log object has a number of attributes that are replaced in the format string
 
 After the placeholder name you can pass a padding or a date format string separated by a colon (`:`):
 
-#### Padding
+##### Padding
 
 If the padding value is negative, the field will be left aligned and padded with spaces on the right:
 
@@ -130,7 +164,7 @@ If the padding value is positive, the field will be right aligned and padded wit
 [  ERROR]
 ```
 
-#### Date format string
+##### Date format string
 
 The date format string starts with a plus sign (`+`) followed by **UFormat** OR **Format** (`[DateTimeFormatInfo]`) parameters. See [here](https://technet.microsoft.com/en-us/library/hh849887.aspx#sectionSection7) for available **UFormat**s, and [here](<https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.85).aspx>) for available **Format**s.
 
@@ -148,7 +182,7 @@ Wednesday, April 20, 2016
 [2016/04/20 13:31:12.431]
 ```
 
-#### Caller
+##### Caller
 
 By default the caller cmdlet is assumed to be the parent function in the executing stack, i.e., the function directly calling the `Write-Log` cmdlet. However, there are instances where a wrapper cmdlet is used on top of `Write-Log` to trigger the logging, thus invalidating the default assumption for the caller.
 
@@ -187,47 +221,13 @@ Invoke-CallerFunctionWithCustomLog
 
 **Note**: A format string starting with a percent symbol (%) will use the `UFormat` parameter of `Get-Date`
 
-### Targets
+#### Targets
 
 The _Targets_ property stores the used logging targets, it's where you define where to route your messages.
 
 Keys of the hashtable depends on the target you are configuring. The module ships with 7 targets but you can write your own for specific usage.
 
-- [PSLogs](#pslogs)
-  - [Project status](#project-status)
-  - [About](#about)
-  - [Installation](#installation)
-    - [PowerShell Gallery](#powershell-gallery)
-- [Usage](#usage)
-  - [TL;DR](#tldr)
-    - [NOTE](#note)
-  - [Configuration](#configuration)
-    - [Level](#level)
-    - [Format](#format)
-      - [Padding](#padding)
-      - [Date format string](#date-format-string)
-      - [Caller](#caller)
-    - [Targets](#targets)
-      - [Console](#console)
-        - [Colors](#colors)
-      - [File](#file)
-        - [Rotation](#rotation)
-      - [ElasticSearch](#elasticsearch)
-        - [NoFlatten](#noflatten)
-        - [Flatten](#flatten)
-      - [Slack](#slack)
-      - [Email](#email)
-      - [Seq](#seq)
-      - [WinEventLog](#wineventlog)
-      - [Teams](#teams)
-    - [CustomTargets](#customtargets)
-      - [AzureLogAnalytics](#azureloganalytics)
-  - [Contributing](#contributing)
-  - [Notes](#notes)
-  - [License](#license)
-  - [Included attributions from orginal repo](#included-attributions-from-orginal-repo)
-
-#### Console
+##### Console
 
 From version 2.3.3 it supports acquiring lock for issues with git prompt that sometimes gets splitted during output.
 The mutex name to acquire is `ConsoleMtx`
@@ -242,7 +242,7 @@ The mutex name to acquire is `ConsoleMtx`
 }
 ```
 
-##### Colors
+###### Colors
 
 Default Console Colors
 
@@ -266,7 +266,7 @@ Add-LoggingTarget -Name Console -Configuration @{
 }
 ```
 
-#### File
+##### File
 
 ```powershell
 > Add-LoggingTarget -Name File -Configuration @{
@@ -291,7 +291,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell'
 Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell' -Body @{source = 'Logging'}
 ```
 
-##### Rotation
+###### Rotation
 This module provides the functionality for the file target to rotate log files.
 To make full use of this functionality, variable data used inside the log path should be encoded, using the previously described format system.
 
@@ -307,7 +307,7 @@ The default behavior is to remove all rotated log files. It is however possible,
 - `%{timestamputc}`
 If an archive should already be present, the data is **merged**.
 
-#### ElasticSearch
+##### ElasticSearch
 
 ```powershell
 > Add-LoggingTarget -Name ElasticSearch -Configuration @{
@@ -327,7 +327,7 @@ $Body = @{source = 'Logging'; host='bastion.constoso.com'; _metadata = @{ip = '1
 Write-Log -Level 'WARNING' -Message 'Hello, Powershell!' -Body $Body
 ```
 
-##### NoFlatten
+###### NoFlatten
 
 ```json
 {
@@ -352,7 +352,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, Powershell!' -Body $Body
 }
 ```
 
-##### Flatten
+###### Flatten
 
 ```json
 {
@@ -373,7 +373,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, Powershell!' -Body $Body
 }
 ```
 
-#### Slack
+##### Slack
 
 ```powershell
 > Add-LoggingTarget -Name Slack -Configuration @{
@@ -389,7 +389,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell'
 Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell' -Body @{source = 'Logging'}
 ```
 
-#### Email
+##### Email
 
 ```powershell
 > Add-LoggingTarget -Name Email -Configuration @{
@@ -410,7 +410,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell'
 Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell' -Body @{source = 'Logging'}
 ```
 
-#### Seq
+##### Seq
 
 ```powershell
 > Add-LoggingTarget -Name Seq -Configuration @{
@@ -425,7 +425,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell'
 Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell' -Body @{source = 'Logging'}
 ```
 
-#### WinEventLog
+##### WinEventLog
 
 Before you can log events you need to make sure that the LogName and Source exists. This needs to be done only once (run as an Administrator)
 
@@ -446,7 +446,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell' -Body 
 }
 ```
 
-#### Teams
+##### Teams
 
 ```powershell
 > Add-LoggingTarget -Name Teams -Configuration @{
@@ -466,7 +466,7 @@ Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell'
 Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell' -Body @{source = 'Logging'}
 ```
 
-### CustomTargets
+#### CustomTargets
 
 It lets define a folder to load custom targets.
 
@@ -482,7 +482,7 @@ Slack                          {Configuration, ParamsRequired, Logger}
 MyCustomTarget                 {Configuration, ParamsRequired, Logger}
 ```
 
-#### AzureLogAnalytics
+##### AzureLogAnalytics
 
 Log directly to a Azure Log Analytics Workspace from your script
 
@@ -527,4 +527,3 @@ Special thanks to:
 [module]: https://github.com/EsOsO/Logging
 [runspaces]: https://learn-powershell.net/tag/runspace/
 [license]: https://github.com/EsOsO/Logging/blob/main/docs/LICENSE.md
-

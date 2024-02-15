@@ -4,7 +4,8 @@ module.exports = {
     //url: 'https://pensive-darwin-90a9ff.netlify.app',
     url: 'https://getps.dev',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
+    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/powershell_orange2.ico',
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
@@ -40,28 +41,37 @@ module.exports = {
             },
             items: [
                 {
-                    to: 'docs/',
+                    to: 'docs',
                     activeBasePath: 'docs',
                     label: 'Knowledge Base',
                     position: 'left',
                 },
                 {
-                    to: 'modules/',
+                    to: 'milestones',
+                    activeBasePath: 'milestones',
+                    label: 'Milestones',
+                    position: 'left',
+                },
+                {
+                    to: 'modules',
                     activeBasePath: 'modules',
                     label: 'Modules',
                     position: 'left',
                 },
                 {
                     to: 'blog',
+                    activeBasePath: 'blog',
                     label: 'Blog',
                     position: 'left'
                 },
                 {
                     to: 'downloads',
+                    activeBasePath: 'downloads',
                     label: 'Downloads',
                     position: 'left'
                 }, {
                     to: 'about',
+                    activeBasePath: 'about',
                     label: 'About',
                     position: 'left'
                 },
@@ -80,19 +90,23 @@ module.exports = {
                     items: [
                         {
                             label: 'Knowledge Base',
-                            to: 'docs/',
+                            activeBasePath: 'docs',
+                            to: 'docs',
                         },
                         {
                             label: 'Module documentation',
-                            to: 'modules/',
+                            activeBasePath: 'modules',
+                            to: 'modules',
                         },
                         {
                             label: 'Blog',
-                            to: 'blog/',
+                            activeBasePath: 'blog',
+                            to: 'blog',
                         },
                         {
                             label: 'Downloads',
-                            to: 'downloads/',
+                            activeBasePath: 'downloads',
+                            to: 'downloads',
                         },
                     ],
                 },
@@ -101,7 +115,8 @@ module.exports = {
                     items: [
                         {
                             label: 'About',
-                            to: 'about/',
+                            activeBasePath: 'about',
+                            to: 'about',
                         },
                     ],
                 },
@@ -164,7 +179,18 @@ module.exports = {
                 routeBasePath: 'modules',
                 sidebarPath: './sidebars_modules.js',
             }
-        ]
+        ],
+        async function myPlugin(context, options) {
+            return {
+                name: 'docusaurus-tailwindcss',
+                configurePostCss(postcssOptions) {
+                    // Appends TailwindCSS and AutoPrefixer.
+                    postcssOptions.plugins.push(require('tailwindcss'));
+                    postcssOptions.plugins.push(require('autoprefixer'));
+                    return postcssOptions;
+                },
+            };
+        }
     ],
     scripts: [
         {
