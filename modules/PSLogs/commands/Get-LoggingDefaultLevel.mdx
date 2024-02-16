@@ -13,29 +13,43 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Returns the default message level
 
 ## SYNTAX
 
 ```powershell
-Get-LoggingDefaultLevel [<CommonParameters>]
+Get-LoggingDefaultLevel [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function returns a string representing the default message level used by enabled targets that don't override it
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Get-LoggingDefaultLevel
 ```
 
-\{\{ Add example description here \}\}
-
 ## PARAMETERS
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 
@@ -43,17 +57,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Get-LoggingDefaultLevel.md](https://logging.readthedocs.io/en/latest/functions/Get-LoggingDefaultLevel.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Get-LoggingDefaultLevel.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Get-LoggingDefaultLevel.ps1)
 
 ## EDIT THIS DOC 
 

@@ -13,27 +13,29 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Sets a global logging severity level.
 
 ## SYNTAX
 
 ```powershell
-Set-LoggingDefaultLevel [-Level] <String> [<CommonParameters>]
+Set-LoggingDefaultLevel [-ProgressAction <ActionPreference>] -Level <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function sets a global logging severity level.
+Log messages written with a lower logging level will be discarded.
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Set-LoggingDefaultLevel -Level ERROR
 ```
 
-\{\{ Add example description here \}\}
+PS C:\\&gt; Write-Log -Level INFO -Message "Test"
+=&gt; Discarded.
 
 ## PARAMETERS
 
@@ -45,10 +47,25 @@ PS C:\> {{ Add example code here }}
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ALERT, CRITICAL, DEBUG, EMERGENCY, ERROR, INFO, NOTICE, NOTSET, SUCCESS, VERBOSE, WARNING
 
 Required: True
-Position: 1
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -60,17 +77,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Set-LoggingDefaultLevel.md](https://logging.readthedocs.io/en/latest/functions/Set-LoggingDefaultLevel.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingDefaultLevel.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingDefaultLevel.ps1)
 
 ## EDIT THIS DOC 
 

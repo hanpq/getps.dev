@@ -13,29 +13,43 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Wait for the message queue to be emptied
 
 ## SYNTAX
 
 ```powershell
-Wait-Logging [<CommonParameters>]
+Wait-Logging [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function can be used to block the execution of a script waiting for the message queue to be emptied
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Wait-Logging
 ```
 
-\{\{ Add example description here \}\}
-
 ## PARAMETERS
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 
@@ -43,17 +57,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Wait-Logging.md](https://logging.readthedocs.io/en/latest/functions/Wait-Logging.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Wait-Logging.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Wait-Logging.ps1)
 
 ## EDIT THIS DOC 
 

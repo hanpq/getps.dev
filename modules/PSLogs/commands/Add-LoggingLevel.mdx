@@ -13,33 +13,44 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Define a new severity level
 
 ## SYNTAX
 
 ```powershell
-Add-LoggingLevel [-Level] <Int32> [-LevelName] <String> [<CommonParameters>]
+Add-LoggingLevel [-Level] <Int32> [-LevelName] <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function add a new severity level to the ones already defined
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Add-LoggingLevel -Level 41 -LevelName CRITICAL
 ```
 
-\{\{ Add example description here \}\}
+### EXAMPLE 2
+
+```powershell
+Add-LoggingLevel -Level 15 -LevelName VERBOSE
+```
 
 ## PARAMETERS
 
 ### -Level
 
-\{\{ Fill Level Description \}\}
+An integer that identify the severity of the level, higher the value higher the severity of the level
+By default the module defines this levels:
+NOTSET   0
+DEBUG   10
+INFO    20
+WARNING 30
+ERROR   40
 
 ```yaml
 Type: Int32
@@ -47,15 +58,15 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 0
-Default value: None
+Position: 1
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -LevelName
 
-\{\{ Fill LevelName Description \}\}
+The human redable name to assign to the level
 
 ```yaml
 Type: String
@@ -63,7 +74,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -75,17 +102,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Add-LoggingLevel.md](https://logging.readthedocs.io/en/latest/functions/Add-LoggingLevel.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Add-LoggingLevel.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Add-LoggingLevel.ps1)
 
 ## EDIT THIS DOC 
 

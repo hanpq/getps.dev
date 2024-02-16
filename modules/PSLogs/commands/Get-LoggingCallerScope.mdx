@@ -13,29 +13,43 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Returns the default caller scope
 
 ## SYNTAX
 
 ```powershell
-Get-LoggingCallerScope [<CommonParameters>]
+Get-LoggingCallerScope [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function returns an int representing the scope where the invocation scope for the caller should be obtained from
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Get-LoggingCallerScope
 ```
 
-\{\{ Add example description here \}\}
-
 ## PARAMETERS
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 
@@ -43,15 +57,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
+
+[https://logging.readthedocs.io/en/latest/functions/Get-LoggingCallerScope.md](https://logging.readthedocs.io/en/latest/functions/Get-LoggingCallerScope.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://logging.readthedocs.io/en/latest/LoggingFormat.md](https://logging.readthedocs.io/en/latest/LoggingFormat.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Get-LoggingCallerScope.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Get-LoggingCallerScope.ps1)
 
 ## EDIT THIS DOC 
 

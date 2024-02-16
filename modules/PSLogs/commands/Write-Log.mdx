@@ -13,53 +13,69 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Emits a log record
 
 ## SYNTAX
 
 ```powershell
 Write-Log [-Message] <String> [[-Arguments] <Array>] [[-Body] <Object>] [[-ExceptionInfo] <ErrorRecord>]
- [[-Level] <String>] [<CommonParameters>]
+ [-ProgressAction <ActionPreference>] [-Level <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function write a log record to configured targets with the matching level
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Write-Log 'Hello, World!'
 ```
 
-\{\{ Add example description here \}\}
+### EXAMPLE 2
+
+```powershell
+Write-Log -Level ERROR -Message 'Hello, World!'
+```
+
+### EXAMPLE 3
+
+```powershell
+Write-Log -Level ERROR -Message 'Hello, {0}!' -Arguments 'World'
+```
+
+### EXAMPLE 4
+
+```powershell
+Write-Log -Level ERROR -Message 'Hello, {0}!' -Arguments 'World' -Body @{Server='srv01.contoso.com'}
+```
 
 ## PARAMETERS
 
-### -Arguments
+### -Message
 
-\{\{ Fill Arguments Description \}\}
+The text message to write.
 
 ```yaml
-Type: Array
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
+### -Arguments
 
-\{\{ Fill Body Description \}\}
+An array of objects used to format &lt;Message&gt;
 
 ```yaml
-Type: Object
+Type: Array
 Parameter Sets: (All)
 Aliases:
 
@@ -70,9 +86,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Body
+
+An object that can contain additional log metadata (used in target like ElasticSearch)
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ExceptionInfo
 
-\{\{ Fill ExceptionInfo Description \}\}
+Provide an optional ErrorRecord
 
 ```yaml
 Type: ErrorRecord
@@ -80,7 +112,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -94,26 +126,25 @@ Accept wildcard characters: False
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ALERT, CRITICAL, DEBUG, EMERGENCY, ERROR, INFO, NOTICE, NOTSET, SUCCESS, VERBOSE, WARNING
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Message
+### -ProgressAction
 
-\{\{ Fill Message Description \}\}
+\{\{ Fill ProgressAction Description \}\}
 
 ```yaml
-Type: String
+Type: ActionPreference
 Parameter Sets: (All)
-Aliases:
+Aliases: proga
 
-Required: True
-Position: 2
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -125,15 +156,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Add-LoggingLevel.md](https://logging.readthedocs.io/en/latest/functions/Add-LoggingLevel.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Write-Log.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Write-Log.ps1)
 
 ## EDIT THIS DOC 
 

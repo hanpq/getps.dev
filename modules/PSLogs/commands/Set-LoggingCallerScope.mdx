@@ -13,33 +13,40 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Sets the scope from which to get the caller scope
 
 ## SYNTAX
 
 ```powershell
-Set-LoggingCallerScope [[-CallerScope] <Int32>] [<CommonParameters>]
+Set-LoggingCallerScope [[-CallerScope] <Int32>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function sets the scope to obtain information from the caller
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Set-LoggingCallerScope -CallerScope 2
 ```
 
-\{\{ Add example description here \}\}
+### EXAMPLE 2
+
+```powershell
+Set-LoggingCallerScope
+```
+
+It sets the caller scope to 1
 
 ## PARAMETERS
 
 ### -CallerScope
 
-\{\{ Fill CallerScope Description \}\}
+Integer representing the scope to use to find the caller information.
+Defaults to 1 which represent the scope of the function where Write-Log is being called from
 
 ```yaml
 Type: Int32
@@ -47,7 +54,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: 1
+Default value: $Defaults.CallerScope
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -59,17 +82,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Set-LoggingCallerScope.md](https://logging.readthedocs.io/en/latest/functions/Set-LoggingCallerScope.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingCallerScope.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingCallerScope.ps1)
 
 ## EDIT THIS DOC 
 

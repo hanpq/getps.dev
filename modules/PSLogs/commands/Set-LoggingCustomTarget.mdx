@@ -13,33 +13,32 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Sets a folder as custom target repository
 
 ## SYNTAX
 
 ```powershell
-Set-LoggingCustomTarget [-Path] <String> [<CommonParameters>]
+Set-LoggingCustomTarget [-Path] <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function sets a folder as a custom target repository.
+Every *.ps1 file will be loaded as a custom target and available to be enabled for logging to.
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Set-LoggingCustomTarget -Path C:\Logging\CustomTargets
 ```
-
-\{\{ Add example description here \}\}
 
 ## PARAMETERS
 
 ### -Path
 
-\{\{ Fill Path Description \}\}
+A valid path containing *.ps1 files that defines new loggin targets
 
 ```yaml
 Type: String
@@ -47,7 +46,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 0
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -59,17 +74,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Set-LoggingCustomTarget.md](https://logging.readthedocs.io/en/latest/functions/Set-LoggingCustomTarget.md)
+
+[https://logging.readthedocs.io/en/latest/functions/CustomTargets.md](https://logging.readthedocs.io/en/latest/functions/CustomTargets.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingCustomTarget.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingCustomTarget.ps1)
 
 ## EDIT THIS DOC 
 

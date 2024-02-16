@@ -13,33 +13,37 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Returns enabled logging targets
 
 ## SYNTAX
 
 ```powershell
-Get-LoggingTarget [[-Name] <String>] [<CommonParameters>]
+Get-LoggingTarget [[-Name] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function returns enabled logging targtes
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Get-LoggingTarget
 ```
 
-\{\{ Add example description here \}\}
+### EXAMPLE 2
+
+```powershell
+Get-LoggingTarget -Name Console
+```
 
 ## PARAMETERS
 
 ### -Name
 
-\{\{ Fill Name Description \}\}
+The Name of the target to retrieve, if not passed all configured targets will be returned
 
 ```yaml
 Type: String
@@ -47,7 +51,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -59,17 +79,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Get-LoggingTarget.md](https://logging.readthedocs.io/en/latest/functions/Get-LoggingTarget.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Get-LoggingTarget.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Get-LoggingTarget.ps1)
 
 ## EDIT THIS DOC 
 

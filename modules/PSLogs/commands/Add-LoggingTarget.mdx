@@ -13,33 +13,38 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Enable a logging target
 
 ## SYNTAX
 
 ```powershell
-Add-LoggingTarget [[-Configuration] <Hashtable>] [-Name] <String> [<CommonParameters>]
+Add-LoggingTarget [[-Configuration] <Hashtable>] [-ProgressAction <ActionPreference>] -Name <String>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function configure and enable a logging target
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Add-LoggingTarget -Name Console -Configuration @{Level = 'DEBUG'}
 ```
 
-\{\{ Add example description here \}\}
+### EXAMPLE 2
+
+```powershell
+Add-LoggingTarget -Name File -Configuration @{Level = 'INFO'; Path = 'C:\Temp\script.log'}
+```
 
 ## PARAMETERS
 
 ### -Configuration
 
-\{\{ Fill Configuration Description \}\}
+An hashtable containing the configurations for the target
 
 ```yaml
 Type: Hashtable
@@ -47,8 +52,8 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
-Default value: None
+Position: 3
+Default value: @{}
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -61,10 +66,25 @@ Accept wildcard characters: False
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: AzureLogAnalytics, WinEventLog, Slack, File, Seq, Teams, Gelf, Console, SQLite, ElasticSearch, WebexTeams, Email
 
 Required: True
-Position: 1
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -76,17 +96,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Add-LoggingTarget.md](https://logging.readthedocs.io/en/latest/functions/Add-LoggingTarget.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://logging.readthedocs.io/en/latest/AvailableTargets.md](https://logging.readthedocs.io/en/latest/AvailableTargets.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Add-LoggingTarget.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Add-LoggingTarget.ps1)
 
 ## EDIT THIS DOC 
 

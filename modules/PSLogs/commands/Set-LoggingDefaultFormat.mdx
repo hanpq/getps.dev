@@ -13,33 +13,39 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-\{\{ Fill in the Synopsis \}\}
+Sets a global logging message format
 
 ## SYNTAX
 
 ```powershell
-Set-LoggingDefaultFormat [[-Format] <String>] [<CommonParameters>]
+Set-LoggingDefaultFormat [[-Format] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-\{\{ Fill in the Description \}\}
+This function sets a global logging message format
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 
 ```powershell
-PS C:\> {{ Add example code here }}
+Set-LoggingDefaultFormat -Format '[%{level:-7}] %{message}'
 ```
 
-\{\{ Add example description here \}\}
+### EXAMPLE 2
+
+```powershell
+Set-LoggingDefaultFormat
+```
+
+It sets the default format as [%\{timestamp:+%Y-%m-%d %T%Z\}] [%\{level:-7\}] %\{message\}
 
 ## PARAMETERS
 
 ### -Format
 
-\{\{ Fill Format Description \}\}
+The string used to format the message to log
 
 ```yaml
 Type: String
@@ -47,7 +53,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: 1
+Default value: $Defaults.Format
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -59,17 +81,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
 
 [https://logging.readthedocs.io/en/latest/functions/Set-LoggingDefaultFormat.md](https://logging.readthedocs.io/en/latest/functions/Set-LoggingDefaultFormat.md)
+
+[https://logging.readthedocs.io/en/latest/functions/LoggingFormat.md](https://logging.readthedocs.io/en/latest/functions/LoggingFormat.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Write-Log.md](https://logging.readthedocs.io/en/latest/functions/Write-Log.md)
+
+[https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingDefaultFormat.ps1](https://github.com/EsOsO/Logging/blob/master/Logging/public/Set-LoggingDefaultFormat.ps1)
 
 ## EDIT THIS DOC 
 
