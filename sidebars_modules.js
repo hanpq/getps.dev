@@ -1,4 +1,5 @@
 // Start of file
+const PSImmich = require('./modules/PSImmich/sidebar.js');
 const PSMQTT = require('./modules/PSMQTT/sidebar.js');
 const PSLogs = require('./modules/PSLogs/sidebar.js');
 const PSPortainer = require('./modules/PSPortainer/sidebar.js');
@@ -12,6 +13,12 @@ module.exports = {
     modulessidebar: {
         Introduction: ['Inventory'],
         Modules: [
+            {
+                type: 'category',
+                label: 'PSImmich',
+                collapsed: true,
+                items: PSImmich
+            },
             {
                 type: 'category',
                 label: 'PSMQTT',
