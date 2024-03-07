@@ -59,6 +59,15 @@ import Timeline, { DateType, Item } from '../components/timeline';
 const items: Item[] = [
     {
         icon: mdiPackageVariantClosed,
+        description: 'Powershell module PSImmich launched',
+        title: 'PSImmich',
+        linklabel: 'Github',
+        link: 'https://github.com/hanpq/PSimmich',
+        date: new Date(2023, 11, 15),
+        dateType: DateType.RELEASE,
+    },
+    {
+        icon: mdiPackageVariantClosed,
         description: 'Powershell module PSMQTT launched',
         title: 'PSMQTT',
         linklabel: 'Github',
