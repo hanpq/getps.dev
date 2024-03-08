@@ -9,5 +9,17 @@
  */
 
 module.exports = [
-    'PSImmich/commands/Get-Something'
+    'PSImmich/commands/Connect-Immich',
+    'PSImmich/commands/Disconnect-Immich',
+    'PSImmich/commands/Get-IMServer',
+    'PSImmich/commands/Get-IMServerConfig',
+    'PSImmich/commands/Get-IMServerFeature',
+    'PSImmich/commands/Get-IMServerInfo',
+    'PSImmich/commands/Get-IMServerStatistic',
+    'PSImmich/commands/Get-IMServerVersion',
+    'PSImmich/commands/Get-IMSession',
+    'PSImmich/commands/Get-IMStatus',
+    'PSImmich/commands/Get-IMSupportedMediaType',
+    'PSImmich/commands/Get-IMTheme',
+    'PSImmich/commands/Test-IMPing'
 ];

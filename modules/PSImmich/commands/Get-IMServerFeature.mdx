@@ -1,7 +1,7 @@
 ---
-id: Get-Something
-title: Get-Something
-description: Help page for the Powershell "Get-Something" command
+id: Get-IMServerFeature
+title: Get-IMServerFeature
+description: Help page for the Powershell "Get-IMServerFeature" command
 keywords:
   - Powershell
   - PSImmich
@@ -13,27 +13,46 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-Sample Function to return input string.
-
 ## SYNTAX
 
 ```powershell
-Get-Something [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMServerFeature [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-This function is only a  sample Advanced function that returns the Data given via parameter Data.
+Retreives Immich server feature
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-Something -Data 'Get me this text'
+Get-IMServerFeature
 ```
 
+Retreives Immich server feature
+
 ## PARAMETERS
+
+### -Session
+
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -ProgressAction
 
