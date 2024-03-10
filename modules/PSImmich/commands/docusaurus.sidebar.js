@@ -11,6 +11,9 @@
 module.exports = [
     'PSImmich/commands/Connect-Immich',
     'PSImmich/commands/Disconnect-Immich',
+    'PSImmich/commands/Get-IMAsset',
+    'PSImmich/commands/Get-IMCuratedLocation',
+    'PSImmich/commands/Get-IMCuratedObject',
     'PSImmich/commands/Get-IMServer',
     'PSImmich/commands/Get-IMServerConfig',
     'PSImmich/commands/Get-IMServerFeature',
@@ -18,8 +21,9 @@ module.exports = [
     'PSImmich/commands/Get-IMServerStatistic',
     'PSImmich/commands/Get-IMServerVersion',
     'PSImmich/commands/Get-IMSession',
-    'PSImmich/commands/Get-IMStatus',
     'PSImmich/commands/Get-IMSupportedMediaType',
     'PSImmich/commands/Get-IMTheme',
-    'PSImmich/commands/Test-IMPing'
+    'PSImmich/commands/Remove-IMAsset',
+    'PSImmich/commands/Test-IMPing',
+    'PSImmich/commands/Update-IMAsset'
 ];

@@ -1,7 +1,7 @@
 ---
-id: Get-IMStatus
-title: Get-IMStatus
-description: Help page for the Powershell "Get-IMStatus" command
+id: Get-IMCuratedObject
+title: Get-IMCuratedObject
+description: Help page for the Powershell "Get-IMCuratedObject" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,29 +16,29 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMStatus [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMCuratedObject [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Get public status for portainer instance
+Retreives Immich curated objects
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-PStatus
+Get-IMCuratedObject
 ```
 
-Get public status for portainer instance
+Retreives Immich curated objects
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a portainer session object to use.
-This is useful when you are connected to more than one portainer instance.
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
 
 -Session $Session
 
@@ -79,6 +79,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Covers API getCuratedObjects
 
 ## RELATED LINKS
 
