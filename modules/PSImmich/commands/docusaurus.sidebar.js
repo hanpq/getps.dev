@@ -9,6 +9,7 @@
  */
 
 module.exports = [
+    'PSImmich/commands/Add-IMAsset',
     'PSImmich/commands/Connect-Immich',
     'PSImmich/commands/Disconnect-Immich',
     'PSImmich/commands/Get-IMAsset',

@@ -1,7 +1,7 @@
 ---
-id: Remove-IMAsset
-title: Remove-IMAsset
-description: Help page for the Powershell "Remove-IMAsset" command
+id: Add-IMAsset
+title: Add-IMAsset
+description: Help page for the Powershell "Add-IMAsset" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,20 +16,21 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Remove-IMAsset [[-Session] <ImmichSession>] [-ids] <String[]> [-force] [-ProgressAction <ActionPreference>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Add-IMAsset [[-Session] <ImmichSession>] [-FilePath] <FileInfo[]> [[-Duration] <String>] [-isArchived]
+ [-isFavorite] [-isOffline] [-isReadOnly] [-isVisible] [[-libraryId] <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Removes an Immich asset
+Adds an Immich asset
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Remove-IMAsset
+Add-IMAsset
 ```
 
 Removes an Immich asset
@@ -55,15 +56,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ids
+### -FilePath
 
 Defines the asset ids that should be removed.
 Accepts pipeline input.
 
 ```yaml
-Type: String[]
+Type: FileInfo[]
 Parameter Sets: (All)
-Aliases: id
+Aliases:
 
 Required: True
 Position: 2
@@ -72,9 +73,25 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -force
+### -Duration
 
-Performs a hard delete bypassing the Trash
+asd
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isArchived
+
+asd
 
 ```yaml
 Type: SwitchParameter
@@ -84,6 +101,86 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isFavorite
+
+asd
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isOffline
+
+asd
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isReadOnly
+
+asd
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isVisible
+
+asd
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -libraryId
+
+asd
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
