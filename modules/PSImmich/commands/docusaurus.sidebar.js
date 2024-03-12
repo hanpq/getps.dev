@@ -10,11 +10,15 @@
 
 module.exports = [
     'PSImmich/commands/Add-IMActivity',
+    'PSImmich/commands/Add-IMAlbumAsset',
+    'PSImmich/commands/Add-IMAlbumUser',
     'PSImmich/commands/Add-IMAsset',
     'PSImmich/commands/Connect-Immich',
     'PSImmich/commands/Disconnect-Immich',
     'PSImmich/commands/Get-IMActivity',
     'PSImmich/commands/Get-IMActivityStatistic',
+    'PSImmich/commands/Get-IMAlbum',
+    'PSImmich/commands/Get-IMAlbumCount',
     'PSImmich/commands/Get-IMAsset',
     'PSImmich/commands/Get-IMCuratedLocation',
     'PSImmich/commands/Get-IMCuratedObject',
@@ -27,8 +31,13 @@ module.exports = [
     'PSImmich/commands/Get-IMSession',
     'PSImmich/commands/Get-IMSupportedMediaType',
     'PSImmich/commands/Get-IMTheme',
+    'PSImmich/commands/New-IMAlbum',
     'PSImmich/commands/Remove-IMActivity',
+    'PSImmich/commands/Remove-IMAlbum',
+    'PSImmich/commands/Remove-IMAlbumAsset',
+    'PSImmich/commands/Remove-IMAlbumUser',
     'PSImmich/commands/Remove-IMAsset',
     'PSImmich/commands/Test-IMPing',
+    'PSImmich/commands/Update-IMAlbum',
     'PSImmich/commands/Update-IMAsset'
 ];

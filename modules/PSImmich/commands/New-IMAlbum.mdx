@@ -1,0 +1,153 @@
+---
+id: New-IMAlbum
+title: New-IMAlbum
+description: Help page for the Powershell "New-IMAlbum" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
+ [[-description] <String>] [[-sharedWithUserIds] <String[]>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Adds a new an album
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+New-IMAlbum
+```
+
+Adds a new an album
+
+## PARAMETERS
+
+### -Session
+
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -albumName
+
+Defines the name of the new album
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -assetIds
+
+Defines a list of assets to add to the album
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -description
+
+Defines a description for the album
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -sharedWithUserIds
+
+Defines a list of user id to share the album to
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
