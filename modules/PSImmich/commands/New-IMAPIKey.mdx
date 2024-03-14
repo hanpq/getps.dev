@@ -1,7 +1,7 @@
 ---
-id: Disconnect-Immich
-title: Disconnect-Immich
-description: Help page for the Powershell "Disconnect-Immich" command
+id: New-IMAPIKey
+title: New-IMAPIKey
+description: Help page for the Powershell "New-IMAPIKey" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,36 +16,32 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Disconnect-Immich [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+New-IMAPIKey [[-Session] <ImmichSession>] [-name] <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Disconnect and cleanup session configuration
+Adds a new an api key
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Disconnect-Immich
+New-IMAPIKey
 ```
 
-Disconnect from the default immich session
-
-### EXAMPLE 2
-
-```powershell
-Disconnect-Immich -Session $Session
-```
-
-Disconnect the specified session
+Adds a new an api key
 
 ## PARAMETERS
 
 ### -Session
 
-Defines a ImmichSession object that will be disconnected and cleaned up.
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
 
 ```yaml
 Type: ImmichSession
@@ -54,6 +50,22 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -name
+
+Defines the name of the new album
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -1,7 +1,7 @@
 ---
-id: Disconnect-Immich
-title: Disconnect-Immich
-description: Help page for the Powershell "Disconnect-Immich" command
+id: Remove-IMAPIKey
+title: Remove-IMAPIKey
+description: Help page for the Powershell "Remove-IMAPIKey" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,36 +16,32 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Disconnect-Immich [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Remove-IMAPIKey [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Disconnect and cleanup session configuration
+Removes Immich api key
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Disconnect-Immich
+Remove-IMAPIKey
 ```
 
-Disconnect from the default immich session
-
-### EXAMPLE 2
-
-```powershell
-Disconnect-Immich -Session $Session
-```
-
-Disconnect the specified session
+Remove Immich api key
 
 ## PARAMETERS
 
 ### -Session
 
-Defines a ImmichSession object that will be disconnected and cleaned up.
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
 
 ```yaml
 Type: ImmichSession
@@ -54,6 +50,55 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines an api key id to remove
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

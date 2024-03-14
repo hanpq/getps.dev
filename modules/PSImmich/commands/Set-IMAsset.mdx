@@ -1,7 +1,7 @@
 ---
-id: Update-IMAsset
-title: Update-IMAsset
-description: Help page for the Powershell "Update-IMAsset" command
+id: Set-IMAsset
+title: Set-IMAsset
+description: Help page for the Powershell "Set-IMAsset" command
 keywords:
   - Powershell
   - PSImmich
@@ -18,7 +18,7 @@ hide_table_of_contents: false
 ### batch (Default)
 
 ```powershell
-Update-IMAsset [-Session <ImmichSession>] -ids <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
+Set-IMAsset [-Session <ImmichSession>] -ids <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
  [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-removeParent] [-stackParentId <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -26,7 +26,7 @@ Update-IMAsset [-Session <ImmichSession>] -ids <String[]> [-dateTimeOriginal <St
 ### id
 
 ```powershell
-Update-IMAsset [-Session <ImmichSession>] -ids <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
+Set-IMAsset [-Session <ImmichSession>] -ids <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
  [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-description <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -40,7 +40,7 @@ Updates an Immich asset
 ### EXAMPLE 1
 
 ```powershell
-Update-IMAsset
+Set-IMAsset
 ```
 
 Update an Immich asset
