@@ -21,8 +21,13 @@ module.exports = [
     'PSImmich/commands/Get-IMAlbumCount',
     'PSImmich/commands/Get-IMAPIKey',
     'PSImmich/commands/Get-IMAsset',
+    'PSImmich/commands/Get-IMAssetMapMarker',
+    'PSImmich/commands/Get-IMAssetMemoryLane',
+    'PSImmich/commands/Get-IMAssetSearchTerm',
+    'PSImmich/commands/Get-IMAssetStatistic',
     'PSImmich/commands/Get-IMCuratedLocation',
     'PSImmich/commands/Get-IMCuratedObject',
+    'PSImmich/commands/Get-IMRandomAsset',
     'PSImmich/commands/Get-IMServer',
     'PSImmich/commands/Get-IMServerConfig',
     'PSImmich/commands/Get-IMServerFeature',
@@ -45,5 +50,6 @@ module.exports = [
     'PSImmich/commands/Set-IMAlbum',
     'PSImmich/commands/Set-IMAPIKey',
     'PSImmich/commands/Set-IMAsset',
+    'PSImmich/commands/Start-IMAssetJob',
     'PSImmich/commands/Test-IMPing'
 ];
