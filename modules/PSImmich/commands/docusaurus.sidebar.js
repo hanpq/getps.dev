@@ -37,6 +37,7 @@ module.exports = [
     'PSImmich/commands/Get-IMSession',
     'PSImmich/commands/Get-IMSupportedMediaType',
     'PSImmich/commands/Get-IMTheme',
+    'PSImmich/commands/Get-IMTimeBucket',
     'PSImmich/commands/Invoke-ImmichMethod',
     'PSImmich/commands/New-IMAlbum',
     'PSImmich/commands/New-IMAPIKey',
