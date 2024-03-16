@@ -27,6 +27,7 @@ module.exports = [
     'PSImmich/commands/Get-IMAssetStatistic',
     'PSImmich/commands/Get-IMAuditDelete',
     'PSImmich/commands/Get-IMAuditFile',
+    'PSImmich/commands/Get-IMAuthDevice',
     'PSImmich/commands/Get-IMCuratedLocation',
     'PSImmich/commands/Get-IMCuratedObject',
     'PSImmich/commands/Get-IMFileChecksum',
@@ -50,10 +51,12 @@ module.exports = [
     'PSImmich/commands/Remove-IMAlbumUser',
     'PSImmich/commands/Remove-IMAPIKey',
     'PSImmich/commands/Remove-IMAsset',
+    'PSImmich/commands/Remove-IMAuthDevice',
     'PSImmich/commands/Save-IMAsset',
     'PSImmich/commands/Set-IMAlbum',
     'PSImmich/commands/Set-IMAPIKey',
     'PSImmich/commands/Set-IMAsset',
     'PSImmich/commands/Start-IMAssetJob',
+    'PSImmich/commands/Test-IMAccessToken',
     'PSImmich/commands/Test-IMPing'
 ];
