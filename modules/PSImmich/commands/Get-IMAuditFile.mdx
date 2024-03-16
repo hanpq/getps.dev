@@ -1,7 +1,7 @@
 ---
-id: Disconnect-Immich
-title: Disconnect-Immich
-description: Help page for the Powershell "Disconnect-Immich" command
+id: Get-IMAuditFile
+title: Get-IMAuditFile
+description: Help page for the Powershell "Get-IMAuditFile" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,36 +16,31 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Disconnect-Immich [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMAuditFile [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Disconnect and cleanup session configuration
+Retreives Immich audit files
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Disconnect-Immich
+Get-IMAuditFile
 ```
 
-Disconnect from the default immich session
-
-### EXAMPLE 2
-
-```powershell
-Disconnect-Immich -Session $Session
-```
-
-Disconnect the specified session
+Retreives Immich audit files
 
 ## PARAMETERS
 
 ### -Session
 
-Defines a ImmichSession object that will be disconnected and cleaned up.
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
 
 ```yaml
 Type: ImmichSession

@@ -1,7 +1,7 @@
 ---
-id: Disconnect-Immich
-title: Disconnect-Immich
-description: Help page for the Powershell "Disconnect-Immich" command
+id: Get-IMAuthDevice
+title: Get-IMAuthDevice
+description: Help page for the Powershell "Get-IMAuthDevice" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,36 +16,31 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Disconnect-Immich [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMAuthDevice [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Disconnect and cleanup session configuration
+Get authorized devices
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Disconnect-Immich
+Get-IMAuthDevice
 ```
 
-Disconnect from the default immich session
-
-### EXAMPLE 2
-
-```powershell
-Disconnect-Immich -Session $Session
-```
-
-Disconnect the specified session
+Get authorized devices
 
 ## PARAMETERS
 
 ### -Session
 
-Defines a ImmichSession object that will be disconnected and cleaned up.
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
 
 ```yaml
 Type: ImmichSession

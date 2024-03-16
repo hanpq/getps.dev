@@ -1,7 +1,7 @@
 ---
-id: Get-IMSession
-title: Get-IMSession
-description: Help page for the Powershell "Get-IMSession" command
+id: Get-IMAssetMapMarker
+title: Get-IMAssetMapMarker
+description: Help page for the Powershell "Get-IMAssetMapMarker" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,22 +16,24 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMSession [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMAssetMapMarker [[-Session] <ImmichSession>] [[-CreatedAfter] <DateTime>] [[-CreatedBefore] <DateTime>]
+ [[-IsArchived] <Boolean>] [[-IsFavorite] <Boolean>] [[-WithPartners] <Boolean>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Displays the Immich Session object.
+Retreives asset map markers
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-PSession
+Get-IMAssetMapMarker
 ```
 
-Returns the ImmichSession, if none is specified, it tries to retreive the default
+Retreives asset map markers
 
 ## PARAMETERS
 
@@ -50,6 +52,86 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CreatedAfter
+
+asd
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CreatedBefore
+
+asd
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsArchived
+
+asd
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsFavorite
+
+asd
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithPartners
+
+asd
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

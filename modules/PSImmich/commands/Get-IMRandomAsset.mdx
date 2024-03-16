@@ -1,7 +1,7 @@
 ---
-id: Disconnect-Immich
-title: Disconnect-Immich
-description: Help page for the Powershell "Disconnect-Immich" command
+id: Get-IMRandomAsset
+title: Get-IMRandomAsset
+description: Help page for the Powershell "Get-IMRandomAsset" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,36 +16,32 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Disconnect-Immich [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMRandomAsset [[-Session] <ImmichSession>] [[-Count] <Int32>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Disconnect and cleanup session configuration
+Retreives random assets
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Disconnect-Immich
+Get-IMRandomAsset
 ```
 
-Disconnect from the default immich session
-
-### EXAMPLE 2
-
-```powershell
-Disconnect-Immich -Session $Session
-```
-
-Disconnect the specified session
+Retreives random assets
 
 ## PARAMETERS
 
 ### -Session
 
-Defines a ImmichSession object that will be disconnected and cleaned up.
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
 
 ```yaml
 Type: ImmichSession
@@ -55,6 +51,22 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+
+asd
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

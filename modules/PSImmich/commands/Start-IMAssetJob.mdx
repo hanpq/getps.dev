@@ -1,7 +1,7 @@
 ---
-id: Get-IMSession
-title: Get-IMSession
-description: Help page for the Powershell "Get-IMSession" command
+id: Start-IMAssetJob
+title: Start-IMAssetJob
+description: Help page for the Powershell "Start-IMAssetJob" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,22 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMSession [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Start-IMAssetJob [[-Session] <ImmichSession>] [-id] <String[]> [-JobName] <String>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Displays the Immich Session object.
+Start Immich asset job
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-PSession
+Start-IMAssetJob
 ```
 
-Returns the ImmichSession, if none is specified, it tries to retreive the default
+Start Immich asset job
 
 ## PARAMETERS
 
@@ -49,6 +50,72 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines the asset id that the job should target.
+Accepts pipeline input.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -JobName
+
+Defines the job to be started
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

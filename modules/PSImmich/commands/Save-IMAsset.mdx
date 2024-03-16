@@ -1,7 +1,7 @@
 ---
-id: Get-IMSession
-title: Get-IMSession
-description: Help page for the Powershell "Get-IMSession" command
+id: Save-IMAsset
+title: Save-IMAsset
+description: Help page for the Powershell "Save-IMAsset" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,22 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMSession [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Save-IMAsset [[-Session] <ImmichSession>] [-id] <String> [-isThumb] [-isWeb] [[-Path] <DirectoryInfo>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Displays the Immich Session object.
+Save Immich asset
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-PSession
+Save-IMAsset
 ```
 
-Returns the ImmichSession, if none is specified, it tries to retreive the default
+Save Immich asset
 
 ## PARAMETERS
 
@@ -49,6 +50,72 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines a specific asset id to be retreived
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -isThumb
+
+Defines if faviorites should be returned or not.
+Do not specify if either should be returned.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isWeb
+
+Defines if archvied assets should be returned or not.
+Do not specify if either should be returned.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+
+Defines filepath for outputfile
+
+```yaml
+Type: DirectoryInfo
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

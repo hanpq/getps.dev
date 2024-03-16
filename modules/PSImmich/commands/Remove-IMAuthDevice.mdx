@@ -1,7 +1,7 @@
 ---
-id: Get-IMSession
-title: Get-IMSession
-description: Help page for the Powershell "Get-IMSession" command
+id: Remove-IMAuthDevice
+title: Remove-IMAuthDevice
+description: Help page for the Powershell "Remove-IMAuthDevice" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,23 +15,34 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### list (Default)
+
 ```powershell
-Get-IMSession [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Remove-IMAuthDevice [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Remove-IMAuthDevice [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Displays the Immich Session object.
+Remove one or many auth devices.
+Not that if id is not specified all but the current auth device will be purged.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-PSession
+Remove-IMAuthDevice
 ```
 
-Returns the ImmichSession, if none is specified, it tries to retreive the default
+Remove all auth device (except current)
 
 ## PARAMETERS
 
@@ -48,7 +59,56 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines a uuid of a auth device that should be removed
+
+```yaml
+Type: String[]
+Parameter Sets: id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
