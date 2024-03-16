@@ -30,6 +30,13 @@ Get-IMAsset [-Session <ImmichSession>] -deviceID <String> [-ProgressAction <Acti
  [<CommonParameters>]
 ```
 
+### personid
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] -personId <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
 ### id
 
 ```powershell
@@ -78,6 +85,22 @@ Defines a device id
 ```yaml
 Type: String
 Parameter Sets: deviceid
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -personId
+
+Defines a personId to retreive assets for
+
+```yaml
+Type: String
+Parameter Sets: personid
 Aliases:
 
 Required: True
