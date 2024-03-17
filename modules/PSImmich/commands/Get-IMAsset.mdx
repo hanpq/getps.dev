@@ -37,6 +37,13 @@ Get-IMAsset [-Session <ImmichSession>] -personId <String> [-ProgressAction <Acti
  [<CommonParameters>]
 ```
 
+### tagid
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] -tagId <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
 ### id
 
 ```powershell
@@ -101,6 +108,22 @@ Defines a personId to retreive assets for
 ```yaml
 Type: String
 Parameter Sets: personid
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -tagId
+
+Defines a tagid to retreive assets for
+
+```yaml
+Type: String
+Parameter Sets: tagid
 Aliases:
 
 Required: True
