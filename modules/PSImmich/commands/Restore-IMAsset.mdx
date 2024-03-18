@@ -1,7 +1,7 @@
 ---
-id: Start-IMJob
-title: Start-IMJob
-description: Help page for the Powershell "Start-IMJob" command
+id: Restore-IMAsset
+title: Restore-IMAsset
+description: Help page for the Powershell "Restore-IMAsset" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,24 +15,33 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### id (Default)
+
 ```powershell
-Start-IMJob [[-Session] <ImmichSession>] [-Job] <String[]> [-Force] [-ProgressAction <ActionPreference>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Restore-IMAsset [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### all
+
+```powershell
+Restore-IMAsset [-Session <ImmichSession>] [-All] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Start immich job
+Restore asset from trash
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Start-IMJob
+Restore-IMAsset
 ```
 
-Start immich job
+Restore asset from trash
 
 ## PARAMETERS
 
@@ -49,38 +58,38 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Job
+### -id
 
-asd
+Defines an asset id to tag
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
-Aliases:
+Parameter Sets: id
+Aliases: assetId
 
 Required: True
-Position: 2
+Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Force
+### -All
 
-asd
+Defines that all assets in trash should be restored.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: all
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: False
 Accept pipeline input: False

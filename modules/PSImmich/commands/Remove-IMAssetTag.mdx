@@ -1,7 +1,7 @@
 ---
-id: Start-IMJob
-title: Start-IMJob
-description: Help page for the Powershell "Start-IMJob" command
+id: Remove-IMAssetTag
+title: Remove-IMAssetTag
+description: Help page for the Powershell "Remove-IMAssetTag" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,24 +15,40 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### tagId (Default)
+
 ```powershell
-Start-IMJob [[-Session] <ImmichSession>] [-Job] <String[]> [-Force] [-ProgressAction <ActionPreference>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-IMAssetTag [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### tagid
+
+```powershell
+Remove-IMAssetTag [-Session <ImmichSession>] -tagId <String> -id <String[]>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### tagName
+
+```powershell
+Remove-IMAssetTag [-Session <ImmichSession>] -tagName <String> -id <String[]>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Start immich job
+Removes Immich asset tag
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Start-IMJob
+Remove-IMAssetTag
 ```
 
-Start immich job
+Removes Immich asset tag
 
 ## PARAMETERS
 
@@ -49,41 +65,59 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Job
+### -tagId
 
-asd
+Defines a tag id to unassign from assets
+
+```yaml
+Type: String
+Parameter Sets: tagid
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -tagName
+
+Defines a tag name to unassign from assets.
+Note that the Immich API does support filtering on tagName so all tags will be retreived and then filtered.
+This means that if there is a very large amount of tags this method might be slow.
+
+```yaml
+Type: String
+Parameter Sets: tagName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines an asset id to remove tag from
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: assetId
 
 Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-
-asd
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
-Default value: False
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
