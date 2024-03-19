@@ -1,0 +1,167 @@
+---
+id: Get-IMSharedLink
+title: Get-IMSharedLink
+description: Help page for the Powershell "Get-IMSharedLink" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+### list (Default)
+
+```powershell
+Get-IMSharedLink [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMSharedLink [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### me
+
+```powershell
+Get-IMSharedLink [-Session <ImmichSession>] [-password <SecureString>] [-token <String>] [-Me]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retreives Immich shared link
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMSharedLink
+```
+
+Retreives Immich shared link
+
+## PARAMETERS
+
+### -Session
+
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines a specific shared link id to be retreived
+
+```yaml
+Type: String[]
+Parameter Sets: id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -password
+
+asd
+
+```yaml
+Type: SecureString
+Parameter Sets: me
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -token
+
+asd
+
+```yaml
+Type: String
+Parameter Sets: me
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Me
+
+Defines that the currently connected users information is retreived.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: me
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
