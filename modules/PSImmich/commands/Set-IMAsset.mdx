@@ -18,16 +18,18 @@ hide_table_of_contents: false
 ### batch (Default)
 
 ```powershell
-Set-IMAsset [-Session <ImmichSession>] -ids <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
+Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
  [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-removeParent] [-stackParentId <String>]
+ [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### id
 
 ```powershell
-Set-IMAsset [-Session <ImmichSession>] -ids <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
+Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
  [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-description <String>]
+ [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -40,10 +42,10 @@ Updates an Immich asset
 ### EXAMPLE 1
 
 ```powershell
-Set-IMAsset
+-AddTag <tagid>
 ```
 
-Update an Immich asset
+Adds a tag to an asset
 
 ## PARAMETERS
 
@@ -66,14 +68,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ids
+### -id
 
-asd
+Defines the asset to update
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: id
+Aliases: ids
 
 Required: True
 Position: Named
@@ -84,7 +86,7 @@ Accept wildcard characters: False
 
 ### -dateTimeOriginal
 
-asd
+Defines the assets taken date
 
 ```yaml
 Type: String
@@ -100,7 +102,7 @@ Accept wildcard characters: False
 
 ### -isArchived
 
-asd
+Defines if the asset should archived
 
 ```yaml
 Type: Boolean
@@ -116,7 +118,7 @@ Accept wildcard characters: False
 
 ### -isFavorite
 
-asd
+Defines if the asset should be set as favorite
 
 ```yaml
 Type: Boolean
@@ -132,7 +134,7 @@ Accept wildcard characters: False
 
 ### -latitude
 
-asd
+Set location latitude
 
 ```yaml
 Type: Int32
@@ -148,7 +150,7 @@ Accept wildcard characters: False
 
 ### -longitude
 
-asd
+Set location longitude
 
 ```yaml
 Type: Int32
@@ -164,7 +166,7 @@ Accept wildcard characters: False
 
 ### -removeParent
 
-asd
+Defines if stack parent should be removed
 
 ```yaml
 Type: SwitchParameter
@@ -180,7 +182,7 @@ Accept wildcard characters: False
 
 ### -stackParentId
 
-asd
+Defines a parent asset
 
 ```yaml
 Type: String
@@ -196,11 +198,75 @@ Accept wildcard characters: False
 
 ### -description
 
-asd
+Defines a description
 
 ```yaml
 Type: String
 Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddToAlbum
+
+Defines if the asset should be added to an album
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveFromAlbum
+
+Defines if the asset should be removed from an album
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddTag
+
+Defines if a tag should be added to the asset
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveTag
+
+Defines if a tag should be removed from the asset
+
+```yaml
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -268,8 +334,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-
-Covers updateAssets, updateAsset
 
 ## RELATED LINKS
 

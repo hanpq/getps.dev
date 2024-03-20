@@ -29,10 +29,10 @@ Adds a new activity to an album
 ### EXAMPLE 1
 
 ```powershell
-Add-IMActivity
+-AssetId <assetid> -Comment 'Great picture!' -Type comment
 ```
 
-Adds a new activity to an album
+Adds a new comment to an asset in the specified album
 
 ## PARAMETERS
 
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 
 ### -albumId
 
-Defines a album id to be retreived
+Defines which album to add the activity to.
 
 ```yaml
 Type: String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 
 ### -assetId
 
-Defines a specific assetid to retreive activities for.
+Defines a specific assetid to add activities for.
 
 ```yaml
 Type: String
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 
 ### -comment
 
-Defines the comment to post.
+Defines the comment to add.
 
 ```yaml
 Type: String
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 
 ### -type
 
-Defines the type of activities to retreive, valid values are comment or like.
+Defines the type of activity to add, valid values are comment or like.
 
 ```yaml
 Type: String

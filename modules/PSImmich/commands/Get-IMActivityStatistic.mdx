@@ -29,10 +29,10 @@ Retreives album activity
 ### EXAMPLE 1
 
 ```powershell
-Get-IMActivityStatistic
+Get-IMActivityStatistic -albumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
 ```
 
-Retreives album activity
+Retreives activity statistics for the album
 
 ## PARAMETERS
 
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 
 ### -albumId
 
-Defines a album id to be retreived
+Defines an album to retreive activity statistics for.
 
 ```yaml
 Type: String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 
 ### -assetId
 
-Defines a specific assetid to retreive activities for.
+Defines a specific asset to retreive activities for.
 
 ```yaml
 Type: String

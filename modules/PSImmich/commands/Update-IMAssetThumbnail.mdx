@@ -1,7 +1,7 @@
 ---
-id: Get-IMRandomAsset
-title: Get-IMRandomAsset
-description: Help page for the Powershell "Get-IMRandomAsset" command
+id: Update-IMAssetThumbnail
+title: Update-IMAssetThumbnail
+description: Help page for the Powershell "Update-IMAssetThumbnail" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,23 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMRandomAsset [[-Session] <ImmichSession>] [[-Count] <Int32>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Update-IMAssetThumbnail [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives random assets
+Update IM asset thumbnails
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMRandomAsset
+
 ```
 
-Retreives random assets
+Update IM asset thumbnails
 
 ## PARAMETERS
 
@@ -55,18 +55,52 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
+### -id
 
-asd
+Defines the asset ids that thumbnails should be refreshed for.
+Accepts pipeline input.
 
 ```yaml
-Type: Int32
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 2
-Default value: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

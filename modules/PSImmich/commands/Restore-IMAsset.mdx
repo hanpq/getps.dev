@@ -38,10 +38,18 @@ Restore asset from trash
 ### EXAMPLE 1
 
 ```powershell
-Restore-IMAsset
+
 ```
 
 Restore asset from trash
+
+### EXAMPLE 2
+
+```powershell
+Restore-IMAsset -All
+```
+
+Restores all assets from trash
 
 ## PARAMETERS
 
@@ -66,7 +74,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines an asset id to tag
+Defines an asset id to restore
 
 ```yaml
 Type: String[]

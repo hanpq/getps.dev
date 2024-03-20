@@ -1,7 +1,7 @@
 ---
-id: Start-IMAssetJob
-title: Start-IMAssetJob
-description: Help page for the Powershell "Start-IMAssetJob" command
+id: Start-IMVideoTranscode
+title: Start-IMVideoTranscode
+description: Help page for the Powershell "Start-IMVideoTranscode" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,23 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Start-IMAssetJob [[-Session] <ImmichSession>] [-id] <String[]> [-JobName] <String>
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-IMVideoTranscode [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Start Immich asset job
+Recreates the transcoded version of the source video files
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Start-IMAssetJob
+Start-IMVideoTranscode
 ```
 
-Start Immich asset job
+Recreates the transcoded version of the source video files
 
 ## PARAMETERS
 
@@ -69,22 +69,6 @@ Required: True
 Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -JobName
-
-Defines the job to be started
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 3
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

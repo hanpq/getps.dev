@@ -1,7 +1,7 @@
 ---
-id: Measure-IMLibrary
-title: Measure-IMLibrary
-description: Help page for the Powershell "Measure-IMLibrary" command
+id: Update-IMAssetMetadata
+title: Update-IMAssetMetadata
+description: Help page for the Powershell "Update-IMAssetMetadata" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,32 +15,24 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
-### list (Default)
-
 ```powershell
-Measure-IMLibrary [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
-```
-
-### id
-
-```powershell
-Measure-IMLibrary [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Update-IMAssetMetadata [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Get library statistics
+Update IM asset metadata
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Measure-IMLibrary
+
 ```
 
-Get library statistics
+Update IM asset metadata
 
 ## PARAMETERS
 
@@ -57,7 +49,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -65,17 +57,51 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a specific library id to be cleaned up
+Defines the asset ids that metadata should be refreshed for.
+Accepts pipeline input.
 
 ```yaml
 Type: String[]
-Parameter Sets: id
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

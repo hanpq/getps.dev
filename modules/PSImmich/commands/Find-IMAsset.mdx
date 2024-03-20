@@ -39,10 +39,10 @@ Find assets
 ### EXAMPLE 1
 
 ```powershell
-Find-IMAsset
+Find-IMAsset -createdAfter (Get-Date).AddDays(-30)
 ```
 
-Find assets
+Retreives all assets created in the last 30 days
 
 ## PARAMETERS
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 
 ### -checksum
 
-asd
+Checksum filter
 
 ```yaml
 Type: String
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ### -city
 
-asd
+City filter
 
 ```yaml
 Type: String
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 
 ### -country
 
-asd
+Country filter
 
 ```yaml
 Type: String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 
 ### -createdAfter
 
-asd
+CreatedAfter filter
 
 ```yaml
 Type: DateTime
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 
 ### -createdBefore
 
-asd
+CreatedBefore filter
 
 ```yaml
 Type: DateTime
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 
 ### -deviceAssetId
 
-asd
+Device Asset Id filter
 
 ```yaml
 Type: String
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 
 ### -deviceId
 
-asd
+Device Id filter
 
 ```yaml
 Type: String
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ### -encodedVideoPath
 
-asd
+Encoded Video path filter
 
 ```yaml
 Type: String
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ### -id
 
-asd
+Id filter
 
 ```yaml
 Type: String
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 
 ### -isArchived
 
-asd
+Archvied filter
 
 ```yaml
 Type: Boolean
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 
 ### -isEncoded
 
-asd
+Encoded filter
 
 ```yaml
 Type: Boolean
@@ -243,7 +243,7 @@ Accept wildcard characters: False
 
 ### -isExternal
 
-asd
+External filter
 
 ```yaml
 Type: Boolean
@@ -259,7 +259,7 @@ Accept wildcard characters: False
 
 ### -isFavorite
 
-asd
+Favorite filter
 
 ```yaml
 Type: Boolean
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 
 ### -isMotion
 
-asd
+Motion filter
 
 ```yaml
 Type: Boolean
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 
 ### -isNotInAlbum
 
-asd
+Not in Album filter
 
 ```yaml
 Type: Boolean
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 
 ### -isOffline
 
-asd
+Offline filter
 
 ```yaml
 Type: Boolean
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 
 ### -isReadOnly
 
-asd
+Read only filter
 
 ```yaml
 Type: Boolean
@@ -339,7 +339,7 @@ Accept wildcard characters: False
 
 ### -isVisible
 
-asd
+Visible filter
 
 ```yaml
 Type: Boolean
@@ -355,7 +355,7 @@ Accept wildcard characters: False
 
 ### -lensModel
 
-asd
+Lens model filter
 
 ```yaml
 Type: String
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 
 ### -libraryId
 
-asd
+Library id filter
 
 ```yaml
 Type: String
@@ -387,7 +387,7 @@ Accept wildcard characters: False
 
 ### -make
 
-asd
+Make filter
 
 ```yaml
 Type: String
@@ -403,7 +403,7 @@ Accept wildcard characters: False
 
 ### -model
 
-asd
+Model filter
 
 ```yaml
 Type: String
@@ -419,7 +419,7 @@ Accept wildcard characters: False
 
 ### -order
 
-asd
+Defines sort order
 
 ```yaml
 Type: String
@@ -435,7 +435,7 @@ Accept wildcard characters: False
 
 ### -originalFileName
 
-asd
+Original file name filter
 
 ```yaml
 Type: String
@@ -451,7 +451,7 @@ Accept wildcard characters: False
 
 ### -originalPath
 
-asd
+Original path filter
 
 ```yaml
 Type: String
@@ -467,7 +467,7 @@ Accept wildcard characters: False
 
 ### -personIds
 
-asd
+Person id filter
 
 ```yaml
 Type: String[]
@@ -483,7 +483,7 @@ Accept wildcard characters: False
 
 ### -resizePath
 
-asd
+Resize path filter
 
 ```yaml
 Type: String
@@ -499,7 +499,7 @@ Accept wildcard characters: False
 
 ### -size
 
-asd
+Size of rest call page
 
 ```yaml
 Type: Int32
@@ -515,7 +515,7 @@ Accept wildcard characters: False
 
 ### -state
 
-asd
+State filter
 
 ```yaml
 Type: String
@@ -531,7 +531,7 @@ Accept wildcard characters: False
 
 ### -takenAfter
 
-asd
+Taken after filter
 
 ```yaml
 Type: DateTime
@@ -547,7 +547,7 @@ Accept wildcard characters: False
 
 ### -takenBefore
 
-asd
+Taken before filter
 
 ```yaml
 Type: DateTime
@@ -563,7 +563,7 @@ Accept wildcard characters: False
 
 ### -trashedAfter
 
-asd
+Trashed after filter
 
 ```yaml
 Type: DateTime
@@ -579,7 +579,7 @@ Accept wildcard characters: False
 
 ### -trashedBefore
 
-asd
+Trashed before filter
 
 ```yaml
 Type: DateTime
@@ -595,7 +595,7 @@ Accept wildcard characters: False
 
 ### -type
 
-asd
+Type filter
 
 ```yaml
 Type: String
@@ -611,7 +611,7 @@ Accept wildcard characters: False
 
 ### -updatedAfter
 
-asd
+Updated after filter
 
 ```yaml
 Type: DateTime
@@ -627,7 +627,7 @@ Accept wildcard characters: False
 
 ### -updatedBefore
 
-asd
+Updated before filter
 
 ```yaml
 Type: DateTime
@@ -643,7 +643,7 @@ Accept wildcard characters: False
 
 ### -webpPath
 
-asd
+Webp path filter
 
 ```yaml
 Type: String
@@ -659,7 +659,7 @@ Accept wildcard characters: False
 
 ### -withArchived
 
-asd
+Archived filter
 
 ```yaml
 Type: Boolean
@@ -675,7 +675,7 @@ Accept wildcard characters: False
 
 ### -withDeleted
 
-asd
+Deleted filter
 
 ```yaml
 Type: Boolean
@@ -691,7 +691,7 @@ Accept wildcard characters: False
 
 ### -withExif
 
-asd
+Exif filter
 
 ```yaml
 Type: Boolean
@@ -707,7 +707,7 @@ Accept wildcard characters: False
 
 ### -withPeople
 
-asd
+With people filter
 
 ```yaml
 Type: Boolean
@@ -723,7 +723,7 @@ Accept wildcard characters: False
 
 ### -withStacked
 
-asd
+Stacked filter
 
 ```yaml
 Type: Boolean

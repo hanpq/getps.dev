@@ -30,10 +30,11 @@ New Immich user
 ### EXAMPLE 1
 
 ```powershell
-New-IMUser
+$Password = Read-Host -Prompt 'Password' -AsSecureString
+New-IMUser -Email 'testuser@domain.com' -Name 'Test User' -Password $Password
 ```
 
-New Immich user
+Creates new Immich user
 
 ## PARAMETERS
 

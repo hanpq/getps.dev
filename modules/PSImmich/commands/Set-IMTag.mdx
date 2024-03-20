@@ -1,7 +1,7 @@
 ---
-id: Remove-IMAssetTag
-title: Remove-IMAssetTag
-description: Help page for the Powershell "Remove-IMAssetTag" command
+id: Set-IMTag
+title: Set-IMTag
+description: Help page for the Powershell "Set-IMTag" command
 keywords:
   - Powershell
   - PSImmich
@@ -18,37 +18,37 @@ hide_table_of_contents: false
 ### tagId (Default)
 
 ```powershell
-Remove-IMAssetTag [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Set-IMTag [-Session <ImmichSession>] [-AddAssets <String[]>] [-RemoveAssets <String[]>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### tagid
 
 ```powershell
-Remove-IMAssetTag [-Session <ImmichSession>] -tagId <String> -id <String[]>
+Set-IMTag [-Session <ImmichSession>] -Id <String[]> [-AddAssets <String[]>] [-RemoveAssets <String[]>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### tagName
 
 ```powershell
-Remove-IMAssetTag [-Session <ImmichSession>] -tagName <String> -id <String[]>
+Set-IMTag [-Session <ImmichSession>] -tagName <String> [-AddAssets <String[]>] [-RemoveAssets <String[]>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Removes Immich asset tag
+Add Immich asset tag
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Remove-IMAssetTag
+
 ```
 
-Removes Immich asset tag
+Add tag to asset
 
 ## PARAMETERS
 
@@ -71,25 +71,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -tagId
+### -Id
 
-Defines a tag id to unassign from assets
+Defines an asset id to tag
 
 ```yaml
-Type: String
+Type: String[]
 Parameter Sets: tagid
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
 ### -tagName
 
-Defines a tag name to unassign from assets.
+Defines a tag name to assign to assets.
 Note that the Immich API does support filtering on tagName so all tags will be retreived and then filtered.
 This means that if there is a very large amount of tags this method might be slow.
 
@@ -105,19 +105,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -AddAssets
 
-Defines an asset id to remove tag from
+Defines the assets to tag
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: assetId
+Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveAssets
+
+Defines the assets to untag
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

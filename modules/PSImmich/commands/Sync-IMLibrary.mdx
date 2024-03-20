@@ -1,7 +1,7 @@
 ---
-id: Add-IMAssetTag
-title: Add-IMAssetTag
-description: Help page for the Powershell "Add-IMAssetTag" command
+id: Sync-IMLibrary
+title: Sync-IMLibrary
+description: Help page for the Powershell "Sync-IMLibrary" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,40 +15,33 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
-### tagId (Default)
+### list (Default)
 
 ```powershell
-Add-IMAssetTag [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Sync-IMLibrary [-Session <ImmichSession>] [-refreshAllFiles <Boolean>] [-refreshModifiedFiles <Boolean>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
-### tagid
+### id
 
 ```powershell
-Add-IMAssetTag [-Session <ImmichSession>] -tagId <String> -id <String[]> [-ProgressAction <ActionPreference>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### tagName
-
-```powershell
-Add-IMAssetTag [-Session <ImmichSession>] -tagName <String> -id <String[]> [-ProgressAction <ActionPreference>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Sync-IMLibrary [-Session <ImmichSession>] -id <String[]> [-refreshAllFiles <Boolean>]
+ [-refreshModifiedFiles <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Add Immich asset tag
+Start library scan job
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-IMAssetTag
+
 ```
 
-Add Immich asset tag
+Start library scan job
 
 ## PARAMETERS
 
@@ -71,48 +64,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -tagId
-
-Defines a tag id to assign to assets
-
-```yaml
-Type: String
-Parameter Sets: tagid
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -tagName
-
-Defines a tag name to assign to assets.
-Note that the Immich API does support filtering on tagName so all tags will be retreived and then filtered.
-This means that if there is a very large amount of tags this method might be slow.
-
-```yaml
-Type: String
-Parameter Sets: tagName
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -id
 
-Defines an asset id to tag
+Defines a specific library id to be cleaned up
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
-Aliases: assetId
+Parameter Sets: id
+Aliases:
 
 Required: True
 Position: Named
@@ -121,35 +80,36 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -WhatIf
+### -refreshAllFiles
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Defines if all assets should be scanned.
+Default false
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -refreshModifiedFiles
 
-Prompts you for confirmation before running the cmdlet.
+Defines that only new/modified assets should be scanned.
+Default true
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: True
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

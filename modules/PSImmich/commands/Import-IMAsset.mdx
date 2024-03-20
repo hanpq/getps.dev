@@ -1,7 +1,7 @@
 ---
-id: Add-IMAlbumAsset
-title: Add-IMAlbumAsset
-description: Help page for the Powershell "Add-IMAlbumAsset" command
+id: Import-IMAsset
+title: Import-IMAsset
+description: Help page for the Powershell "Import-IMAsset" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,23 +16,24 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Add-IMAlbumAsset [[-Session] <ImmichSession>] [-albumId] <String> [-assetId] <String[]>
+Import-IMAsset [[-Session] <ImmichSession>] [-FilePath] <FileInfo[]> [[-Duration] <String>] [-isArchived]
+ [-isFavorite] [-isOffline] [-isReadOnly] [-isVisible] [[-libraryId] <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Add assets to album
+Imports an Immich asset
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-IMAlbumAsset
+Import-IMAsset -FilePath C:\file.jpg
 ```
 
-Add assets to album
+Uploads image to Immich
 
 ## PARAMETERS
 
@@ -55,35 +56,132 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumId
+### -FilePath
 
-Defines albumId to add assets to
+Defines the path to the file to upload.
+Accepts pipeline input.
 
 ```yaml
-Type: String
+Type: FileInfo[]
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
 Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Duration
+
+Defines the duration if its a video asset
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -assetId
+### -isArchived
 
-Defines the assetIds to add to the album
+Defines if the new asset should be archived.
 
 ```yaml
-Type: String[]
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: id
+Aliases:
 
-Required: True
-Position: 3
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isFavorite
+
+Defines if the new asset should be a favorite
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isOffline
+
+Defines if the new asset should be offline
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isReadOnly
+
+Defines if the new asset should be read only
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isVisible
+
+Defines if the new asset should be visible
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -libraryId
+
+Defines which library to upload the asset to
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

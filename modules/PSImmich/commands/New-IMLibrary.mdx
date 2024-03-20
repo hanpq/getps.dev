@@ -30,7 +30,7 @@ Adds a new library
 ### EXAMPLE 1
 
 ```powershell
-New-IMLibrary
+New-IMLibrary -Name 'NAS' -ImportPaths '/mnt/media/pictures'
 ```
 
 Adds a new library
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 
 ### -name
 
-asd
+Defines the name of the library
 
 ```yaml
 Type: String
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 
 ### -exclusionPatterns
 
-asd
+Defines an exclusion pattern
 
 ```yaml
 Type: String[]
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 
 ### -importPaths
 
-asd
+Defines the import paths
 
 ```yaml
 Type: String[]
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 
 ### -isVisible
 
-asd
+Defines if the library should be visible
 
 ```yaml
 Type: Boolean
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 
 ### -isWatched
 
-asd
+Defines if the library should be watched by immich
 
 ```yaml
 Type: Boolean
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 
 ### -ownerId
 
-asd
+Defines the owner of library
 
 ```yaml
 Type: String
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 
 ### -type
 
-asd
+Defines the type of library ASSET, EXTERNAL
 
 ```yaml
 Type: String

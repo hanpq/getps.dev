@@ -23,6 +23,13 @@ Get-IMAsset [-Session <ImmichSession>] [-isFavorite <Boolean>] [-isArchived <Boo
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
+### random
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] [-Random] [-Count <Int32>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
 ### deviceid
 
 ```powershell
@@ -59,10 +66,10 @@ Retreives Immich asset
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAsset
+Get-IMAsset -isFavorite:$true
 ```
 
-Retreives Immich asset
+Retreives all favorites
 
 ## PARAMETERS
 
@@ -81,6 +88,40 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Random
+
+Defines that random assets should be retreived.
+Unless -count is also specified one random asset is returned.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: random
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+
+Defines how many random assets should be returned.
+Required -Random
+
+```yaml
+Type: Int32
+Parameter Sets: random
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

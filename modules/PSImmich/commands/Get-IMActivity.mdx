@@ -29,10 +29,18 @@ Retreives album activity
 ### EXAMPLE 1
 
 ```powershell
-Get-IMActivity
+Get-IMActivity -albumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
 ```
 
-Retreives album activity
+Retreives all activities for an album
+
+### EXAMPLE 2
+
+```powershell
+Get-IMActivity -albumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -assetId 'a4908e1f-697f-4d7b-9330-93b5eabe3baf'
+```
+
+Retreives all activities for an album and a specific asset
 
 ## PARAMETERS
 
@@ -57,7 +65,7 @@ Accept wildcard characters: False
 
 ### -albumId
 
-Defines a album id to be retreived
+Defines the album to retreive activities for.
 
 ```yaml
 Type: String
@@ -73,7 +81,7 @@ Accept wildcard characters: False
 
 ### -assetId
 
-Defines a specific assetid to retreive activities for.
+Defines a asset to retreive activities for.
 
 ```yaml
 Type: String
