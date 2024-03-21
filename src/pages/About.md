@@ -12,6 +12,8 @@ hide_table_of_contents: true
 
 Hannes work as a senior consultant at Crayon Sweden and has many years of experience in the IT industry and specifically designing, implementing and migrating Microsoft based email solutions including Microsoft 365. Additionally, Hannes has expertise within developing, automation, identity management and security.
 
+This web-site is not affiliated with Crayon or any of it's companies, it is a personal website mainly promoting powershell related articles and open source projects. It also serves as a documentation site for powershell modules that Hannes is maintaining and/or contributing to.
+
 ### Contact information
 <div class ="imgpadding">
     <a href="mailto:hannes.palmquist+getpsabout@outlook.com"><img src={require('../../static/img/outlook-1.png').default} style={{width: 30, height: 30}}/></a>
