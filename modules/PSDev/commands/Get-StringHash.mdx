@@ -17,7 +17,7 @@ hide_table_of_contents: false
 
 ```powershell
 Get-StringHash [-Strings] <String[]> [[-Algorithm] <String>] [[-Salt] <String>] [-RandomSalt]
- [[-Iterations] <Int32>] [<CommonParameters>]
+ [[-Iterations] <Int32>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -114,6 +114,22 @@ Aliases:
 Required: False
 Position: 4
 Default value: 10
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
