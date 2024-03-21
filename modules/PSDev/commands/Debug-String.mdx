@@ -21,20 +21,21 @@ Outputs a string in diagnostic form or as source code.
 
 ```powershell
 Debug-String [-InputObject] <Object[]> [-Delimiters <String[]>] [-NoSpacesAsDots] [-NoEmphasis] [-SingleLine]
- [-UnicodeEscapes] [<CommonParameters>]
+ [-UnicodeEscapes] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### AsSourceCode
 
 ```powershell
-Debug-String [-InputObject] <Object[]> [-AsSourceCode] [-SingleLine] [-UnicodeEscapes] [<CommonParameters>]
+Debug-String [-InputObject] <Object[]> [-AsSourceCode] [-SingleLine] [-UnicodeEscapes]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### Caret
 
 ```powershell
 Debug-String [-InputObject] <Object[]> [-Delimiters <String[]>] [-CaretNotation] [-NoSpacesAsDots]
- [-NoEmphasis] [-UnicodeEscapes] [<CommonParameters>]
+ [-NoEmphasis] [-UnicodeEscapes] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -257,6 +258,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

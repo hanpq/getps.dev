@@ -17,7 +17,7 @@ hide_table_of_contents: false
 
 ```powershell
 Get-Office365IPURL [[-Services] <String[]>] [-OnlyRequired] [[-Types] <String[]>] [[-OutputFormat] <String>]
- [[-Office365IPURL] <String>] [<CommonParameters>]
+ [[-Office365IPURL] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,6 +119,22 @@ Aliases:
 Required: False
 Position: 4
 Default value: Https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
