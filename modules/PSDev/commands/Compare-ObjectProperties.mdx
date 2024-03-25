@@ -1,0 +1,96 @@
+---
+id: Compare-ObjectProperties
+title: Compare-ObjectProperties
+description: Help page for the Powershell "Compare-ObjectProperties" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Compare-ObjectProperties [[-Object1] <Object>] [[-Object2] <Object>] [[-HeaderProperty] <Object>]
+```
+
+## DESCRIPTION
+
+Compare two objects and compare all property values
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Compare-ObjectProperties -Object1 $temp1 -Object2 $temp2 -HeaderProperty 'name'
+```
+
+Compare properties of the two objects
+
+## PARAMETERS
+
+### -Object1
+
+Define reference object to compare
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Object2
+
+Defines compare object to compare
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HeaderProperty
+
+Define the property to be used as identifyer for the object
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)
