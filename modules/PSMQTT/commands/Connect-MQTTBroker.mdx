@@ -15,9 +15,18 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### Anon (Default)
+
 ```powershell
-Connect-MQTTBroker [-Hostname] <String> [[-Port] <Int32>] [[-Username] <String>] [[-Password] <SecureString>]
- [-TLS] [<CommonParameters>]
+Connect-MQTTBroker -Hostname <String> [-Port <Int32>] [-TLS] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### Auth
+
+```powershell
+Connect-MQTTBroker -Hostname <String> [-Port <Int32>] -Username <String> -Password <SecureString> [-TLS]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,6 +41,16 @@ This function establishes a session with the MQTT broker and returns a session o
 $Session = Connect-MQTTBroker -Hostname mqttbroker.contoso.com -Port 1234 -Username mqttuser -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
 ```
 
+Establish a MQTT Broker session with authentication
+
+### EXAMPLE 2
+
+```powershell
+$Session = Connect-MQTTBroker -Hostname mqttbroker.contoso.com -Port 1234
+```
+
+Establish a MQTT Broker session without authentication
+
 ## PARAMETERS
 
 ### -Hostname
@@ -44,7 +63,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -61,7 +80,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -73,11 +92,11 @@ Defines the username to use when connecting to the MQTT broker
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Auth
 Aliases:
 
-Required: False
-Position: 3
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -89,11 +108,11 @@ Defines the password (securestring) to use when connecting to the MQTT Broker
 
 ```yaml
 Type: SecureString
-Parameter Sets: (All)
+Parameter Sets: Auth
 Aliases:
 
-Required: False
-Position: 4
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -111,6 +130,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
