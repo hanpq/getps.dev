@@ -18,8 +18,8 @@ hide_table_of_contents: false
 ```powershell
 Set-IMAlbum [[-Session] <ImmichSession>] [-id] <String[]> [[-AddAssets] <String[]>]
  [[-RemoveAssets] <String[]>] [[-albumName] <String>] [[-albumThumbnailAssetId] <String>]
- [[-description] <String>] [[-isActivityEnabled] <Boolean>] [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [[-description] <String>] [[-isActivityEnabled] <Boolean>] [[-Order] <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -173,6 +173,22 @@ Aliases:
 Required: False
 Position: 8
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Order
+
+Defines the sort order for the album
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
