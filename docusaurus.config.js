@@ -65,9 +65,9 @@ module.exports = {
                     position: 'left'
                 },
                 {
-                    to: 'downloads',
-                    activeBasePath: 'downloads',
-                    label: 'Downloads',
+                    to: 'exchangeversions',
+                    activeBasePath: 'exchangeversions',
+                    label: 'Exchange Versions',
                     position: 'left'
                 }, {
                     to: 'about',
