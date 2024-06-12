@@ -89,15 +89,15 @@ Below is a reference of the available command. For documentation about each comm
 
 ### Album
 
-- Add-IMAlbumAsset
 - Add-IMAlbumUser
 - Get-IMAlbum
 - Get-IMAlbumCount
 - New-IMAlbum
 - Remove-IMAlbum
-- Remove-IMAlbumAsset
 - Remove-IMAlbumUser
+- Rename-IMAlbum
 - Set-IMAlbum
+- Set-IMAlbumUser
 
 ### API key
 
@@ -108,34 +108,40 @@ Below is a reference of the available command. For documentation about each comm
 
 ### Asset
 
-- Add-IMAsset
-- Find-IMAsset
+- Export-IMAssetThumbnail
 - Get-IMAsset
-- Get-IMAssetMapMarker
 - Get-IMAssetMemoryLane
 - Get-IMAssetStatistic
-- Get-IMTimeBucket
+- Import-IMAsset
 - Remove-IMAsset
 - Restore-IMAsset
 - Save-IMAsset
 - Set-IMAsset
-- Start-IMAssetJob
+- Start-IMAVideoTranscode
+- Update-IMAssetMetadata
+- Update-IMAssetThumbnail
 
 ### Audit
 
 - Get-IMAuditDelete
-- Get-IMAuditFile
-- Get-IMFileChecksum
 
 ### Auth
 
-- Get-IMAuthDevice
-- Remove-IMAuthDevice
 - Test-IMAccessToken
+
+### AuthSession
+
+- Get-IMAuthSession
+- Remove-IMAuthSession
 
 ### Face
 
 - Get-IMFace
+
+### FileReport
+
+- Get-IMAuditFile
+- Get-IMFileChecksum
 
 ### Job
 
@@ -148,13 +154,28 @@ Below is a reference of the available command. For documentation about each comm
 ### Library
 
 - Get-IMLibrary
-- Measure-IMLibrary
 - New-IMLibrary
 - Remove-IMLibrary
 - Remove-IMOfflineLibraryFile
 - Set-IMLibrary
-- Start-IMLibraryScan
+- Sync-IMLibrary
 - Test-IMLibrary
+
+### Map
+
+- Get-IMMapMarker
+- Get-IMMapStyle
+
+### Memories
+
+- Get-IMMemory
+- New-IMMemory
+- Remove-IMMemory
+- Set-IMMemory
+
+### Notification
+
+- Send-IMTestMessage
 
 ### Partner
 
@@ -165,28 +186,38 @@ Below is a reference of the available command. For documentation about each comm
 
 ### Person
 
+- Export-IMPersonThumbnail
 - Get-IMPerson
+- Merge-IMPerson
 - New-IMPerson
 - Set-IMPerson
 
-### Config
+### Search
+
+- Find-IMAsset
+- Find-IMCity
+- Find-IMExploreData
+- Find-IMPerson
+- Find-IMPlace
+
+### ServerConfig
 
 - Get-IMConfig
 - Set-IMConfig
 
-### Server
+### ServerInfo
 
 - Get-IMServer
 - Get-IMServerConfig
 - Get-IMServerFeature
-- Get-IMServerInfo
 - Get-IMServerStatistic
+- Get-IMServerStorage
 - Get-IMServerVersion
 - Get-IMSupportedMediaType
 - Get-IMTheme
 - Test-IMPing
 
-### Session 
+### Session
 
 - Connect-Immich
 - Disconnect-Immich
@@ -211,12 +242,18 @@ Below is a reference of the available command. For documentation about each comm
 - Remove-IMTag
 - Rename-IMTag
 
+### Timeline
+
+- Get-IMTimeBucket
+
 ### User
 
 - Add-IMMyProfilePicture
+- Export-IMProfilePicture
 - Get-IMUser
 - New-IMUser
 - Remove-IMMyProfilePicture
 - Remove-IMUser
 - Restore-IMUser
 - Set-IMUser
+
