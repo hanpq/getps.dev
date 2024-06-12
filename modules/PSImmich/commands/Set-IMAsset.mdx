@@ -21,6 +21,7 @@ hide_table_of_contents: false
 Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
  [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-removeParent] [-stackParentId <String>]
  [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>]
+ [-AddToFace <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -30,6 +31,7 @@ Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String
 Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
  [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-description <String>]
  [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>]
+ [-AddToFace <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -263,6 +265,54 @@ Accept wildcard characters: False
 ### -RemoveTag
 
 Defines if a tag should be removed from the asset
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddToFace
+
+Defines if the asset should be assign to a face
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddToMemory
+
+Defines if the asset should be added to a memory
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveFromMemory
+
+Defines if the asset should be removed from a memory
 
 ```yaml
 Type: String

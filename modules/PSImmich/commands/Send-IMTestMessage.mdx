@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: Send-IMTestMessage
+title: Send-IMTestMessage
+description: Help page for the Powershell "Send-IMTestMessage" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,32 +16,24 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
- [[-description] <String>] [[-albumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Send-IMTestMessage [[-Session] <ImmichSession>] [[-enabled] <Boolean>] [-from] <String> [-replyto] <String>
+ [-hostname] <String> [[-ignoreCert] <Boolean>] [-Password] <SecureString> [[-port] <Int32>]
+ [[-username] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Send a SMTP test message
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+Send-IMTestMessage
 ```
 
-Adds a new an album
-
-### EXAMPLE 2
-
-```powershell
-';role='editor'}
-```
-
-Adds a new shared album that is shared to a user
+Send a SMTP test message
 
 ## PARAMETERS
 
@@ -64,9 +56,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumName
+### -enabled
 
-Defines the name of the new album
+Unknown, defaults to true
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -from
+
+Defines the from address
 
 ```yaml
 Type: String
@@ -74,31 +82,95 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -assetIds
-
-Defines a list of assets to add to the album
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -description
+### -replyto
 
-Defines a description for the album
+Defines the replyto address
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -hostname
+
+Defines the smtp host
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ignoreCert
+
+Defines if certificate validation should be skipped
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Password
+
+Defines the password
+
+```yaml
+Type: SecureString
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -port
+
+Defines port
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: 25
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -username
+
+Defines the username
 
 ```yaml
 Type: String
@@ -106,23 +178,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -albumUsers
-
-Defines a list of user id to share the album to
-
-```yaml
-Type: Hashtable[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

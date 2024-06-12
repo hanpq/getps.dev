@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: Get-IMMemory
+title: Get-IMMemory
+description: Help page for the Powershell "Get-IMMemory" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,33 +15,32 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### list (Default)
+
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
- [[-description] <String>] [[-albumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
+Get-IMMemory [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMMemory [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Retreives Immich memory
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+Get-IMMemory
 ```
 
-Adds a new an album
-
-### EXAMPLE 2
-
-```powershell
-';role='editor'}
-```
-
-Adds a new shared album that is shared to a user
+Retreives Immich memory
 
 ## PARAMETERS
 
@@ -58,73 +57,25 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumName
+### -id
 
-Defines the name of the new album
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -assetIds
-
-Defines a list of assets to add to the album
+Defines a specific memory id to be retreived
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: id
 Aliases:
 
-Required: False
-Position: 3
+Required: True
+Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -description
-
-Defines a description for the album
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -albumUsers
-
-Defines a list of user id to share the album to
-
-```yaml
-Type: Hashtable[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 

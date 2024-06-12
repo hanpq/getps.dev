@@ -24,7 +24,8 @@ Get-IMPerson [-Session <ImmichSession>] [-withHidden] [-ProgressAction <ActionPr
 ### id
 
 ```powershell
-Get-IMPerson [-Session <ImmichSession>] -id <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMPerson [-Session <ImmichSession>] -id <String> [-IncludeStatistics] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,6 +87,22 @@ Do not specify if either should be returned.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeStatistics
+
+Defines if statistics should be returned for the person
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: id
 Aliases:
 
 Required: False

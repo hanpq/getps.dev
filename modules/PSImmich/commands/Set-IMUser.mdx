@@ -16,10 +16,9 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Set-IMUser [[-Session] <ImmichSession>] [-id] <String[]> [[-Email] <String>] [[-AvatarColor] <String>]
- [[-MemoriesEnabled] <Boolean>] [[-Name] <String>] [[-Password] <SecureString>] [[-QuotaSizeInBytes] <Int64>]
- [[-ShouldChangePassword] <Boolean>] [[-StorageLabel] <String>] [[-IsAdmin] <Boolean>]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-IMUser [[-Session] <ImmichSession>] [-id] <String[]> [[-Email] <String>] [[-Name] <String>]
+ [[-Password] <SecureString>] [[-QuotaSizeInBytes] <Int64>] [[-ShouldChangePassword] <Boolean>]
+ [[-StorageLabel] <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,39 +88,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AvatarColor
-
-Defines the avatar color for the user
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MemoriesEnabled
-
-Should Memories enabled.
-Enabled by default
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: True
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Name
 
 Defines the name of the user
@@ -132,7 +98,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -148,7 +114,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -164,7 +130,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: 6
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -180,7 +146,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 7
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -196,24 +162,8 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 8
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsAdmin
-
-Defines if the user should be admin
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 11
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -16,7 +16,7 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Add-IMAlbumUser [[-Session] <ImmichSession>] [-albumId] <String> [-userId] <String[]>
+Add-IMAlbumUser [[-Session] <ImmichSession>] [-albumId] <String> [-userId] <String[]> [[-Role] <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -29,7 +29,7 @@ Add user to album
 ### EXAMPLE 1
 
 ```powershell
--userid <userid>
+-userid <userid> -role editor
 ```
 
 Add user to album
@@ -84,6 +84,22 @@ Required: True
 Position: 3
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Role
+
+Defines the user role
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: Viewer
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: Set-IMMemory
+title: Set-IMMemory
+description: Help page for the Powershell "Set-IMMemory" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,32 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
- [[-description] <String>] [[-albumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Set-IMMemory [[-Session] <ImmichSession>] [-id] <String[]> [[-isSaved] <Boolean>] [[-MemoryAt] <DateTime>]
+ [[-SeenAt] <DateTime>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Updates an Immich memory
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+-memoryAt "2024-01-01 00:00:00"
 ```
 
-Adds a new an album
-
-### EXAMPLE 2
-
-```powershell
-';role='editor'}
-```
-
-Adds a new shared album that is shared to a user
+Update an Immich memory
 
 ## PARAMETERS
 
@@ -64,44 +55,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumName
+### -id
 
-Defines the name of the new album
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -assetIds
-
-Defines a list of assets to add to the album
+Defines memory to update
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
 Aliases:
 
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -isSaved
+
+Defines if the memory is saved
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
 Required: False
 Position: 3
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -description
+### -MemoryAt
 
-Defines a description for the album
+Defines the memoryAt datetime
 
 ```yaml
-Type: String
+Type: DateTime
 Parameter Sets: (All)
 Aliases:
 
@@ -112,17 +103,50 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumUsers
+### -SeenAt
 
-Defines a list of user id to share the album to
+Defines the seenAt datetime
 
 ```yaml
-Type: Hashtable[]
+Type: DateTime
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

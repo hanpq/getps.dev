@@ -1,7 +1,7 @@
 ---
-id: Get-IMCuratedObject
-title: Get-IMCuratedObject
-description: Help page for the Powershell "Get-IMCuratedObject" command
+id: Export-IMAssetThumbnail
+title: Export-IMAssetThumbnail
+description: Help page for the Powershell "Export-IMAssetThumbnail" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,22 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMCuratedObject [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Export-IMAssetThumbnail [[-Session] <ImmichSession>] [-id] <String> [[-Path] <DirectoryInfo>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives Immich curated objects
+Retreives the asset thumbnail
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMCuratedObject
+Get-IMAssetThumbnail
 ```
 
-Retreives Immich curated objects
+Retreives asset thumbnails
 
 ## PARAMETERS
 
@@ -49,6 +50,38 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines the asset ID to query
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Path
+
+Defines the directory for the output file
+
+```yaml
+Type: DirectoryInfo
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

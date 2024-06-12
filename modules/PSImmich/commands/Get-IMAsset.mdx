@@ -18,9 +18,7 @@ hide_table_of_contents: false
 ### list (Default)
 
 ```powershell
-Get-IMAsset [-Session <ImmichSession>] [-isFavorite <Boolean>] [-isArchived <Boolean>] [-skip <Int32>]
- [-take <Int32>] [-updatedAfter <DateTime>] [-updatedBefore <DateTime>] [-userId <String>]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMAsset [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### random
@@ -187,120 +185,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -isFavorite
-
-Defines if faviorites should be returned or not.
-Do not specify if either should be returned.
-
-```yaml
-Type: Boolean
-Parameter Sets: list
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isArchived
-
-Defines if archvied assets should be returned or not.
-Do not specify if either should be returned.
-
-```yaml
-Type: Boolean
-Parameter Sets: list
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -skip
-
-Defines skip
-
-```yaml
-Type: Int32
-Parameter Sets: list
-Aliases:
-
-Required: False
-Position: Named
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -take
-
-Defines take
-
-```yaml
-Type: Int32
-Parameter Sets: list
-Aliases:
-
-Required: False
-Position: Named
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -updatedAfter
-
-Deinfes updatedAfter
-
-```yaml
-Type: DateTime
-Parameter Sets: list
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -updatedBefore
-
-Defines updatedBefore
-
-```yaml
-Type: DateTime
-Parameter Sets: list
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -userId
-
-Defines userId
-
-```yaml
-Type: String
-Parameter Sets: list
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -36,13 +36,6 @@ Get-IMConfig [-Session <ImmichSession>] [-StorageTemplate] [-ProgressAction <Act
  [<CommonParameters>]
 ```
 
-### mapstyle
-
-```powershell
-Get-IMConfig [-Session <ImmichSession>] [-MapStyle] [-Theme <String>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
-```
-
 ## DESCRIPTION
 
 Retreives Immich config
@@ -122,38 +115,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MapStyle
-
-Specifies that map style configuration should be returned.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: mapstyle
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Theme
-
-Specifies which theme (dark or light) should be returned.
-
-```yaml
-Type: String
-Parameter Sets: mapstyle
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
