@@ -1,7 +1,7 @@
 ---
-id: Get-IMAuthDevice
-title: Get-IMAuthDevice
-description: Help page for the Powershell "Get-IMAuthDevice" command
+id: Export-IMPersonThumbnail
+title: Export-IMPersonThumbnail
+description: Help page for the Powershell "Export-IMPersonThumbnail" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,22 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMAuthDevice [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Export-IMPersonThumbnail [[-Session] <ImmichSession>] [-id] <String> [[-Path] <DirectoryInfo>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Get authorized devices
+Export Immich person thumbnail
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAuthDevice
+-Path C:\download
 ```
 
-Get authorized devices
+Export person thumbnail
 
 ## PARAMETERS
 
@@ -49,6 +50,38 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines the person id to retreive the thumbnail for
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Path
+
+Defines the directory for the output file
+
+```yaml
+Type: DirectoryInfo
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

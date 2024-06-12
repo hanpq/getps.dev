@@ -1,7 +1,7 @@
 ---
-id: Get-IMServerInfo
-title: Get-IMServerInfo
-description: Help page for the Powershell "Get-IMServerInfo" command
+id: Get-IMAuthSession
+title: Get-IMAuthSession
+description: Help page for the Powershell "Get-IMAuthSession" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,22 +16,22 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMServerInfo [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMAuthSession [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives Immich server info
+Get authenticated sessions
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMServerInfo
+Get-IMAuthDevice
 ```
 
-Retreives Immich server info
+Get authorized devices
 
 ## PARAMETERS
 
@@ -79,6 +79,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Due to Get-IMSession already being used by the PSImmich module, cmdlets within the session namespace is prefixed with "Auth".
 
 ## RELATED LINKS
 

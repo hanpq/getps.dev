@@ -18,7 +18,7 @@ hide_table_of_contents: false
 ### list (Default)
 
 ```powershell
-Get-IMUser [-Session <ImmichSession>] [-isAll <Boolean>] [-ProgressAction <ActionPreference>]
+Get-IMUser [-Session <ImmichSession>] [-IncludeDeleted] [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
@@ -85,12 +85,12 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -isAll
+### -IncludeDeleted
 
-...
+Defines if deleted users should be returned.
 
 ```yaml
-Type: Boolean
+Type: SwitchParameter
 Parameter Sets: list
 Aliases:
 

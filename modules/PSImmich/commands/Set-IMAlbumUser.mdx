@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: Set-IMAlbumUser
+title: Set-IMAlbumUser
+description: Help page for the Powershell "Set-IMAlbumUser" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,32 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
- [[-description] <String>] [[-albumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Set-IMAlbumUser [[-Session] <ImmichSession>] [-albumId] <String> [-userId] <String[]> [-Role] <String>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Set user role
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+-userid <userid> -role editor
 ```
 
-Adds a new an album
-
-### EXAMPLE 2
-
-```powershell
-';role='editor'}
-```
-
-Adds a new shared album that is shared to a user
+Changes the role of the user in the specified album
 
 ## PARAMETERS
 
@@ -64,9 +55,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumName
+### -albumId
 
-Defines the name of the new album
+Defines album to add the user to
 
 ```yaml
 Type: String
@@ -80,49 +71,66 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -assetIds
+### -userId
 
-Defines a list of assets to add to the album
+Defines the user to add to the album
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: id
 
-Required: False
+Required: True
 Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -description
+### -Role
 
-Defines a description for the album
+Defines the user role
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumUsers
+### -WhatIf
 
-Defines a list of user id to share the album to
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: Hashtable[]
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: wi
 
 Required: False
-Position: 5
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: Get-IMMapMarker
+title: Get-IMMapMarker
+description: Help page for the Powershell "Get-IMMapMarker" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,32 +16,24 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
- [[-description] <String>] [[-albumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Get-IMMapMarker [[-Session] <ImmichSession>] [[-CreatedAfter] <DateTime>] [[-CreatedBefore] <DateTime>]
+ [[-IsArchived] <Boolean>] [[-IsFavorite] <Boolean>] [[-WithPartners] <Boolean>]
+ [[-WithSharedAlbums] <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Retreives map markers
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+Get-IMMapMarker
 ```
 
-Adds a new an album
-
-### EXAMPLE 2
-
-```powershell
-';role='editor'}
-```
-
-Adds a new shared album that is shared to a user
+Retreives map markers
 
 ## PARAMETERS
 
@@ -64,28 +56,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumName
+### -CreatedAfter
 
-Defines the name of the new album
+Created after filter
 
 ```yaml
-Type: String
+Type: DateTime
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -assetIds
+### -CreatedBefore
 
-Defines a list of assets to add to the album
+Created before filter
 
 ```yaml
-Type: String[]
+Type: DateTime
 Parameter Sets: (All)
 Aliases:
 
@@ -96,34 +88,66 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -description
+### -IsArchived
 
-Defines a description for the album
+Archived filter
 
 ```yaml
-Type: String
+Type: Boolean
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumUsers
+### -IsFavorite
 
-Defines a list of user id to share the album to
+Favorite filter
 
 ```yaml
-Type: Hashtable[]
+Type: Boolean
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: None
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithPartners
+
+With partners filter
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithSharedAlbums
+
+With shared albums filter
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

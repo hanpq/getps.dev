@@ -1,7 +1,7 @@
 ---
-id: Remove-IMAuthDevice
-title: Remove-IMAuthDevice
-description: Help page for the Powershell "Remove-IMAuthDevice" command
+id: Merge-IMPerson
+title: Merge-IMPerson
+description: Help page for the Powershell "Merge-IMPerson" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,34 +15,25 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
-### list (Default)
-
 ```powershell
-Remove-IMAuthDevice [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### id
-
-```powershell
-Remove-IMAuthDevice [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Merge-IMPerson [[-Session] <ImmichSession>] [-ToPersonID] <String[]> [-FromPersonID] <String[]>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Remove one or many auth devices.
-Not that if id is not specified all but the current auth device will be purged.
+Merges two people
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Remove-IMAuthDevice
+-FromPersonID <personid>,<personid>
 ```
 
-Remove all auth device (except current)
+Merges three persons.
+ToPersonID will persist
 
 ## PARAMETERS
 
@@ -59,25 +50,41 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -ToPersonID
 
-Defines a uuid of a auth device that should be removed
+Defines the person to merge to
 
 ```yaml
 Type: String[]
-Parameter Sets: id
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FromPersonID
+
+Defines the id of the person to merge from
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

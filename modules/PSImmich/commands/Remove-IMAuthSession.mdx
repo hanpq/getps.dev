@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: Remove-IMAuthSession
+title: Remove-IMAuthSession
+description: Help page for the Powershell "Remove-IMAuthSession" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,33 +15,34 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### list (Default)
+
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
- [[-description] <String>] [[-albumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
+Remove-IMAuthSession [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Remove-IMAuthSession [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Remove one or many auth sessions.
+Not that if id is not specified all but the current auth session will be purged.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+Remove-IMAuthSession
 ```
 
-Adds a new an album
-
-### EXAMPLE 2
-
-```powershell
-';role='editor'}
-```
-
-Adds a new shared album that is shared to a user
+Remove all auth session (except current)
 
 ## PARAMETERS
 
@@ -58,71 +59,56 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumName
+### -id
 
-Defines the name of the new album
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -assetIds
-
-Defines a list of assets to add to the album
+Defines a uuid of an auth session that should be removed
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: id
 Aliases:
 
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
 Required: False
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -description
+### -Confirm
 
-Defines a description for the album
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -albumUsers
-
-Defines a list of user id to share the album to
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: Hashtable[]
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
-Position: 5
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

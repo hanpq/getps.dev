@@ -17,8 +17,7 @@ hide_table_of_contents: false
 
 ```powershell
 New-IMLibrary [[-Session] <ImmichSession>] [-name] <String> [[-exclusionPatterns] <String[]>]
- [[-importPaths] <String[]>] [[-isVisible] <Boolean>] [[-isWatched] <Boolean>] [[-ownerId] <String>]
- [-type] <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [[-importPaths] <String[]>] [[-ownerId] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,38 +103,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isVisible
-
-Defines if the library should be visible
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: True
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isWatched
-
-Defines if the library should be watched by immich
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 6
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ownerId
 
 Defines the owner of library
@@ -146,23 +113,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -type
-
-Defines the type of library ASSET, EXTERNAL
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 8
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -16,7 +16,7 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMUser [[-Session] <ImmichSession>] [-Email] <String> [[-MemoriesEnabled] <Boolean>] [-Name] <String>
+New-IMUser [[-Session] <ImmichSession>] [-Email] <String> [[-Notify] <Boolean>] [-Name] <String>
  [-Password] <SecureString> [[-QuotaSizeInBytes] <Int64>] [[-ShouldChangePassword] <Boolean>]
  [[-StorageLabel] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
@@ -73,9 +73,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MemoriesEnabled
+### -Notify
 
-Should Memories enabled.
+Should the user be notified.
 Enabled by default
 
 ```yaml

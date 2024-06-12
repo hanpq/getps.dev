@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: New-IMMemory
+title: New-IMMemory
+description: Help page for the Powershell "New-IMMemory" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,32 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-albumName] <String> [[-assetIds] <String[]>]
- [[-description] <String>] [[-albumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+New-IMMemory [[-Session] <ImmichSession>] [[-Year] <Boolean>] [[-AssetIds] <String[]>] [-MemoryAt] <DateTime>
+ [[-SeenAt] <DateTime>] [[-Type] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Adds a new memory
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+,<assetid>
 ```
 
-Adds a new an album
-
-### EXAMPLE 2
-
-```powershell
-';role='editor'}
-```
-
-Adds a new shared album that is shared to a user
+Create a new memory for the date and assets.
 
 ## PARAMETERS
 
@@ -64,25 +55,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumName
+### -Year
 
-Defines the name of the new album
+Defines the year of the memory.
 
 ```yaml
-Type: String
+Type: Boolean
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 2
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -assetIds
+### -AssetIds
 
-Defines a list of assets to add to the album
+Defines a list of assets to add to the memory
 
 ```yaml
 Type: String[]
@@ -96,9 +87,43 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -description
+### -MemoryAt
 
-Defines a description for the album
+Defines the MemoryAt property
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SeenAt
+
+Defines the SeenAt property
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+Defines the type of memory.
+Defaults to 'on_this_day'.
+Valid values are 'on_this_day'
 
 ```yaml
 Type: String
@@ -106,24 +131,8 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -albumUsers
-
-Defines a list of user id to share the album to
-
-```yaml
-Type: Hashtable[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: None
+Position: 6
+Default value: On_this_day
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
