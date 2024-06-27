@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.2.2] - 2024-06-27
+
+### Fixed
+
+- Removed debug line [PR #6] (Thanks to @in-voker)
+
 ## [5.2.1] - 2024-03-13
 
 ### Fixed
