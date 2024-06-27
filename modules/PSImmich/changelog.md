@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### IMPORTANT NOTE
+
+- This update contains breaking changes regarding the way the cmdlet behaves when listing albums. Especially when you use the Shared, WithoutAssets parameters. Read the changelog below and test your scripts.
+
+### Added
+
+- A new parameter "-Name" has been added to the Get-IMAlbum cmdlet. This parameter makes a wildcard search for all albums containing that string.
+
+### Changed
+
+- The parameter "shared" for Get-IMAlbum has been changed to a switch parameter and renamed to ExcludeShared. This means that the command will return shared albums by default unless this parameter is used.
+- The parameter "withoutAssets has been changed to a switch parameter and renamed to IncludeAssets. This means that the command will not return assets in the asset property of the returned albums by default.
+
 ## [1.106.0] - 2024-06-12
 
 ### Changed
@@ -26,9 +39,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New cmdlet Get-IMProfilePicture
 - New cmdlet Get-IMAssetThumbnail
 - New cmdlet Set-IMAlbumUser to allow changing the user role for an album.
-- Set-IMAsset now has a parameter for AddToFace to incorporate the /face/\{id} API
-- New cmdlet Marge-IMPerson to incorporate the /person/\{id}/merge API
-- Get-IMPerson now has a new switch IncludeStatistics to incorporate the /person/\{id}/statistics API. The switch is not currently available with the list parameter set. However one could use the following to produce the same result Get-IMPerson | Get-IMPerson -IncludeStatistics
+- Set-IMAsset now has a parameter for AddToFace to incorporate the /face/{id} API
+- New cmdlet Marge-IMPerson to incorporate the /person/{id}/merge API
+- Get-IMPerson now has a new switch IncludeStatistics to incorporate the /person/{id}/statistics API. The switch is not currently available with the list parameter set. However one could use the following to produce the same result Get-IMPerson | Get-IMPerson -IncludeStatistics
 - New cmdlet Export-IMPersonThumbnail
 
 ### Fixed
@@ -63,3 +76,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - First release
+
