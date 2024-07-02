@@ -15,31 +15,17 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
-### list-shared (Default)
+### list (Default)
 
 ```powershell
-Get-IMAlbum [-Session <ImmichSession>] [-ExcludeShared] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Get-IMAlbum [-Session <ImmichSession>] [-AssetId <String>] [-IncludeAssets] [-Shared <Boolean>]
+ [-Name <String>] [-SearchString <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### id
 
 ```powershell
-Get-IMAlbum [-Session <ImmichSession>] [-AlbumId] <String> [-IncludeAssets]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
-```
-
-### list-asset
-
-```powershell
-Get-IMAlbum [-Session <ImmichSession>] -AssetId <String> [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
-```
-
-### search-albumname
-
-```powershell
-Get-IMAlbum [-Session <ImmichSession>] [-ExcludeShared] [-Name] <String> [-ProgressAction <ActionPreference>]
+Get-IMAlbum [-Session <ImmichSession>] -AlbumId <String> [-IncludeAssets] [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
@@ -88,7 +74,7 @@ Parameter Sets: id
 Aliases: Id
 
 Required: True
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -100,10 +86,10 @@ Only returns albums that contain the asset
 
 ```yaml
 Type: String
-Parameter Sets: list-asset
+Parameter Sets: list
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -116,7 +102,7 @@ Defines weather to return assets as part of the object or not
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: id
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -126,13 +112,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExcludeShared
+### -Shared
 
 Defines weather to return shared albums or not.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: list-shared, search-albumname
+Type: Boolean
+Parameter Sets: list
 Aliases:
 
 Required: False
@@ -144,15 +130,31 @@ Accept wildcard characters: False
 
 ### -Name
 
-Get album by name
+Specify an exact name of an album
 
 ```yaml
 Type: String
-Parameter Sets: search-albumname
+Parameter Sets: list
 Aliases:
 
-Required: True
-Position: 2
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SearchString
+
+Specify a string to search for in album names, accepts wildcard
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
