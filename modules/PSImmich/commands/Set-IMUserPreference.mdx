@@ -1,0 +1,269 @@
+---
+id: Set-IMUserPreference
+title: Set-IMUserPreference
+description: Help page for the Powershell "Set-IMUserPreference" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Set-IMUserPreference [[-Session] <ImmichSession>] [-id] <String[]> [[-AvatarColor] <String>]
+ [[-DownloadArchiveSize] <Int32>] [[-EmailNotificationForAlbumInvite] <Boolean>]
+ [[-EmailNotificationForAlbumUpdate] <Boolean>] [[-EmailNotificationEnabled] <Boolean>]
+ [[-MemoriesEnabled] <Boolean>] [[-HideBuyButtonUntil] <DateTime>] [[-ShowSupportBadge] <Boolean>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Set Immich user preference
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+-AvatarColor green
+```
+
+Set Immich user preferences
+
+## PARAMETERS
+
+### -Session
+
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+Defines the user id to update
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -AvatarColor
+
+Select the avatar color to use.
+Valid values are primary, pink, red, yellow, blue, green, purple, orange, gray, amber.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DownloadArchiveSize
+
+Not defines
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EmailNotificationForAlbumInvite
+
+Select if an email notification should be sent to the user if an album is shared to the user.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EmailNotificationForAlbumUpdate
+
+Select if an email notification should be sent to the user if an album that is shared to the user is updated.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EmailNotificationEnabled
+
+Select if email notifications are enabled.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MemoriesEnabled
+
+Select if memories should be shown to the user
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HideBuyButtonUntil
+
+Select if the Buy Immich button should be hidden for, accepts a datetime value.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ShowSupportBadge
+
+Select if the Support Immich badge should be shown.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 10
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
