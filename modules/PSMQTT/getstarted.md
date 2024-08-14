@@ -2,8 +2,6 @@
 id: getstarted
 title: Get started
 ---
-> :warning: **IMPORTANT**
-> This module is early in it´s development phase. Many API function and features are not yet available. You are welcome to contribute on GitHub to accelerate progress further.
 
 # PSMQTT
 
@@ -14,7 +12,7 @@ This project has adopted the following policies [![CodeOfConduct](https://img.sh
 
 ## About
 
-PSMQTT is a...
+This powershell module allows you to connect to a MQTT broker and post new messages as well as subscribing to a topic to receive new messages.
 
 ## Installation
 
@@ -28,5 +26,34 @@ Install-Module PSMQTT -Scope CurrentUser
 
 ## Usage
 
+Start by connecting to the MQTT broker with `Connect-MQTTBroker`. You can connect either annonymous or with username & password
 
+```powershell
+# With username & password
 
+$Session = Connect-MQTTBroker -Hostname mqttbroker.contoso.com -Port 1234 -Username mqttuser -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
+
+# Annonymous
+
+$Session = Connect-MQTTBroker -Hostname mqttbroker.contoso.com -Port 1234
+```
+
+To send a message to the MQTT broker use `Send-MQTTMessage`
+
+```powershell
+Send-MQTTMessage -Session $Session -Topic 'foo' -Payload '{"attribute":"value"}'
+```
+
+To subscribe to messages sent to the MQTT broker, use `Watch-MQTTTopic`
+
+```powershell
+Watch-MQTTTopic -Session $Session -Topic "topic/#"
+```
+
+You can subscribe to subtopics by using `/` and you can also use wildcards with `#` as in the example above.
+
+One you are done you can close the session by calling `Disconnect-MQTTBroker`
+
+```powershell
+Disconnect-MQTTBroker -Session $Session
+```
