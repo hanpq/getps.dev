@@ -103,11 +103,6 @@ module.exports = {
                             activeBasePath: 'blog',
                             to: 'blog',
                         },
-                        {
-                            label: 'Downloads',
-                            activeBasePath: 'downloads',
-                            to: 'downloads',
-                        },
                     ],
                 },
                 {
@@ -153,6 +148,7 @@ module.exports = {
                     },
                     blogSidebarCount: 'ALL',
                     blogSidebarTitle: 'All our posts',
+                    onUntruncatedBlogPosts: 'ignore',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
