@@ -1,11 +1,7 @@
 ﻿---
 slug: announcing-psportainer
 title: Announcing PSPortainer Powershell Module
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [powershell,portainer,psportainer,rest,api,docker,module]
 keywords: [powershell,portainer,psportainer,rest,api,docker,module]
 description: Powershell module to interact with Portainer API

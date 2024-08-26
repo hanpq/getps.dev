@@ -1,11 +1,7 @@
 ---
 slug: find-office365-url-and-ip
 title: Find Office 365 URL and IP
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [powershell,office365,office 365,api,ip,url,psdev]
 keywords: [powershell,office365,office 365,api,ip,url,psdev]
 description: Script to get office 365 url and ip

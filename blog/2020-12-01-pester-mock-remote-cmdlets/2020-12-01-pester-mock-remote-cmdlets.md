@@ -1,11 +1,7 @@
 ---
 slug: pester-mock-remote-cmdlets
 title: Pester, mock remote or unavailable cmdlets
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [powershell, pester, mock, remote, cmdlets]
 keywords: [powershell, pester, mock, remote, cmdlets]
 description: Mocking the unmockable, mocking remote or unavailable cmdlets.

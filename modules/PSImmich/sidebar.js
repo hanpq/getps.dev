@@ -16,4 +16,3 @@ module.exports = [
         items: commands
     },
 ];
-

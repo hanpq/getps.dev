@@ -2,6 +2,7 @@
 id: changelog
 title: Changelog
 ---
+
 # Changelog for PSImmich
 
 The format is based on and uses the types of changes according to [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -79,9 +80,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New cmdlet Get-IMProfilePicture
 - New cmdlet Get-IMAssetThumbnail
 - New cmdlet Set-IMAlbumUser to allow changing the user role for an album.
-- Set-IMAsset now has a parameter for AddToFace to incorporate the /face/{id} API
-- New cmdlet Marge-IMPerson to incorporate the /person/{id}/merge API
-- Get-IMPerson now has a new switch IncludeStatistics to incorporate the /person/{id}/statistics API. The switch is not currently available with the list parameter set. However one could use the following to produce the same result Get-IMPerson | Get-IMPerson -IncludeStatistics
+- Set-IMAsset now has a parameter for AddToFace to incorporate the /face/\{id\} API
+- New cmdlet Marge-IMPerson to incorporate the /person/\{id\}/merge API
+- Get-IMPerson now has a new switch IncludeStatistics to incorporate the /person/\{id\}/statistics API. The switch is not currently available with the list parameter set. However one could use the following to produce the same result Get-IMPerson | Get-IMPerson -IncludeStatistics
 - New cmdlet Export-IMPersonThumbnail
 
 ### Fixed
@@ -116,4 +117,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - First release
-

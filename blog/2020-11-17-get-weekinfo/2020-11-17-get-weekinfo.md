@@ -1,11 +1,7 @@
 ---
 slug: get-weekinfo
 title: Get-WeekInfo
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [Powershell, week, function]
 keywords: [Powershell, week, function]
 description: In some parts of the world it is more common to work with weeks as measurement of time. Unfortunately there are not easy accessible ways to work with weeks in powershell or .NET.

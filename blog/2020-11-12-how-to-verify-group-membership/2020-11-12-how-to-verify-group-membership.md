@@ -1,11 +1,7 @@
 ---
 slug: how-to-verify-group-membership
 title: How to verify group membership
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [powershell, check-profilestatus, function, profile]
 keywords: [powershell, check-profilestatus, function, profile]
 description: This function can be used to show the status of the Powershell profile scripts on the computer.

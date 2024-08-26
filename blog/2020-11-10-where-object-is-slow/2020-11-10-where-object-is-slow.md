@@ -1,11 +1,7 @@
 ---
 slug: where-object-is-slow
 title: Where-Object is slow...
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [powershell, where-object, function, performance, optimization]
 keywords: [powershell, where-object, function, performance, optimization]
 description: A faster search function replacing edge cases of where-object

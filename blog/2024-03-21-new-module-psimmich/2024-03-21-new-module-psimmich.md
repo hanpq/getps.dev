@@ -1,11 +1,7 @@
 ---
 slug: new-module-psimmich
 title: Work with the Immich API from Powershell
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [powershell,immich,psimmich]
 keywords: [powershell,immich,psimmich]
 description: Work with the Immich API from Powershell

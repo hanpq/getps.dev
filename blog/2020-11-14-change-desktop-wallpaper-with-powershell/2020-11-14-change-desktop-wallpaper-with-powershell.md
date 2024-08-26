@@ -1,11 +1,7 @@
 ---
 slug: change-desktop-wallpaper-with-powershell
 title: Change desktop wallpaper with powershell
-authors:
-  - name: Hannes Palmquist
-    title: Senior Consultant Cloud
-    url: https://getps.dev/about
-    image_url: https://getps.dev/img/Hannes_Profil_HighContrast.jpg
+authors: hanpq
 tags: [powershell, Set-DesktopWallpaper, function, wallpaper]
 keywords: [powershell, Set-DesktopWallpaper, function, wallpaper]
 description: I’ve seen numerous forums and blog articles trying to to change desktop wallpaper in windows, none of which works reliably.
