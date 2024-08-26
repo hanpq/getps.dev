@@ -6,7 +6,6 @@
 
 # Temp
 /temp
-/.yarn
 
 # Generated files
 .docusaurus
