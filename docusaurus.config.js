@@ -162,6 +162,9 @@ module.exports = {
                     // Optional fields.
                     anonymizeIP: true, // Should IPs be anonymized?
                 },
+                googleTagManager: {
+                    containerId: 'G-MYR3KXGL15',
+                },
                 googleAnalytics: {
                     trackingID: 'G-MYR3KXGL15',
                     // Optional fields.
