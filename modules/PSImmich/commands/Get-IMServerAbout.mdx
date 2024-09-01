@@ -1,7 +1,7 @@
 ---
-id: Rename-IMTag
-title: Rename-IMTag
-description: Help page for the Powershell "Rename-IMTag" command
+id: Get-IMServerAbout
+title: Get-IMServerAbout
+description: Help page for the Powershell "Get-IMServerAbout" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,23 +16,22 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Rename-IMTag [[-Session] <ImmichSession>] [-id] <String> [-NewName] <String>
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMServerAbout [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Remove Immich tag
+Retreives Immich server about
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--NewName 'Cats'
+Get-IMServerAbout
 ```
 
-Remove Immich tag
+Retreives Immich server about
 
 ## PARAMETERS
 
@@ -50,38 +49,6 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -id
-
-Defines a specific tag id to be renamed
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NewName
-
-Defines a new name for the tag
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

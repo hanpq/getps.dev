@@ -2,13 +2,26 @@
 id: changelog
 title: Changelog
 ---
-
 # Changelog for PSImmich
 
 The format is based on and uses the types of changes according to [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.113.0] - 2024-09-01
+
+### Added
+
+- Added Color parameter to Set-IMTag
+- Added Permissions to New-IMAPIKey
+- Added Get-IMServerAbout
+
+### Fixed
+
+- Renamed Get-IMAlbumCount to Get-IMAlbumStatistics according to upstream API change
+- Changed removed/server-info calls and replace with new /server calls.
+- Removed Rename-IMTag as it is removed from the upstream API
 
 ## [1.111.1] - 2024-08-14
 
@@ -117,3 +130,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - First release
+
