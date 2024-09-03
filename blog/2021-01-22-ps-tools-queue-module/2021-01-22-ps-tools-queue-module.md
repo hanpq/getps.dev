@@ -1,6 +1,6 @@
 ---
 slug: ps-tools-queue-module
-title: Introducing pstools.queue
+title: Introducing PSQueue
 authors: hanpq
 tags: [powershell,module,queue,cmdlet,function,system.collection.queue]
 keywords: [powershell,module,queue,cmdlet,function,system.collection.queue]
@@ -13,7 +13,7 @@ data-layout="button"
 data-size="small">
 </div>
 
-Recently I developed a tool that utilizes the .NET class system.collections.queue. The function runs continously and produces workitems that should be processed in sequence and in the same order they were added. One simple way to acheive this is to use the collection queue. This class provides a simple way to add items to the queue and retreive the oldest item when needed.
+Recently I developed a tool that utilizes the .NET class system.collections.queue. The function runs continously and produces workitems that should be processed in sequence and in the same order they were added. One simple way to acheive this is to use the collection queue. This class provides a simple way to add items to the queue and retrieve the oldest item when needed.
 
 For fun I wanted to create a wrapper for the queue class so that it can be used in a powershell style syntax. Additionally i missed functionality to see the rate and velocity that items were added and removed to the queue.
 
