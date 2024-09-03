@@ -18,7 +18,7 @@ hide_table_of_contents: false
 ### tagId (Default)
 
 ```powershell
-Set-IMTag [-Session <ImmichSession>] [-AddAssets <String[]>] [-RemoveAssets <String[]>]
+Set-IMTag [-Session <ImmichSession>] [-AddAssets <String[]>] [-RemoveAssets <String[]>] [-Color <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -26,14 +26,14 @@ Set-IMTag [-Session <ImmichSession>] [-AddAssets <String[]>] [-RemoveAssets <Str
 
 ```powershell
 Set-IMTag [-Session <ImmichSession>] -Id <String[]> [-AddAssets <String[]>] [-RemoveAssets <String[]>]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Color <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### tagName
 
 ```powershell
 Set-IMTag [-Session <ImmichSession>] -tagName <String> [-AddAssets <String[]>] [-RemoveAssets <String[]>]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Color <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -127,6 +127,22 @@ Defines the assets to untag
 
 ```yaml
 Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Color
+
+Defines the tag color, acceppts a HEX string ie, #000000
+
+```yaml
+Type: String
 Parameter Sets: (All)
 Aliases:
 

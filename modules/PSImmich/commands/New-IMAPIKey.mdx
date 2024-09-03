@@ -16,8 +16,8 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMAPIKey [[-Session] <ImmichSession>] [-name] <String> [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+New-IMAPIKey [[-Session] <ImmichSession>] [-name] <String> [[-Permission] <String[]>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,6 +67,22 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Permission
+
+Defines the permissions for the API-key
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: All
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
