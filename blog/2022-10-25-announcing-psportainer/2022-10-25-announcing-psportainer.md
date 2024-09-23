@@ -2,7 +2,7 @@
 slug: announcing-psportainer
 title: Announcing PSPortainer Powershell Module
 authors: hanpq
-tags: [powershell,portainer,psportainer,rest,api,docker,module]
+tags: [Powershell, Modules]
 keywords: [powershell,portainer,psportainer,rest,api,docker,module]
 description: Powershell module to interact with Portainer API
 ---

@@ -2,7 +2,7 @@
 slug: setup-active-directory-one-way-trust-with-selective-authentication
 title: Setup Active Directory One-way Trust With Selective Authentication
 authors: hanpq
-tags: [Active Directory, Trust]
+tags: [Active Directory]
 keywords: [Active Directory, Trust]
 description: Setting up a one-way trust with selective authentication and without DNS conditional forward
 ---

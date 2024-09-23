@@ -2,7 +2,7 @@
 slug: cleanup-github-artifacts
 title: Cleanup GitHub Artifacts
 authors: hanpq
-tags: [powershell,github,rest,api,artifact,artifacts]
+tags: [Powershell, Github]
 keywords: [powershell,github,rest,api,artifact,artifacts]
 description: Script to remove/cleanup github artifacts
 ---

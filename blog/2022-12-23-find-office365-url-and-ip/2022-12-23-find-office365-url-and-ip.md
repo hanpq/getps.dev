@@ -2,7 +2,7 @@
 slug: find-office365-url-and-ip
 title: Find Office 365 URL and IP
 authors: hanpq
-tags: [powershell,office365,office 365,api,ip,url,psdev]
+tags: [Office 365]
 keywords: [powershell,office365,office 365,api,ip,url,psdev]
 description: Script to get office 365 url and ip
 ---

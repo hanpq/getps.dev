@@ -2,7 +2,7 @@
 slug: exchange-versions
 title: Exchange Versions
 authors: hanpq
-tags: [powershell, check-profilestatus, function, profile]
+tags: [Exchange Server]
 keywords: [powershell, check-profilestatus, function, profile]
 description: I’ve summarized a table with all versions released of Exchange Server that shows version numbers, release date, .net requirement, OS requirement, forest functional level etc in a simple to use excel spreadsheet.
 ---

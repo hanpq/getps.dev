@@ -2,7 +2,7 @@
 slug: new-module-psimmich
 title: Work with the Immich API from Powershell
 authors: hanpq
-tags: [powershell,immich,psimmich]
+tags: [Powershell, Modules]
 keywords: [powershell,immich,psimmich]
 description: Work with the Immich API from Powershell
 ---

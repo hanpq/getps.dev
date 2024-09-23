@@ -2,7 +2,7 @@
 slug: exchange-recipienttypes
 title: Exchange RecipientTypes
 authors: hanpq
-tags: [Exchange, RecipientType, Office365, ExchangeOnline]
+tags: [Exchange Server, Exchange Online]
 keywords: [Exchange, RecipientType, Office365, ExchangeOnline]
 description: Below are all current recipient types. Please comment below if you miss an entry in any of the tables.
 ---

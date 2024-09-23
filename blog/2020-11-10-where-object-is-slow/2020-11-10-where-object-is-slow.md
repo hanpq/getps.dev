@@ -2,7 +2,7 @@
 slug: where-object-is-slow
 title: Where-Object is slow...
 authors: hanpq
-tags: [powershell, where-object, function, performance, optimization]
+tags: [Powershell]
 keywords: [powershell, where-object, function, performance, optimization]
 description: A faster search function replacing edge cases of where-object
 ---

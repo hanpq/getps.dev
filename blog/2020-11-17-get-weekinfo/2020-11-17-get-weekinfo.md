@@ -2,7 +2,7 @@
 slug: get-weekinfo
 title: Get-WeekInfo
 authors: hanpq
-tags: [Powershell, week, function]
+tags: [Powershell]
 keywords: [Powershell, week, function]
 description: In some parts of the world it is more common to work with weeks as measurement of time. Unfortunately there are not easy accessible ways to work with weeks in powershell or .NET.
 ---

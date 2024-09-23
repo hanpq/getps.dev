@@ -2,7 +2,7 @@
 slug: how-to-verify-group-membership
 title: How to verify group membership
 authors: hanpq
-tags: [powershell, check-profilestatus, function, profile]
+tags: [Powershell, Active Directory]
 keywords: [powershell, check-profilestatus, function, profile]
 description: This function can be used to show the status of the Powershell profile scripts on the computer.
 ---

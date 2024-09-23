@@ -2,7 +2,7 @@
 slug: convert-datestringtodatetimeobject
 title: Convert-DateStringToDateTimeObject
 authors: hanpq
-tags: [powershell, datetime, function]
+tags: [Powershell]
 keywords: [powershell, datetime, function]
 description: Eventually you will stumble upon badly formatted date/time strings that you need to parse. Instead of doing a lot of Split, Trim, Substring and what not you can leverage the DateTime class methods Parse/TryParse/ParseExact.
 ---

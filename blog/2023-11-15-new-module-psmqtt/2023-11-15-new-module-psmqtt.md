@@ -2,7 +2,7 @@
 slug: new-module-psmqtt
 title: Send and monitor MQTT messages with powershell
 authors: hanpq
-tags: [powershell,mqtt,home automation,protocol,psdev]
+tags: [Powershell, Modules]
 keywords: [powershell,mqtt,home automation,protocol,psdev]
 description: Powershell module to work with MQTT
 ---

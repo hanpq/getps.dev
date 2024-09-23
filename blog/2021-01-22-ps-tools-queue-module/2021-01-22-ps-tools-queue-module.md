@@ -2,7 +2,7 @@
 slug: ps-tools-queue-module
 title: Introducing PSQueue
 authors: hanpq
-tags: [powershell,module,queue,cmdlet,function,system.collection.queue]
+tags: [Powershell, Modules]
 keywords: [powershell,module,queue,cmdlet,function,system.collection.queue]
 description: Introducing wrapper module for queue
 ---

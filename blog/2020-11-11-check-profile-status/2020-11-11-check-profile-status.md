@@ -2,7 +2,7 @@
 slug: check-profile-status
 title: Check-ProfileStatus
 authors: hanpq
-tags: [powershell, check-profilestatus, function, profile]
+tags: [Powershell]
 keywords: [powershell, check-profilestatus, function, profile]
 description: This function can be used to show the status of the Powershell profile scripts on the computer.
 ---

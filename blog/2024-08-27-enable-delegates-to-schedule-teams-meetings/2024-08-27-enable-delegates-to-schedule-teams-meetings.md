@@ -2,7 +2,7 @@
 slug: enable-delegates-to-schedule-teams-meetings
 title: Enable exchange delegates to schedule teams meetings
 authors: hanpq
-tags: [powershell,exchange,outlook,delegate,delegates,teams,meeting,office365]
+tags: [Microsoft Teams, Exchange Server]
 keywords: [powershell,exchange,outlook,delegate,delegates,teams,meeting,office365]
 description: This article describes the steps to take to enable delegates to schedule teams meetings.
 ---
