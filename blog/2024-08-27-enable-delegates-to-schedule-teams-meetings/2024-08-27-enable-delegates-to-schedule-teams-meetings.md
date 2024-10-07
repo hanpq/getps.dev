@@ -40,7 +40,7 @@ This initial step involves creating a mail user on the Exchange server and assig
 Here’s how you can do it:
 
 ```powershell
-$user = New-MailUser -Name SfBOnline-ApplicationAccount -ExternalEmailAddress SfBOnline-ApplicationAccount@casiad.com
+$user = New-MailUser -Name SfBOnline-ApplicationAccount -ExternalEmailAddress SfBOnline-ApplicationAccount@domain.com
 Set-MailUser -Identity $user.Identity -HiddenFromAddressListsEnabled $True
 New-ManagementRoleAssignment -Role UserApplication -User $user.Identity
 New-ManagementRoleAssignment -Role ArchiveApplication -User $user.Identity
