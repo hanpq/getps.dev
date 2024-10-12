@@ -84,7 +84,6 @@ module.exports = [
     'PSImmich/commands/Remove-IMLibrary',
     'PSImmich/commands/Remove-IMMemory',
     'PSImmich/commands/Remove-IMMyProfilePicture',
-    'PSImmich/commands/Remove-IMOfflineLibraryFile',
     'PSImmich/commands/Remove-IMPartner',
     'PSImmich/commands/Remove-IMServerLicense',
     'PSImmich/commands/Remove-IMSharedLink',
