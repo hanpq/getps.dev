@@ -2,7 +2,6 @@
 id: getstarted
 title: Get started
 ---
-
 # PSMQTT
 
 This project has adopted the following policies [![CodeOfConduct](https://img.shields.io/badge/Code%20Of%20Conduct-gray)](https://github.com/hanpq/PSMQTT/blob/main/.github/CODE_OF_CONDUCT.md) [![Contributing](https://img.shields.io/badge/Contributing-gray)](https://github.com/hanpq/PSMQTT/blob/main/.github/CONTRIBUTING.md) [![Security](https://img.shields.io/badge/Security-gray)](https://github.com/hanpq/PSMQTT/blob/main/.github/SECURITY.md)
@@ -57,3 +56,4 @@ One you are done you can close the session by calling `Disconnect-MQTTBroker`
 ```powershell
 Disconnect-MQTTBroker -Session $Session
 ```
+
