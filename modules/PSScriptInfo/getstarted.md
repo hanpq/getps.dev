@@ -16,7 +16,7 @@ This project has adopted the following policies [![CodeOfConduct](https://img.sh
 
 This module lets you update and manage a PSScriptInfo block at the beginning of each script file. This can be used keep track of version specific information about the script. Examples of information to keep in the PSScriptInfo block could be version, unique guid, tags, date created, date updated, changelog, release note, copyright, links to license, project, docs etc.
 
-The PSScriptInfo block is wrapped with the following script block tags "\<#PSScriptInfo" and "PSScriptInfo#>". The content within the block is in JSON format for easy parsing and manual updating.
+The PSScriptInfo block is wrapped with the following script block tags "<#PSScriptInfo" and "PSScriptInfo#>". The content within the block is in JSON format for easy parsing and manual updating.
 
 ```powershell
 <#PSScriptInfo
@@ -126,3 +126,4 @@ Update-PSScriptInfo -FilePath C:\Script\file.ps1 -Properties @{
     DateUpdated = (get-date)
 }
 ```
+
