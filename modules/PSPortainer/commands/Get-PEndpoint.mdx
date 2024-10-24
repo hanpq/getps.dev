@@ -18,19 +18,21 @@ hide_table_of_contents: false
 ### List (Default)
 
 ```powershell
-Get-PEndpoint [-Session <PortainerSession>] [<CommonParameters>]
+Get-PEndpoint [-Session <PortainerSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### Search
 
 ```powershell
-Get-PEndpoint [-SearchString <String>] [-Session <PortainerSession>] [<CommonParameters>]
+Get-PEndpoint [-SearchString <String>] [-Session <PortainerSession>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ### Id
 
 ```powershell
-Get-PEndpoint [-Id <Int32>] [-Session <PortainerSession>] [<CommonParameters>]
+Get-PEndpoint [-Id <Int32>] [-Session <PortainerSession>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,6 +94,22 @@ This is useful when you are connected to more than one portainer instance.
 Type: PortainerSession
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named

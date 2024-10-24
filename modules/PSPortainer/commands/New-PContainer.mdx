@@ -23,8 +23,8 @@ New-PContainer [[-Endpoint] <String>] [-Name] <String> [[-Platform] <String>] [[
  [[-ArgsEscaped] <Boolean>] [[-Image] <String>] [[-Volumes] <String[]>] [[-WorkingDir] <String>]
  [[-Entrypoint] <String[]>] [[-NetworkDisabled] <Boolean>] [[-MacAddress] <String>] [[-OnBuild] <String[]>]
  [[-Labels] <Hashtable>] [[-StopSignal] <String>] [[-StopTimeout] <Int32>] [[-Shell] <String[]>]
- [[-HostConfig] <Hashtable>] [[-NetworkConfig] <Hashtable>] [[-Session] <PortainerSession>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [[-HostConfig] <Hashtable>] [[-NetworkConfig] <Hashtable>] [[-Session] <PortainerSession>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -606,6 +606,22 @@ Prompts you for confirmation before running the cmdlet.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named

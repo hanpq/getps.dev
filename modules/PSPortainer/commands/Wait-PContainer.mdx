@@ -17,7 +17,7 @@ hide_table_of_contents: false
 
 ```powershell
 Wait-PContainer [[-Endpoint] <String>] [[-Id] <Object[]>] [[-Session] <PortainerSession>]
- [[-Condition] <ContainerCondition>] [<CommonParameters>]
+ [[-Condition] <ContainerCondition>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,6 +108,22 @@ Accepted values: notrunning, nextexit, removed
 Required: False
 Position: 4
 Default value: Notrunning
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

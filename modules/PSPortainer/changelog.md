@@ -2,7 +2,6 @@
 id: changelog
 title: Changelog
 ---
-
 # Changelog for PSPortainer
 
 ## [Unreleased]
@@ -19,7 +18,7 @@ title: Changelog
 
 ### Added
 
-- Added function Get-PCustomTemplate, covering GET:/customtemplates, GET:/customtemplates/\{id} and GET:/customtemplates/\{id}/file
+- Added function Get-PCustomTemplate, covering GET:/customtemplates, GET:/customtemplates/{id} and GET:/customtemplates/{id}/file
 
 ### Fixed
 
@@ -36,7 +35,6 @@ title: Changelog
 ### Fixed
 
 - Fixed an issue in the release pipeline where an empty prerelease property in the manifest caused publishing to a custom nuget repo to fail.
-- 
 ## [0.2.1] - 2022-12-07
 
 ### Fixed
@@ -148,3 +146,4 @@ title: Changelog
 ### Added
 
 - First version
+
