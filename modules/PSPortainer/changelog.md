@@ -18,7 +18,7 @@ title: Changelog
 
 ### Added
 
-- Added function Get-PCustomTemplate, covering GET:/customtemplates, GET:/customtemplates/{id} and GET:/customtemplates/{id}/file
+- Added function Get-PCustomTemplate, covering GET:/\customtemplates, GET:/\customtemplates\/\{id\} and GET:\/customtemplates\/\{id\}\/file
 
 ### Fixed
 
@@ -146,4 +146,3 @@ title: Changelog
 ### Added
 
 - First version
-
