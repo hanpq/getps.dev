@@ -27,7 +27,6 @@ module.exports = [
     'PSDev/commands/Remove-GitHubArtifact',
     'PSDev/commands/Resolve-IPinSubnet',
     'PSDev/commands/Set-EnvironmentVariable',
-    'PSDev/commands/Start-Sound',
     'PSDev/commands/Switch-Object',
     'PSDev/commands/Test-AllHashKeysAreTrue',
     'PSDev/commands/Test-Office365IPURL',
