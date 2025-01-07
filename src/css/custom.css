@@ -6,10 +6,6 @@
  * work well for content-centric websites.
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* You can override the default Infima variables here. */
 
 :root {
@@ -21,6 +17,12 @@
     --ifm-color-primary-lighter: #d29069;
     --ifm-color-primary-lightest: #dca788;
     --ifm-code-font-size: 95%;
+    --ifm-table-cell-padding: 4px;
+
+}
+
+.td {
+    padding-top: 10px;
 }
 
 .alert--secondary {
@@ -41,4 +43,17 @@
 .imgpadding {
     display: flex;
     gap: 15px;
+}
+
+/* Inaktivera fet text på navbar och menu. */
+.navbar__item {
+    font-weight: 400;
+}
+
+.menu__link {
+    font-weight: 400;
+}
+
+.navbar__title {
+    font-weight: 400;
 }

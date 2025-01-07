@@ -4,6 +4,9 @@ module.exports = {
     //url: 'https://pensive-darwin-90a9ff.netlify.app',
     url: 'https://getps.dev',
     baseUrl: '/',
+    future: {
+        experimental_faster: true,
+    },
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/powershell_orange2.ico',
@@ -135,12 +138,10 @@ module.exports = {
             {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    // Please change this to your repo.
                     editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
-                    // Please change this to your repo.
                     editUrl:
                         'https://github.com/hanpq/getps.dev/tree/main/',
                     feedOptions: {
@@ -180,17 +181,6 @@ module.exports = {
                 sidebarPath: './sidebars_modules.js',
             }
         ],
-        async function myPlugin(context, options) {
-            return {
-                name: 'docusaurus-tailwindcss',
-                configurePostCss(postcssOptions) {
-                    // Appends TailwindCSS and AutoPrefixer.
-                    postcssOptions.plugins.push(require('tailwindcss'));
-                    postcssOptions.plugins.push(require('autoprefixer'));
-                    return postcssOptions;
-                },
-            };
-        }
     ],
     scripts: [
         {

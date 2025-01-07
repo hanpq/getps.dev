@@ -193,40 +193,6 @@ The _Targets_ property stores the used logging targets, it's where you define wh
 
 Keys of the hashtable depends on the target you are configuring. The module ships with 7 targets but you can write your own for specific usage.
 
-- [PSLogs](#pslogs)
-  - [Project status](#project-status)
-  - [About](#about)
-  - [Installation](#installation)
-    - [PowerShell Gallery](#powershell-gallery)
-- [Usage](#usage)
-  - [TL;DR](#tldr)
-    - [NOTE](#note)
-  - [Configuration](#configuration)
-    - [Level](#level)
-    - [Format](#format)
-      - [Padding](#padding)
-      - [Date format string](#date-format-string)
-      - [Caller](#caller)
-    - [Targets](#targets)
-      - [Console](#console)
-        - [Colors](#colors)
-      - [File](#file)
-        - [Rotation](#rotation)
-      - [ElasticSearch](#elasticsearch)
-        - [NoFlatten](#noflatten)
-        - [Flatten](#flatten)
-      - [Slack](#slack)
-      - [Email](#email)
-      - [Seq](#seq)
-      - [WinEventLog](#wineventlog)
-      - [Teams](#teams)
-    - [CustomTargets](#customtargets)
-      - [AzureLogAnalytics](#azureloganalytics)
-  - [Contributing](#contributing)
-  - [Notes](#notes)
-  - [License](#license)
-  - [Included attributions from orginal repo](#included-attributions-from-orginal-repo)
-
 #### Console
 
 From version 2.3.3 it supports acquiring lock for issues with git prompt that sometimes gets splitted during output.
@@ -527,4 +493,3 @@ Special thanks to:
 [module]: https://github.com/EsOsO/Logging
 [runspaces]: https://learn-powershell.net/tag/runspace/
 [license]: https://github.com/EsOsO/Logging/blob/main/docs/LICENSE.md
-
