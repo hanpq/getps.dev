@@ -359,7 +359,7 @@ Note: .Net has not been released yet
 [OSNT40]: https://img.shields.io/badge/NT%204.0-f6f6f2
 [OSNT351]: https://img.shields.io/badge/NT%203.51-f6f6f2
 
-[Hotfix Update]: https://img.shields.io/badge/Security%20Update-dc832f
+[Hotfix Update]: https://img.shields.io/badge/Hotfix%20Update-dc832f
 [Security Update]: https://img.shields.io/badge/Security%20Update-8A2BE2
 [Cumulative Update]: https://img.shields.io/badge/Cumulative%20Update-53a5bf
 [RTM]: https://img.shields.io/badge/RTM-53a5bf
