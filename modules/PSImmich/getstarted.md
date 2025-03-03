@@ -191,6 +191,7 @@ Below is a reference of the available command. For documentation about each comm
 
 ### Search
 
+- Search-IMAsset
 - Find-IMAsset
 - Find-IMCity
 - Find-IMExploreData
@@ -253,4 +254,3 @@ Below is a reference of the available command. For documentation about each comm
 - Remove-IMUser
 - Restore-IMUser
 - Set-IMUser
-

@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.128.0] - 2025-03-03
+
+### Added
+
+- Added coverage for smart search, provided by Search-IMAsset.
+
+### Removed
+
+- Removed Get-IMAuditDelete as it is no longer provided by the Immich API.
+
 ## [1.118.0] - 2024-10-15
 
 ### Fixed
@@ -158,4 +168,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - First release
-
