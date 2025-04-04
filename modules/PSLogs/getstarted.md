@@ -391,6 +391,63 @@ Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell'
 Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell' -Body @{source = 'Logging'}
 ```
 
+#### SQLite
+
+Using column mapping the following values can be used out-of-the-box 
+
+- pathname
+- pid
+- body
+- timestamp
+- rawmessage
+- lineno
+- filename
+- caller
+- level
+- timestamputc
+- execinfo
+- message
+- levelno
+
+The key of the ColumnMapping hashtable is the SQL Table column name and the value is one of the above properties.
+
+```powershell
+Add-LoggingTarget -Name SQLite -Configuration @{
+    Database      = "$PSScriptRoot\Logs.sqlite"
+    TableName     = 'Logs'
+    ColumnMapping = @{
+        Timestamp = 'Timestamp'
+        Severity  = 'Level'
+        Source    = 'Caller'
+        Message   = 'Message'
+    }
+    Level         = 'debug'
+}
+
+Write-Log -Level 'WARNING' -Message 'Hello, Powershell'
+Write-Log -Level 'WARNING' -Message 'Hello, {0}!' -Arguments 'Powershell'
+```
+
+You can also provide custom values for the logging table by providing a hashtable to the Body parameter. Make sure that the table actually has the columns before trying to log them.
+
+```powershell
+Write-Log -Level 'WARNING' -Message 'Hello' -Body @{PSEdition = $PSEdition}
+```
+When you have the dependency module PSSQLite installed you can use the following command to initialize a SQLite database for logging. Modify appropriately
+
+```powershell
+$Query = @'
+CREATE TABLE "Logs" (
+	"Timestamp"	DATETIME NOT NULL,
+	"Severity"	TEXT NOT NULL,
+	"Source"	TEXT NOT NULL,
+	"Message"	TEXT NOT NULL,
+	"PSEdition"	TEXT
+);
+'@
+Invoke-SqliteQuery -DataSource C:\Path\To\logs2.sqlite -Query $Query
+```
+
 #### WinEventLog
 
 Before you can log events you need to make sure that the LogName and Source exists. This needs to be done only once (run as an Administrator)
@@ -493,3 +550,4 @@ Special thanks to:
 [module]: https://github.com/EsOsO/Logging
 [runspaces]: https://learn-powershell.net/tag/runspace/
 [license]: https://github.com/EsOsO/Logging/blob/main/docs/LICENSE.md
+
