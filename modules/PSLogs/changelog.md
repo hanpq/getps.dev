@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Plugin Console: Now supports SQL logging level
+
+### Chore
+
+- Updated README / GetStarted docs
+
 ## [5.2.4] - 2025-04-11
 
 ### Added
