@@ -345,7 +345,7 @@ Add-LoggingTarget -Name Console -Configuration @{
 #### Example
 Add-LoggingTarget -Name Console -Configuration @{
     Level = 'DEBUG'
-    Format = '[%{timestamp}] [%{level}] %{message}'
+    Format = '[%\{timestamp\}] [%\{level\}] %{message}'
     PrintException = $false
     ColorMapping = @{
         'DEBUG'   = 'Blue'
@@ -407,7 +407,7 @@ This module provides the functionality for the file target to remove old log fil
     Append          = $true               
     Encoding        = 'ascii'             
     Level           = 'VERBOSE'          
-    Format          =  '[%{timestamp}] [%{level}] %{message}'         
+    Format          =  '[%\{timestamp\}] [%\{level\}] %{message}'         
     RotateAfterAmount = <NOTSET>          
     RotateAmount      = <NOTSET>          
     RotateAfterDate   = <NOTSET>          
