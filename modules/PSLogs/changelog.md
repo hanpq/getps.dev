@@ -9,6 +9,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.5.1] - 2025-04-15
+
+### Fixed
+
+- Plugin Console: Fixed an issue where format colors cause an error on Windows Powershell 5.1
+- Plugin Console: Fixed an issue where Windows Powershell 5.1 where the ANSI escape character was not working.
+
+## [5.5.0] - 2025-04-14
+
+### Added
+
+- Plugin Console: You can now colorize individual text items both in the message and in the general format. See docs for more info.
+
+## [5.4.0] - 2025-04-13
+
+### Fixed
+
+- Fixed module release issue
+
+## [5.2.7] - 2025-04-13
+
+### Fixed
+
+- Fixed module release issue
+
+## [5.2.6] - 2025-04-13
+
+### Fixed
+
+- Plugin Console: Fixed an issue where ShortLevel would cause default colors to not apply.
+
 ## [5.2.5] - 2025-04-13
 
 ### Added
