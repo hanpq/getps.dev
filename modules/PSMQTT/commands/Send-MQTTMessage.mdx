@@ -16,8 +16,8 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Send-MQTTMessage [-Session] <MqttClient> [-Topic] <String> [[-Payload] <String>] [-Quiet]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Send-MQTTMessage [-Session] <MqttClient> [-Topic] <String> [[-Payload] <String>] [-Quiet] [[-QosLevel] <Int32>]
+ [-Retain] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -85,6 +85,38 @@ Accept wildcard characters: False
 ### -Quiet
 
 Defines that messages are sent without outputing any objects.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -QosLevel
+
+Defines the Quality of Service level for the message.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Retain
+
+Defines if the message should be retained by the MQTTBroker.
 
 ```yaml
 Type: SwitchParameter
