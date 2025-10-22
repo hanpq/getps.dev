@@ -1,0 +1,358 @@
+﻿/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem 0;
+}
+
+/* Central Timeline Line */
+.timelineLine {
+    position: absolute;
+    left: 50%;
+    top: 2.5rem;
+    bottom: 2.5rem;
+    width: 2px;
+    background: var(--ifm-color-emphasis-300);
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* Reversed timeline line positioning */
+.timelineReversed .timelineLine {
+    top: 2.5rem;
+    bottom: 2.5rem;
+}
+
+/* Add subtle gradient overlay for depth */
+.timelineLine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            var(--ifm-color-emphasis-400) 10%,
+            var(--ifm-color-emphasis-400) 90%,
+            transparent 100%);
+    z-index: 1;
+}
+
+/* Timeline Item Container */
+.timelineItem {
+    position: relative;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+/* Left Side Items */
+.timelineLeft {
+    text-align: right;
+}
+
+.timelineLeft .timelineCard {
+    margin-right: calc(50% + 2rem);
+    margin-left: 0;
+}
+
+/* Right Side Items */
+.timelineRight {
+    text-align: left;
+}
+
+.timelineRight .timelineCard {
+    margin-left: calc(50% + 2rem);
+    margin-right: 0;
+}
+
+/* Timeline Marker (Icon Circle) */
+.timelineMarker {
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--ifm-background-color);
+    border: 2px solid var(--ifm-color-emphasis-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.timelineMarker:hover {
+    border-color: var(--ifm-color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%) scale(1.05);
+}
+
+.timelineIcon {
+    font-size: 1.2rem;
+}
+
+/* Timeline Card */
+.timelineCard {
+    background: var(--ifm-card-background-color);
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.timelineCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Arrow */
+.timelineLeft .timelineCard::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: 1.5rem;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-left-color: var(--ifm-card-background-color);
+}
+
+.timelineRight .timelineCard::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 1.5rem;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-right-color: var(--ifm-card-background-color);
+}
+
+/* Timeline Header */
+.timelineHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.timelineTitle {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ifm-heading-color);
+    flex: 1;
+}
+
+.timelineTitleLink {
+    color: var(--ifm-link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.timelineTitleLink:hover {
+    color: var(--ifm-link-hover-color);
+    text-decoration: underline;
+}
+
+.timelineDate {
+    font-size: 0.875rem;
+    color: var(--ifm-color-emphasis-700);
+    background: var(--ifm-color-emphasis-100);
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    white-space: nowrap;
+}
+
+/* Timeline Content */
+.timelineContent {
+    margin-top: 1rem;
+}
+
+.timelineText {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--ifm-font-color-base);
+}
+
+.timelineImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timelineMap {
+    margin-top: 1rem;
+}
+
+.timelineMap iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mapFallback {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--ifm-color-emphasis-700);
+}
+
+.mapFallback a {
+    color: var(--ifm-link-color);
+    text-decoration: none;
+}
+
+.mapFallback a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Theme Adjustments */
+[data-theme='dark'] .timelineCard {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .timelineCard:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .timelineImage {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .timelineMap iframe {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 1rem 0;
+    }
+
+    .timelineLine {
+        left: 2rem;
+    }
+
+    .timelineItem {
+        margin: 1.5rem 0;
+    }
+
+    .timelineLeft,
+    .timelineRight {
+        text-align: left;
+    }
+
+    .timelineLeft .timelineCard,
+    .timelineRight .timelineCard {
+        margin-left: 4rem;
+        margin-right: 1rem;
+    }
+
+    .timelineMarker {
+        left: 2rem;
+    }
+
+    .timelineLeft .timelineCard::after,
+    .timelineRight .timelineCard::after {
+        left: -12px;
+        border-left-color: transparent;
+        border-right-color: var(--ifm-card-background-color);
+    }
+
+    .timelineHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timelineTitle {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Mobile adjustments for terminal markers */
+    .timelineTerminal {
+        left: 2rem;
+    }
+
+    .timelineTerminalMarker {
+        left: 2rem;
+    }
+}
+
+/* Timeline Terminal Markers (Start/End) */
+.timelineTerminal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    z-index: 3;
+}
+
+.timelineStart {
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.timelineEnd {
+    margin-bottom: 0;
+    margin-top: 3rem;
+}
+
+/* Reversed timeline marker positioning */
+.timelineReversed .timelineStart {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.timelineReversed .timelineEnd {
+    margin-bottom: 3rem;
+    margin-top: 0;
+}
+
+.timelineTerminalMarker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ifm-card-background-color);
+    color: var(--ifm-color-emphasis-800);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 4;
+    font-weight: 600;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    border: 2px solid var(--ifm-color-primary);
+}
+
+.timelineTerminalIcon {
+    font-size: 1.1rem;
+}
+
+.timelineTerminalText {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Dark theme adjustments for terminal markers */
+[data-theme='dark'] .timelineTerminalMarker {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--ifm-background-color);
+}
