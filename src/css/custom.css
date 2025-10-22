@@ -51,7 +51,7 @@
 .alert--MSnote {
     --ifm-alert-background-color: #E6F3FF;
     --ifm-alert-background-color-highlight: #CCE7FF;
-    --ifm-alert-foreground-color: #0066CC;
+    --ifm-alert-foreground-color: #003d82;
     --ifm-alert-border-color: #0078D4;
 }
 
@@ -59,8 +59,21 @@
 [data-theme='dark'] .alert--MSnote {
     --ifm-alert-background-color: #1A2B3D;
     --ifm-alert-background-color-highlight: #2D4A5C;
-    --ifm-alert-foreground-color: #73C7FF;
+    --ifm-alert-foreground-color: #ffffff;
     --ifm-alert-border-color: #0078D4;
+}
+
+/* Add custom icon for MSnote - Info icon */
+.theme-admonition-MSnote .admonitionIcon_Rf37 svg,
+.alert--MSnote .admonitionIcon_Rf37 svg {
+    display: none;
+}
+
+.theme-admonition-MSnote .admonitionIcon_Rf37::after,
+.alert--MSnote .admonitionIcon_Rf37::after {
+    content: "💡";
+    font-size: 16px;
+    display: inline-block;
 }
 
 /* MStip - Green/Teal theme (like Microsoft Learn) */
@@ -68,7 +81,7 @@
 .alert--MStip {
     --ifm-alert-background-color: #E6F7E6;
     --ifm-alert-background-color-highlight: #CCF2CC;
-    --ifm-alert-foreground-color: #107C10;
+    --ifm-alert-foreground-color: #0f5c0f;
     --ifm-alert-border-color: #00BCF2;
 }
 
@@ -76,8 +89,21 @@
 [data-theme='dark'] .alert--MStip {
     --ifm-alert-background-color: #1A3B1A;
     --ifm-alert-background-color-highlight: #2D5A2D;
-    --ifm-alert-foreground-color: #7DD87D;
+    --ifm-alert-foreground-color: #ffffff;
     --ifm-alert-border-color: #00BCF2;
+}
+
+/* Add custom icon for MStip - Tip icon */
+.theme-admonition-MStip .admonitionIcon_Rf37 svg,
+.alert--MStip .admonitionIcon_Rf37 svg {
+    display: none;
+}
+
+.theme-admonition-MStip .admonitionIcon_Rf37::after,
+.alert--MStip .admonitionIcon_Rf37::after {
+    content: "🚀";
+    font-size: 16px;
+    display: inline-block;
 }
 
 /* MSwarning - Yellow/Orange theme (like Microsoft Learn) */
@@ -85,7 +111,7 @@
 .alert--MSwarning {
     --ifm-alert-background-color: #FFF4E6;
     --ifm-alert-background-color-highlight: #FFE8CC;
-    --ifm-alert-foreground-color: #CC6600;
+    --ifm-alert-foreground-color: #b8860b;
     --ifm-alert-border-color: #FF8C00;
 }
 
@@ -93,8 +119,21 @@
 [data-theme='dark'] .alert--MSwarning {
     --ifm-alert-background-color: #3D2A1A;
     --ifm-alert-background-color-highlight: #5C3F2D;
-    --ifm-alert-foreground-color: #FFB366;
+    --ifm-alert-foreground-color: #ffffff;
     --ifm-alert-border-color: #FF8C00;
+}
+
+/* Add custom icon for MSwarning - Warning icon */
+.theme-admonition-MSwarning .admonitionIcon_Rf37 svg,
+.alert--MSwarning .admonitionIcon_Rf37 svg {
+    display: none;
+}
+
+.theme-admonition-MSwarning .admonitionIcon_Rf37::after,
+.alert--MSwarning .admonitionIcon_Rf37::after {
+    content: "⚠️";
+    font-size: 16px;
+    display: inline-block;
 }
 
 /* MSimportant - Red theme (like Microsoft Learn) */
@@ -102,7 +141,7 @@
 .alert--MSimportant {
     --ifm-alert-background-color: #FFE6E6;
     --ifm-alert-background-color-highlight: #FFCCCC;
-    --ifm-alert-foreground-color: #CC0000;
+    --ifm-alert-foreground-color: #a00000;
     --ifm-alert-border-color: #E81123;
 }
 
@@ -110,8 +149,21 @@
 [data-theme='dark'] .alert--MSimportant {
     --ifm-alert-background-color: #3D1A1A;
     --ifm-alert-background-color-highlight: #5C2D2D;
-    --ifm-alert-foreground-color: #FF7373;
+    --ifm-alert-foreground-color: #ffffff;
     --ifm-alert-border-color: #E81123;
+}
+
+/* Add custom icon for MSimportant - Important icon */
+.theme-admonition-MSimportant .admonitionIcon_Rf37 svg,
+.alert--MSimportant .admonitionIcon_Rf37 svg {
+    display: none;
+}
+
+.theme-admonition-MSimportant .admonitionIcon_Rf37::after,
+.alert--MSimportant .admonitionIcon_Rf37::after {
+    content: "🚨";
+    font-size: 16px;
+    display: inline-block;
 }
 
 /* MScaution - Orange theme (like Microsoft Learn) */
@@ -119,7 +171,7 @@
 .alert--MScaution {
     --ifm-alert-background-color: #FFF0E6;
     --ifm-alert-background-color-highlight: #FFE0CC;
-    --ifm-alert-foreground-color: #B8860B;
+    --ifm-alert-foreground-color: #bf6900;
     --ifm-alert-border-color: #F7630C;
 }
 
@@ -127,8 +179,21 @@
 [data-theme='dark'] .alert--MScaution {
     --ifm-alert-background-color: #3D2B1A;
     --ifm-alert-background-color-highlight: #5C402D;
-    --ifm-alert-foreground-color: #FFD166;
+    --ifm-alert-foreground-color: #ffffff;
     --ifm-alert-border-color: #F7630C;
+}
+
+/* Add custom icon for MScaution - Caution icon */
+.theme-admonition-MScaution .admonitionIcon_Rf37 svg,
+.alert--MScaution .admonitionIcon_Rf37 svg {
+    display: none;
+}
+
+.theme-admonition-MScaution .admonitionIcon_Rf37::after,
+.alert--MScaution .admonitionIcon_Rf37::after {
+    content: "🛑";
+    font-size: 16px;
+    display: inline-block;
 }
 
 /* Inaktivera fet text på navbar och menu. */
