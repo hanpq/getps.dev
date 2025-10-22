@@ -139,6 +139,10 @@ module.exports = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     editUrl: 'https://github.com/hanpq/getps.dev/tree/main/',
+                    admonitions: {
+                        keywords: ['note', 'tip', 'info', 'caution', 'danger', 'warning', 'MSnote', 'MStip', 'MSwarning', 'MSimportant', 'MScaution'],
+                        extendDefaults: true,
+                    },
                 },
                 blog: {
                     showReadingTime: true,
@@ -151,6 +155,10 @@ module.exports = {
                     blogSidebarCount: 'ALL',
                     blogSidebarTitle: 'All our posts',
                     onUntruncatedBlogPosts: 'ignore',
+                    admonitions: {
+                        keywords: ['note', 'tip', 'info', 'caution', 'danger', 'warning', 'MSnote', 'MStip', 'MSwarning', 'MSimportant', 'MScaution'],
+                        extendDefaults: true,
+                    },
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -179,6 +187,10 @@ module.exports = {
                 path: './modules',
                 routeBasePath: 'modules',
                 sidebarPath: './sidebars_modules.js',
+                admonitions: {
+                    keywords: ['note', 'tip', 'info', 'caution', 'danger', 'warning', 'MSnote', 'MStip', 'MSwarning', 'MSimportant', 'MScaution'],
+                    extendDefaults: true,
+                },
             }
         ],
     ],

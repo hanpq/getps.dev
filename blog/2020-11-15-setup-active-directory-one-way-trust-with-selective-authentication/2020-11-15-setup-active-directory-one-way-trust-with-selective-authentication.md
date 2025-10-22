@@ -22,6 +22,10 @@ One of the things I have helped clients with is to setup Active Directory Forest
   - Not allowed to setup a stub zone or conditional forward
 - And last but not least strict security policies for firewall rules
 
+:::purple[Väldigt viktigt]
+En text
+:::
+
 ## Scenario and definitions
 
 The scenario came from the acquisition of another company and during the consolidation of the two organization the trust was setup so that the migrated users could access a few legacy systems until all resources was migrated. In the table below the scenario is defined.
@@ -31,7 +35,7 @@ The scenario came from the acquisition of another company and during the consoli
 | Containing          | Users    | Resources |
 | Trust Direction     | Incoming | Outgoing  |
 | Trust               | Trusted  | Trusting  |
-| Direction of Access | >       | >        |
+| Direction of Access | >        | >         |
 | Direction of Trust  | \<       | \<        |
 
 ## Configure trust options

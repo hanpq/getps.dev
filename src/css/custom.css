@@ -45,6 +45,92 @@
     gap: 15px;
 }
 
+/* Microsoft Learn Style Admonitions */
+/* MSnote - Blue theme (like Microsoft Learn) */
+.theme-admonition-MSnote,
+.alert--MSnote {
+    --ifm-alert-background-color: #E6F3FF;
+    --ifm-alert-background-color-highlight: #CCE7FF;
+    --ifm-alert-foreground-color: #0066CC;
+    --ifm-alert-border-color: #0078D4;
+}
+
+[data-theme='dark'] .theme-admonition-MSnote,
+[data-theme='dark'] .alert--MSnote {
+    --ifm-alert-background-color: #1A2B3D;
+    --ifm-alert-background-color-highlight: #2D4A5C;
+    --ifm-alert-foreground-color: #73C7FF;
+    --ifm-alert-border-color: #0078D4;
+}
+
+/* MStip - Green/Teal theme (like Microsoft Learn) */
+.theme-admonition-MStip,
+.alert--MStip {
+    --ifm-alert-background-color: #E6F7E6;
+    --ifm-alert-background-color-highlight: #CCF2CC;
+    --ifm-alert-foreground-color: #107C10;
+    --ifm-alert-border-color: #00BCF2;
+}
+
+[data-theme='dark'] .theme-admonition-MStip,
+[data-theme='dark'] .alert--MStip {
+    --ifm-alert-background-color: #1A3B1A;
+    --ifm-alert-background-color-highlight: #2D5A2D;
+    --ifm-alert-foreground-color: #7DD87D;
+    --ifm-alert-border-color: #00BCF2;
+}
+
+/* MSwarning - Yellow/Orange theme (like Microsoft Learn) */
+.theme-admonition-MSwarning,
+.alert--MSwarning {
+    --ifm-alert-background-color: #FFF4E6;
+    --ifm-alert-background-color-highlight: #FFE8CC;
+    --ifm-alert-foreground-color: #CC6600;
+    --ifm-alert-border-color: #FF8C00;
+}
+
+[data-theme='dark'] .theme-admonition-MSwarning,
+[data-theme='dark'] .alert--MSwarning {
+    --ifm-alert-background-color: #3D2A1A;
+    --ifm-alert-background-color-highlight: #5C3F2D;
+    --ifm-alert-foreground-color: #FFB366;
+    --ifm-alert-border-color: #FF8C00;
+}
+
+/* MSimportant - Red theme (like Microsoft Learn) */
+.theme-admonition-MSimportant,
+.alert--MSimportant {
+    --ifm-alert-background-color: #FFE6E6;
+    --ifm-alert-background-color-highlight: #FFCCCC;
+    --ifm-alert-foreground-color: #CC0000;
+    --ifm-alert-border-color: #E81123;
+}
+
+[data-theme='dark'] .theme-admonition-MSimportant,
+[data-theme='dark'] .alert--MSimportant {
+    --ifm-alert-background-color: #3D1A1A;
+    --ifm-alert-background-color-highlight: #5C2D2D;
+    --ifm-alert-foreground-color: #FF7373;
+    --ifm-alert-border-color: #E81123;
+}
+
+/* MScaution - Orange theme (like Microsoft Learn) */
+.theme-admonition-MScaution,
+.alert--MScaution {
+    --ifm-alert-background-color: #FFF0E6;
+    --ifm-alert-background-color-highlight: #FFE0CC;
+    --ifm-alert-foreground-color: #B8860B;
+    --ifm-alert-border-color: #F7630C;
+}
+
+[data-theme='dark'] .theme-admonition-MScaution,
+[data-theme='dark'] .alert--MScaution {
+    --ifm-alert-background-color: #3D2B1A;
+    --ifm-alert-background-color-highlight: #5C402D;
+    --ifm-alert-foreground-color: #FFD166;
+    --ifm-alert-border-color: #F7630C;
+}
+
 /* Inaktivera fet text på navbar och menu. */
 .navbar__item {
     font-weight: 400;
