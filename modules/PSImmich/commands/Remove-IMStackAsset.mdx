@@ -1,7 +1,7 @@
 ---
-id: Get-IMAssetMemoryLane
-title: Get-IMAssetMemoryLane
-description: Help page for the Powershell "Get-IMAssetMemoryLane" command
+id: Remove-IMStackAsset
+title: Remove-IMStackAsset
+description: Help page for the Powershell "Remove-IMStackAsset" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,23 +16,31 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMAssetMemoryLane [[-Session] <ImmichSession>] [-DayOfMonth] <Int32> [-Month] <Int32>
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Remove-IMStackAsset [[-Session] <ImmichSession>] [-StackId] <String> [-AssetId] <String> [-Force]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives asset memory lane
+Removes an asset from an Immich stack
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAssetMemoryLane -DayOfMonth 1 -Month 4
+-AssetId <assetId>
 ```
 
-Retreives assets for 1 of April for every year
+Removes the specified asset from the stack
+
+### EXAMPLE 2
+
+```powershell
+-AssetId <assetId> -Force
+```
+
+Removes the asset from the stack without confirmation
 
 ## PARAMETERS
 
@@ -55,34 +63,83 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DayOfMonth
+### -StackId
 
-Defines which day of month to query
+The stack ID from which to remove the asset
 
 ```yaml
-Type: Int32
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Month
+### -AssetId
 
-Defines which month
+The asset ID to remove from the stack
 
 ```yaml
-Type: Int32
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Force
+
+Suppress confirmation prompt
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -1,7 +1,7 @@
 ---
-id: Get-IMAuditFile
-title: Get-IMAuditFile
-description: Help page for the Powershell "Get-IMAuditFile" command
+id: Set-IMStack
+title: Set-IMStack
+description: Help page for the Powershell "Set-IMStack" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,22 +16,23 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-Get-IMAuditFile [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Set-IMStack [[-Session] <ImmichSession>] [-Id] <String> [-PrimaryAssetId] <String>
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives Immich audit files
+Updates an existing Immich stack
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAuditFile
+-PrimaryAssetId <assetId>
 ```
 
-Retreives Immich audit files
+Updates the stack to use the specified asset as the primary asset
 
 ## PARAMETERS
 
@@ -49,6 +50,38 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The stack ID to update
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -PrimaryAssetId
+
+The asset ID to set as the primary asset for this stack
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
