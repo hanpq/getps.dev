@@ -1,7 +1,7 @@
 ---
-id: New-IMAlbum
-title: New-IMAlbum
-description: Help page for the Powershell "New-IMAlbum" command
+id: Remove-IMStack
+title: Remove-IMStack
+description: Help page for the Powershell "Remove-IMStack" command
 keywords:
   - Powershell
   - PSImmich
@@ -16,32 +16,31 @@ hide_table_of_contents: false
 ## SYNTAX
 
 ```powershell
-New-IMAlbum [[-Session] <ImmichSession>] [-AlbumName] <String> [[-AssetIds] <String[]>]
- [[-Description] <String>] [[-AlbumUsers] <Hashtable[]>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Remove-IMStack [[-Session] <ImmichSession>] [-Id] <String[]> [-Force] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new album
+Removes Immich stack(s)
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+
 ```
 
-Adds a new an album
+Removes the specified stack
 
 ### EXAMPLE 2
 
 ```powershell
-';role='editor'}
+Remove-IMStack -Id @('stack-1', 'stack-2') -Force
 ```
 
-Adds a new shared album that is shared to a user
+Removes multiple stacks without confirmation
 
 ## PARAMETERS
 
@@ -64,65 +63,67 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AlbumName
+### -Id
 
-Defines the name of the new album
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AssetIds
-
-Defines a list of assets to add to the album
+The stack ID(s) to remove.
+Can accept multiple IDs for bulk deletion.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
 Aliases:
 
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Force
+
+Suppress confirmation prompt
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
 Required: False
-Position: 3
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Description
+### -Confirm
 
-Defines a description for the album
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AlbumUsers
-
-Defines a list of user id to share the album to
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: Hashtable[]
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
-Position: 5
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

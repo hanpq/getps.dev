@@ -1,7 +1,7 @@
 ---
-id: Get-IMFileChecksum
-title: Get-IMFileChecksum
-description: Help page for the Powershell "Get-IMFileChecksum" command
+id: Get-IMStack
+title: Get-IMStack
+description: Help page for the Powershell "Get-IMStack" command
 keywords:
   - Powershell
   - PSImmich
@@ -15,24 +15,48 @@ hide_table_of_contents: false
 
 ## SYNTAX
 
+### list (Default)
+
 ```powershell
-Get-IMFileChecksum [[-Session] <ImmichSession>] [-FileName] <String[]> [-ProgressAction <ActionPreference>]
+Get-IMStack [-Session <ImmichSession>] [-PrimaryAssetId <String>] [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMStack [-Session <ImmichSession>] -Id <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives Immich file checksum
+Retrieves Immich stack information
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMFileChecksum
+Get-IMStack
 ```
 
-Retreives Immich file checksum
+Retrieves all Immich stacks
+
+### EXAMPLE 2
+
+```powershell
+
+```
+
+Retrieves a specific Immich stack by ID
+
+### EXAMPLE 3
+
+```powershell
+
+```
+
+Retrieves stacks filtered by primary asset ID
 
 ## PARAMETERS
 
@@ -49,23 +73,39 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FileName
+### -Id
 
-Defines the full path to the file that checksum should be calculated for.
+Defines the stack to get
 
 ```yaml
-Type: String[]
-Parameter Sets: (All)
+Type: String
+Parameter Sets: id
 Aliases:
 
 Required: True
-Position: 2
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -PrimaryAssetId
+
+Only returns stacks that contain the specified primary asset
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

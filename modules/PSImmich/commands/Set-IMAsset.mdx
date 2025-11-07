@@ -18,8 +18,8 @@ hide_table_of_contents: false
 ### batch (Default)
 
 ```powershell
-Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
- [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-removeParent] [-stackParentId <String>]
+Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-DateTimeOriginal <String>] [-IsArchived <Boolean>]
+ [-IsFavorite <Boolean>] [-Latitude <Int32>] [-Longitude <Int32>] [-RemoveParent] [-StackParentId <String>]
  [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>]
  [-AddToFace <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -28,11 +28,11 @@ Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String
 ### id
 
 ```powershell
-Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-dateTimeOriginal <String>] [-isArchived <Boolean>]
- [-isFavorite <Boolean>] [-latitude <Int32>] [-longitude <Int32>] [-description <String>]
- [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>]
- [-AddToFace <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
+ [-Latitude <Int32>] [-Longitude <Int32>] [-Description <String>] [-AddToAlbum <String>]
+ [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>] [-AddToFace <String>]
+ [-AddToMemory <String>] [-RemoveFromMemory <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,7 +86,7 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -dateTimeOriginal
+### -DateTimeOriginal
 
 Defines the assets taken date
 
@@ -102,13 +102,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isArchived
+### -IsArchived
 
 Defines if the asset should archived
 
 ```yaml
 Type: Boolean
-Parameter Sets: (All)
+Parameter Sets: batch
 Aliases:
 
 Required: False
@@ -118,7 +118,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isFavorite
+### -IsFavorite
 
 Defines if the asset should be set as favorite
 
@@ -134,7 +134,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -latitude
+### -Latitude
 
 Set location latitude
 
@@ -150,7 +150,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -longitude
+### -Longitude
 
 Set location longitude
 
@@ -166,7 +166,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -removeParent
+### -RemoveParent
 
 Defines if stack parent should be removed
 
@@ -182,7 +182,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -stackParentId
+### -StackParentId
 
 Defines a parent asset
 
@@ -198,7 +198,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -description
+### -Description
 
 Defines a description
 
