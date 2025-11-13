@@ -13,35 +13,53 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Exports Immich asset thumbnails
+
 ## SYNTAX
 
 ```powershell
-Export-IMAssetThumbnail [[-Session] <ImmichSession>] [-id] <String> [[-Path] <DirectoryInfo>]
+Export-IMAssetThumbnail [[-Session] <ImmichSession>] [-Id] <String> [[-Path] <DirectoryInfo>]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives the asset thumbnail
+Downloads and saves thumbnail images for Immich assets to a local directory.
+Thumbnails are saved
+as JPEG files with the asset UUID as the filename.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAssetThumbnail
+Export-IMAssetThumbnail -Id 'asset-uuid' -Path 'C:\Thumbnails'
 ```
 
-Retreives asset thumbnails
+Exports the thumbnail for the specified asset to the C:\Thumbnails directory.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAsset -Random -Count 10 | Export-IMAssetThumbnail -Path 'C:\RandomThumbnails'
+```
+
+Exports thumbnails for 10 random assets using pipeline input.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAsset -TagId 'portrait-tag' | Export-IMAssetThumbnail -Path 'C:\Portraits\Thumbs'
+```
+
+Exports thumbnails for all assets tagged as portraits.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +73,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines the asset ID to query
+The UUID of the asset to export the thumbnail for.
+Accepts pipeline input.
 
 ```yaml
 Type: String
@@ -73,7 +92,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Defines the directory for the output file
+The local directory where the thumbnail file will be saved.
+The file will be named using the asset UUID with a .jpeg extension.
 
 ```yaml
 Type: DirectoryInfo

@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich theme CSS.
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,7 @@ Get-IMTheme [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<
 
 ## DESCRIPTION
 
-Retreives Immich theme CSS
+Gets current theme CSS styling for Immich interface.
 
 ## EXAMPLES
 
@@ -31,16 +33,13 @@ Retreives Immich theme CSS
 Get-IMTheme
 ```
 
-Retreives Immich theme CSS
+Gets current theme CSS.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession

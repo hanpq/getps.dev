@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes an asset tag.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ Remove-IMTag [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction <Act
 
 ## DESCRIPTION
 
-Remove Immich tag
+Deletes a tag and removes it from all associated assets.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-
+Remove-IMTag -Id 'tag-id'
 ```
 
-Remove Immich tag
+Removes tag and all associations.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a specific tag id to be retreived
+Tag ID to remove.
 
 ```yaml
 Type: String[]

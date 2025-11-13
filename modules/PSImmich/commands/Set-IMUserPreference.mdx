@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates user interface preferences.
+
 ## SYNTAX
 
 ```powershell
@@ -25,7 +27,7 @@ Set-IMUserPreference [[-Session] <ImmichSession>] [-id] <String[]> [[-AvatarColo
 
 ## DESCRIPTION
 
-Set Immich user preference
+Modifies user preferences for interface behavior and appearance.
 
 ## EXAMPLES
 
@@ -41,10 +43,7 @@ Set Immich user preferences
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -60,7 +59,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines the user id to update
+User ID to update preferences for.
 
 ```yaml
 Type: String[]

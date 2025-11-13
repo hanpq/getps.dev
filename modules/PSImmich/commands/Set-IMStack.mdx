@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates stack configuration.
+
 ## SYNTAX
 
 ```powershell
@@ -22,15 +24,17 @@ Set-IMStack [[-Session] <ImmichSession>] [-Id] <String> [-PrimaryAssetId] <Strin
 
 ## DESCRIPTION
 
-Updates an existing Immich stack
+Modifies stack properties, such as changing the primary asset.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--PrimaryAssetId <assetId>
+Set-IMStack -Id 'stack-id' -PrimaryAssetId 'asset-id'
 ```
+
+Changes stack primary asset.
 
 Updates the stack to use the specified asset as the primary asset
 
@@ -38,10 +42,7 @@ Updates the stack to use the specified asset as the primary asset
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +58,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-The stack ID to update
+Stack ID to update.
 
 ```yaml
 Type: String
@@ -73,7 +74,7 @@ Accept wildcard characters: False
 
 ### -PrimaryAssetId
 
-The asset ID to set as the primary asset for this stack
+Asset ID to set as the new primary asset.
 
 ```yaml
 Type: String

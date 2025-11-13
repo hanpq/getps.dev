@@ -13,26 +13,52 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new memory collection in Immich.
+
 ## SYNTAX
 
 ```powershell
-New-IMMemory [[-Session] <ImmichSession>] [[-Year] <Boolean>] [[-AssetIds] <String[]>] [-MemoryAt] <DateTime>
+New-IMMemory [[-Session] <ImmichSession>] [[-Year] <Int32>] [[-AssetIds] <String[]>] [-MemoryAt] <DateTime>
  [[-SeenAt] <DateTime>] [[-Type] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new memory
+The New-IMMemory function creates a new memory in Immich, which is a curated collection
+of assets organized around a specific date, event, or theme.
+Memories help users
+rediscover their photos through temporal organization and can be configured for
+different types of reminiscence experiences.
+
+The function supports creating 'on_this_day' type memories that highlight assets
+from previous years on the same date, helping users revisit past moments and experiences.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-,<assetid>
+New-IMMemory -MemoryAt "2024-01-01 00:00:00" -AssetIds 'bf973405-3f2a-48d2-a687-2ed4167164be', '9c4e0006-3a2b-4967-94b6-7e8bb8490a12'
 ```
 
-Create a new memory for the date and assets.
+Creates a New Year's Day memory for 2024 with two specific assets.
+
+### EXAMPLE 2
+
+```powershell
+New-IMMemory -MemoryAt (Get-Date "2023-12-25") -Type 'on_this_day' -Year 2023
+```
+
+Creates a Christmas Day memory for 2023 using DateTime object for the date.
+
+### EXAMPLE 3
+
+```powershell
+$assets = Get-IMAsset | Where-Object { $_.fileCreatedAt -like '*-07-04*' }
+New-IMMemory -MemoryAt "2024-07-04" -AssetIds $assets.id
+```
+
+Creates a memory for July 4th using assets filtered by creation date.
 
 ## PARAMETERS
 
@@ -57,23 +83,29 @@ Accept wildcard characters: False
 
 ### -Year
 
-Defines the year of the memory.
+Specifies the year component for the memory.
+This helps organize memories by
+temporal periods and can be used to create year-specific memory collections.
 
 ```yaml
-Type: Boolean
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AssetIds
 
-Defines a list of assets to add to the memory
+Specifies an array of asset IDs to include in the memory.
+These assets will be
+associated with the memory and displayed when the memory is viewed.
+Assets should
+be relevant to the memory's date or theme.
 
 ```yaml
 Type: String[]
@@ -89,7 +121,10 @@ Accept wildcard characters: False
 
 ### -MemoryAt
 
-Defines the MemoryAt property
+Specifies the date and time when the memory is anchored.
+This represents the focal
+point of the memory and is used to organize and present the associated assets.
+Must be provided in a valid DateTime format.
 
 ```yaml
 Type: DateTime
@@ -105,7 +140,9 @@ Accept wildcard characters: False
 
 ### -SeenAt
 
-Defines the SeenAt property
+Specifies when the memory was last viewed or acknowledged by the user.
+This helps
+track user engagement with memories and can influence how memories are presented.
 
 ```yaml
 Type: DateTime
@@ -121,9 +158,10 @@ Accept wildcard characters: False
 
 ### -Type
 
-Defines the type of memory.
-Defaults to 'on_this_day'.
-Valid values are 'on_this_day'
+Specifies the type of memory to create.
+Currently supports 'on_this_day' which
+creates memories that highlight assets from the same date in previous years.
+Defaults to 'on_this_day' if not specified.
 
 ```yaml
 Type: String
@@ -162,6 +200,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Memories provide a way to automatically surface relevant photos from the past,
+enhancing the user experience by helping rediscover forgotten moments.
 
 ## RELATED LINKS
 

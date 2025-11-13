@@ -13,28 +13,29 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves timeline time buckets.
+
 ## SYNTAX
 
 ### list (Default)
 
 ```powershell
-Get-IMTimeBucket [-Session <ImmichSession>] [-albumId <String>] [-isArchived <Boolean>] [-isFavorite <Boolean>]
- [-isTrashed <Boolean>] [-order <String>] [-personId <String>] -size <String> [-userId <String>]
- [-withPartners <Boolean>] [-withStacked <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMTimeBucket [-Session <ImmichSession>] [-albumId <String>] [-isFavorite <Boolean>] [-isTrashed <Boolean>]
+ [-order <String>] [-personId <String>] [-userId <String>] [-withPartners <Boolean>] [-withStacked <Boolean>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### timebucket
 
 ```powershell
-Get-IMTimeBucket [-Session <ImmichSession>] [-albumId <String>] [-isArchived <Boolean>] [-isFavorite <Boolean>]
- [-isTrashed <Boolean>] [-order <String>] [-personId <String>] -size <String> [-timeBucket <String>]
- [-userId <String>] [-withPartners <Boolean>] [-withStacked <Boolean>] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Get-IMTimeBucket [-Session <ImmichSession>] [-albumId <String>] [-isFavorite <Boolean>] [-isTrashed <Boolean>]
+ [-order <String>] [-personId <String>] -timeBucket <String> [-userId <String>] [-withPartners <Boolean>]
+ [-withStacked <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives timebucket objects
+Gets time-based groupings of assets for timeline display and navigation.
 
 ## EXAMPLES
 
@@ -50,10 +51,7 @@ Retreives timebucket
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -69,7 +67,7 @@ Accept wildcard characters: False
 
 ### -albumId
 
-Albumid filter
+Filter by album ID.
 
 ```yaml
 Type: String
@@ -83,25 +81,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isArchived
-
-Archived filter
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -isFavorite
 
-Favorite filter
+Filter by favorite status.
 
 ```yaml
 Type: Boolean
@@ -117,7 +99,7 @@ Accept wildcard characters: False
 
 ### -isTrashed
 
-Trashed filter
+Filter by trash status.
 
 ```yaml
 Type: Boolean
@@ -133,7 +115,7 @@ Accept wildcard characters: False
 
 ### -order
 
-Defines sort order
+Sort order for results.
 
 ```yaml
 Type: String
@@ -149,7 +131,7 @@ Accept wildcard characters: False
 
 ### -personId
 
-PersonId filter
+Filter by person ID.
 
 ```yaml
 Type: String
@@ -157,22 +139,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -size
-
-Defines size, DAY or MONTH
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -188,7 +154,7 @@ Type: String
 Parameter Sets: timebucket
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

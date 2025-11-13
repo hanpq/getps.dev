@@ -13,22 +13,23 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates Immich asset properties and associations
+
 ## SYNTAX
 
 ### batch (Default)
 
 ```powershell
-Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-DateTimeOriginal <String>] [-IsArchived <Boolean>]
- [-IsFavorite <Boolean>] [-Latitude <Int32>] [-Longitude <Int32>] [-RemoveParent] [-StackParentId <String>]
- [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>]
- [-AddToFace <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
+Set-IMAsset [-Session <ImmichSession>] -Id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
+ [-Latitude <Int32>] [-Longitude <Int32>] [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>]
+ [-RemoveTag <String>] [-AddToFace <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### id
 
 ```powershell
-Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
+Set-IMAsset [-Session <ImmichSession>] -Id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
  [-Latitude <Int32>] [-Longitude <Int32>] [-Description <String>] [-AddToAlbum <String>]
  [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>] [-AddToFace <String>]
  [-AddToMemory <String>] [-RemoveFromMemory <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
@@ -37,26 +38,50 @@ Set-IMAsset [-Session <ImmichSession>] -id <String[]> [-DateTimeOriginal <String
 
 ## DESCRIPTION
 
-Updates an Immich asset
+Updates various properties of Immich assets including metadata, location, favorites status, and manages
+associations with albums, tags, faces, and memories.
+Supports batch operations on multiple assets.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--AddTag <tagid>
+Set-IMAsset -Id 'asset-uuid' -IsFavorite:$true
 ```
 
-Adds a tag to an asset
+Marks the specified asset as a favorite.
+
+### EXAMPLE 2
+
+```powershell
+Set-IMAsset -Id 'asset-uuid' -AddTag 'tag-uuid'
+```
+
+Adds a tag to the specified asset.
+
+### EXAMPLE 3
+
+```powershell
+Set-IMAsset -Id 'asset-uuid' -Latitude 40.7128 -Longitude -74.0060 -Description 'New York City'
+```
+
+Updates the location and description for the asset.
+
+### EXAMPLE 4
+
+```powershell
+@('asset1-uuid', 'asset2-uuid') | Set-IMAsset -AddToAlbum 'album-uuid'
+```
+
+Adds multiple assets to an album via pipeline.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -70,9 +95,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines the asset to update
+The UUID(s) of the asset(s) to update.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -88,7 +114,7 @@ Accept wildcard characters: False
 
 ### -DateTimeOriginal
 
-Defines the assets taken date
+The original date and time when the asset was created/taken.
 
 ```yaml
 Type: String
@@ -102,25 +128,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IsArchived
-
-Defines if the asset should archived
-
-```yaml
-Type: Boolean
-Parameter Sets: batch
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -IsFavorite
 
-Defines if the asset should be set as favorite
+Specifies whether the asset should be marked as a favorite.
 
 ```yaml
 Type: Boolean
@@ -136,7 +146,7 @@ Accept wildcard characters: False
 
 ### -Latitude
 
-Set location latitude
+The latitude coordinate for the asset's location.
 
 ```yaml
 Type: Int32
@@ -152,7 +162,7 @@ Accept wildcard characters: False
 
 ### -Longitude
 
-Set location longitude
+The longitude coordinate for the asset's location.
 
 ```yaml
 Type: Int32
@@ -166,41 +176,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RemoveParent
-
-Defines if stack parent should be removed
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: batch
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StackParentId
-
-Defines a parent asset
-
-```yaml
-Type: String
-Parameter Sets: batch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Description
 
-Defines a description
+A description or caption for the asset.
 
 ```yaml
 Type: String
@@ -216,7 +194,7 @@ Accept wildcard characters: False
 
 ### -AddToAlbum
 
-Defines if the asset should be added to an album
+The UUID of an album to add the asset(s) to.
 
 ```yaml
 Type: String
@@ -232,7 +210,7 @@ Accept wildcard characters: False
 
 ### -RemoveFromAlbum
 
-Defines if the asset should be removed from an album
+The UUID of an album to remove the asset(s) from.
 
 ```yaml
 Type: String
@@ -248,7 +226,7 @@ Accept wildcard characters: False
 
 ### -AddTag
 
-Defines if a tag should be added to the asset
+The UUID of a tag to add to the asset(s).
 
 ```yaml
 Type: String
@@ -264,7 +242,7 @@ Accept wildcard characters: False
 
 ### -RemoveTag
 
-Defines if a tag should be removed from the asset
+The UUID of a tag to remove from the asset(s).
 
 ```yaml
 Type: String
@@ -280,7 +258,7 @@ Accept wildcard characters: False
 
 ### -AddToFace
 
-Defines if the asset should be assign to a face
+The UUID of a face to associate the asset(s) with.
 
 ```yaml
 Type: String
@@ -296,7 +274,7 @@ Accept wildcard characters: False
 
 ### -AddToMemory
 
-Defines if the asset should be added to a memory
+The UUID of a memory to add the asset(s) to.
 
 ```yaml
 Type: String
@@ -312,7 +290,7 @@ Accept wildcard characters: False
 
 ### -RemoveFromMemory
 
-Defines if the asset should be removed from a memory
+The UUID of a memory to remove the asset(s) from.
 
 ```yaml
 Type: String
@@ -384,6 +362,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before making changes.
 
 ## RELATED LINKS
 

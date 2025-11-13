@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Disconnects from Immich server.
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,7 @@ Disconnect-Immich [[-Session] <ImmichSession>] [-ProgressAction <ActionPreferenc
 
 ## DESCRIPTION
 
-Disconnect and cleanup session configuration
+Cleans up session configuration and authentication state.
 
 ## EXAMPLES
 
@@ -31,21 +33,21 @@ Disconnect and cleanup session configuration
 Disconnect-Immich
 ```
 
-Disconnect from the default immich session
+Disconnects from default session.
 
 ### EXAMPLE 2
 
 ```powershell
-Disconnect-Immich -Session $Session
+Disconnect-Immich -Session $session
 ```
 
-Disconnect the specified session
+Disconnects specific session object.
 
 ## PARAMETERS
 
 ### -Session
 
-Defines a ImmichSession object that will be disconnected and cleaned up.
+Specific session to disconnect, or default session if omitted.
 
 ```yaml
 Type: ImmichSession

@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes current user's profile picture.
+
 ## SYNTAX
 
 ```powershell
@@ -22,7 +24,7 @@ Remove-IMMyProfilePicture [[-Session] <ImmichSession>] [-ProgressAction <ActionP
 
 ## DESCRIPTION
 
-Remove the profile picture of the connected user
+Deletes profile picture for the currently authenticated user.
 
 ## EXAMPLES
 
@@ -32,16 +34,15 @@ Remove the profile picture of the connected user
 Remove-IMMyProfilePicture
 ```
 
+Removes your profile picture.
+
 Remove the profile picture of the connected user
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession

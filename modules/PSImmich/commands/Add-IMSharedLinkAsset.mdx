@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Adds assets to an existing shared link.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ Add-IMSharedLinkAsset [[-Session] <ImmichSession>] [-Id] <String[]> [-SharedLink
 
 ## DESCRIPTION
 
-Add Immich shared link asset
+Expands shared link content by adding more assets to it.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-IMSharedLinkAsset
+Add-IMSharedLinkAsset -SharedLinkId 'link-id' -Id 'asset1', 'asset2'
 ```
 
-Add Immich shared link asset
+Adds assets to existing shared link.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-Defines assets to add to the shared link
+Asset IDs to add to the shared link.
 
 ```yaml
 Type: String[]
@@ -73,7 +72,7 @@ Accept wildcard characters: False
 
 ### -SharedLinkId
 
-Defines a shared link to add assets to
+Shared link ID to modify.
 
 ```yaml
 Type: String
@@ -145,6 +144,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Supports -WhatIf and -Confirm for safety.
 
 ## RELATED LINKS
 

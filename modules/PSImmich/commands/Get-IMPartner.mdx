@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves sharing partners.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ Get-IMPartner [[-Session] <ImmichSession>] [-Direction] <String> [-ProgressActio
 
 ## DESCRIPTION
 
-Get immich partner
+Gets users who share assets with you or users you share with.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMPartner -direction 'shared-with'
+Get-IMPartner -Direction 'shared-with'
 ```
 
-Get immich partner
+Gets users you are sharing assets with.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,7 @@ Accept wildcard characters: False
 
 ### -Direction
 
-Defines the direction of the partnership
+Partnership direction: 'shared-by' (partners sharing with you) or 'shared-with' (partners you share with).
 
 ```yaml
 Type: String

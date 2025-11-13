@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates partner sharing settings.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ Set-IMPartner [[-Session] <ImmichSession>] [-id] <String> [-EnableTimeline]
 
 ## DESCRIPTION
 
-Set immich partner
+Configures how partner's assets appear in your timeline and interface.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--EnableTimeline
+Set-IMPartner -Id 'bf973405-3f2a-48d2-a687-2ed4167164be' -EnableTimeline
 ```
 
-Set immich partner
+Enables timeline integration for the specified partner.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,8 @@ Accept wildcard characters: False
 
 ### -id
 
-Define the id of the partner to update
+Partner user ID to update.
+Must be valid GUID format.
 
 ```yaml
 Type: String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 
 ### -EnableTimeline
 
-Defines that the partners assets should be displayed within the main timeline
+When specified, shows partner's assets in your main timeline view.
 
 ```yaml
 Type: SwitchParameter
@@ -145,6 +145,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Supports -WhatIf and -Confirm for safety.
 
 ## RELATED LINKS
 

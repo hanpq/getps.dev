@@ -40,7 +40,6 @@ module.exports = [
     'PSImmich/commands/Get-IMJob',
     'PSImmich/commands/Get-IMLibrary',
     'PSImmich/commands/Get-IMMapMarker',
-    'PSImmich/commands/Get-IMMapStyle',
     'PSImmich/commands/Get-IMMemory',
     'PSImmich/commands/Get-IMPartner',
     'PSImmich/commands/Get-IMPerson',

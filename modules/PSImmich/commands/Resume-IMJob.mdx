@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Resumes suspended Immich background jobs
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,42 @@ Resume-IMJob [[-Session] <ImmichSession>] [-Job] <String[]> [-Force] [-ProgressA
 
 ## DESCRIPTION
 
-Resume immich job
+Resumes processing of previously suspended job types in Immich.
+This allows the job queues
+to continue processing pending items and accept new jobs.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Resume-IMJob
+Resume-IMJob -Job 'thumbnailGeneration'
 ```
 
-Resume immich job
+Resumes thumbnail generation processing.
+
+### EXAMPLE 2
+
+```powershell
+Resume-IMJob -Job 'videoConversion' -Force
+```
+
+Forcibly resumes video conversion jobs.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMJob | Where-Object {$_.jobCounts.paused -gt 0} | ForEach-Object { Resume-IMJob -Job $_.name }
+```
+
+Resumes all job types that have paused jobs.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +75,9 @@ Accept wildcard characters: False
 
 ### -Job
 
-Defines the job type
+The type of job to resume.
+Valid values include thumbnailGeneration, metadataExtraction,
+videoConversion, faceDetection, and other background job types.
 
 ```yaml
 Type: String[]
@@ -73,7 +93,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Defines force
+Forces the resumption without additional confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -112,6 +132,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Use this cmdlet to resume jobs that were previously suspended with Suspend-IMJob.
+Monitor job status with Get-IMJob to verify jobs are processing normally after resuming.
 
 ## RELATED LINKS
 

@@ -13,35 +13,45 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Renames an Immich API key
+
 ## SYNTAX
 
 ```powershell
-Rename-IMAPIKey [[-Session] <ImmichSession>] [-id] <String> [-name] <String>
+Rename-IMAPIKey [[-Session] <ImmichSession>] [-Id] <String> [-Name] <String>
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Sets name of an apikey
+Updates the name of an existing API key.
+This helps maintain organized and descriptive names
+for API keys as their usage evolves.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Rename-IMAPIKey
+Rename-IMAPIKey -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -Name 'Production Backup Script'
 ```
 
-Sets name of an apikey
+Renames the specified API key to 'Production Backup Script'.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAPIKey | Where-Object {$_.name -eq 'temp'} | Rename-IMAPIKey -Name 'Mobile App Access'
+```
+
+Finds an API key named 'temp' and renames it to 'Mobile App Access'.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +65,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines the id of the API key to update
+The UUID of the API key to rename.
+Accepts pipeline input.
 
 ```yaml
 Type: String
@@ -71,9 +82,10 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -name
+### -Name
 
-Defines a new name for the apikey
+The new name for the API key.
+Should be descriptive to help identify the key's purpose.
 
 ```yaml
 Type: String

@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates shared link settings.
+
 ## SYNTAX
 
 ```powershell
@@ -23,7 +25,7 @@ Set-IMSharedLink [[-Session] <ImmichSession>] [-Id] <String[]> [-AllowDownload] 
 
 ## DESCRIPTION
 
-Set Immich shared link
+Modifies permissions and properties of an existing shared link.
 
 ## EXAMPLES
 
@@ -39,10 +41,7 @@ Set Immich shared link
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -58,7 +57,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-Defines the asset ids to share
+Shared link ID to update.
 
 ```yaml
 Type: String[]
@@ -74,7 +73,7 @@ Accept wildcard characters: False
 
 ### -AllowDownload
 
-Defines if downloading of assets are permitted.
+Permits downloading assets through the shared link.
 
 ```yaml
 Type: SwitchParameter
@@ -90,7 +89,7 @@ Accept wildcard characters: False
 
 ### -AllowUpload
 
-Defines if uploads of assets are permitted.
+Permits uploading assets through the shared link.
 
 ```yaml
 Type: SwitchParameter

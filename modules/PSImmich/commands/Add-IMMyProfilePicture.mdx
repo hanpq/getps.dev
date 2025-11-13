@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Sets current user's profile picture.
+
 ## SYNTAX
 
 ```powershell
@@ -22,7 +24,7 @@ Add-IMMyProfilePicture [[-Session] <ImmichSession>] [-FilePath] <FileInfo> [-Pro
 
 ## DESCRIPTION
 
-Adds an Immich user profile picture
+Uploads and sets profile picture for the currently authenticated user.
 
 ## EXAMPLES
 
@@ -38,10 +40,7 @@ Add profile picture to current user
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,8 +56,8 @@ Accept wildcard characters: False
 
 ### -FilePath
 
-Defines the asset ids that should be removed.
-Accepts pipeline input.
+Path to image file for profile picture.
+Supports JPG, PNG, GIF formats.
 
 ```yaml
 Type: FileInfo

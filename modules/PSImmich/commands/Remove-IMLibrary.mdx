@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes an Immich library and all associated assets.
+
 ## SYNTAX
 
 ```powershell
@@ -22,17 +24,51 @@ Remove-IMLibrary [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction 
 
 ## DESCRIPTION
 
-Removes an Immich library
+The Remove-IMLibrary function permanently deletes an Immich library along with all
+its associated assets, metadata, and configuration settings.
+This is a destructive
+operation that cannot be undone, so it should be used with caution.
+
+The function supports pipeline input for batch operations and includes confirmation
+prompts to help prevent accidental deletions.
+When a library is removed, all assets
+within that library are also deleted from the Immich database, though the original
+files on the file system remain unchanged.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-
+Remove-IMLibrary -Id 'bf973405-3f2a-48d2-a687-2ed4167164be'
 ```
 
-Removes an Immich library
+Removes the library with the specified ID after confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+Remove-IMLibrary -Id 'bf973405-3f2a-48d2-a687-2ed4167164be' -Confirm:$false
+```
+
+Removes the library without prompting for confirmation (use with extreme caution).
+
+### EXAMPLE 3
+
+```powershell
+Get-IMLibrary | Where-Object Name -like '*test*' | Remove-IMLibrary
+```
+
+Removes all libraries with 'test' in their name using pipeline processing.
+
+### EXAMPLE 4
+
+```powershell
+$librariesToRemove = @('bf973405-3f2a-48d2-a687-2ed4167164be', '9c4e0006-3a2b-4967-94b6-7e8bb8490a12')
+$librariesToRemove | Remove-IMLibrary -WhatIf
+```
+
+Shows what would happen if the specified libraries were removed, without actually deleting them.
 
 ## PARAMETERS
 
@@ -57,8 +93,10 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines the library ids that should be removed.
-Accepts pipeline input.
+Specifies the unique identifier(s) of the library to remove.
+Must be valid GUID format.
+Accepts pipeline input by value and by property name for batch deletion operations.
+This parameter has an alias 'libraryId' for compatibility.
 
 ```yaml
 Type: String[]
@@ -130,6 +168,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This function supports ShouldProcess for confirmation prompts.
+Use -WhatIf to preview
+changes and -Confirm to control confirmation behavior.
+Library removal is permanent
+and affects all assets within the library - ensure you have backups before proceeding.
 
 ## RELATED LINKS
 

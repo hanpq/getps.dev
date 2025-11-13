@@ -13,35 +13,60 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Downloads Immich assets to local storage
+
 ## SYNTAX
 
 ```powershell
-Save-IMAsset [[-Session] <ImmichSession>] [-id] <String> [-isThumb] [-isWeb] [[-Path] <DirectoryInfo>]
+Save-IMAsset [[-Session] <ImmichSession>] [-Id] <String> [[-Key] <String>] [[-Path] <DirectoryInfo>]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Save Immich asset
+Downloads one or more assets from Immich to a local directory, preserving their original filenames.
+Supports downloading original files, thumbnails, or web-optimized versions.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--Path C:\download
+Save-IMAsset -Id '550e8400-e29b-41d4-a716-446655440000' -Path 'C:\Downloads'
 ```
 
-Save asset
+Downloads the specified asset to the C:\Downloads directory.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAsset -Random -Count 5 | Save-IMAsset -Path 'C:\RandomAssets'
+```
+
+Downloads 5 random assets to the specified directory using pipeline input.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAsset -TagId 'vacation-tag' | Save-IMAsset -Path 'C:\VacationPhotos'
+```
+
+Downloads all assets tagged with 'vacation-tag' to a local folder.
+
+### EXAMPLE 4
+
+```powershell
+Save-IMAsset -Id 'asset-uuid' -Path 'C:\Backup' -Key 'shared-key'
+```
+
+Downloads an asset using a shared link key.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +80,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines a specific asset id to be retreived
+The UUID of the asset to download.
+Accepts pipeline input.
 
 ```yaml
 Type: String
@@ -71,43 +97,26 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -isThumb
+### -Key
 
-Defines if faviorites should be returned or not.
-Do not specify if either should be returned.
+An optional API key for shared link access when downloading assets.
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isWeb
-
-Defines if archvied assets should be returned or not.
-Do not specify if either should be returned.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
+Position: 3
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
 
-Defines the directory for the output file
+The local directory where the downloaded file will be saved.
+The file will retain its original filename from Immich.
 
 ```yaml
 Type: DirectoryInfo
@@ -115,7 +124,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

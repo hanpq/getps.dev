@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves comprehensive Immich server information.
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,7 @@ Get-IMServer [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [
 
 ## DESCRIPTION
 
-Retreives all Immich server info properties
+Gets detailed server properties including version, features, statistics, and configuration.
 
 ## EXAMPLES
 
@@ -31,16 +33,13 @@ Retreives all Immich server info properties
 Get-IMServer
 ```
 
-Retreives all Immich server info properties
+Retrieves all server information and properties.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession

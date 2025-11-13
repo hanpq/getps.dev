@@ -13,27 +13,56 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates an Immich library configuration.
+
 ## SYNTAX
 
 ```powershell
-Set-IMLibrary [[-Session] <ImmichSession>] [-id] <String[]> [[-exclusionPatterns] <String[]>]
- [[-importPaths] <String[]>] [[-isVisible] <Boolean>] [[-name] <String>] [-ProgressAction <ActionPreference>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-IMLibrary [[-Session] <ImmichSession>] [-Id] <String[]> [[-ExclusionPatterns] <String[]>]
+ [[-ImportPaths] <String[]>] [[-Name] <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Updates an Immich library
+The Set-IMLibrary function updates an existing Immich library with new configuration settings.
+You can modify the library name, visibility, import paths, and exclusion patterns.
+This function supports pipeline input for batch updates and includes confirmation prompts
+for safety when making changes to library configurations.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--Name 'NewName'
+Set-IMLibrary -Id 'bf973405-3f2a-48d2-a687-2ed4167164be' -Name 'Family Photos'
 ```
 
-Update an Immich library
+Updates the library with the specified ID to have the name 'Family Photos'.
+
+### EXAMPLE 2
+
+```powershell
+Set-IMLibrary -Id 'bf973405-3f2a-48d2-a687-2ed4167164be' -IsVisible $false
+```
+
+Hides the specified library from the Immich interface by setting visibility to false.
+
+### EXAMPLE 3
+
+```powershell
+$library | Set-IMLibrary -Name 'Updated Library' -ImportPaths @('/photos', '/videos')
+```
+
+Updates a library object from the pipeline with a new name and import paths.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMLibrary | Where-Object Name -like '*temp*' | Set-IMLibrary -IsVisible $false
+```
+
+Hides all libraries with 'temp' in their name using pipeline processing.
 
 ## PARAMETERS
 
@@ -56,9 +85,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines library to update
+Specifies the unique identifier of the library to update.
+Must be a valid GUID format.
+Accepts pipeline input by value and by property name for batch operations.
 
 ```yaml
 Type: String[]
@@ -72,9 +103,11 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -exclusionPatterns
+### -ExclusionPatterns
 
-Defines exclusion patterns
+Defines file and folder exclusion patterns for the library.
+These patterns determine which
+files and directories should be ignored during library scanning operations.
 
 ```yaml
 Type: String[]
@@ -88,9 +121,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -importPaths
+### -ImportPaths
 
-Defines import paths
+Specifies the file system paths that the library should monitor and import assets from.
+Multiple paths can be specified for comprehensive coverage.
 
 ```yaml
 Type: String[]
@@ -104,25 +138,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isVisible
+### -Name
 
-Defines if the library should be visible
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -name
-
-Defines the name of the library
+Specifies the new display name for the library.
+This name appears in the Immich interface
+and helps identify the library's purpose or content type.
 
 ```yaml
 Type: String
@@ -130,7 +150,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -194,6 +214,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This function supports ShouldProcess for confirmation prompts when making changes.
+Use -WhatIf to preview changes before applying them to library configurations.
 
 ## RELATED LINKS
 

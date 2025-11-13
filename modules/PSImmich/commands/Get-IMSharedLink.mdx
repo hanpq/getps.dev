@@ -13,12 +13,15 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves shared links for asset sharing.
+
 ## SYNTAX
 
 ### list (Default)
 
 ```powershell
-Get-IMSharedLink [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMSharedLink [-Session <ImmichSession>] [-AlbumId <Object>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ### id
@@ -28,16 +31,9 @@ Get-IMSharedLink [-Session <ImmichSession>] -id <String[]> [-ProgressAction <Act
  [<CommonParameters>]
 ```
 
-### me
-
-```powershell
-Get-IMSharedLink [-Session <ImmichSession>] [-password <SecureString>] [-token <String>] [-Me]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
 
-Retreives Immich shared link
+Gets shared links that allow external access to assets and albums.
 
 ## EXAMPLES
 
@@ -47,16 +43,21 @@ Retreives Immich shared link
 Get-IMSharedLink
 ```
 
-Retreives Immich shared link
+Gets all shared links.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMSharedLink -Id 'link-id'
+```
+
+Gets specific shared link details.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -72,7 +73,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a specific shared link id to be retreived
+Specific shared link ID to retrieve.
 
 ```yaml
 Type: String[]
@@ -86,50 +87,18 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -password
+### -AlbumId
 
-...
+Filter by album ID to get album shared links.
 
 ```yaml
-Type: SecureString
-Parameter Sets: me
+Type: Object
+Parameter Sets: list
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -token
-
-...
-
-```yaml
-Type: String
-Parameter Sets: me
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Me
-
-Defines that the currently connected users information is retreived.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: me
-Aliases:
-
-Required: True
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

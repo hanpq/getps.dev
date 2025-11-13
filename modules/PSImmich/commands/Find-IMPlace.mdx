@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Searches for places by name.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ Find-IMPlace [[-Session] <ImmichSession>] [-Name] <String> [-ProgressAction <Act
 
 ## DESCRIPTION
 
-Find places
+Finds geographic locations from asset GPS metadata by name.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Find-IMPlace -Name 'Stockholm'
+Find-IMPlace -Name 'Paris'
 ```
 
-Search for places named Stockholm
+Searches for places containing 'Paris' in the name.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Name filter
+Place name to search for (supports partial matches).
 
 ```yaml
 Type: String

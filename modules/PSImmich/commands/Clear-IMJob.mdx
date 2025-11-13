@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Clears Immich job queues
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,42 @@ Clear-IMJob [[-Session] <ImmichSession>] [-Job] <String[]> [-FailedOnly] [-Force
 
 ## DESCRIPTION
 
-Clear immich job
+Clears completed, failed, or all jobs from specific job queues in Immich.
+This helps manage
+job queue cleanup and removes old job entries that are no longer needed.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Clear-IMJob
+Clear-IMJob -Job 'thumbnailGeneration'
 ```
 
-Clear immich job
+Clears all jobs from the thumbnail generation queue.
+
+### EXAMPLE 2
+
+```powershell
+Clear-IMJob -Job 'faceDetection' -FailedOnly
+```
+
+Clears only failed jobs from the face detection queue.
+
+### EXAMPLE 3
+
+```powershell
+Clear-IMJob -Job 'metadataExtraction' -Force
+```
+
+Forcibly clears the metadata extraction job queue.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +75,9 @@ Accept wildcard characters: False
 
 ### -Job
 
-Defines the job type
+The type of job queue to clear.
+Valid values include thumbnailGeneration, metadataExtraction,
+videoConversion, faceDetection, and other job types.
 
 ```yaml
 Type: String[]
@@ -73,7 +93,7 @@ Accept wildcard characters: False
 
 ### -FailedOnly
 
-Defines that only failed jobs should be cleared
+Clears only failed jobs from the queue, leaving completed and pending jobs intact.
 
 ```yaml
 Type: SwitchParameter
@@ -89,7 +109,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Defines force
+Forces the operation to proceed without additional confirmation for potentially disruptive actions.
 
 ```yaml
 Type: SwitchParameter
@@ -128,6 +148,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Use caution when clearing job queues as this may remove jobs that haven't completed yet.
+The FailedOnly parameter is recommended for routine maintenance.
 
 ## RELATED LINKS
 

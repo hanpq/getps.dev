@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich users.
+
 ## SYNTAX
 
 ### list (Default)
@@ -36,26 +38,31 @@ Get-IMUser [-Session <ImmichSession>] [-Me] [-ProgressAction <ActionPreference>]
 
 ## DESCRIPTION
 
-Retreives Immich user
+Gets user accounts and profile information from Immich server.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-
+Get-IMUser -Me
 ```
 
-Retreives Immich user
+Gets current user information.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMUser -Id 'user-id'
+```
+
+Gets specific user details.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -71,7 +78,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a specific user id to be retreived
+Specific user ID to retrieve.
 
 ```yaml
 Type: String[]
@@ -87,7 +94,7 @@ Accept wildcard characters: False
 
 ### -IncludeDeleted
 
-Defines if deleted users should be returned.
+Include deleted users in results.
 
 ```yaml
 Type: SwitchParameter
@@ -103,7 +110,7 @@ Accept wildcard characters: False
 
 ### -Me
 
-Defines that the currently connected users information is retreived.
+Retrieve current user's information.
 
 ```yaml
 Type: SwitchParameter

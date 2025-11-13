@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new person record.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ New-IMPerson [[-Session] <ImmichSession>] [-Name] <String> [-IsHidden] [[-BirthD
 
 ## DESCRIPTION
 
-Adds a new Immich person
+Manually creates a person entry for face recognition training and organization.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMPerson -Name 'John Smith'
+New-IMPerson -Name 'John Smith' -BirthDate '1990-01-01'
 ```
 
-Adds a new Immich person
+Creates a new person with name and birth date.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Defines the name of the person
+Display name for the person.
 
 ```yaml
 Type: String
@@ -73,7 +72,7 @@ Accept wildcard characters: False
 
 ### -IsHidden
 
-Defines if the person is hidden
+Set to $true to hide person from main interface.
 
 ```yaml
 Type: SwitchParameter
@@ -89,7 +88,7 @@ Accept wildcard characters: False
 
 ### -BirthDate
 
-Defines a birthdate for the person
+Person's birth date for timeline context.
 
 ```yaml
 Type: DateTime

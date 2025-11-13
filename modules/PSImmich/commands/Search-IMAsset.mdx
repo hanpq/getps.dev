@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Searches assets using AI content analysis.
+
 ## SYNTAX
 
 ```powershell
@@ -29,9 +31,9 @@ Search-IMAsset [[-Session] <ImmichSession>] [[-City] <String>] [[-Country] <Stri
 
 ## DESCRIPTION
 
-Search for assets using smart search.
-Do note that this uses the machine learning model find assets based on content so results may vary.
-If you rather want to search based on metadata use the Find-IMAsset cmdlet.
+Uses machine learning to find assets by visual content, faces, objects, and OCR text.
+Results may vary based on model accuracy.
+For metadata searches, use Find-IMAsset.
 
 ## EXAMPLES
 
@@ -43,14 +45,19 @@ Search-IMAsset -Query 'Road'
 
 Searches for assets matching content Road.
 
+### EXAMPLE 2
+
+```powershell
+Search-IMAsset -OCR 'birthday party'
+```
+
+Finds photos containing 'birthday party' text.
+
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -66,7 +73,7 @@ Accept wildcard characters: False
 
 ### -City
 
-City filter
+Filter by city name.
 
 ```yaml
 Type: String
@@ -82,7 +89,7 @@ Accept wildcard characters: False
 
 ### -Country
 
-Country filter
+Filter by country name.
 
 ```yaml
 Type: String
@@ -98,7 +105,7 @@ Accept wildcard characters: False
 
 ### -CreatedAfter
 
-CreatedAfter filter
+Include assets created after this date.
 
 ```yaml
 Type: DateTime
@@ -114,7 +121,7 @@ Accept wildcard characters: False
 
 ### -CreatedBefore
 
-CreatedBefore filter
+Include assets created before this date.
 
 ```yaml
 Type: DateTime
@@ -130,7 +137,7 @@ Accept wildcard characters: False
 
 ### -DeviceId
 
-Device Id filter
+Filter by device identifier.
 
 ```yaml
 Type: String
@@ -146,7 +153,7 @@ Accept wildcard characters: False
 
 ### -Visibility
 
-Asset visibility filter (archive, timeline, hidden, locked)
+Asset visibility: archive, timeline, hidden, or locked.
 
 ```yaml
 Type: String
@@ -162,7 +169,7 @@ Accept wildcard characters: False
 
 ### -OCR
 
-OCR text search filter
+Search text extracted from images via OCR.
 
 ```yaml
 Type: String
@@ -178,7 +185,7 @@ Accept wildcard characters: False
 
 ### -IsEncoded
 
-Encoded filter
+Filter by video encoding status.
 
 ```yaml
 Type: Boolean
@@ -617,6 +624,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Requires machine learning models to be enabled and trained.
 
 ## RELATED LINKS
 

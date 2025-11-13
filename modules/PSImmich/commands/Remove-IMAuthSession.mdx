@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes authenticated sessions from Immich
+
 ## SYNTAX
 
 ### list (Default)
@@ -31,8 +33,11 @@ Remove-IMAuthSession [-Session <ImmichSession>] -id <String[]> [-ProgressAction 
 
 ## DESCRIPTION
 
-Remove one or many auth sessions.
-Not that if id is not specified all but the current auth session will be purged.
+Removes one or more authenticated sessions from Immich.
+When no specific session ID is provided,
+all sessions except the current one will be removed.
+This is useful for security purposes or
+when cleaning up old sessions.
 
 ## EXAMPLES
 
@@ -42,16 +47,38 @@ Not that if id is not specified all but the current auth session will be purged.
 Remove-IMAuthSession
 ```
 
-Remove all auth session (except current)
+Removes all authenticated sessions except the current one with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+Remove-IMAuthSession -Id 'session-uuid'
+```
+
+Removes a specific authenticated session with confirmation prompt.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAuthSession | Where-Object {$_.deviceType -eq 'mobile'} | Remove-IMAuthSession
+```
+
+Removes all mobile device sessions via pipeline.
+
+### EXAMPLE 4
+
+```powershell
+Remove-IMAuthSession -Confirm:$false
+```
+
+Removes all sessions except current without confirmation prompt.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -67,7 +94,9 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a uuid of an auth session that should be removed
+The UUID(s) of specific authenticated session(s) to remove.
+Accepts pipeline input and multiple values.
+If not specified, all sessions except the current one will be removed.
 
 ```yaml
 Type: String[]
@@ -139,6 +168,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing sessions.
+The current session cannot be removed and will be preserved even when removing all sessions.
 
 ## RELATED LINKS
 

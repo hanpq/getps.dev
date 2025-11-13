@@ -13,35 +13,53 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Renames Immich albums
+
 ## SYNTAX
 
 ```powershell
-Rename-IMAlbum [[-Session] <ImmichSession>] [-id] <String[]> [-NewName] <String>
+Rename-IMAlbum [[-Session] <ImmichSession>] [-Id] <String[]> [-NewName] <String>
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Renames an Immich album
+Changes the name of one or more Immich albums.
+This is a convenient wrapper around Set-IMAlbum
+specifically for renaming operations.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--NewName 'New York 2024'
+Rename-IMAlbum -Id 'album-uuid' -NewName 'Family Vacation 2024'
 ```
 
-Renames the album
+Renames the specified album.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAlbum -SearchString 'temp*' | Rename-IMAlbum -NewName 'Archived Photos'
+```
+
+Renames all albums with names starting with 'temp' to 'Archived Photos'.
+
+### EXAMPLE 3
+
+```powershell
+Rename-IMAlbum -Id 'album-uuid' -NewName 'Wedding Photos' -Confirm:$false
+```
+
+Renames the album without confirmation prompt.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +73,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines albums to update
+The UUID(s) of the album(s) to rename.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -73,7 +92,7 @@ Accept wildcard characters: False
 
 ### -NewName
 
-Defines a new album name
+The new name for the album(s).
 
 ```yaml
 Type: String
@@ -145,6 +164,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before renaming albums.
 
 ## RELATED LINKS
 

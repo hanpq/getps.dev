@@ -13,35 +13,61 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves detected faces from Immich assets
+
 ## SYNTAX
 
 ```powershell
-Get-IMFace [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction <ActionPreference>]
+Get-IMFace [[-Session] <ImmichSession>] [-Id] <String[]> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Get immich face
+Retrieves information about faces detected in one or more Immich assets.
+This includes face detection
+data, bounding boxes, and any associated person identifications from facial recognition.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMFace
+Get-IMFace -Id 'asset-uuid'
 ```
 
-Get immich face
+Retrieves all detected faces for the specified asset.
+
+### EXAMPLE 2
+
+```powershell
+@('asset1-uuid', 'asset2-uuid') | Get-IMFace
+```
+
+Retrieves face information for multiple assets via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAsset -Random -Count 5 | Get-IMFace
+```
+
+Gets face detection data for 5 random assets.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMFace -Id 'asset-uuid' | Where-Object {$_.person}
+```
+
+Retrieves faces that have been identified as specific persons.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +81,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines the asset id to get faces for
+The UUID(s) of the asset(s) to retrieve face information for.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -96,6 +123,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Requires that face detection has been run on the assets.
+Use Start-IMJob with 'faceDetection' to process assets for face detection.
 
 ## RELATED LINKS
 

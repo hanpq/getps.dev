@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes Immich server license.
+
 ## SYNTAX
 
 ```powershell
@@ -22,7 +24,7 @@ Remove-IMServerLicense [[-Session] <ImmichSession>] [-ProgressAction <ActionPref
 
 ## DESCRIPTION
 
-Removes Immich server license
+Deactivates and removes the current server license.
 
 ## EXAMPLES
 
@@ -32,16 +34,13 @@ Removes Immich server license
 Remove-IMServerLicense
 ```
 
-Removes Immich server license
+Removes current server license.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -113,6 +112,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Supports -WhatIf and -Confirm for safety.
 
 ## RELATED LINKS
 

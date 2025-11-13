@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Displays current Immich session information.
+
 ## SYNTAX
 
 ```powershell
@@ -21,26 +23,23 @@ Get-IMSession [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] 
 
 ## DESCRIPTION
 
-Displays the Immich Session object.
+Shows active session details including server URL and authentication status.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-PSession
+Get-IMSession
 ```
 
-Returns the ImmichSession, if none is specified, it tries to retreive the default
+Shows current session information.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Specific session to display, or default session if omitted.
 
 ```yaml
 Type: ImmichSession

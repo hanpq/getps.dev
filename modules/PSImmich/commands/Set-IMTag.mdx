@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Assigns tags to assets.
+
 ## SYNTAX
 
 ### tagId (Default)
@@ -38,7 +40,7 @@ Set-IMTag [-Session <ImmichSession>] -tagName <String> [-AddAssets <String[]>] [
 
 ## DESCRIPTION
 
-Add Immich asset tag
+Associates tags with assets for organization and categorization.
 
 ## EXAMPLES
 
@@ -54,10 +56,7 @@ Add tag to asset
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -73,7 +72,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-Defines an asset id to tag
+Asset ID(s) to tag.
 
 ```yaml
 Type: String[]
@@ -89,9 +88,8 @@ Accept wildcard characters: False
 
 ### -tagName
 
-Defines a tag name to assign to assets.
-Note that the Immich API does support filtering on tagName so all tags will be retreived and then filtered.
-This means that if there is a very large amount of tags this method might be slow.
+Tag name to assign.
+Slower than TagId for large tag collections.
 
 ```yaml
 Type: String

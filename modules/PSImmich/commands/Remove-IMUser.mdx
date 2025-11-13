@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes an Immich user account.
+
 ## SYNTAX
 
 ```powershell
@@ -22,15 +24,26 @@ Remove-IMUser [[-Session] <ImmichSession>] [-id] <String[]> [-Force] [-ProgressA
 
 ## DESCRIPTION
 
-Remove Immich user
+Deletes user account.
+By default, moves to trash for 7 days before permanent removal.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--force
+Remove-IMUser -Id 'user-id'
 ```
+
+Removes user to trash for 7 days.
+
+### EXAMPLE 2
+
+```powershell
+Remove-IMUser -Id 'user-id' -Force
+```
+
+Immediately deletes user permanently.
 
 Remove Immich user
 
@@ -38,10 +51,7 @@ Remove Immich user
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +67,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines the user id to update
+User ID to remove.
 
 ```yaml
 Type: String[]
@@ -73,8 +83,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Defines that the user should be removed immediatly.
-By default the user remains in trash for 7 days before assets are removed.
+Forces immediate permanent deletion, bypassing 7-day trash period.
 
 ```yaml
 Type: SwitchParameter

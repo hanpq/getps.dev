@@ -13,35 +13,52 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes users from an Immich album
+
 ## SYNTAX
 
 ```powershell
-Remove-IMAlbumUser [[-Session] <ImmichSession>] [-albumId] <String> [-userId] <String[]>
+Remove-IMAlbumUser [[-Session] <ImmichSession>] [-AlbumId] <String> [-UserId] <String[]>
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Remove user from album
+Removes one or more users from an Immich album, revoking their access to the shared album.
+This action cannot be undone and the users will lose access immediately.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--userid <userid>
+Remove-IMAlbumUser -AlbumId 'album-uuid' -UserId 'user-uuid'
 ```
 
-Remove user from album
+Removes a specific user from the album with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+@('user1-uuid', 'user2-uuid') | Remove-IMAlbumUser -AlbumId 'album-uuid'
+```
+
+Removes multiple users from the album via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Remove-IMAlbumUser -AlbumId 'album-uuid' -UserId 'user-uuid' -Confirm:$false
+```
+
+Removes the user without confirmation prompt.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +72,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumId
+### -AlbumId
 
-Defines album to remove users from
+The UUID of the album to remove users from.
 
 ```yaml
 Type: String
@@ -71,9 +88,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -userId
+### -UserId
 
-Defines the user to remove from the album
+The UUID(s) of the user(s) to remove from the album.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -145,6 +163,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing users from albums.
 
 ## RELATED LINKS
 

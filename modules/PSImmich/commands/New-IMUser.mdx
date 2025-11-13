@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new Immich user account.
+
 ## SYNTAX
 
 ```powershell
@@ -23,7 +25,7 @@ New-IMUser [[-Session] <ImmichSession>] [-Email] <String> [[-Notify] <Boolean>] 
 
 ## DESCRIPTION
 
-New Immich user
+Adds new user with email, name, and notification preferences.
 
 ## EXAMPLES
 
@@ -40,10 +42,7 @@ Creates new Immich user
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -59,7 +58,7 @@ Accept wildcard characters: False
 
 ### -Email
 
-Defines a specific user id to be retreived
+User email address for login.
 
 ```yaml
 Type: String
@@ -75,8 +74,8 @@ Accept wildcard characters: False
 
 ### -Notify
 
-Should the user be notified.
-Enabled by default
+Send notification to user about account creation.
+Enabled by default.
 
 ```yaml
 Type: Boolean
@@ -92,7 +91,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Defines the name of the user
+Display name for the user account.
 
 ```yaml
 Type: String

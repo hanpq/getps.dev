@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Searches for people by name or visibility.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ Find-IMPerson [[-Session] <ImmichSession>] [-Name] <String> [[-WithHidden] <Bool
 
 ## DESCRIPTION
 
-Find people
+Finds person records using name filtering and hidden status options.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Find-IMPerson -Name 'Jim Carrey'
+Find-IMPerson -Name 'John'
 ```
 
-Search for persons named Jim Carrey
+Searches for people with 'John' in their name.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Name filter
+Search by person name (supports partial matches).
 
 ```yaml
 Type: String
@@ -73,7 +72,7 @@ Accept wildcard characters: False
 
 ### -WithHidden
 
-Filter hidden
+Include hidden people when $true, exclude when $false.
 
 ```yaml
 Type: Boolean

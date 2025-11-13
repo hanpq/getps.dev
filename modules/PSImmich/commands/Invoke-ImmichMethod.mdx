@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Invokes custom Immich API methods.
+
 ## SYNTAX
 
 ```powershell
@@ -23,7 +25,7 @@ Invoke-ImmichMethod [[-Session] <ImmichSession>] [[-Headers] <Hashtable>] [[-Que
 
 ## DESCRIPTION
 
-Invokes command
+Makes direct API calls to Immich endpoints with custom parameters and headers.
 
 ## EXAMPLES
 
@@ -39,10 +41,7 @@ Retreives all Immich server info properties
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -58,7 +57,7 @@ Accept wildcard characters: False
 
 ### -Headers
 
-Headers
+Custom HTTP headers for the request.
 
 ```yaml
 Type: Hashtable
@@ -74,7 +73,7 @@ Accept wildcard characters: False
 
 ### -QueryParameters
 
-Query parameters
+URL query parameters as hashtable.
 
 ```yaml
 Type: Hashtable
@@ -90,7 +89,7 @@ Accept wildcard characters: False
 
 ### -BodyParameters
 
-Body parameters
+Request body parameters.
 
 ```yaml
 Type: Hashtable
@@ -106,7 +105,7 @@ Accept wildcard characters: False
 
 ### -Method
 
-Method
+HTTP method (GET, POST, PUT, DELETE, etc.).
 
 ```yaml
 Type: String
@@ -122,7 +121,7 @@ Accept wildcard characters: False
 
 ### -RelativeURI
 
-RelativePath
+API endpoint path relative to server URL.
 
 ```yaml
 Type: String

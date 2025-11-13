@@ -13,35 +13,45 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new Immich API key
+
 ## SYNTAX
 
 ```powershell
-New-IMAPIKey [[-Session] <ImmichSession>] [-name] <String> [[-Permission] <String[]>]
+New-IMAPIKey [[-Session] <ImmichSession>] [-Name] <String> [[-Permission] <String[]>]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new an api key
+Creates a new API key for programmatic access to the Immich server.
+API keys can be assigned specific
+permissions to control access to different parts of the API.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAPIKey -name 'Automation'
+New-IMAPIKey -Name 'Automation Script'
 ```
 
-Adds a new an api key
+Creates a new API key with full permissions named 'Automation Script'.
+
+### EXAMPLE 2
+
+```powershell
+New-IMAPIKey -Name 'Read Only Access' -Permission 'asset.read','album.read','library.read'
+```
+
+Creates a new API key with limited read-only permissions.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +65,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -name
+### -Name
 
-Defines the name of the new api key
+The name for the new API key.
+This should be descriptive to help identify the key's purpose.
 
 ```yaml
 Type: String
@@ -73,7 +84,10 @@ Accept wildcard characters: False
 
 ### -Permission
 
-Defines the permissions for the API-key
+The permissions to assign to the API key.
+Defaults to 'all' for full access.
+Can specify multiple granular permissions
+such as 'asset.read', 'album.create', etc.
 
 ```yaml
 Type: String[]
@@ -112,6 +126,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+The API key secret is only displayed once upon creation.
+Store it securely as it cannot be retrieved later.
 
 ## RELATED LINKS
 

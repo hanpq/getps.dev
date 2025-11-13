@@ -13,35 +13,34 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Activates Immich server license.
+
 ## SYNTAX
 
 ```powershell
-Set-IMServerLicense [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Set-IMServerLicense [[-Session] <ImmichSession>] [-ActivationKey] <String> [-LicenseKey] <String>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Sets Immich server license
+Installs and activates server license using provided keys.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Set-IMServerLicense -LicenseKey "ABC" -ActivationKey "ABC"
+Set-IMServerLicense -LicenseKey 'your-license' -ActivationKey 'activation-key'
 ```
 
-Sets Immich server license
+Activates server with provided license keys.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -50,6 +49,38 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActivationKey
+
+License activation key provided by Immich.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LicenseKey
+
+License key for server activation.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -113,6 +144,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Supports -WhatIf and -Confirm for safety.
 
 ## RELATED LINKS
 

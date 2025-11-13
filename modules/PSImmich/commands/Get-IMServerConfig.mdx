@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves server configuration settings.
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,7 @@ Get-IMServerConfig [[-Session] <ImmichSession>] [-ProgressAction <ActionPreferen
 
 ## DESCRIPTION
 
-Retreives Immich server config
+Gets current server configuration and settings.
 
 ## EXAMPLES
 
@@ -31,16 +33,13 @@ Retreives Immich server config
 Get-IMServerConfig
 ```
 
-Retreives Immich server config
+Gets current server configuration.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession

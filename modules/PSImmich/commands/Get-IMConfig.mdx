@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich server configuration.
+
 ## SYNTAX
 
 ### applied (Default)
@@ -38,7 +40,7 @@ Get-IMConfig [-Session <ImmichSession>] [-StorageTemplate] [-ProgressAction <Act
 
 ## DESCRIPTION
 
-Retreives Immich config
+Gets current or default server configuration settings, optionally as raw JSON.
 
 ## EXAMPLES
 
@@ -48,16 +50,21 @@ Retreives Immich config
 Get-IMConfig
 ```
 
-Retreives Immich config
+Gets current server configuration.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMConfig -ReturnRawJSON
+```
+
+Gets configuration as JSON for editing.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -73,7 +80,7 @@ Accept wildcard characters: False
 
 ### -ReturnRawJSON
 
-This is useful if you want to alter the current config and pass it on to Set-IMConfig
+Returns configuration as raw JSON for modification and use with Set-IMConfig.
 
 ```yaml
 Type: SwitchParameter
@@ -89,7 +96,7 @@ Accept wildcard characters: False
 
 ### -Default
 
-Retreives default config instead of current applied
+Retrieves default configuration instead of current settings.
 
 ```yaml
 Type: SwitchParameter
@@ -105,7 +112,7 @@ Accept wildcard characters: False
 
 ### -StorageTemplate
 
-Specifies that storage template configuration should be returned.
+Returns storage template configuration settings.
 
 ```yaml
 Type: SwitchParameter

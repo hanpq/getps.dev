@@ -13,16 +13,20 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich asset statistics
+
 ## SYNTAX
 
 ```powershell
-Get-IMAssetStatistic [[-Session] <ImmichSession>] [[-isArchived] <Boolean>] [[-isFavorite] <Boolean>]
- [[-isTrashed] <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMAssetStatistic [[-Session] <ImmichSession>] [[-IsFavorite] <Boolean>] [[-IsTrashed] <Boolean>]
+ [[-Visibility] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives asset statistic
+Retrieves comprehensive statistics about assets in the Immich library, including counts by type,
+status, and other criteria.
+Supports filtering by favorite status, trash status, and visibility.
 
 ## EXAMPLES
 
@@ -32,16 +36,39 @@ Retreives asset statistic
 Get-IMAssetStatistic
 ```
 
-Retreives asset statistic
+Retrieves comprehensive asset statistics for the entire library.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAssetStatistic -IsFavorite:$true
+```
+
+Retrieves statistics for favorite assets only.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAssetStatistic -IsTrashed:$false -Visibility 'timeline'
+```
+
+Retrieves statistics for non-trashed assets visible in the timeline.
+
+### EXAMPLE 4
+
+```powershell
+$stats = Get-IMAssetStatistic
+Write-Host "Total images: $($stats.images), Total videos: $($stats.videos)"
+```
+
+Retrieves statistics and displays specific counts.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +82,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isArchived
+### -IsFavorite
 
-Archived filter
+Filter statistics to include only favorite assets (true) or exclude favorites (false).
+If not specified, includes both.
 
 ```yaml
 Type: Boolean
@@ -71,9 +99,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isFavorite
+### -IsTrashed
 
-Favorite filter
+Filter statistics to include only trashed assets (true) or exclude trashed assets (false).
+If not specified, includes both.
 
 ```yaml
 Type: Boolean
@@ -87,18 +116,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isTrashed
+### -Visibility
 
-Trashed filter
+Filter statistics by asset visibility.
+Valid values are 'archive', 'timeline', 'hidden', 'locked'.
 
 ```yaml
-Type: Boolean
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

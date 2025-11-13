@@ -13,35 +13,61 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes Immich assets
+
 ## SYNTAX
 
 ```powershell
-Remove-IMAsset [[-Session] <ImmichSession>] [-ids] <String[]> [-force] [-ProgressAction <ActionPreference>]
+Remove-IMAsset [[-Session] <ImmichSession>] [-Ids] <String[]> [-Force] [-ProgressAction <ActionPreference>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Removes an Immich asset
+Removes one or more assets from Immich.
+By default, assets are moved to trash and can be restored.
+Use the Force parameter to permanently delete assets, bypassing the trash.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-
+Remove-IMAsset -Ids 'asset-uuid'
 ```
 
-Removes an Immich asset
+Moves the specified asset to trash with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+@('asset1-uuid', 'asset2-uuid') | Remove-IMAsset
+```
+
+Moves multiple assets to trash via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Remove-IMAsset -Ids 'asset-uuid' -Force
+```
+
+Permanently deletes the asset, bypassing trash.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMAsset -TagId 'temp-tag' | Remove-IMAsset -Force -Confirm:$false
+```
+
+Permanently deletes all assets with a specific tag without confirmation.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,10 +81,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ids
+### -Ids
 
-Defines the asset ids that should be removed.
-Accepts pipeline input.
+The UUID(s) of the asset(s) to remove.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -72,9 +98,10 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -force
+### -Force
 
-Performs a hard delete bypassing the Trash
+Performs a permanent deletion bypassing the trash.
+Assets removed with this flag cannot be restored.
 
 ```yaml
 Type: SwitchParameter
@@ -146,6 +173,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing assets.
+Use caution with the -Force parameter as it permanently deletes assets.
 
 ## RELATED LINKS
 

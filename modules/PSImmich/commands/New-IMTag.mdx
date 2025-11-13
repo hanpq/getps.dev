@@ -13,24 +13,28 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new asset tag.
+
 ## SYNTAX
 
 ```powershell
-New-IMTag [[-Session] <ImmichSession>] [-name] <String> [-type] <String> [-ProgressAction <ActionPreference>]
+New-IMTag [[-Session] <ImmichSession>] [-Name] <String> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Creates a new Immich tag
+Creates tags for organizing and categorizing assets by type.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMTag -name 'Dogs' -type OBJECT
+New-IMTag -Name 'Vacation' -Type CUSTOM
 ```
+
+Creates custom tag for vacation photos.
 
 Creates a new Immich tag
 
@@ -38,10 +42,7 @@ Creates a new Immich tag
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +56,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -name
+### -Name
 
-Defines a name for the new tag
+Name for the new tag.
 
 ```yaml
 Type: String
@@ -66,23 +67,6 @@ Aliases:
 
 Required: True
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -type
-
-Defines the type of tag to create.
-Valid values, OBJECT, FACE, CUSTOM
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

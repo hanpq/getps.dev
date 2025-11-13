@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves authenticated sessions from Immich
+
 ## SYNTAX
 
 ```powershell
@@ -21,26 +23,43 @@ Get-IMAuthSession [[-Session] <ImmichSession>] [-ProgressAction <ActionPreferenc
 
 ## DESCRIPTION
 
-Get authenticated sessions
+Retrieves information about all currently active authenticated sessions in Immich.
+This includes
+sessions from web browsers, mobile apps, and API clients.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAuthDevice
+Get-IMAuthSession
 ```
 
-Get authorized devices
+Retrieves all active authenticated sessions.
+
+### EXAMPLE 2
+
+```powershell
+$sessions = Get-IMAuthSession
+$sessions | Where-Object {$_.deviceType -eq 'mobile'}
+```
+
+Retrieves sessions and filters for mobile device sessions.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAuthSession | Format-Table deviceType, createdAt, current
+```
+
+Displays session information in a formatted table.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -80,7 +99,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Due to Get-IMSession already being used by the PSImmich module, cmdlets within the session namespace is prefixed with "Auth".
+Due to Get-IMSession already being used by the PSImmich module, cmdlets within the session namespace are prefixed with 'Auth'.
 
 ## RELATED LINKS
 

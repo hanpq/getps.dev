@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new Immich album
+
 ## SYNTAX
 
 ```powershell
@@ -23,34 +25,52 @@ New-IMAlbum [[-Session] <ImmichSession>] [-AlbumName] <String> [[-AssetIds] <Str
 
 ## DESCRIPTION
 
-Adds a new album
+Creates a new album in Immich with the specified name and optional properties.
+Albums can be created with
+initial assets, descriptions, and shared with other users.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMAlbum -albumName 'Las Vegas'
+New-IMAlbum -AlbumName 'Family Vacation 2024'
 ```
 
-Adds a new an album
+Creates a new album named 'Family Vacation 2024'.
 
 ### EXAMPLE 2
 
 ```powershell
-';role='editor'}
+New-IMAlbum -AlbumName 'Wedding Photos' -Description 'Photos from Sarah and John wedding ceremony'
 ```
 
-Adds a new shared album that is shared to a user
+Creates a new album with a description.
+
+### EXAMPLE 3
+
+```powershell
+$assets = @('asset1-uuid', 'asset2-uuid')
+New-IMAlbum -AlbumName 'Best of 2024' -AssetIds $assets
+```
+
+Creates a new album and adds specific assets to it.
+
+### EXAMPLE 4
+
+```powershell
+$users = @(@{userId='user1-uuid'; role='editor'}, @{userId='user2-uuid'; role='viewer'})
+New-IMAlbum -AlbumName 'Shared Memories' -AlbumUsers $users
+```
+
+Creates a new album shared with multiple users with different roles.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -66,7 +86,8 @@ Accept wildcard characters: False
 
 ### -AlbumName
 
-Defines the name of the new album
+The name for the new album.
+This will be displayed in the Immich interface.
 
 ```yaml
 Type: String
@@ -82,7 +103,7 @@ Accept wildcard characters: False
 
 ### -AssetIds
 
-Defines a list of assets to add to the album
+An array of asset UUIDs to add to the album during creation.
 
 ```yaml
 Type: String[]
@@ -98,7 +119,7 @@ Accept wildcard characters: False
 
 ### -Description
 
-Defines a description for the album
+A description for the album to provide additional context about its contents.
 
 ```yaml
 Type: String
@@ -114,7 +135,8 @@ Accept wildcard characters: False
 
 ### -AlbumUsers
 
-Defines a list of user id to share the album to
+An array of user objects to share the album with.
+Each object should contain 'userId' and 'role' properties.
 
 ```yaml
 Type: Hashtable[]

@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves asset stacks.
+
 ## SYNTAX
 
 ### list (Default)
@@ -30,7 +32,7 @@ Get-IMStack [-Session <ImmichSession>] -Id <String> [-ProgressAction <ActionPref
 
 ## DESCRIPTION
 
-Retrieves Immich stack information
+Gets stacks that group related assets together (like photo bursts or HDR sets).
 
 ## EXAMPLES
 
@@ -40,13 +42,15 @@ Retrieves Immich stack information
 Get-IMStack
 ```
 
-Retrieves all Immich stacks
+Gets all asset stacks.
 
 ### EXAMPLE 2
 
 ```powershell
-
+Get-IMStack -Id 'stack-id'
 ```
+
+Gets specific stack details.
 
 Retrieves a specific Immich stack by ID
 
@@ -62,10 +66,7 @@ Retrieves stacks filtered by primary asset ID
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -81,7 +82,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-Defines the stack to get
+Specific stack ID to retrieve.
 
 ```yaml
 Type: String
@@ -97,7 +98,7 @@ Accept wildcard characters: False
 
 ### -PrimaryAssetId
 
-Only returns stacks that contain the specified primary asset
+Filter stacks by primary asset ID.
 
 ```yaml
 Type: String

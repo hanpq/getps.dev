@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich album statistics
+
 ## SYNTAX
 
 ```powershell
@@ -21,26 +23,34 @@ Get-IMAlbumStatistic [[-Session] <ImmichSession>] [-ProgressAction <ActionPrefer
 
 ## DESCRIPTION
 
-Retreives Immich album statistics
+Retrieves statistical information about albums in the Immich server, such as total number of albums,
+shared albums, and other aggregate data.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAlbumStatistics
+Get-IMAlbumStatistic
 ```
 
-Retreives Immich album statistics
+Retrieves comprehensive album statistics for the current user.
+
+### EXAMPLE 2
+
+```powershell
+$stats = Get-IMAlbumStatistic
+Write-Host "Total albums: $($stats.totalAlbums)"
+```
+
+Retrieves statistics and displays the total number of albums.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession

@@ -13,35 +13,44 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Adds a new activity to an Immich album
+
 ## SYNTAX
 
 ```powershell
-Add-IMActivity [[-Session] <ImmichSession>] [-albumId] <String> [[-assetId] <String>] [[-comment] <String>]
- [[-type] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Add-IMActivity [[-Session] <ImmichSession>] [-AlbumId] <String> [[-AssetId] <String>] [[-Comment] <String>]
+ [[-Type] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new activity to an album
+Adds a new activity (comment or like) to an Immich album or specific asset within an album.
+Activities provide a way to interact with and comment on media in shared albums.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--AssetId <assetid> -Comment 'Great picture!' -Type comment
+Add-IMActivity -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -Comment 'Amazing sunset!' -Type 'comment'
 ```
 
-Adds a new comment to an asset in the specified album
+Adds a comment to the specified album.
+
+### EXAMPLE 2
+
+```powershell
+Add-IMActivity -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -AssetId 'a4908e1f-697f-4d7b-9330-93b5eabe3baf' -Type 'like'
+```
+
+Adds a like to a specific asset within the album.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +64,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumId
+### -AlbumId
 
-Defines which album to add the activity to.
+The UUID of the album to add the activity to.
+Accepts pipeline input.
 
 ```yaml
 Type: String
@@ -71,9 +81,10 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -assetId
+### -AssetId
 
-Defines a specific assetid to add activities for.
+The UUID of a specific asset to add the activity to.
+If not specified, the activity applies to the album level.
 
 ```yaml
 Type: String
@@ -87,9 +98,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -comment
+### -Comment
 
-Defines the comment to add.
+The comment text to add.
+Required when Type is 'comment'.
 
 ```yaml
 Type: String
@@ -103,9 +115,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -type
+### -Type
 
-Defines the type of activity to add, valid values are comment or like.
+The type of activity to add.
+Valid values are 'comment' or 'like'.
 
 ```yaml
 Type: String

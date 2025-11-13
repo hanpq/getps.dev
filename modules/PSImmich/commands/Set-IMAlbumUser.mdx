@@ -13,35 +13,53 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates user roles in an Immich album
+
 ## SYNTAX
 
 ```powershell
-Set-IMAlbumUser [[-Session] <ImmichSession>] [-albumId] <String> [-userId] <String[]> [-Role] <String>
+Set-IMAlbumUser [[-Session] <ImmichSession>] [-AlbumId] <String> [-UserId] <String[]> [-Role] <String>
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Set user role
+Changes the role of one or more users in an Immich album.
+Users can be promoted or demoted between
+editor (full access) and viewer (read-only) roles.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--userid <userid> -role editor
+Set-IMAlbumUser -AlbumId 'album-uuid' -UserId 'user-uuid' -Role 'editor'
 ```
 
-Changes the role of the user in the specified album
+Promotes a user to editor role in the specified album.
+
+### EXAMPLE 2
+
+```powershell
+@('user1-uuid', 'user2-uuid') | Set-IMAlbumUser -AlbumId 'album-uuid' -Role 'viewer'
+```
+
+Changes multiple users to viewer role via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAlbum -AlbumId 'album-uuid' | Get-IMAlbumUsers | Where-Object {$_.role -eq 'editor'} | Set-IMAlbumUser -AlbumId 'album-uuid' -Role 'viewer'
+```
+
+Demotes all current editors to viewers in the album.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +73,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumId
+### -AlbumId
 
-Defines album to add the user to
+The UUID of the album to update user roles in.
 
 ```yaml
 Type: String
@@ -71,9 +89,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -userId
+### -UserId
 
-Defines the user to add to the album
+The UUID(s) of the user(s) whose roles should be updated.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -89,7 +108,8 @@ Accept wildcard characters: False
 
 ### -Role
 
-Defines the user role
+The new role to assign to the user(s).
+Valid values are 'editor' (can modify album) or 'viewer' (read-only access).
 
 ```yaml
 Type: String
@@ -161,6 +181,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before changing user roles.
 
 ## RELATED LINKS
 

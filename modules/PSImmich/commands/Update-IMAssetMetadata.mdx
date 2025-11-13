@@ -13,35 +13,52 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates Immich asset metadata
+
 ## SYNTAX
 
 ```powershell
-Update-IMAssetMetadata [[-Session] <ImmichSession>] [-id] <String[]> [-ProgressAction <ActionPreference>]
+Update-IMAssetMetadata [[-Session] <ImmichSession>] [-Id] <String[]> [-ProgressAction <ActionPreference>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Update IM asset metadata
+Triggers a metadata refresh job for one or more assets, causing Immich to re-extract and update
+metadata information such as EXIF data, location, and other file properties.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-
+Update-IMAssetMetadata -Id 'asset-uuid'
 ```
 
-Update IM asset metadata
+Triggers metadata refresh for the specified asset with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+@('asset1-uuid', 'asset2-uuid') | Update-IMAssetMetadata
+```
+
+Refreshes metadata for multiple assets via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAsset -TagId 'needs-update' | Update-IMAssetMetadata -Confirm:$false
+```
+
+Refreshes metadata for all assets with a specific tag without confirmation.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,10 +72,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines the asset ids that metadata should be refreshed for.
-Accepts pipeline input.
+The UUID(s) of the asset(s) to refresh metadata for.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -130,6 +147,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before updating metadata.
+The operation creates a background job that may take time to complete for large numbers of assets.
 
 ## RELATED LINKS
 

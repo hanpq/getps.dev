@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves data for explore interface.
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,7 @@ Find-IMExploreData [[-Session] <ImmichSession>] [-ProgressAction <ActionPreferen
 
 ## DESCRIPTION
 
-Find explore data
+Gets curated content and suggestions for Immich's explore feature.
 
 ## EXAMPLES
 
@@ -31,16 +33,13 @@ Find explore data
 Find-IMExploreData
 ```
 
-Retreives explore data
+Gets explore interface data and suggestions.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession

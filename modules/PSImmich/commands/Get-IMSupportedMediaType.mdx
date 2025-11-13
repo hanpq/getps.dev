@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves supported media file types.
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,7 @@ Get-IMSupportedMediaType [[-Session] <ImmichSession>] [-ProgressAction <ActionPr
 
 ## DESCRIPTION
 
-Retreives Immich supported media type
+Gets list of media file formats supported by Immich server for import.
 
 ## EXAMPLES
 
@@ -31,16 +33,13 @@ Retreives Immich supported media type
 Get-IMSupportedMediaType
 ```
 
-Retreives Immich supported media type
+Lists supported media file types.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession

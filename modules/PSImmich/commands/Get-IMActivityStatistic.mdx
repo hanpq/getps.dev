@@ -13,35 +13,45 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves activity statistics for an Immich album
+
 ## SYNTAX
 
 ```powershell
-Get-IMActivityStatistic [[-Session] <ImmichSession>] [-albumId] <String> [[-assetId] <String>]
+Get-IMActivityStatistic [[-Session] <ImmichSession>] [-AlbumId] <String> [[-AssetId] <String>]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives album activity
+Retrieves statistical information about activities in an Immich album, such as the number of comments
+and likes.
+Can provide statistics for the entire album or for a specific asset.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMActivityStatistic -albumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+Get-IMActivityStatistic -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
 ```
 
-Retreives activity statistics for the album
+Retrieves activity statistics for the entire album.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMActivityStatistic -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -AssetId 'a4908e1f-697f-4d7b-9330-93b5eabe3baf'
+```
+
+Retrieves activity statistics for a specific asset within the album.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -55,9 +65,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumId
+### -AlbumId
 
-Defines an album to retreive activity statistics for.
+The UUID of the album to retrieve activity statistics for.
+Accepts pipeline input.
 
 ```yaml
 Type: String
@@ -71,9 +82,10 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -assetId
+### -AssetId
 
-Defines a specific asset to retreive activities for.
+The UUID of a specific asset to retrieve activity statistics for.
+If specified, returns statistics only for this asset.
 
 ```yaml
 Type: String

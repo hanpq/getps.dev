@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves server usage statistics.
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,7 @@ Get-IMServerStatistic [[-Session] <ImmichSession>] [-ProgressAction <ActionPrefe
 
 ## DESCRIPTION
 
-Retreives Immich server statistic
+Gets server performance metrics and usage statistics.
 
 ## EXAMPLES
 
@@ -31,16 +33,13 @@ Retreives Immich server statistic
 Get-IMServerStatistic
 ```
 
-Retreives Immich server statistic
+Gets server usage statistics.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession

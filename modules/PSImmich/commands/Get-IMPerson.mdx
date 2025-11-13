@@ -13,12 +13,14 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves person records from face recognition.
+
 ## SYNTAX
 
 ### list (Default)
 
 ```powershell
-Get-IMPerson [-Session <ImmichSession>] [-withHidden] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMPerson [-Session <ImmichSession>] [-WithHidden] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### id
@@ -30,26 +32,31 @@ Get-IMPerson [-Session <ImmichSession>] -id <String> [-IncludeStatistics] [-Prog
 
 ## DESCRIPTION
 
-Retreives Immich person
+Gets people identified by Immich's face recognition with optional filtering and statistics.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMPerson
+Get-IMPerson -IncludeStatistics
 ```
 
-Retreives Immich person
+Gets all people with asset counts.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMPerson -Id 'bf973405-3f2a-48d2-a687-2ed4167164be'
+```
+
+Gets specific person details.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -65,7 +72,8 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a specific person to be retreived
+Specific person ID to retrieve.
+Supports pipeline input.
 
 ```yaml
 Type: String
@@ -79,10 +87,10 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -withHidden
+### -WithHidden
 
-Defines if hidden should be returned or not.
-Do not specify if either should be returned.
+Include or exclude hidden people.
+Omit to return all.
 
 ```yaml
 Type: SwitchParameter
@@ -98,7 +106,7 @@ Accept wildcard characters: False
 
 ### -IncludeStatistics
 
-Defines if statistics should be returned for the person
+Include asset count and other statistics for each person.
 
 ```yaml
 Type: SwitchParameter

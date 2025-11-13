@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich background job information
+
 ## SYNTAX
 
 ```powershell
@@ -21,7 +23,9 @@ Get-IMJob [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<Co
 
 ## DESCRIPTION
 
-Get immich job
+Retrieves information about all background jobs in Immich, including their status, progress,
+and queue information.
+This helps monitor system processing and job performance.
 
 ## EXAMPLES
 
@@ -31,16 +35,31 @@ Get immich job
 Get-IMJob
 ```
 
-Get immich job
+Retrieves information about all background jobs.
+
+### EXAMPLE 2
+
+```powershell
+$jobs = Get-IMJob
+$jobs | Where-Object {$_.jobCounts.active -gt 0}
+```
+
+Gets jobs that are currently active.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMJob | Format-Table name, @{Name='Active';Expression={$_.jobCounts.active}}, @{Name='Waiting';Expression={$_.jobCounts.waiting}}
+```
+
+Displays job information in a formatted table showing active and waiting job counts.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -79,6 +98,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Job information includes queue status, active jobs, waiting jobs, and completed job counts for each job type.
 
 ## RELATED LINKS
 

@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich assets
+
 ## SYNTAX
 
 ### list (Default)
@@ -31,52 +33,85 @@ Get-IMAsset [-Session <ImmichSession>] [-Random] [-Count <Int32>] [-ProgressActi
 ### deviceid
 
 ```powershell
-Get-IMAsset [-Session <ImmichSession>] -deviceID <String> [-ProgressAction <ActionPreference>]
+Get-IMAsset [-Session <ImmichSession>] -DeviceID <String> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ### personid
 
 ```powershell
-Get-IMAsset [-Session <ImmichSession>] -personId <String> [-ProgressAction <ActionPreference>]
+Get-IMAsset [-Session <ImmichSession>] -PersonId <String> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ### tagid
 
 ```powershell
-Get-IMAsset [-Session <ImmichSession>] -tagId <String> [-ProgressAction <ActionPreference>]
+Get-IMAsset [-Session <ImmichSession>] -TagId <String> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ### id
 
 ```powershell
-Get-IMAsset [-Session <ImmichSession>] -id <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMAsset [-Session <ImmichSession>] -Id <String> [-Key <String>] [-Slug <String>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Retreives Immich asset
+Retrieves assets from the Immich server using various criteria.
+Supports retrieving specific assets by ID,
+random assets, assets by device, person, or tag associations, and general asset searches.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMAsset -isFavorite:$true
+Get-IMAsset
 ```
 
-Retreives all favorites
+Retrieves all assets using the default search.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAsset -Id '550e8400-e29b-41d4-a716-446655440000'
+```
+
+Retrieves a specific asset by its UUID.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAsset -Random -Count 5
+```
+
+Retrieves 5 random assets from the library.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMAsset -PersonId '550e8400-e29b-41d4-a716-446655440001'
+```
+
+Retrieves all assets associated with a specific person.
+
+### EXAMPLE 5
+
+```powershell
+Get-IMAsset -TagId 'tag-uuid'
+```
+
+Retrieves all assets tagged with the specified tag.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -92,8 +127,7 @@ Accept wildcard characters: False
 
 ### -Random
 
-Defines that random assets should be retreived.
-Unless -count is also specified one random asset is returned.
+Specifies that random assets should be retrieved instead of a specific asset.
 
 ```yaml
 Type: SwitchParameter
@@ -109,8 +143,8 @@ Accept wildcard characters: False
 
 ### -Count
 
-Defines how many random assets should be returned.
-Required -Random
+The number of random assets to return when using -Random.
+Default is 1, maximum is 1000.
 
 ```yaml
 Type: Int32
@@ -124,9 +158,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -deviceID
+### -DeviceID
 
-Defines a device id
+The device ID to retrieve assets from a specific device.
 
 ```yaml
 Type: String
@@ -140,9 +174,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -personId
+### -PersonId
 
-Defines a personId to retreive assets for
+The UUID of a person to retrieve associated assets.
 
 ```yaml
 Type: String
@@ -156,9 +190,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -tagId
+### -TagId
 
-Defines a tagid to retreive assets for
+The UUID of a tag to retrieve assets with that tag.
 
 ```yaml
 Type: String
@@ -172,9 +206,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -Id
 
-Defines a specific asset id to be retreived
+The UUID of a specific asset to retrieve.
+Accepts pipeline input.
 
 ```yaml
 Type: String
@@ -185,6 +220,38 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Key
+
+An optional API key for shared link access when retrieving assets.
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Slug
+
+An optional slug for shared link access when retrieving assets.
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

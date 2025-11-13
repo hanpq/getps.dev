@@ -13,17 +13,19 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates person information and settings.
+
 ## SYNTAX
 
 ```powershell
-Set-IMPerson [[-Session] <ImmichSession>] [-Id] <String[]> [[-BirthDate] <DateTime>] [[-FaceAssetId] <String>]
- [[-IsHidden] <Boolean>] [[-Name] <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Set-IMPerson [[-Session] <ImmichSession>] [-Id] <String[]> [[-BirthDate] <DateTime>] [[-Color] <String>]
+ [[-IsFavorite] <Boolean>] [[-FaceAssetId] <String>] [[-IsHidden] <Boolean>] [[-Name] <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Updates an Immich asset
+Modifies person details like name, birth date, visibility, and face thumbnail.
 
 ## EXAMPLES
 
@@ -39,10 +41,7 @@ Update an Immich asset
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -58,7 +57,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-Defines the person to update
+Person ID to update.
 
 ```yaml
 Type: String[]
@@ -74,7 +73,7 @@ Accept wildcard characters: False
 
 ### -BirthDate
 
-Defines birth date
+Person's birth date.
 
 ```yaml
 Type: DateTime
@@ -88,9 +87,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FaceAssetId
+### -Color
 
-Defines an face asset id
+Defines the color associated with the person
 
 ```yaml
 Type: String
@@ -104,9 +103,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IsHidden
+### -IsFavorite
 
-Defines if the person should be hidden
+Defines if the person is marked as favorite
 
 ```yaml
 Type: Boolean
@@ -120,9 +119,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
+### -FaceAssetId
 
-Defines the name of the person
+Asset ID to use as person's face thumbnail.
 
 ```yaml
 Type: String
@@ -131,6 +130,38 @@ Aliases:
 
 Required: False
 Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsHidden
+
+Set to $true to hide person from interface.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Display name for the person.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

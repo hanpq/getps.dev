@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes assets from a shared link.
+
 ## SYNTAX
 
 ```powershell
@@ -22,15 +24,17 @@ Remove-IMSharedLinkAsset [[-Session] <ImmichSession>] [-Id] <String[]> [-SharedL
 
 ## DESCRIPTION
 
-Remove Immich shared link asset
+Removes specific assets from an existing shared link.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
--sharedlinkid <sharedlinkid>
+Remove-IMSharedLinkAsset -Id 'asset-id' -SharedLinkId 'link-id'
 ```
+
+Removes asset from shared link.
 
 Remove Immich shared link asset
 
@@ -38,10 +42,7 @@ Remove Immich shared link asset
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +58,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-Defines assets to add to the shared link
+Asset IDs to remove from the shared link.
 
 ```yaml
 Type: String[]
@@ -73,7 +74,7 @@ Accept wildcard characters: False
 
 ### -SharedLinkId
 
-Defines a shared link to add assets to
+Shared link ID to modify.
 
 ```yaml
 Type: String

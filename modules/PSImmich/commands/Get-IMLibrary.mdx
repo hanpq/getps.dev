@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich libraries
+
 ## SYNTAX
 
 ### list (Default)
@@ -31,7 +33,9 @@ Get-IMLibrary [-Session <ImmichSession>] -id <String[]> [-IncludeStatistics]
 
 ## DESCRIPTION
 
-Retreives Immich library
+Retrieves one or more libraries from Immich.
+Libraries are collections of assets that can be
+managed separately with different settings, permissions, and storage locations.
 
 ## EXAMPLES
 
@@ -41,16 +45,38 @@ Retreives Immich library
 Get-IMLibrary
 ```
 
-Retreives Immich library
+Retrieves all libraries accessible to the current user.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMLibrary -Id 'library-uuid' -IncludeStatistics
+```
+
+Retrieves a specific library with detailed statistics.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMLibrary -OwnerId 'user-uuid'
+```
+
+Retrieves all libraries owned by a specific user.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMLibrary | Where-Object {$_.type -eq 'EXTERNAL'}
+```
+
+Retrieves only external libraries (those that scan existing folders).
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -66,7 +92,8 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a specific library id to be retreived
+The UUID(s) of specific library(ies) to retrieve.
+Accepts pipeline input and multiple values.
 
 ```yaml
 Type: String[]
@@ -82,7 +109,8 @@ Accept wildcard characters: False
 
 ### -IncludeStatistics
 
-Includes statistics for the library in the return object
+Includes detailed statistics (asset counts, sizes, etc.) in the returned library objects.
+Only applicable when retrieving specific libraries by ID.
 
 ```yaml
 Type: SwitchParameter
@@ -98,7 +126,8 @@ Accept wildcard characters: False
 
 ### -ownerId
 
-Retreive libraries for a user
+Retrieves libraries owned by a specific user UUID.
+Only applicable when listing libraries.
 
 ```yaml
 Type: String
@@ -137,6 +166,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Libraries can be either UPLOAD (for uploading new assets) or EXTERNAL (for scanning existing folders).
 
 ## RELATED LINKS
 

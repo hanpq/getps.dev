@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates user account settings.
+
 ## SYNTAX
 
 ```powershell
@@ -23,7 +25,7 @@ Set-IMUser [[-Session] <ImmichSession>] [-id] <String[]> [[-Email] <String>] [[-
 
 ## DESCRIPTION
 
-Set Immich user
+Modifies user properties including admin status, avatar color, and other preferences.
 
 ## EXAMPLES
 
@@ -39,10 +41,7 @@ Set Immich user
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -58,7 +57,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines the user id to update
+User ID to update.
 
 ```yaml
 Type: String[]

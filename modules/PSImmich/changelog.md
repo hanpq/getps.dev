@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Windows PowerShell compatibility for Import-IMAsset and Add-IMMyProfilePicture cmdlets
+
+### Changed
+
+- Comprehensively improved PowerShell help documentation for all cmdlets
+- Enhanced API parameter handling with support for nested parameter structures using dot-notation
+
+### Removed
+
+- Removed Get-IMMapStyle cmdlet (endpoint no longer available in Immich API)
+
 ## [2.2.1] - 2025-11-06
 
 ### Added
@@ -34,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed Get-IMAsset -TagId to use search API instead of deprecated tags/\{id\}/assets endpoint
+- Fixed Get-IMAsset -TagId to use search API instead of deprecated tags/{id}/assets endpoint
 - Updated Get-IMAsset to remove deprecation warning for asset enumeration
 
 ### Removed
@@ -202,3 +215,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - First release
+

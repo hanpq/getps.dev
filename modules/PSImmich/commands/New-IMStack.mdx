@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new asset stack.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,24 @@ New-IMStack [[-Session] <ImmichSession>] [-AssetIds] <String[]> [-ProgressAction
 
 ## DESCRIPTION
 
-Creates a new Immich stack from assets
+Groups related assets into a stack with the first asset as primary.
+Minimum 2 assets required.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMStack -AssetIds @('asset-id-1', 'asset-id-2', 'asset-id-3')
+New-IMStack -AssetIds @('asset1', 'asset2', 'asset3')
 ```
 
-Creates a new stack with the specified assets, with asset-id-1 as the primary
+Creates stack with asset1 as primary.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,9 +57,8 @@ Accept wildcard characters: False
 
 ### -AssetIds
 
-Array of asset IDs to include in the stack.
-The first asset becomes the primary asset.
-Minimum 2 assets required.
+Array of asset IDs to stack.
+First asset becomes the primary asset.
 
 ```yaml
 Type: String[]

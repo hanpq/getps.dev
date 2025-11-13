@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Updates Immich server configuration.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,24 @@ Set-IMConfig [[-Session] <ImmichSession>] [[-RawJSON] <String>] [-ProgressAction
 
 ## DESCRIPTION
 
-Set immich config
+Applies new configuration settings to the Immich server using JSON format.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Set-IMConfig
+$config = Get-IMConfig -ReturnRawJSON
+Set-IMConfig -RawJSON $config
 ```
 
-Set immich config
+Updates server configuration using modified JSON.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,8 +57,7 @@ Accept wildcard characters: False
 
 ### -RawJSON
 
-Defines the immich configuration.
-Provided as JSON text.
+Configuration data as JSON text string.
 
 ```yaml
 Type: String
@@ -130,6 +129,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Supports -WhatIf and -Confirm for safety.
 
 ## RELATED LINKS
 

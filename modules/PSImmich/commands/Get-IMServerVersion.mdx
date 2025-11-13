@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves Immich server version information.
+
 ## SYNTAX
 
 ```powershell
@@ -22,7 +24,7 @@ Get-IMServerVersion [[-Session] <ImmichSession>] [-History] [-ProgressAction <Ac
 
 ## DESCRIPTION
 
-Retreives Immich server version
+Gets current server version or version history details.
 
 ## EXAMPLES
 
@@ -32,16 +34,21 @@ Retreives Immich server version
 Get-IMServerVersion
 ```
 
-Retreives Immich server version
+Gets current server version.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMServerVersion -History
+```
+
+Gets server version history.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +64,7 @@ Accept wildcard characters: False
 
 ### -History
 
-Defines that version history should be return instead of the current version
+Returns version history instead of current version when specified.
 
 ```yaml
 Type: SwitchParameter

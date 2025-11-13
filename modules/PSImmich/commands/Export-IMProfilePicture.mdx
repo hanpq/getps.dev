@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Exports user profile picture to file.
+
 ## SYNTAX
 
 ```powershell
@@ -22,7 +24,7 @@ Export-IMProfilePicture [[-Session] <ImmichSession>] [-id] <String> [[-Path] <Di
 
 ## DESCRIPTION
 
-Export Immich profile picture
+Downloads and saves user's profile picture to local file system.
 
 ## EXAMPLES
 
@@ -38,10 +40,7 @@ Export user profile picture
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines the user id to retreive the profile picture for
+User ID to export profile picture for.
 
 ```yaml
 Type: String

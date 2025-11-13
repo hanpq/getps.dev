@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new shared link for assets or albums.
+
 ## SYNTAX
 
 ### asset (Default)
@@ -33,7 +35,7 @@ New-IMSharedLink [-Session <ImmichSession>] -AlbumId <String> [-AllowDownload] [
 
 ## DESCRIPTION
 
-New Immich shared link
+Generates public sharing links with configurable permissions and expiration.
 
 ## EXAMPLES
 
@@ -49,10 +51,7 @@ New Immich shared link
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -68,7 +67,7 @@ Accept wildcard characters: False
 
 ### -AssetId
 
-Defines the asset ids to share
+Asset IDs to include in the shared link.
 
 ```yaml
 Type: String[]
@@ -84,7 +83,7 @@ Accept wildcard characters: False
 
 ### -AlbumId
 
-Defines the albumid to share
+Album ID to share via the link.
 
 ```yaml
 Type: String
@@ -100,7 +99,7 @@ Accept wildcard characters: False
 
 ### -AllowDownload
 
-Defines if downloading of assets are permitted.
+Permits downloading assets through the shared link.
 
 ```yaml
 Type: SwitchParameter
@@ -116,7 +115,7 @@ Accept wildcard characters: False
 
 ### -AllowUpload
 
-Defines if uploads of assets are permitted.
+Permits uploading assets through the shared link.
 
 ```yaml
 Type: SwitchParameter
@@ -132,7 +131,7 @@ Accept wildcard characters: False
 
 ### -Description
 
-Defines a description of the shared link
+Description text for the shared link.
 
 ```yaml
 Type: String

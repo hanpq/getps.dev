@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes assets from a stack.
+
 ## SYNTAX
 
 ```powershell
@@ -22,11 +24,20 @@ Remove-IMStackAsset [[-Session] <ImmichSession>] [-StackId] <String> [-AssetId] 
 
 ## DESCRIPTION
 
-Removes an asset from an Immich stack
+Removes specific assets from an existing stack.
+If primary asset is removed, another becomes primary.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
+
+```powershell
+Remove-IMStackAsset -StackId 'stack-id' -AssetId 'asset-id'
+```
+
+Removes asset from stack after confirmation.
+
+### EXAMPLE 2
 
 ```powershell
 -AssetId <assetId>
@@ -34,7 +45,7 @@ Removes an asset from an Immich stack
 
 Removes the specified asset from the stack
 
-### EXAMPLE 2
+### EXAMPLE 3
 
 ```powershell
 -AssetId <assetId> -Force
@@ -46,10 +57,7 @@ Removes the asset from the stack without confirmation
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -65,7 +73,7 @@ Accept wildcard characters: False
 
 ### -StackId
 
-The stack ID from which to remove the asset
+Stack ID to modify.
 
 ```yaml
 Type: String
@@ -81,7 +89,7 @@ Accept wildcard characters: False
 
 ### -AssetId
 
-The asset ID to remove from the stack
+Asset ID to remove from the stack.
 
 ```yaml
 Type: String
@@ -97,7 +105,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Suppress confirmation prompt
+Suppresses confirmation prompt when specified.
 
 ```yaml
 Type: SwitchParameter

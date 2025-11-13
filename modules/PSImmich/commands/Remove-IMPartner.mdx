@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Removes a sharing partner.
+
 ## SYNTAX
 
 ```powershell
@@ -22,26 +24,23 @@ Remove-IMPartner [[-Session] <ImmichSession>] [-id] <String> [-ProgressAction <A
 
 ## DESCRIPTION
 
-Remove immich partner
+Ends partnership relationship and stops asset sharing with specified user.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-
+Remove-IMPartner -Id 'bf973405-3f2a-48d2-a687-2ed4167164be'
 ```
 
-Remove immich partner
+Removes the specified partner relationship.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -57,7 +56,8 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines the partner id
+Partner user ID to remove.
+Must be valid GUID format.
 
 ```yaml
 Type: String
@@ -129,6 +129,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+Supports -WhatIf and -Confirm for safety.
 
 ## RELATED LINKS
 

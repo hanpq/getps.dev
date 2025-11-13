@@ -13,26 +13,61 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Creates a new Immich library for asset management.
+
 ## SYNTAX
 
 ```powershell
-New-IMLibrary [[-Session] <ImmichSession>] [-name] <String> [[-exclusionPatterns] <String[]>]
- [[-importPaths] <String[]>] [[-ownerId] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+New-IMLibrary [[-Session] <ImmichSession>] [-Name] <String> [[-ExclusionPatterns] <String[]>]
+ [[-ImportPaths] <String[]>] [[-OwnerId] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Adds a new library
+The New-IMLibrary function creates a new library in Immich for organizing and managing
+digital assets.
+Libraries define collections of assets with specific import paths,
+exclusion patterns, and ownership settings.
+Each library can monitor designated
+directories and automatically import new assets according to configured rules.
+
+Libraries provide a way to organize assets from different sources or with different
+access requirements, such as personal photos, family albums, or professional archives.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-IMLibrary -Name 'NAS' -ImportPaths '/mnt/media/pictures'
+New-IMLibrary -Name 'Family Photos' -ImportPaths '/mnt/photos/family'
 ```
 
-Adds a new library
+Creates a new library named 'Family Photos' that monitors the '/mnt/photos/family' directory.
+
+### EXAMPLE 2
+
+```powershell
+New-IMLibrary -Name 'Professional Archive' -ImportPaths @('/storage/work', '/backup/projects') -ExclusionPatterns @('*.tmp', '.*')
+```
+
+Creates a library with multiple import paths and exclusion patterns for temporary and hidden files.
+
+### EXAMPLE 3
+
+```powershell
+New-IMLibrary -Name 'User Collection' -ImportPaths '/home/user/pictures' -OwnerId 'bf973405-3f2a-48d2-a687-2ed4167164be'
+```
+
+Creates a library with a specific owner assigned by user ID.
+
+### EXAMPLE 4
+
+```powershell
+$library = New-IMLibrary -Name 'Mobile Uploads' -ImportPaths '/uploads/mobile'
+Write-Output "Created library: $($library.name) with ID: $($library.id)"
+```
+
+Creates a library and captures the returned library object for further processing.
 
 ## PARAMETERS
 
@@ -55,9 +90,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -name
+### -Name
 
-Defines the name of the library
+Specifies the display name for the new library.
+This name appears in the Immich
+interface and should clearly identify the library's purpose or content source.
 
 ```yaml
 Type: String
@@ -71,9 +108,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -exclusionPatterns
+### -ExclusionPatterns
 
-Defines an exclusion pattern
+Defines file and folder patterns to exclude from library scanning.
+These patterns
+help filter out unwanted files such as system files, temporary files, or specific
+file types that should not be imported as assets.
 
 ```yaml
 Type: String[]
@@ -87,9 +127,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -importPaths
+### -ImportPaths
 
-Defines the import paths
+Specifies the file system paths that the library should monitor for assets.
+These paths define the directories from which the library will import photos,
+videos, and other supported media files.
 
 ```yaml
 Type: String[]
@@ -103,9 +145,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ownerId
+### -OwnerId
 
-Defines the owner of library
+Specifies the user ID of the library owner.
+The owner has administrative control
+over the library settings and can manage access permissions for other users.
 
 ```yaml
 Type: String
@@ -144,6 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+After creating a library, use Sync-IMLibrary to initiate the initial scan and
+import of existing assets from the configured import paths.
 
 ## RELATED LINKS
 

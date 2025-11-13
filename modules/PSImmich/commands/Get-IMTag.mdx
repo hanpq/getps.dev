@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Retrieves asset tags.
+
 ## SYNTAX
 
 ### list (Default)
@@ -29,7 +31,7 @@ Get-IMTag [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPref
 
 ## DESCRIPTION
 
-Retreives Immich tag
+Gets tags used for organizing and categorizing assets.
 
 ## EXAMPLES
 
@@ -39,16 +41,21 @@ Retreives Immich tag
 Get-IMTag
 ```
 
-Retreives Immich tag
+Gets all available tags.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMTag -Id 'tag-id'
+```
+
+Gets specific tag details.
 
 ## PARAMETERS
 
 ### -Session
 
-Optionally define a immich session object to use.
-This is useful when you are connected to more than one immich instance.
-
--Session $Session
+Optional session object for multi-instance connections.
 
 ```yaml
 Type: ImmichSession
@@ -64,7 +71,7 @@ Accept wildcard characters: False
 
 ### -id
 
-Defines a specific tag id to be retreived
+Specific tag ID to retrieve.
 
 ```yaml
 Type: String[]
