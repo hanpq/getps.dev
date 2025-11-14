@@ -55,7 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed Get-IMAsset -TagId to use search API instead of deprecated tags/{id}/assets endpoint
+- Fixed Get-IMAsset -TagId to use search API instead of deprecated tags/\{id\}/assets endpoint
 - Updated Get-IMAsset to remove deprecation warning for asset enumeration
 
 ### Removed
@@ -223,4 +223,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - First release
-
