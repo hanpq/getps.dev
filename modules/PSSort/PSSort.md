@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSSort
+title: PSSort
 ---
 > :warning: **IMPORTANT**
 > This module is early in it´s development phase. Many API function and features are not yet available. You are welcome to contribute on GitHub to accelerate progress further.
@@ -27,4 +27,3 @@ Install-Module PSSort -Scope CurrentUser
 ```
 
 ## Usage
-

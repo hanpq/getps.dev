@@ -186,7 +186,7 @@ module.exports = {
                 id: 'modules_docs',
                 path: './modules',
                 routeBasePath: 'modules',
-                sidebarPath: './sidebars_modules.js',
+                //sidebarPath: './sidebars_modules.js',
                 admonitions: {
                     keywords: ['note', 'tip', 'info', 'caution', 'danger', 'warning', 'MSnote', 'MStip', 'MSwarning', 'MSimportant', 'MScaution'],
                     extendDefaults: true,

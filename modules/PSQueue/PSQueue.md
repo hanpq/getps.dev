@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSQueue
+title: PSQueue
 ---
 > :warning: **IMPORTANT**
 > This module is early in it´s development phase. Many API function and features are not yet available. You are welcome to contribute on GitHub to accelerate progress further.
@@ -68,4 +68,3 @@ You can show performance metrics by using Measure-Queue
 ``` powershell
 Measure-Queue -Queue $Queue
 ```
-

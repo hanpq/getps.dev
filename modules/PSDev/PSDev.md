@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSDev
+title: PSDev
 ---
 > :warning: **IMPORTANT**
 > This module is early in it´s development phase. Many API function and features are not yet available. You are welcome to contribute on GitHub to accelerate progress further.
@@ -86,4 +86,3 @@ This function will simply try to resolve the specified package name and check if
 
 #### Test-RebootPending
 Checks if there is a pending reboot.
-

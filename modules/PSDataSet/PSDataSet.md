@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSDataSet
+title: PSDataSet
 ---
 > :warning: **IMPORTANT**
 > This module is early in it´s development phase. Many API function and features are not yet available. You are welcome to contribute on GitHub to accelerate progress further.
@@ -113,4 +113,3 @@ the following commands.
 $DataSet = New-DataSet
 Add-DataSetTable -Dataset $Dataset -DataTable $DataTable
 ```
-

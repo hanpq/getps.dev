@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSLogs
+title: PSLogs
 ---
 # PSLogs
 
@@ -822,4 +822,3 @@ Special thanks to:
 [module]: https://github.com/EsOsO/Logging
 [runspaces]: https://learn-powershell.net/tag/runspace/
 [license]: https://github.com/EsOsO/Logging/blob/main/docs/LICENSE.md
-

@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSImmich
+title: PSImmich
 ---
 # PSImmich
 
@@ -253,4 +253,3 @@ Below is a reference of the available command. For documentation about each comm
 - Remove-IMUser
 - Restore-IMUser
 - Set-IMUser
-

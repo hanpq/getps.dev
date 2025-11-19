@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSPortainer
+title: PSPortainer
 ---
 > :warning: **IMPORTANT**
 > This module is early in it´s development phase. Many API function and features are not yet available. You are welcome to contribute on GitHub to accelerate progress further.
@@ -70,4 +70,3 @@ Get-PContainer -Session $Instance2
 ```
 
 Do note that the last Connect-Portainer call will be the fallback session that is used if the cmdlet is not provided with a session object. In the example above, a call to Get-PContainer without a -Session parameter would use the instance portainer-02.
-

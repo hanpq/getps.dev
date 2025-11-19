@@ -1,6 +1,6 @@
 ---
-id: getstarted
-title: Get started
+id: PSMQTT
+title: PSMQTT
 ---
 # PSMQTT
 
@@ -56,4 +56,3 @@ One you are done you can close the session by calling `Disconnect-MQTTBroker`
 ```powershell
 Disconnect-MQTTBroker -Session $Session
 ```
-
