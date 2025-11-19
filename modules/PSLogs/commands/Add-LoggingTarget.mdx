@@ -18,8 +18,8 @@ Enable a logging target
 ## SYNTAX
 
 ```powershell
-Add-LoggingTarget [[-Configuration] <Hashtable>] [-ProgressAction <ActionPreference>] -Name <String>
- [<CommonParameters>]
+Add-LoggingTarget [[-Configuration] <Hashtable>] [-ProgressAction <ActionPreference>] -Type <String>
+ [-DisplayName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,7 +37,19 @@ Add-LoggingTarget -Name Console -Configuration @{Level = 'DEBUG'}
 ### EXAMPLE 2
 
 ```powershell
+Add-LoggingTarget -Type File -DisplayName 'ErrorsOnly' -Configuration @{Level = 'ERROR'; Path = 'C:\Temp\errors.log'}
+```
+
+### EXAMPLE 3
+
+```powershell
 Add-LoggingTarget -Name File -Configuration @{Level = 'INFO'; Path = 'C:\Temp\script.log'}
+```
+
+### EXAMPLE 4
+
+```powershell
+Add-LoggingTarget -Type File -DisplayName 'DatabaseLogs' -Configuration @{Level = 'INFO'; Path = 'C:\Logs\db.log'; Tags = @('Database', 'Performance')}
 ```
 
 ## PARAMETERS
@@ -45,6 +57,7 @@ Add-LoggingTarget -Name File -Configuration @{Level = 'INFO'; Path = 'C:\Temp\sc
 ### -Configuration
 
 An hashtable containing the configurations for the target
+Can include a 'Tags' key with an array of strings for tag-based message routing
 
 ```yaml
 Type: Hashtable
@@ -58,16 +71,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
+### -DisplayName
 
-\{\{ Fill Name Description \}\}
+\{\{ Fill DisplayName Description \}\}
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -84,6 +97,22 @@ Parameter Sets: (All)
 Aliases: proga
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+\{\{ Fill Type Description \}\}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -1,0 +1,131 @@
+---
+id: Remove-LoggingTarget
+title: Remove-LoggingTarget
+description: Help page for the Powershell "Remove-LoggingTarget" command
+keywords:
+  - Powershell
+  - PSLogs
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Remove a logging target
+
+## SYNTAX
+
+### ByDisplayName (Default)
+
+```powershell
+Remove-LoggingTarget [[-DisplayName] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### ByType
+
+```powershell
+Remove-LoggingTarget -Type <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+This function removes a previously configured logging target
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-LoggingTarget -DisplayName 'ErrorsOnly'
+```
+
+Removes the target with DisplayName 'ErrorsOnly'
+
+### EXAMPLE 2
+
+```powershell
+Remove-LoggingTarget -Name Console
+```
+
+Removes the Console target (backward compatibility)
+
+### EXAMPLE 3
+
+```powershell
+Remove-LoggingTarget -Type File
+```
+
+Removes the File target (if only one exists)
+
+## PARAMETERS
+
+### -DisplayName
+
+The DisplayName of the target to remove.
+If not specified, removes target by Type name
+
+```yaml
+Type: String
+Parameter Sets: ByDisplayName
+Aliases: Name
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+The type of target to remove (used when DisplayName is not specified)
+
+```yaml
+Type: String
+Parameter Sets: ByType
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+[https://logging.readthedocs.io/en/latest/functions/Remove-LoggingTarget.md](https://logging.readthedocs.io/en/latest/functions/Remove-LoggingTarget.md)
+
+[https://logging.readthedocs.io/en/latest/functions/Add-LoggingTarget.md](https://logging.readthedocs.io/en/latest/functions/Add-LoggingTarget.md)
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSLogs)

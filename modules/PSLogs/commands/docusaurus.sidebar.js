@@ -16,6 +16,7 @@ module.exports = [
     'PSLogs/commands/Get-LoggingDefaultFormat',
     'PSLogs/commands/Get-LoggingDefaultLevel',
     'PSLogs/commands/Get-LoggingTarget',
+    'PSLogs/commands/Remove-LoggingTarget',
     'PSLogs/commands/Set-LoggingCallerScope',
     'PSLogs/commands/Set-LoggingCustomTarget',
     'PSLogs/commands/Set-LoggingDefaultFormat',
