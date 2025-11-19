@@ -17,7 +17,7 @@ Below is summary of milestones in the context of modules, news, and announcement
 
 PSMQTT reached 40 000 downloads on PSGallery in less than a year!
 
- - [Get started](/modules/PSMQTT/getstarted)
+ - [Get started](/modules/PSMQTT)
 
 </li>
 
@@ -29,7 +29,7 @@ PSMQTT reached 40 000 downloads on PSGallery in less than a year!
 
 Powershell module PSImmich published.
 
- - [Get started](/modules/PSImmich/getstarted)
+ - [Get started](/modules/PSImmich)
  - A powershell wrapper for the Immich REST API.
 
 </li>
@@ -42,7 +42,7 @@ Powershell module PSImmich published.
 
 Powershell module PSMQTT published.
 
- - [Get started](/modules/PSMQTT/getstarted)
+ - [Get started](/modules/PSMQTT)
  - A powershell implementation to submit and subscribe to messages to/from a MQTT broker.
  - Uses the M2MQTT library.
 
@@ -56,7 +56,7 @@ No link
 
 Powershell module PSLogs published.
 
- - [Get started](/modules/PSLogs/getstarted)
+ - [Get started](/modules/PSLogs)
  - A logging module with a plugin system for logging targets. Each logging operation is executed in a separate thread reducing impact on script execution.
  - Forked of the original module Logging.
 
@@ -70,7 +70,7 @@ No link
 
 Powershell module PSDev published.
 
- - [Get started](/modules/PSDev/getstarted)
+ - [Get started](/modules/PSDev)
  - My personal tools modules where a I store various powershell functions and tools.
 
 </li>
@@ -83,7 +83,7 @@ No link
 
 Powershell module PSScriptInfo published.
 
- - [Get started](/modules/PSScriptInfo/getstarted)
+ - [Get started](/modules/PSScriptInfo)
  - Powershell module containing tools to add/update/remove a comment based header to powershell script files.
 
 ```powershell
@@ -117,7 +117,7 @@ No link
 
 Powershell module PSDaikin published.
 
- - [Get started](/modules/PSDaikin/getstarted)
+ - [Get started](/modules/PSDaikin)
  - Powershell module containing tools to control a Daikin device locally.
 
 </li>
@@ -130,7 +130,7 @@ No link
 
 Powershell module PSDataset published.
 
- - [Get started](/modules/PSDataSet/getstarted)
+ - [Get started](/modules/PSDataSet)
  - Powershell wrapper for the .Net classes System.Collections.Dataset
  - Datasets are in memory data structures like tables.
 
@@ -144,7 +144,7 @@ No link
 
 Powershell module PSSort published.
 
- - [Get started](/modules/PSSort/getstarted)
+ - [Get started](/modules/PSSort)
  - Hobby project for implementing different sorting algorithms in powershell. Only meant to be a fun and educational project rather than performant tool event though I try to be as efficient as powershell allows me to be within the scope of powershell code.
 
 </li>
@@ -157,7 +157,7 @@ Powershell module PSSort published.
 
 Powershell module PSPortainer published.
 
- - [Get started](/modules/PSPortainer/getstarted)
+ - [Get started](/modules/PSPortainer)
  - Powershell wrapper for the Portainer REST API.
 
 </li>
@@ -170,7 +170,7 @@ Powershell module PSPortainer published.
 
 Powershell module PSQueue published.
 
- - [Get started](/modules/PSQueue/getstarted)
+ - [Get started](/modules/PSQueue)
  - Powershell wrapper for the .Net classes System.Collections.Queue
  - Added functionality for performance monitoring, like queue item velocity.
 

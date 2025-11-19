@@ -21,6 +21,6 @@ I've put together a new powershell module which allows you to send and receive M
 Install-Module PSMQTT -Scope CurrentUser
 ```
 
-[PSMQTT Module Docs](https://getps.dev/modules/PSMQTT/getstarted)
+[PSMQTT Module Docs](https://getps.dev/modules/PSMQTT)
 
 <Comments />

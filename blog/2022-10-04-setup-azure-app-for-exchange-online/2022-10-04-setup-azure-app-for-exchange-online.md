@@ -15,7 +15,7 @@ data-size="small">
 
 :::info
 
-This script has been integrated in the module [PSDev](https://getps.dev/modules/psdev/getstarted/) and is no longer provided as a stand-alone script.
+This script has been integrated in the module [PSDev](https://getps.dev/modules/psdev) and is no longer provided as a stand-alone script.
 
 :::
 

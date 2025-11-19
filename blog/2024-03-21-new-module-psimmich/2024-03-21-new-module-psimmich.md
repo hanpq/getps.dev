@@ -32,6 +32,6 @@ You can build quite powerful automations for your image gallery, some examples;
 Install-Module PSImmich -Scope CurrentUser
 ```
 
-[PSImmich Module Docs](https://getps.dev/modules/PSImmich/getstarted)
+[PSImmich Module Docs](https://getps.dev/modules/PSImmich)
 
 <Comments />

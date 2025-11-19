@@ -21,7 +21,7 @@ Recently i published a new module PSDev with the purpose to group together a set
 Install-Module PSDev -Scope CurrentUser
 ```
 
-[PSDev Module Docs](https://getps.dev/modules/PSDev/getstarted)
+[PSDev Module Docs](https://getps.dev/modules/PSDev)
 
 ## Function: Get-Office365IPURL
 
