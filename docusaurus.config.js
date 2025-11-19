@@ -4,6 +4,7 @@ module.exports = {
     //url: 'https://pensive-darwin-90a9ff.netlify.app',
     url: 'https://getps.dev',
     baseUrl: '/',
+    trailingSlash: false,
     future: {
         experimental_faster: true,
     },
