@@ -17,10 +17,10 @@ Remove a logging target
 
 ## SYNTAX
 
-### ByDisplayName (Default)
+### ByUniqueName (Default)
 
 ```powershell
-Remove-LoggingTarget [[-DisplayName] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Remove-LoggingTarget [[-UniqueName] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### ByType
@@ -38,10 +38,10 @@ This function removes a previously configured logging target
 ### EXAMPLE 1
 
 ```powershell
-Remove-LoggingTarget -DisplayName 'ErrorsOnly'
+Remove-LoggingTarget -UniqueName 'ErrorsOnly'
 ```
 
-Removes the target with DisplayName 'ErrorsOnly'
+Removes the target with UniqueName 'ErrorsOnly'
 
 ### EXAMPLE 2
 
@@ -61,14 +61,14 @@ Removes the File target (if only one exists)
 
 ## PARAMETERS
 
-### -DisplayName
+### -UniqueName
 
-The DisplayName of the target to remove.
+The UniqueName of the target to remove.
 If not specified, removes target by Type name
 
 ```yaml
 Type: String
-Parameter Sets: ByDisplayName
+Parameter Sets: ByUniqueName
 Aliases: Name
 
 Required: False
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 
 ### -Type
 
-The type of target to remove (used when DisplayName is not specified)
+The type of target to remove (used when UniqueName is not specified)
 
 ```yaml
 Type: String

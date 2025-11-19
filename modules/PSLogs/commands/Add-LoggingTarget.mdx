@@ -19,7 +19,7 @@ Enable a logging target
 
 ```powershell
 Add-LoggingTarget [[-Configuration] <Hashtable>] [-ProgressAction <ActionPreference>] -Type <String>
- [-DisplayName <String>] [<CommonParameters>]
+ [-UniqueName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,7 +37,7 @@ Add-LoggingTarget -Name Console -Configuration @{Level = 'DEBUG'}
 ### EXAMPLE 2
 
 ```powershell
-Add-LoggingTarget -Type File -DisplayName 'ErrorsOnly' -Configuration @{Level = 'ERROR'; Path = 'C:\Temp\errors.log'}
+Add-LoggingTarget -Type File -UniqueName 'ErrorsOnly' -Configuration @{Level = 'ERROR'; Path = 'C:\Temp\errors.log'}
 ```
 
 ### EXAMPLE 3
@@ -49,7 +49,7 @@ Add-LoggingTarget -Name File -Configuration @{Level = 'INFO'; Path = 'C:\Temp\sc
 ### EXAMPLE 4
 
 ```powershell
-Add-LoggingTarget -Type File -DisplayName 'DatabaseLogs' -Configuration @{Level = 'INFO'; Path = 'C:\Logs\db.log'; Tags = @('Database', 'Performance')}
+Add-LoggingTarget -Type File -UniqueName 'DatabaseLogs' -Configuration @{Level = 'INFO'; Path = 'C:\Logs\db.log'; Tags = @('Database', 'Performance')}
 ```
 
 ## PARAMETERS
@@ -67,22 +67,6 @@ Aliases:
 Required: False
 Position: 3
 Default value: @{}
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayName
-
-\{\{ Fill DisplayName Description \}\}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -113,6 +97,22 @@ Parameter Sets: (All)
 Aliases: Name
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UniqueName
+
+\{\{ Fill UniqueName Description \}\}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
