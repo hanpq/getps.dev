@@ -19,7 +19,7 @@ Emits a log record
 
 ```powershell
 Write-Log [-Message] <String> [[-Arguments] <Array>] [[-Body] <Object>] [[-ExceptionInfo] <ErrorRecord>]
- [-ProgressAction <ActionPreference>] [-Level <String>] [<CommonParameters>]
+ [[-Tags] <String[]>] [-ProgressAction <ActionPreference>] [-Level <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,6 +50,12 @@ Write-Log -Level ERROR -Message 'Hello, {0}!' -Arguments 'World'
 
 ```powershell
 Write-Log -Level ERROR -Message 'Hello, {0}!' -Arguments 'World' -Body @{Server='srv01.contoso.com'}
+```
+
+### EXAMPLE 5
+
+```powershell
+Write-Log -Level INFO -Message 'Database operation completed' -Tags @('Database', 'Performance')
 ```
 
 ## PARAMETERS
@@ -114,6 +120,23 @@ Aliases:
 Required: False
 Position: 6
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+
+An array of tags to associate with the log message for target routing.
+Defaults to 'Default' if not specified.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: @('Default')
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

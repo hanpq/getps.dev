@@ -26,8 +26,8 @@ Import-IMAsset [[-Session] <ImmichSession>] [-FilePath] <FileInfo[]> [[-Duration
 ## DESCRIPTION
 
 Uploads media files (photos and videos) to Immich, creating new assets.
-Supports cross-platform
-multipart uploads with various metadata and status options.
+Uses unified HttpClient
+implementation for reliable cross-platform multipart uploads with metadata and status options.
 
 ## EXAMPLES
 
@@ -271,7 +271,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Supports both Windows PowerShell and PowerShell Core with cross-platform multipart upload capabilities.
+Uses System.Net.Http.HttpClient for reliable multipart uploads across all PowerShell editions.
 This cmdlet supports ShouldProcess and will prompt for confirmation before uploading files.
 
 ## RELATED LINKS
