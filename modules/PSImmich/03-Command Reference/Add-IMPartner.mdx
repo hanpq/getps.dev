@@ -18,7 +18,7 @@ Adds a user as a sharing partner.
 ## SYNTAX
 
 ```powershell
-Add-IMPartner [[-Session] <ImmichSession>] [-id] <String> [-ProgressAction <ActionPreference>]
+Add-IMPartner [[-Session] <ImmichSession>] [-SharedWithId] <String> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
@@ -31,7 +31,7 @@ Creates a partnership relationship allowing asset sharing between users.
 ### EXAMPLE 1
 
 ```powershell
-Add-IMPartner -Id 'bf973405-3f2a-48d2-a687-2ed4167164be'
+Add-IMPartner -SharedWithId 'bf973405-3f2a-48d2-a687-2ed4167164be'
 ```
 
 Adds the specified user as a sharing partner.
@@ -54,7 +54,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -id
+### -SharedWithId
 
 User ID to add as partner.
 Must be valid GUID format.
