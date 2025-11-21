@@ -1,0 +1,159 @@
+---
+id: Remove-IMWorkflow
+title: Remove-IMWorkflow
+description: Help page for the Powershell "Remove-IMWorkflow" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Removes Immich workflows
+
+## SYNTAX
+
+```powershell
+Remove-IMWorkflow [[-Session] <ImmichSession>] [-Id] <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Removes one or more workflows from the Immich server.
+This action is permanent and cannot be undone.
+Note: Workflow functionality is in Alpha state as of Immich v2.3.1.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-IMWorkflow -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Removes the specified workflow with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMWorkflow | Where-Object { $_.name -like 'temp*' } | Remove-IMWorkflow
+```
+
+Removes all workflows with names starting with 'temp'.
+
+### EXAMPLE 3
+
+```powershell
+Remove-IMWorkflow -Id 'workflow-uuid' -Confirm:$false
+```
+
+Removes the workflow without confirmation prompt.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID(s) of the workflow(s) to remove.
+Accepts pipeline input and multiple values.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: WorkflowId
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing workflows.
+This feature is in Alpha state and may be subject to changes in future Immich versions.
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
