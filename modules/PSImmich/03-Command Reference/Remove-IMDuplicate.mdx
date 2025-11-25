@@ -1,0 +1,172 @@
+---
+id: Remove-IMDuplicate
+title: Remove-IMDuplicate
+description: Help page for the Powershell "Remove-IMDuplicate" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Removes duplicate asset groups from Immich
+
+## SYNTAX
+
+```powershell
+Remove-IMDuplicate [[-Session] <ImmichSession>] [-Ids] <String[]> [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Removes one or more duplicate asset groups from Immich.
+This function uses the bulk delete endpoint
+to efficiently remove multiple duplicates.
+When duplicates are removed, Immich will keep one asset
+from each duplicate group and remove the others.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-IMDuplicate -Ids 'duplicate-group-uuid'
+```
+
+Removes the specified duplicate group with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+@('duplicate1-uuid', 'duplicate2-uuid') | Remove-IMDuplicate
+```
+
+Removes multiple duplicate groups via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMDuplicate | Remove-IMDuplicate -Confirm:$false
+```
+
+Removes all duplicate groups without confirmation prompts.
+
+### EXAMPLE 4
+
+```powershell
+Remove-IMDuplicate -Ids 'duplicate-group-uuid' -WhatIf
+```
+
+Shows what would be removed without actually performing the deletion.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ids
+
+The UUID(s) of the duplicate group(s) to remove.
+Accepts pipeline input and multiple values.
+These are the duplicate group IDs returned by Get-IMDuplicate, not individual asset IDs.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: id
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing duplicates.
+The function removes duplicate groups, not individual assets.
+Immich determines which assets
+to keep and which to remove within each duplicate group.
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
