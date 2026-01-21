@@ -30,13 +30,6 @@ Get-IMAsset [-Session <ImmichSession>] [-Random] [-Count <Int32>] [-ProgressActi
  [<CommonParameters>]
 ```
 
-### deviceid
-
-```powershell
-Get-IMAsset [-Session <ImmichSession>] -DeviceID <String> [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
-```
-
 ### personid
 
 ```powershell
@@ -54,7 +47,7 @@ Get-IMAsset [-Session <ImmichSession>] -TagId <String> [-ProgressAction <ActionP
 ### id
 
 ```powershell
-Get-IMAsset [-Session <ImmichSession>] -Id <String> [-Key <String>] [-Slug <String>]
+Get-IMAsset [-Session <ImmichSession>] -Id <String> [-Key <String>] [-Slug <String>] [-IncludeOCR]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
@@ -158,22 +151,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeviceID
-
-The device ID to retrieve assets from a specific device.
-
-```yaml
-Type: String
-Parameter Sets: deviceid
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PersonId
 
 The UUID of a person to retrieve associated assets.
@@ -251,6 +228,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeOCR
+
+Include OCR data for the asset when retrieving by Id.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

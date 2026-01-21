@@ -17,13 +17,106 @@ Retrieves comprehensive Immich server information.
 
 ## SYNTAX
 
+### about (Default)
+
 ```powershell
-Get-IMServer [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMServer [-Session <ImmichSession>] [-About] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### version
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-Version] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### version-history
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-VersionHistory] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### features
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-Features] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### statistics
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-Statistics] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### configuration
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-Configuration] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### appliedsystemconfiguration
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-AppliedSystemConfiguration] [-ReturnRawJSON]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### defaultsystemconfiguration
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-DefaultSystemConfiguration] [-ReturnRawJSON]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### storagetemplateoptions
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-StorageTemplateOptions] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### storage
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-Storage] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### mediatypes
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-MediaTypes] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### theme
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-Theme] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### apklinks
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-APKLinks] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### versioncheck
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-VersionCheck] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### ping
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-Ping] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 Gets detailed server properties including version, features, statistics, and configuration.
+Use different parameter sets to retrieve specific information about the Immich server.
 
 ## EXAMPLES
 
@@ -33,7 +126,39 @@ Gets detailed server properties including version, features, statistics, and con
 Get-IMServer
 ```
 
-Retrieves all server information and properties.
+Retrieves general server information and about details (default).
+
+### EXAMPLE 2
+
+```powershell
+Get-IMServer -Version
+```
+
+Gets the server version in a formatted object.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMServer -Statistics
+```
+
+Retrieves server usage statistics.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMServer -AppliedSystemConfiguration -ReturnRawJSON
+```
+
+Gets current system configuration as raw JSON.
+
+### EXAMPLE 5
+
+```powershell
+Get-IMServer -Ping
+```
+
+Tests if the server is responding.
 
 ## PARAMETERS
 
@@ -47,8 +172,265 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -About
+
+Retrieves general server information and about details.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: about
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Version
+
+Retrieves server version information in a formatted object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: version
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VersionHistory
+
+Retrieves server version history and release information.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: version-history
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Features
+
+Retrieves information about enabled server features.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: features
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Statistics
+
+Retrieves server usage statistics.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: statistics
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Configuration
+
+Retrieves server configuration settings.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: configuration
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppliedSystemConfiguration
+
+Retrieves currently applied system configuration.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: appliedsystemconfiguration
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultSystemConfiguration
+
+Retrieves default system configuration values.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: defaultsystemconfiguration
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReturnRawJSON
+
+Returns system configuration as raw JSON instead of PowerShell object.
+Only valid with AppliedSystemConfiguration or DefaultSystemConfiguration.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: appliedsystemconfiguration, defaultsystemconfiguration
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StorageTemplateOptions
+
+Retrieves available storage template options.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: storagetemplateoptions
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Storage
+
+Retrieves server storage information and usage.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: storage
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MediaTypes
+
+Retrieves supported media types and formats.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: mediatypes
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Theme
+
+Retrieves server theme configuration.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: theme
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -APKLinks
+
+Retrieves mobile application download links.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: apklinks
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VersionCheck
+
+Checks for available server updates.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: versioncheck
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ping
+
+Tests server connectivity and responsiveness.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ping
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

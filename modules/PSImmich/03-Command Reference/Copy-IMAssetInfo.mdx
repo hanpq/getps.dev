@@ -1,0 +1,272 @@
+---
+id: Copy-IMAssetInfo
+title: Copy-IMAssetInfo
+description: Help page for the Powershell "Copy-IMAssetInfo" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Copies asset information from one asset to another
+
+## SYNTAX
+
+```powershell
+Copy-IMAssetInfo [[-Session] <ImmichSession>] [-SourceId] <String> [-TargetId] <String> [-Albums] [-Metadata]
+ [-SharedLinks] [-Sidecar] [-Stack] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Copies various properties and associations like albums, tags, shared links, sidecar data,
+and stack information from a source asset to a target asset.
+This is useful for
+synchronizing metadata between similar assets or transferring properties during
+asset management workflows.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Copy-IMAssetInfo -SourceId 'source-uuid' -TargetId 'target-uuid'
+```
+
+Copies all available information from the source asset to the target asset.
+
+### EXAMPLE 2
+
+```powershell
+Copy-IMAssetInfo -SourceId 'source-uuid' -TargetId 'target-uuid' -Albums -Metadata
+```
+
+Copies only album associations and metadata from source to target asset.
+
+### EXAMPLE 3
+
+```powershell
+Copy-IMAssetInfo -SourceId 'source-uuid' -TargetId 'target-uuid' -Albums:$false
+```
+
+Copies all information except albums from source to target asset.
+
+### EXAMPLE 4
+
+```powershell
+'target1-uuid', 'target2-uuid' | ForEach-Object { Copy-IMAssetInfo -SourceId 'source-uuid' -TargetId $_ }
+```
+
+Copies information from one source asset to multiple target assets.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceId
+
+The UUID of the source asset from which to copy information.
+This parameter is mandatory.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetId
+
+The UUID of the target asset to which information will be copied.
+This parameter is mandatory.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Albums
+
+Copy album associations from source to target asset.
+If no switches are specified, all information is copied.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Metadata
+
+Copy metadata from source to target asset.
+If no switches are specified, all information is copied.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SharedLinks
+
+Copy shared link associations from source to target asset.
+If no switches are specified, all information is copied.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sidecar
+
+Copy sidecar data from source to target asset.
+If no switches are specified, all information is copied.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Stack
+
+Copy stack information from source to target asset.
+If no switches are specified, all information is copied.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet uses the PUT /assets/copy endpoint which supports selective copying of asset properties.
+All copy options default to $true, meaning all information is copied unless specifically disabled.
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)

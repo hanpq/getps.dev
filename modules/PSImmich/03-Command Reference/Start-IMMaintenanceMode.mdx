@@ -1,7 +1,7 @@
 ---
-id: Get-IMConfig
-title: Get-IMConfig
-description: Help page for the Powershell "Get-IMConfig" command
+id: Start-IMMaintenanceMode
+title: Start-IMMaintenanceMode
+description: Help page for the Powershell "Start-IMMaintenanceMode" command
 keywords:
   - Powershell
   - PSImmich
@@ -13,63 +13,66 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-Retrieves Immich server configuration.
+Starts Immich maintenance mode
 
 ## SYNTAX
 
-### applied (Default)
-
 ```powershell
-Get-IMConfig [-Session <ImmichSession>] [-ReturnRawJSON] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
-```
-
-### default
-
-```powershell
-Get-IMConfig [-Session <ImmichSession>] [-ReturnRawJSON] [-Default] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
-```
-
-### storage
-
-```powershell
-Get-IMConfig [-Session <ImmichSession>] [-StorageTemplate] [-ProgressAction <ActionPreference>]
+Start-IMMaintenanceMode [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Gets current or default server configuration settings, optionally as raw JSON.
+Puts Immich into maintenance mode, making it read-only for administrative operations.
+This is typically used before performing maintenance tasks like backups or updates.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMConfig
+Start-IMMaintenanceMode
 ```
 
-Gets current server configuration.
+Puts the current Immich instance into maintenance mode.
 
 ### EXAMPLE 2
 
 ```powershell
-Get-IMConfig -ReturnRawJSON
+Start-IMMaintenanceMode -Session $MySession
 ```
 
-Gets configuration as JSON for editing.
+Puts the specified Immich instance into maintenance mode.
 
 ## PARAMETERS
 
 ### -Session
 
-Optional session object for multi-instance connections.
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -78,50 +81,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReturnRawJSON
+### -Confirm
 
-Returns configuration as raw JSON for modification and use with Set-IMConfig.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: applied, default
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Default
-
-Retrieves default configuration instead of current settings.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: default
-Aliases:
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StorageTemplate
-
-Returns storage template configuration settings.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: storage
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -151,6 +122,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This cmdlet requires administrative privileges and supports ShouldProcess.
+Users will see a maintenance message when trying to access Immich while in maintenance mode.
 
 ## RELATED LINKS
 

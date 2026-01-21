@@ -1,0 +1,202 @@
+---
+id: New-IMWorkflow
+title: New-IMWorkflow
+description: Help page for the Powershell "New-IMWorkflow" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Creates a new Immich workflow
+
+## SYNTAX
+
+```powershell
+New-IMWorkflow [[-Session] <ImmichSession>] [-Name] <String> [[-Description] <String>]
+ [[-TriggerType] <String>] [[-Enabled] <Boolean>] [[-Actions] <Hashtable[]>] [[-Filters] <Hashtable[]>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Creates a new workflow in Immich with the specified name and configuration.
+Workflows can be created with
+empty filters and actions and configured later.
+Note: Workflow functionality is in Alpha state as of Immich v2.3.1.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+New-IMWorkflow -Name 'Auto Tag Photos' -Description 'Automatically tag uploaded photos'
+```
+
+Creates a new workflow with basic information.
+
+### EXAMPLE 2
+
+```powershell
+New-IMWorkflow -Name 'Process Videos' -TriggerType 'upload' -Enabled:$false
+```
+
+Creates a new workflow that is initially disabled.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+The name for the new workflow.
+This will be displayed in the Immich interface.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+
+A description for the workflow to provide additional context about its purpose.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TriggerType
+
+The trigger type for the workflow.
+This determines when the workflow will be executed.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Enabled
+
+Specifies whether the workflow should be enabled upon creation.
+Defaults to true.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Actions
+
+An array of workflow action objects that define what the workflow will do when triggered.
+
+```yaml
+Type: Hashtable[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: @()
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filters
+
+An array of workflow filter objects that define the conditions for workflow execution.
+
+```yaml
+Type: Hashtable[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: @()
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This feature is in Alpha state and may be subject to changes in future Immich versions.
+Workflows can be created with empty filters and actions for later configuration.
+
+## RELATED LINKS
+
+## EDIT THIS DOC 
+
+This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)

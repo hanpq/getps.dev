@@ -9,6 +9,62 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.2] - 2025-11-25
+
+### Added
+
+- New cmdlet Copy-IMAssetInfo to support the PUT /assets/copy API.
+- Get-IMAsset now has a parameter -IncludeOCR when using the -Id parameter to retrieve OCR data.
+- New cmdlet Remove-IMDuplicate to support the DELETE /duplicate API
+- New cmdlets Start-IMMaintenanceMode and Stop-IMMaintenanceMode
+  - NOTE: These are currently in alpha mode and not completely functional. We can enter maintenance mode successfully but once maintenance mode is enabled we cannot stop maintenance mode trough the API. Therefor it is currently disabled in code with a warning.
+
+## [2.3.1] - 2025-11-22
+
+### BREAKING CHANGES
+
+- Get-IMServer* cmdlets have been removed and replaced by a single Get-IMServer cmdlet that provides switch parameters for the different data.
+  - Removed cmdlets
+    - Get-IMServerAbout -> Get-IMServer -About
+    - Get-IMServerConfig -> Get-IMServer -Configuration
+    - Get-IMServerFeature -> Get-IMServer -Features
+    - Get-IMServerStatistic -> Get-IMServer -Statistics
+    - Get-IMServerStorage -> Get-IMServer -Storage
+    - Get-IMServerVersion -> Get-IMServer -Version & Get-IMServer -VersionHistory
+    - Get-IMServerMediaTypes -> Get-IMServer -MediaTypes
+    - Get-IMTheme -> Get-IMServer -Theme
+    - Get-IMConfig -Applied -> Get-IMServer -AppliedSystemConfiguration
+    - Get-IMConfig -Default -> Get-IMServer -DefaultSystemConfiguration
+    - Get-IMConfig -Storage -> Get-IMServer -StorageTemplateOptions
+    - Test-IMPing -> Get-IMServer -Ping
+    - Set-IMConfig -RawJson -> Set-IMServer -RawJson
+
+### Added
+
+- New Plugin management cmdlets (Alpha feature):
+  - Get-IMPlugin - Retrieve plugins with support for listing all plugins or getting specific plugin by ID
+- New Workflow management cmdlets (Alpha feature):
+  - NOTE: These are basically untested, the API specification is not complete and workflows are currently under active development by the Immich Team. These cmdlets has been added as a preparation for when the workflow feature is stable.
+  - Get-IMWorkflow - Retrieve workflows with support for listing all workflows or getting specific workflow by ID
+  - New-IMWorkflow - Create new workflows with configurable name, description, trigger type, actions, and filters
+  - Set-IMWorkflow - Update existing workflows including name, description, trigger type, enabled state, actions, and filters
+  - Remove-IMWorkflow - Delete workflows with confirmation support
+- New server info
+  - Get-IMServer -APKLinks
+  - Get-IMServer -VersionCheck
+
+### Changed
+
+- Enhanced Memory management functionality:
+  - Get-IMMemory - Added support for retrieving memories statistics via new -Statistics parameter
+  - Get-IMMemory - New parameters: Order, For, NumberOfMemories, IsSaved, IsTrashed, Type, Statistics
+  - Get-IMMemory - Integrated /memories/statistics API functionality
+- Updated Job management:
+  - Start-IMJob - Now uses the updated POST /jobs API endpoint
+- Updated Partner cmdlets for API changes
+- Deprecated functionality removal:
+  - Get-IMAsset - Removed DeviceID support following API deprecation
+
 ## [2.2.5] - 2025-11-17
 
 ### Added

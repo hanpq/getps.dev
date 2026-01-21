@@ -20,13 +20,22 @@ Retrieves Immich memories and memory collections.
 ### list (Default)
 
 ```powershell
-Get-IMMemory [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMMemory [-Session <ImmichSession>] [-Order <String>] [-For <DateTime>] [-NumberOfMemories <Int32>]
+ [-IsSaved] [-IsTrashed] [-Type <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### id
 
 ```powershell
 Get-IMMemory [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### statistics
+
+```powershell
+Get-IMMemory [-Session <ImmichSession>] [-Order <String>] [-For <DateTime>] [-NumberOfMemories <Int32>]
+ [-IsSaved] [-IsTrashed] [-Type <String>] [-Statistics] [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
@@ -76,6 +85,46 @@ Get-IMMemory | Where-Object { $_.assets.Count -gt 10 }
 
 Gets all memories and filters to show only those containing more than 10 assets.
 
+### EXAMPLE 5
+
+```powershell
+Get-IMMemory -Order desc -NumberOfMemories 5
+```
+
+Retrieves the 5 most recent memories in descending order.
+
+### EXAMPLE 6
+
+```powershell
+Get-IMMemory -Type on_this_day -For (Get-Date '2023-12-25')
+```
+
+Retrieves "on this day" memories for Christmas 2023, showing memories from December 25th in previous years.
+
+### EXAMPLE 7
+
+```powershell
+Get-IMMemory -IsSaved -Order asc
+```
+
+Retrieves all saved memories in ascending (oldest first) order.
+
+### EXAMPLE 8
+
+```powershell
+Get-IMMemory -Statistics
+```
+
+Retrieves memory statistics and summary information.
+
+### EXAMPLE 9
+
+```powershell
+Get-IMMemory -Statistics -Order desc -NumberOfMemories 10
+```
+
+Retrieves memory statistics with descending order, limited to 10 results.
+
 ## PARAMETERS
 
 ### -Session
@@ -113,6 +162,135 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Order
+
+Specifies the sort order for returned memories when retrieving all memories.
+Valid values are 'asc' (ascending), 'desc' (descending), or 'random' (random order).
+Only applies when retrieving all memories (list parameter set).
+
+```yaml
+Type: String
+Parameter Sets: list, statistics
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -For
+
+Specifies a specific date to retrieve memories for.
+Memories associated with or created
+around this date will be returned.
+Only applies when retrieving all memories.
+
+```yaml
+Type: DateTime
+Parameter Sets: list, statistics
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NumberOfMemories
+
+Specifies the maximum number of memories to return when retrieving all memories.
+This parameter limits the result set size for performance and pagination purposes.
+Alias: Size.
+Only applies when retrieving all memories (list parameter set).
+
+```yaml
+Type: Int32
+Parameter Sets: list, statistics
+Aliases: Size
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsSaved
+
+When specified, filters to return only memories that have been marked as saved.
+Only applies when retrieving all memories (list parameter set).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: list, statistics
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsTrashed
+
+When specified, filters to return only memories that have been moved to trash.
+Only applies when retrieving all memories (list parameter set).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: list, statistics
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+Specifies the type of memories to retrieve.
+Currently supports 'on_this_day' type
+which returns memories from the same date in previous years.
+Only applies when
+retrieving all memories (list parameter set).
+
+```yaml
+Type: String
+Parameter Sets: list, statistics
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Statistics
+
+When specified, retrieves memory statistics instead of memory objects.
+Returns
+statistical information about memories such as counts, distributions, and summaries.
+This creates a separate parameter set that supports Order and NumberOfMemories parameters.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: statistics
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

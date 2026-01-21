@@ -1,7 +1,7 @@
 ---
-id: Set-IMConfig
-title: Set-IMConfig
-description: Help page for the Powershell "Set-IMConfig" command
+id: Stop-IMMaintenanceMode
+title: Stop-IMMaintenanceMode
+description: Help page for the Powershell "Stop-IMMaintenanceMode" command
 keywords:
   - Powershell
   - PSImmich
@@ -13,35 +13,44 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-Updates Immich server configuration.
+Stops Immich maintenance mode
 
 ## SYNTAX
 
 ```powershell
-Set-IMConfig [[-Session] <ImmichSession>] [[-RawJSON] <String>] [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Stop-IMMaintenanceMode [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Applies new configuration settings to the Immich server using JSON format.
+Takes Immich out of maintenance mode, restoring normal read-write operations.
+This should be called after completing maintenance tasks to restore full functionality.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-$config = Get-IMConfig -ReturnRawJSON
-Set-IMConfig -RawJSON $config
+Stop-IMMaintenanceMode
 ```
 
-Updates server configuration using modified JSON.
+Takes the current Immich instance out of maintenance mode.
+
+### EXAMPLE 2
+
+```powershell
+Stop-IMMaintenanceMode -Session $MySession
+```
+
+Takes the specified Immich instance out of maintenance mode.
 
 ## PARAMETERS
 
 ### -Session
 
-Optional session object for multi-instance connections.
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -50,22 +59,6 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RawJSON
-
-Configuration data as JSON text string.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -130,7 +123,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Supports -WhatIf and -Confirm for safety.
+This cmdlet requires administrative privileges and supports ShouldProcess.
+After calling this, users will regain full access to Immich functionality.
 
 ## RELATED LINKS
 

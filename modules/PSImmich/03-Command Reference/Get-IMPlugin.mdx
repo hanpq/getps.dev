@@ -1,7 +1,7 @@
 ---
-id: Get-IMServerVersion
-title: Get-IMServerVersion
-description: Help page for the Powershell "Get-IMServerVersion" command
+id: Get-IMPlugin
+title: Get-IMPlugin
+description: Help page for the Powershell "Get-IMPlugin" command
 keywords:
   - Powershell
   - PSImmich
@@ -13,42 +13,60 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-Retrieves Immich server version information.
+Retrieves Immich plugins
 
 ## SYNTAX
 
+### list (Default)
+
 ```powershell
-Get-IMServerVersion [[-Session] <ImmichSession>] [-History] [-ProgressAction <ActionPreference>]
- [<CommonParameters>]
+Get-IMPlugin [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMPlugin [-Session <ImmichSession>] -Id <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Gets current server version or version history details.
+Retrieves one or more plugins from the Immich server.
+Can retrieve all plugins or a specific plugin by ID.
+Note: Plugin functionality is in Alpha state as of Immich v2.3.1.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Get-IMServerVersion
+Get-IMPlugin
 ```
 
-Gets current server version.
+Retrieves all plugins available to the current user.
 
 ### EXAMPLE 2
 
 ```powershell
-Get-IMServerVersion -History
+Get-IMPlugin -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
 ```
 
-Gets server version history.
+Retrieves a specific plugin by its ID.
+
+### EXAMPLE 3
+
+```powershell
+'plugin1-uuid', 'plugin2-uuid' | Get-IMPlugin
+```
+
+Retrieves multiple plugins by piping their IDs.
 
 ## PARAMETERS
 
 ### -Session
 
-Optional session object for multi-instance connections.
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -56,25 +74,26 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -History
+### -Id
 
-Returns version history instead of current version when specified.
+The UUID of a specific plugin to retrieve.
+Accepts pipeline input.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
+Type: String
+Parameter Sets: id
 Aliases:
 
-Required: False
+Required: True
 Position: Named
-Default value: False
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -103,6 +122,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This feature is in Alpha state and may be subject to changes in future Immich versions.
 
 ## RELATED LINKS
 

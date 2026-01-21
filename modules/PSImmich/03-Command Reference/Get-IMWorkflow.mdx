@@ -1,7 +1,7 @@
 ---
-id: Add-IMPartner
-title: Add-IMPartner
-description: Help page for the Powershell "Add-IMPartner" command
+id: Get-IMWorkflow
+title: Get-IMWorkflow
+description: Help page for the Powershell "Get-IMWorkflow" command
 keywords:
   - Powershell
   - PSImmich
@@ -13,34 +13,61 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-Adds a user as a sharing partner.
+Retrieves Immich workflows
 
 ## SYNTAX
 
+### list (Default)
+
 ```powershell
-Add-IMPartner [[-Session] <ImmichSession>] [-SharedWithId] <String> [-ProgressAction <ActionPreference>]
+Get-IMWorkflow [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMWorkflow [-Session <ImmichSession>] -Id <String> [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Creates a partnership relationship allowing asset sharing between users.
+Retrieves one or more workflows from the Immich server.
+Can retrieve all workflows or a specific workflow by ID.
+Note: Workflow functionality is in Alpha state as of Immich v2.3.1.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Add-IMPartner -SharedWithId 'bf973405-3f2a-48d2-a687-2ed4167164be'
+Get-IMWorkflow
 ```
 
-Adds the specified user as a sharing partner.
+Retrieves all workflows available to the current user.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMWorkflow -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Retrieves a specific workflow by its ID.
+
+### EXAMPLE 3
+
+```powershell
+'workflow1-uuid', 'workflow2-uuid' | Get-IMWorkflow
+```
+
+Retrieves multiple workflows by piping their IDs.
 
 ## PARAMETERS
 
 ### -Session
 
-Optional session object for multi-instance connections.
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
 
 ```yaml
 Type: ImmichSession
@@ -48,26 +75,26 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SharedWithId
+### -Id
 
-User ID to add as partner.
-Must be valid GUID format.
+The UUID of a specific workflow to retrieve.
+Accepts pipeline input.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: id
 Aliases:
 
 Required: True
-Position: 2
+Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -96,6 +123,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+This feature is in Alpha state and may be subject to changes in future Immich versions.
 
 ## RELATED LINKS
 
