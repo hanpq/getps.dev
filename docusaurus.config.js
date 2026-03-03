@@ -26,15 +26,15 @@ module.exports = {
     projectName: 'getps.dev', // Usually your repo name.
 
     // SEO and social media metadata
-    metadata: [
-        {name: 'keywords', content: 'PowerShell, PowerShell modules, Exchange Server, PowerShell scripts, PowerShell automation, system administration, DevOps, Microsoft Exchange, PowerShell Gallery, open source PowerShell'},
-        {name: 'author', content: 'Hannes Palmquist'},
-        {property: 'og:type', content: 'website'},
-        {property: 'og:image', content: 'https://getps.dev/img/powershell_orange.png'},
-        {name: 'twitter:card', content: 'summary_large_image'},
-        {name: 'twitter:creator', content: '@PalmquistHannes'},
-        {name: 'twitter:image', content: 'https://getps.dev/img/powershell_orange.png'},
-    ],
+    //metadata: [
+    //    {name: 'keywords', content: 'PowerShell, PowerShell modules, Exchange Server, PowerShell scripts, PowerShell automation, system administration, DevOps, Microsoft Exchange, PowerShell Gallery, open source PowerShell'},
+    //    {name: 'author', content: 'Hannes Palmquist'},
+    //    {property: 'og:type', content: 'website'},
+    //    {property: 'og:image', content: 'https://getps.dev/img/powershell_orange.png'},
+    //    {name: 'twitter:card', content: 'summary_large_image'},
+    //    {name: 'twitter:creator', content: '@PalmquistHannes'},
+    //    {name: 'twitter:image', content: 'https://getps.dev/img/powershell_orange.png'},
+    //],
 
     themeConfig: {
         // Default SEO image for social sharing
