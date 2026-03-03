@@ -1,10 +1,23 @@
 ---
 id: Inventory
-title: Inventory
-slug : /
+title: PowerShell Modules by GetPS.dev
+slug: /
+keywords: [PowerShell modules, open source PowerShell, PSMQTT, PSImmich, PSPortainer, PSLogs, PSDaikin, PSDataSet, PSQueue, PSSort, PSScriptInfo, PSDev, PowerShell Gallery, PowerShell automation tools, PowerShell libraries, free PowerShell modules, PowerShell developers, PowerShell scripts, PowerShell community, PowerShell tools download]
+description: Download free, open-source PowerShell modules from GetPS.dev. Popular modules include PSMQTT (40k+ downloads), PSImmich for photo management, PSPortainer for Docker, and more. All modules are available on PowerShell Gallery with full documentation.
 ---
 
-This topic provides documentation for all PowerShell modules published by getps.dev. Below is a summary of the available modules
+# PowerShell Modules by GetPS.dev
+
+Discover our comprehensive collection of open-source PowerShell modules designed to enhance your automation and administration capabilities. All modules are free, well-documented, and actively maintained by the PowerShell community.
+
+## 🚀 Featured Modules
+
+- [PSMQTT](/modules/PSMQTT) - Complete MQTT client implementation (40,000+ downloads!)
+- [PSImmich](/modules/PSImmich) - Immich photo server automation and management  
+- [PSPortainer](/modules/PSPortainer) - Docker container management via Portainer API
+- [PSLogs](/modules/PSLogs) - Advanced logging and log analysis tools
+
+## 📊 Module Status Dashboard
 
 | Module       | Build                                                                                                                                                                                                             | Codecov                                                                                                                                                 | Platform                                                                                                                                                  | PSGallery DL                                                                                                                                      | License                                                                                                                                | Docs                                                                                                            | Changelog                                                                                                                       | Release                                                                                                                                 | Pre-release                                                                                                                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |

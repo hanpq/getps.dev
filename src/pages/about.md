@@ -1,18 +1,30 @@
 ﻿---
 id: about
 slug: about
-title: About
-description: About
+title: About Hannes Palmquist - PowerShell Expert & Exchange Server Specialist
+keywords: [Hannes Palmquist, PowerShell expert, Exchange Server specialist, Microsoft 365 consultant, PowerShell modules, Exchange administrator, Microsoft MVP, PowerShell developer, Exchange Server migration, Microsoft consultant, Crayon Sweden, PowerShell automation, Exchange Server versions, IT consultant, system administrator, PowerShell scripting, Exchange Server expertise]
+description: Meet Hannes Palmquist - Senior Microsoft consultant at Crayon Sweden, PowerShell module developer, and creator of the most comprehensive Exchange Server version database. Expert in Exchange Server, Microsoft 365, PowerShell automation, and IT infrastructure.
 hide_table_of_contents: true
 ---
 
-## Hannes Palmquist
+# About Hannes Palmquist
+## Exchange Server Specialist & PowerShell Expert
 
 <a class="avatar__photo-link avatar__photo" href="https://getps.dev/about" target="_blank" rel="noreferrer noopener">
-    <img src="https://getps.dev/img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist"/>
+    <img src="https://getps.dev/img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist - PowerShell Expert and Exchange Server Specialist"/>
 </a>
 
-Hannes work as a senior consultant at Crayon Sweden and has many years of experience in the IT industry and specifically designing, implementing and migrating Microsoft based email solutions including Microsoft 365. Additionally, Hannes has expertise within developing, automation, identity management and security.
+Hannes Palmquist is a Senior Microsoft Consultant at Crayon Sweden with many years of experience in designing, implementing, and migrating Microsoft-based email solutions, including Microsoft 365 and Exchange Server environments.
+
+Hannes has developed numerous open-source PowerShell modules that are widely used by the PowerShell community, including popular modules like PSMQTT (40,000+ downloads), PSImmich, and PSPortainer.
+
+## Areas of Expertise
+
+- Exchange Server Administration
+- PowerShell Module Development
+- Microsoft 365 Migration
+- Identity Management & Security
+- IT Automation
 
 This web-site is not affiliated with Crayon or any of it's companies, it is a personal website mainly promoting powershell related articles and open source projects. It also serves as a documentation site for powershell modules that Hannes is maintaining and/or contributing to.
 

@@ -56,9 +56,8 @@ function Home() {
     const { siteConfig = {} } = context;
     return (
         <Layout
-            //title={`${siteConfig.title}`}
-            title="$"
-            description="Getps.dev provides a portal of powershell scripts, modules, blog, knowledge base, tutorials, guides, tips and tricks">
+            title="GetPS.dev - PowerShell Scripts, Modules, Tutorials & Exchange Server Resources"
+            description="The PowerShell resource hub. Download free PowerShell modules (PSMQTT, PSImmich, PSPortainer), find scripts, tutorials, and the most comprehensive Exchange Server version database. Perfect for PowerShell developers and system administrators.">
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
                     <h1 className="hero__title">{siteConfig.title}</h1>

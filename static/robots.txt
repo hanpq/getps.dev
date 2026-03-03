@@ -1,4 +1,19 @@
 ﻿User-Agent: *
-Disallow: 
+Allow: /
+Disallow: /.docusaurus/
+Disallow: /build/
+Disallow: /node_modules/
 
+# Allow search engines to discover our key content
+Allow: /blog/
+Allow: /docs/
+Allow: /modules/
+Allow: /exchangeversions
+Allow: /about
+Allow: /milestones
+
+# Sitemap location
 Sitemap: https://getps.dev/sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1

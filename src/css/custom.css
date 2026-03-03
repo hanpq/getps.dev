@@ -64,13 +64,13 @@
 }
 
 /* Add custom icon for MSnote - Info icon */
-.theme-admonition-MSnote .admonitionIcon_Rf37 svg,
-.alert--MSnote .admonitionIcon_Rf37 svg {
+.theme-admonition-MSnote .admonitionIcon svg,
+.alert--MSnote .admonitionIcon svg {
     display: none;
 }
 
-.theme-admonition-MSnote .admonitionIcon_Rf37::after,
-.alert--MSnote .admonitionIcon_Rf37::after {
+.theme-admonition-MSnote .admonitionIcon::after,
+.alert--MSnote .admonitionIcon::after {
     content: "💡";
     font-size: 16px;
     display: inline-block;
@@ -94,13 +94,13 @@
 }
 
 /* Add custom icon for MStip - Tip icon */
-.theme-admonition-MStip .admonitionIcon_Rf37 svg,
-.alert--MStip .admonitionIcon_Rf37 svg {
+.theme-admonition-MStip .admonitionIcon svg,
+.alert--MStip .admonitionIcon svg {
     display: none;
 }
 
-.theme-admonition-MStip .admonitionIcon_Rf37::after,
-.alert--MStip .admonitionIcon_Rf37::after {
+.theme-admonition-MStip .admonitionIcon::after,
+.alert--MStip .admonitionIcon::after {
     content: "🚀";
     font-size: 16px;
     display: inline-block;
@@ -124,13 +124,13 @@
 }
 
 /* Add custom icon for MSwarning - Warning icon */
-.theme-admonition-MSwarning .admonitionIcon_Rf37 svg,
-.alert--MSwarning .admonitionIcon_Rf37 svg {
+.theme-admonition-MSwarning .admonitionIcon svg,
+.alert--MSwarning .admonitionIcon svg {
     display: none;
 }
 
-.theme-admonition-MSwarning .admonitionIcon_Rf37::after,
-.alert--MSwarning .admonitionIcon_Rf37::after {
+.theme-admonition-MSwarning .admonitionIcon::after,
+.alert--MSwarning .admonitionIcon::after {
     content: "⚠️";
     font-size: 16px;
     display: inline-block;
@@ -154,13 +154,13 @@
 }
 
 /* Add custom icon for MSimportant - Important icon */
-.theme-admonition-MSimportant .admonitionIcon_Rf37 svg,
-.alert--MSimportant .admonitionIcon_Rf37 svg {
+.theme-admonition-MSimportant .admonitionIcon svg,
+.alert--MSimportant .admonitionIcon svg {
     display: none;
 }
 
-.theme-admonition-MSimportant .admonitionIcon_Rf37::after,
-.alert--MSimportant .admonitionIcon_Rf37::after {
+.theme-admonition-MSimportant .admonitionIcon::after,
+.alert--MSimportant .admonitionIcon::after {
     content: "🚨";
     font-size: 16px;
     display: inline-block;
@@ -184,13 +184,13 @@
 }
 
 /* Add custom icon for MScaution - Caution icon */
-.theme-admonition-MScaution .admonitionIcon_Rf37 svg,
-.alert--MScaution .admonitionIcon_Rf37 svg {
+.theme-admonition-MScaution .admonitionIcon svg,
+.alert--MScaution .admonitionIcon svg {
     display: none;
 }
 
-.theme-admonition-MScaution .admonitionIcon_Rf37::after,
-.alert--MScaution .admonitionIcon_Rf37::after {
+.theme-admonition-MScaution .admonitionIcon::after,
+.alert--MScaution .admonitionIcon::after {
     content: "🛑";
     font-size: 16px;
     display: inline-block;

@@ -1,11 +1,20 @@
 ---
 id: milestones
-title: Milestones
+title: PowerShell Module Milestones & GetPS.dev Project Timeline
+slug: milestones
+keywords: [PowerShell module milestones, PSMQTT downloads, PSImmich release, PSPortainer updates, PowerShell module development, GetPS.dev timeline, PowerShell project history, open source PowerShell modules, PowerShell community milestones, PowerShell module releases, PowerShell project achievements]
+description: Track the journey of PowerShell module development at GetPS.dev. Discover major milestones including PSMQTT reaching 40,000 downloads, PSImmich and PSPortainer releases, and other significant achievements in the PowerShell community.
 ---
 
 import "@site/src/css/timeline.css";
 
-Below is summary of milestones in the context of modules, news, and announcements made on getps.dev.
+# PowerShell Module Milestones & Project Timeline
+
+Track the journey of PowerShell module development at GetPS.dev!
+
+## 🏆 Major Achievements Timeline
+
+Below is a comprehensive timeline showcasing the **growth**, **adoption**, and **impact** of our PowerShell modules in the community.
 
 <ol class="timeline-container">
 

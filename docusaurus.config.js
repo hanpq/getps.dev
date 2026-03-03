@@ -6,14 +6,40 @@ module.exports = {
     baseUrl: '/',
     trailingSlash: false,
     future: {
-        experimental_faster: true,
+        experimental_faster: {
+            rspackBundler: true,
+            rspackPersistentCache: true,
+            ssgWorkerThreads: true,
+        },
+        v4: {
+            removeLegacyPostBuildHeadAttribute: true,
+        }
     },
     onBrokenLinks: 'warn',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/powershell_orange2.ico',
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        },
+    },
     organizationName: 'hanpq', // Usually your GitHub org/user name.
     projectName: 'getps.dev', // Usually your repo name.
+
+    // SEO and social media metadata
+    metadata: [
+        {name: 'keywords', content: 'PowerShell, PowerShell modules, Exchange Server, PowerShell scripts, PowerShell automation, system administration, DevOps, Microsoft Exchange, PowerShell Gallery, open source PowerShell'},
+        {name: 'author', content: 'Hannes Palmquist'},
+        {property: 'og:type', content: 'website'},
+        {property: 'og:image', content: 'https://getps.dev/img/powershell_orange.png'},
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {name: 'twitter:creator', content: '@PalmquistHannes'},
+        {name: 'twitter:image', content: 'https://getps.dev/img/powershell_orange.png'},
+    ],
+
     themeConfig: {
+        // Default SEO image for social sharing
+        image: 'img/powershell_orange.png',
+
         algolia: {
             indexName: 'getps',
             appId: 'JW8FXUKUSV',
