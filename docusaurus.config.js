@@ -220,6 +220,10 @@ module.exports = {
                 },
             }
         ],
+        [
+            "@gracefullight/docusaurus-plugin-microsoft-clarity",
+            { projectId: "w3qj0g5l7g" },
+        ],
     ],
     scripts: [
         {
