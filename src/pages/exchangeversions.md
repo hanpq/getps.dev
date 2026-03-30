@@ -22,11 +22,11 @@ This is the most complete Exchange version database available online - bookmark 
 :::
 
 ## Quick Navigation
-- [**Exchange SE (2025)**](#exchange-se) - Latest Subscription Edition
-- [**Exchange 2019**](#exchange-2019) - Current on-premises version
-- [**Exchange 2016**](#exchange-2016) - Previous generation (End-of-Life)  
-- [**Exchange 2013**](#exchange-2013) - Legacy version (End-of-Life)
-- [**Exchange 2010 & Earlier**](#exchange-2010) - Historical versions
+- [**Exchange SE (2025)**](#exchange-se)
+- [**Exchange 2019**](#exchange-2019)
+- [**Exchange 2016**](#exchange-2016)
+- [**Exchange 2013**](#exchange-2013) 
+- [**Exchange 2010 & Earlier**](#exchange-2010)
 
 ---
 
@@ -63,7 +63,7 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange 2019 | CU14 Feb 2026 SU   | ![][Security Update]   | 2026-02-10   | 15.02.1544.039 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
 | Exchange 2019 | CU14 Dec 2025 SU   | ![][Security Update]   | 2025-12-09   | 15.02.1544.037 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
 | Exchange 2019 | CU14 Oct 2025 SU   | ![][Security Update]   | 2025-10-14   | 15.02.1544.036 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
-| Exchange 2019 | CU14 Sep 2025 HU   | ![][Hostfix Update]    | 2025-09-08   | 15.02.1544.034 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
+| Exchange 2019 | CU14 Sep 2025 HU   | ![][Hotfix Update]     | 2025-09-08   | 15.02.1544.034 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
 | Exchange 2019 | CU14 Aug 2025 SU   | ![][Security Update]   | 2025-08-12   | 15.02.1544.033 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
 | Exchange 2019 | CU14 May 2025 HU   | ![][Hotfix Update]     | 2025-05-29   | 15.02.1544.027 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
 | Exchange 2019 | CU14 Apr 2025 HU   | ![][Hotfix Update]     | 2025-04-18   | 15.02.1544.025 | 17003  | 13243   | 16762         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2022] ![][OS2019]             |
@@ -464,6 +464,48 @@ This is the most complete Exchange version database available online - bookmark 
 
 ---
 
+## Major changes/features
+
+- Exchange SE
+  - CU1
+    - To Be Released
+  - RTM
+    - No changes between RTM and 2019 CU15 (except, EULA, version and name)
+
+- Exchange 2019
+  - CU15
+    - Support for Windows Server 2025
+    - Partial TLS 1.3 support
+    - Certificate Management tasks is returning to ECP
+    - Feature Flighting
+    - Oracle Outside In Technology (OIT) replaced with DocParser
+  - CU14
+    - Extended Protection is now enabled by default and must be explicitly disabled during installation to prevent enablement.
+    - Supports .NET Framework 4.8.1 on Windows Server 2022
+  - CU13
+    - Mainly bug and security fixes
+  - CU12
+    - UNC paths in Exchange Server Powershell cmdlets is not longer allowed.
+  - CU11
+    - Emergency Mitigation service launched
+    - New prereq IIS URL Rewrite Module, Universal C Runtime in Windows
+  - CU10
+    - Exchange now supports AMSI integration
+  - CU1-9
+    - Mainly bug and security fixes
+  - RTM
+    - Custom configuration preservation
+    - Windows Server Core support
+    - Block external access to Exchange admin center (EAC) and the Exchange Management Shell (EMS)
+    - Modern authentication support for pure on-premises environmants
+    - Improved search infrastructure
+    - Faster, more reliable failovers
+    - Metacache database
+    - Support for up to 256GB of memory and 48 CPU cores
+    - Dynamic database cache
+    - Email address internationalization (EAI)
+    - Unified Messaging is removed
+
 ## Frequently Asked Questions
 
 ### How do I check my Exchange Server version?
@@ -472,7 +514,7 @@ Run `Get-ExchangeServer | ft Name, Edition, AdminDisplayVersion` in Exchange Man
 ### What's the difference between CU, SU, and HU updates?
 - **CU (Cumulative Update)**: Major updates with new features and fixes
 - **SU (Security Update)**: Security-focused patches released monthly  
-- **HU (Hotfix Update)**: Critical bug fixes between regular update cycles
+- **HU (Hotfix Update)**: Bug fixes between regular update cycles
 
 ---
 
