@@ -1,7 +1,7 @@
 ﻿---
 id: about
 slug: about
-title: About Hannes Palmquist - PowerShell Expert & Exchange Server Specialist
+title: About Hannes Palmquist
 keywords: [Hannes Palmquist, PowerShell expert, Exchange Server specialist, Microsoft 365 consultant, PowerShell modules, Exchange administrator, Microsoft MVP, PowerShell developer, Exchange Server migration, Microsoft consultant, Crayon Sweden, PowerShell automation, Exchange Server versions, IT consultant, system administrator, PowerShell scripting, Exchange Server expertise]
 description: Meet Hannes Palmquist - Senior Microsoft consultant at Crayon Sweden, PowerShell module developer, and creator of the most comprehensive Exchange Server version database. Expert in Exchange Server, Microsoft 365, PowerShell automation, and IT infrastructure.
 hide_table_of_contents: true

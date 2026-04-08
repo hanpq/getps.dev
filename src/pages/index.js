@@ -12,7 +12,7 @@ const features = [
         imageUrl: 'img/coding-svgrepo-com.svg',
         description: (
             <>
-                GetPS.dev hosts a knowledgebase with misc scripts and snippets
+                GetPS.dev hosts a knowledge base with misc scripts and snippets
             </>
         ),
     },

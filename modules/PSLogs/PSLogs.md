@@ -29,9 +29,9 @@ To install from the PowerShell gallery using PowerShellGet run the following com
 Install-Module PSLogs -Scope CurrentUser
 ```
 
-# Usage
+## Usage
 
-## TL;DR
+### TL;DR
 
 ```powershell
 Set-LoggingDefaultLevel -Level 'WARNING'

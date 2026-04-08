@@ -1,7 +1,7 @@
 ---
 id: exchange-versions
 slug: exchangeversions
-title: Complete Microsoft Exchange Server Version History & Build Numbers - 2025 Updated
+title: Complete Exchange Server Version History & Build Numbers
 keywords: [Exchange Server versions, Exchange Server build numbers, Exchange Server version history, Exchange 2019 versions, Exchange 2016 versions, Exchange 2013 versions, Exchange cumulative updates, Exchange security updates, Exchange Server patch levels, Microsoft Exchange updates, Exchange Server compatibility matrix, Exchange version table, Exchange build table, Exchange Server releases, Exchange Server updates 2025, Exchange Server patches, Exchange version reference, Exchange build reference, Exchange Server lifecycle, Exchange Server support matrix, Exchange Server version lookup, Exchange build lookup, Exchange CU versions, Exchange SU versions, Exchange hotfix versions, Exchange RTM versions, Exchange Server admin reference]
 description: The most comprehensive and up-to-date Microsoft Exchange Server version history table. Complete build numbers, release dates, and compatibility information for Exchange 2025 SE, 2019, 2016, 2013, 2010, 2007, and earlier versions. Essential reference for Exchange administrators.
 hide_table_of_contents: true
