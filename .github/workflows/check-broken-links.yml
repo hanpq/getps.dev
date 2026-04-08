@@ -3,11 +3,11 @@ on:
   workflow_dispatch:
     inputs:
       tags:
-        description: 'Run checker'  
+        description: 'Run checker'
 #  schedule:
 #    - cron:  '0 1 1 * *'
 env:
-  WEBSITE_URL: "https://getps.dev"
+  WEBSITE_URL: "https://www.getps.dev"
   ISSUE_TEMPLATE: ".github/workflows/check-broken-links.md"
 
 jobs:

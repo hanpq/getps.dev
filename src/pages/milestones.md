@@ -102,7 +102,7 @@ Powershell module PSScriptInfo published.
     "GUID" : "a3002a7c-0870-4b5f-8bed-cd31f7f23432",
     "DateCreated" : "2021-03-29",
     "DateUpdated" : "2021-03-30",
-    "ProjectSite" : "https://getps.dev"
+    "ProjectSite" : "https://www.getps.dev"
 }
 PSScriptInfo#>
 ```
@@ -188,7 +188,7 @@ Powershell module PSQueue published.
 
 ## Website getps.dev launched
 
-[Site](https://getps.dev)
+[Site](https://www.getps.dev)
 
 </li>
 </ol>

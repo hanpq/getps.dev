@@ -8,7 +8,7 @@ description: I’ve seen numerous forums and blog articles trying to to change d
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/change-desktop-wallpaper-with-powershell"
+data-href="https://www.getps.dev/blog/change-desktop-wallpaper-with-powershell"
 data-layout="button"
 data-size="small">
 </div>

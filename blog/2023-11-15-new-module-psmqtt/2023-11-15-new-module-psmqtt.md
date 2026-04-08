@@ -8,7 +8,7 @@ description: Powershell module to work with MQTT
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/new-module-psmqtt"
+data-href="https://www.getps.dev/blog/new-module-psmqtt"
 data-layout="button"
 data-size="small">
 </div>
@@ -21,6 +21,6 @@ I've put together a new powershell module which allows you to send and receive M
 Install-Module PSMQTT -Scope CurrentUser
 ```
 
-[PSMQTT Module Docs](https://getps.dev/modules/PSMQTT)
+[PSMQTT Module Docs](https://www.getps.dev/modules/PSMQTT)
 
 <Comments />

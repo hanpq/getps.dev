@@ -8,7 +8,7 @@ description: Setting up a one-way trust with selective authentication and withou
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/setup-active-directory-one-way-trust-with-selective-authentication"
+data-href="https://www.getps.dev/blog/setup-active-directory-one-way-trust-with-selective-authentication"
 data-layout="button"
 data-size="small">
 </div>

@@ -8,7 +8,7 @@ description: A faster search function replacing edge cases of where-object
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/where-object-is-slow"
+data-href="https://www.getps.dev/blog/where-object-is-slow"
 data-layout="button"
 data-size="small">
 </div>

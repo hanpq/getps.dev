@@ -8,7 +8,7 @@ description: Introducing wrapper module for queue
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/ps-tools-queue-module"
+data-href="https://www.getps.dev/blog/ps-tools-queue-module"
 data-layout="button"
 data-size="small">
 </div>
@@ -20,7 +20,7 @@ For fun I wanted to create a wrapper for the queue class so that it can be used 
 Queue objects created with this module contains metrics for count of added and removed items, rate of added and removed items and velocity.
 
 [![Repo](https://img.shields.io/badge/Repo-pstools.queue-success?logo=github)](https://github.com/hanpq/pstools.queue) <br/>
-[![Docs](https://img.shields.io/badge/Docs-pstools.queue-success?logo=read-the-docs)](https://getps.dev/modules/pstools.queue/quickstart) <br/>
+[![Docs](https://img.shields.io/badge/Docs-pstools.queue-success?logo=read-the-docs)](https://www.getps.dev/modules/pstools.queue/quickstart) <br/>
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/v/pstools.queue?label=PSGallery&logo=powershell)](https://www.powershellgallery.com/packages/pstools.queue)
 
 <Comments />

@@ -8,7 +8,7 @@ description: This article describes the steps to take to export pictures and vid
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/imessageexporter"
+data-href="https://www.getps.dev/blog/imessageexporter"
 data-layout="button"
 data-size="small">
 </div>

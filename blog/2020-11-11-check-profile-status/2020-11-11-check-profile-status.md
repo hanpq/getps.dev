@@ -8,7 +8,7 @@ description: This function can be used to show the status of the Powershell prof
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/check-profile-status"
+data-href="https://www.getps.dev/blog/check-profile-status"
 data-layout="button"
 data-size="small">
 </div>

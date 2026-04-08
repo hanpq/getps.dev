@@ -8,7 +8,7 @@ description: Below are all current recipient types. Please comment below if you 
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/exchange-recipienttypes"
+data-href="https://www.getps.dev/blog/exchange-recipienttypes"
 data-layout="button"
 data-size="small">
 </div>

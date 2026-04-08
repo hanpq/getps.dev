@@ -8,7 +8,7 @@ description: Powershell module to interact with Portainer API
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/announcing-psportainer"
+data-href="https://www.getps.dev/blog/announcing-psportainer"
 data-layout="button"
 data-size="small">
 </div>
@@ -19,7 +19,7 @@ So here it is, an early pre-release/work in progress powershell module for Porta
 
 If you want to contribute to the project it is publicly available on GitHub [here](https://github.com/hanpq/PSPortainer)
 
-To get started, visit the docs for the module at [getps.dev](https://getps.dev/modules/PSPortainer) or start exploring directly by installing the module from PSGallery
+To get started, visit the docs for the module at [getps.dev](https://www.getps.dev/modules/PSPortainer) or start exploring directly by installing the module from PSGallery
 
 ```powershell
 Install-Module PSPortainer -Scope CurrentUser

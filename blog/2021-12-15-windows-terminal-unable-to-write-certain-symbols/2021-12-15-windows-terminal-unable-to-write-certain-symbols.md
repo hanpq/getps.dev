@@ -8,7 +8,7 @@ description: Unable to write certain characters in Windows Terminal
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/ps-tools-queue-module"
+data-href="https://www.getps.dev/blog/ps-tools-queue-module"
 data-layout="button"
 data-size="small">
 </div>

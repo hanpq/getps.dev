@@ -8,7 +8,7 @@ description: I’ve summarized a table with all versions released of Exchange Se
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/exchange-versions"
+data-href="https://www.getps.dev/blog/exchange-versions"
 data-layout="button"
 data-size="small">
 </div>

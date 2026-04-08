@@ -8,14 +8,14 @@ description: Script to configure and setup Azure App for unattended access to Ex
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/setup-azure-app-for-exchange-online"
+data-href="https://www.getps.dev/blog/setup-azure-app-for-exchange-online"
 data-layout="button"
 data-size="small">
 </div>
 
 :::info
 
-This script has been integrated in the module [PSDev](https://getps.dev/modules/psdev) and is no longer provided as a stand-alone script.
+This script has been integrated in the module [PSDev](https://www.getps.dev/modules/psdev) and is no longer provided as a stand-alone script.
 
 :::
 

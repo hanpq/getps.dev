@@ -8,7 +8,7 @@ description: This article describes the steps to take to enable delegates to sch
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/enable-delegates-to-schedule-teams-meetings"
+data-href="https://www.getps.dev/blog/enable-delegates-to-schedule-teams-meetings"
 data-layout="button"
 data-size="small">
 </div>

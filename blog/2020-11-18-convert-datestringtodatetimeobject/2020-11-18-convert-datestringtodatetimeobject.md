@@ -8,7 +8,7 @@ description: Eventually you will stumble upon badly formatted date/time strings 
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/convert-datestringtodatetimeobject"
+data-href="https://www.getps.dev/blog/convert-datestringtodatetimeobject"
 data-layout="button"
 data-size="small">
 </div>

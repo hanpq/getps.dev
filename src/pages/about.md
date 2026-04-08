@@ -10,8 +10,8 @@ hide_table_of_contents: true
 # About Hannes Palmquist
 ## Exchange Server Specialist & PowerShell Expert
 
-<a class="avatar__photo-link avatar__photo" href="https://getps.dev/about" target="_blank" rel="noreferrer noopener">
-    <img src="https://getps.dev/img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist - PowerShell Expert and Exchange Server Specialist"/>
+<a class="avatar__photo-link avatar__photo" href="https://www.getps.dev/about" target="_blank" rel="noreferrer noopener">
+    <img src="https://www.getps.dev/img/Hannes_Profil_HighContrast.jpg" alt="Hannes Palmquist - PowerShell Expert and Exchange Server Specialist"/>
 </a>
 
 Hannes Palmquist is a Senior Microsoft Consultant at Crayon Sweden with many years of experience in designing, implementing, and migrating Microsoft-based email solutions, including Microsoft 365 and Exchange Server environments.

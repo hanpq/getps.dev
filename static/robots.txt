@@ -13,7 +13,7 @@ Allow: /about
 Allow: /milestones
 
 # Sitemap location
-Sitemap: https://getps.dev/sitemap.xml
+Sitemap: https://www.getps.dev/sitemap.xml
 
 # Crawl delay for politeness
 Crawl-delay: 1

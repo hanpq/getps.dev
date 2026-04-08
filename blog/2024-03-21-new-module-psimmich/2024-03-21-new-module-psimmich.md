@@ -8,7 +8,7 @@ description: Work with the Immich API from Powershell
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/new-module-psimmich"
+data-href="https://www.getps.dev/blog/new-module-psimmich"
 data-layout="button"
 data-size="small">
 </div>
@@ -32,6 +32,6 @@ You can build quite powerful automations for your image gallery, some examples;
 Install-Module PSImmich -Scope CurrentUser
 ```
 
-[PSImmich Module Docs](https://getps.dev/modules/PSImmich)
+[PSImmich Module Docs](https://www.getps.dev/modules/PSImmich)
 
 <Comments />

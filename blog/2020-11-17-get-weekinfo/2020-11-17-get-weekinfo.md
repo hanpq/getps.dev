@@ -8,7 +8,7 @@ description: In some parts of the world it is more common to work with weeks as 
 ---
 
 <div class="fb-share-button"
-data-href="https://getps.dev/blog/get-weekinfo"
+data-href="https://www.getps.dev/blog/get-weekinfo"
 data-layout="button"
 data-size="small">
 </div>
