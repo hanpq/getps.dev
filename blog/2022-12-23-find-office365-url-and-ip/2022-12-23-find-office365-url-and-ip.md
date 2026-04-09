@@ -45,7 +45,7 @@ Exchange_TCP_25_URL  Exchange URL  TCP      25   *.mail.protection.outlook.com  
 
 ```
 
-[Get-Office365IPURL Docs](https://www.getps.dev/modules/PSDev/commands/Get-Office365IPURL)
+[Get-Office365IPURL Docs](https://www.getps.dev/modules/PSDev/Command%20Reference/Get-Office365IPURL)
 
 ## Function: Test-Office365IPURL
 
@@ -63,6 +63,6 @@ RuleID ServiceArea TCPPort UDPPort Required Range         Subject      IsMember
 
 ```
 
-[Test-Office365IPURL Docs](https://www.getps.dev/modules/PSDev/commands/Test-Office365IPURL)
+[Test-Office365IPURL Docs](https://www.getps.dev/modules/PSDev/Command%20Reference/Test-Office365IPURL)
 
 <Comments />
