@@ -6,47 +6,69 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-const features = [
+const destinations = [
     {
-        title: 'Scripts and Snippets',
+        title: 'Blog: Scripts, Guides, and Deep Dives',
         imageUrl: 'img/coding-svgrepo-com.svg',
+        to: '/blog/',
+        cta: 'Open the Blog',
         description: (
             <>
-                GetPS.dev hosts a knowledge base with misc scripts and snippets
+                Explore practical PowerShell posts, tutorials, and real-world troubleshooting write-ups.
             </>
         ),
     },
     {
-        title: 'Modules',
+        title: 'Module Documentation',
         imageUrl: 'img/delivery-box-svgrepo-com.svg',
+        to: '/modules/',
+        cta: 'Browse Modules',
         description: (
             <>
-                Here you will find <code>docs</code> for the modules developed and published by getps.dev
+                Find docs, usage examples, and installation details for modules published on GetPS.dev.
             </>
         ),
     },
     {
-        title: 'Guides and tutorials',
+        title: 'Exchange Version Reference',
         imageUrl: 'img/Question-Girl.svg',
+        to: '/exchangeversions/',
+        cta: 'Open Exchange Versions',
         description: (
             <>
-                Within the <code>blog</code> getps.dev publishes in dept guides and tutorials
+                Quickly check Exchange build numbers, release history, and version details in one place.
+            </>
+        ),
+    },
+    {
+        title: 'Documentation Hub',
+        imageUrl: 'img/Question-Girl.svg',
+        to: '/docs/',
+        cta: 'Go to Docs',
+        description: (
+            <>
+                Start from the docs landing page for focused walkthroughs and reference material.
             </>
         ),
     },
 ];
 
-function Feature({ imageUrl, title, description }) {
+function DestinationCard({ imageUrl, title, description, to, cta }) {
     const imgUrl = useBaseUrl(imageUrl);
     return (
-        <div className={clsx('col col--4', styles.feature)}>
-            {imgUrl && (
-                <div className="text--center">
-                    <img className={styles.featureImage} src={imgUrl} alt={title} />
+        <div className={clsx('col col--6 margin-bottom--lg')}>
+            <Link className={styles.cardLink} to={to}>
+                <div className={styles.destinationCard}>
+                    {imgUrl && (
+                        <div className="text--center">
+                            <img className={styles.featureImage} src={imgUrl} alt={title} />
+                        </div>
+                    )}
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                    <span className={styles.cardCta}>{cta}</span>
                 </div>
-            )}
-            <h3>{title}</h3>
-            <p>{description}</p>
+            </Link>
         </div>
     );
 }
@@ -61,26 +83,40 @@ function Home() {
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
                     <h1 className="hero__title">{siteConfig.title}</h1>
-                    <p className="hero__subtitle">{siteConfig.tagline}</p>
+                    <p className="hero__subtitle">PowerShell resources, organized by what you need right now.</p>
                     <div className={styles.buttons}>
                         <Link
                             className={clsx(
-                                'button button--outline button--secondary button--lg',
-                                styles.getStarted,
+                                'button button--secondary button--lg',
+                                styles.primaryAction,
                             )}
+                            to={useBaseUrl('modules/')}>
+                            Module Docs
+                        </Link>
+                        <Link
+                            className={clsx('button button--outline button--secondary button--lg', styles.secondaryAction)}
+                            to={useBaseUrl('exchangeversions/')}>
+                            Exchange Versions
+                        </Link>
+                        <Link
+                            className={clsx('button button--outline button--secondary button--lg', styles.secondaryAction)}
                             to={useBaseUrl('blog/')}>
-                            Get Started
+                            Blog & Tutorials
                         </Link>
                     </div>
                 </div>
             </header>
             <main>
-                {features && features.length > 0 && (
+                {destinations && destinations.length > 0 && (
                     <section className={styles.features}>
                         <div className="container">
+                            <h2 className={styles.sectionTitle}>Start Here</h2>
+                            <p className={styles.sectionLead}>
+                                Choose your destination. Every section below is clickable and takes you straight to the content.
+                            </p>
                             <div className="row">
-                                {features.map((props, idx) => (
-                                    <Feature key={idx} {...props} />
+                                {destinations.map((props, idx) => (
+                                    <DestinationCard key={idx} {...props} />
                                 ))}
                             </div>
                         </div>
