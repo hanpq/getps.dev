@@ -89,10 +89,6 @@ function Home() {
                 {destinations && destinations.length > 0 && (
                     <section className={styles.features}>
                         <div className="container">
-                            <h2 className={styles.sectionTitle}>Start Here</h2>
-                            <p className={styles.sectionLead}>
-                                Choose your destination. Every section below is clickable and takes you straight to the content.
-                            </p>
                             <div className="row">
                                 {destinations.map((props, idx) => (
                                     <DestinationCard key={idx} {...props} />
