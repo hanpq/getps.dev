@@ -43,11 +43,11 @@ const destinations = [
     {
         title: 'About the Author',
         imageUrl: 'img/Question-Girl.svg',
-        to: '/author',
+        to: '/about',
         cta: 'Go to Author',
         description: (
             <>
-                Learn more about the author, their background, and contributions to the PowerShell community.
+                Learn more about the author, their background, and their contributions to the PowerShell community.
             </>
         ),
     },
@@ -82,7 +82,7 @@ function Home() {
             description="The PowerShell resource hub. Download free PowerShell modules (PSMQTT, PSImmich, PSPortainer), find scripts, tutorials, and the most comprehensive Exchange Server version database. Perfect for PowerShell developers and system administrators.">
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
-
+                    <h1 className="hero__title">{siteConfig.title}</h1>
                 </div>
             </header>
             <main>
