@@ -82,7 +82,7 @@ function Home() {
             description="The PowerShell resource hub. Download free PowerShell modules (PSMQTT, PSImmich, PSPortainer), find scripts, tutorials, and the most comprehensive Exchange Server version database. Perfect for PowerShell developers and system administrators.">
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
-                    <h1 className="hero__title">{siteConfig.title}</h1>
+                    <h1 className={clsx('hero__title', styles.heroTitle)}>{siteConfig.title}</h1>
                 </div>
             </header>
             <main>
