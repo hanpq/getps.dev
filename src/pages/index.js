@@ -41,13 +41,13 @@ const destinations = [
         ),
     },
     {
-        title: 'Documentation Hub',
+        title: 'About the Author',
         imageUrl: 'img/Question-Girl.svg',
-        to: '/docs/',
-        cta: 'Go to Docs',
+        to: '/author',
+        cta: 'Go to Author',
         description: (
             <>
-                Start from the docs landing page for focused walkthroughs and reference material.
+                Learn more about the author, their background, and contributions to the PowerShell community.
             </>
         ),
     },
@@ -82,28 +82,7 @@ function Home() {
             description="The PowerShell resource hub. Download free PowerShell modules (PSMQTT, PSImmich, PSPortainer), find scripts, tutorials, and the most comprehensive Exchange Server version database. Perfect for PowerShell developers and system administrators.">
             <header className={clsx('hero hero--primary', styles.heroBanner)}>
                 <div className="container">
-                    <h1 className="hero__title">{siteConfig.title}</h1>
-                    <p className="hero__subtitle">PowerShell resources, organized by what you need right now.</p>
-                    <div className={styles.buttons}>
-                        <Link
-                            className={clsx(
-                                'button button--secondary button--lg',
-                                styles.primaryAction,
-                            )}
-                            to={useBaseUrl('modules/')}>
-                            Module Docs
-                        </Link>
-                        <Link
-                            className={clsx('button button--outline button--secondary button--lg', styles.secondaryAction)}
-                            to={useBaseUrl('exchangeversions/')}>
-                            Exchange Versions
-                        </Link>
-                        <Link
-                            className={clsx('button button--outline button--secondary button--lg', styles.secondaryAction)}
-                            to={useBaseUrl('blog/')}>
-                            Blog & Tutorials
-                        </Link>
-                    </div>
+
                 </div>
             </header>
             <main>
