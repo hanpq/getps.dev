@@ -28,7 +28,6 @@ export default function EnhancedTable({ children }) {
     const originalRef = useRef(null);
     const [headers, setHeaders] = useState([]);
     const [rows, setRows] = useState([]);
-    const [colWidths, setColWidths] = useState([]);
     const [ready, setReady] = useState(false);
     const [filter, setFilter] = useState('');
 
@@ -40,20 +39,6 @@ export default function EnhancedTable({ children }) {
         const parsedHeaders = headerCells.map((th) => th.textContent.trim());
         const bodyRows = Array.from(table.querySelectorAll('tbody tr'));
 
-        // Measure the widest cell per column across the full dataset (while the
-        // original table still uses auto layout) so the fixed-layout table gets
-        // the same natural proportions but stays stable when rows are filtered.
-        const maxWidths = headerCells.map((th) => th.getBoundingClientRect().width);
-        bodyRows.forEach((tr) => {
-            Array.from(tr.children).forEach((td, idx) => {
-                if (idx < maxWidths.length) {
-                    maxWidths[idx] = Math.max(maxWidths[idx], td.getBoundingClientRect().width);
-                }
-            });
-        });
-        const totalWidth = maxWidths.reduce((a, b) => a + b, 0) || 1;
-        const widths = maxWidths.map((w) => (w / totalWidth) * 100);
-
         const parsedRows = bodyRows.map((tr) => {
             const cells = Array.from(tr.children).map((td) => ({
                 html: td.innerHTML,
@@ -64,7 +49,6 @@ export default function EnhancedTable({ children }) {
         });
 
         setHeaders(parsedHeaders);
-        setColWidths(widths);
         setRows(parsedRows);
         setReady(true);
     }, [children]);
@@ -97,11 +81,6 @@ export default function EnhancedTable({ children }) {
                     </div>
                     <div className={styles.tableScroll}>
                         <table className={styles.table}>
-                            <colgroup>
-                                {colWidths.map((w, idx) => (
-                                    <col key={idx} style={{ width: `${w}%` }} />
-                                ))}
-                            </colgroup>
                             <thead>
                                 <tr>
                                     {headers.map((h, idx) => (
