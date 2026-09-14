@@ -22,10 +22,11 @@ This is the most complete Exchange version database available online - bookmark 
 :::
 
 ## Quick Navigation
+
 - [**Exchange SE (2025)**](#exchange-se)
 - [**Exchange 2019**](#exchange-2019)
 - [**Exchange 2016**](#exchange-2016)
-- [**Exchange 2013**](#exchange-2013) 
+- [**Exchange 2013**](#exchange-2013)
 - [**Exchange 2010 & Earlier**](#exchange-2010)
 
 ---
@@ -34,6 +35,8 @@ This is the most complete Exchange version database available online - bookmark 
 
 :::tip[ACTIVE]
 :::
+
+<EnhancedTable>
 
 | Product     | Display Name                   | Ref                                                                                                                                                                                                                                                                                                                       | Type                   | Release Date   | Version        | Schema | Default | Configuration | .Net                   | AD OS                                                         | FFL                       | EX OS                               |
 | ----------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | -------------- | -------------- | ------ | ------- | ------------- | ---------------------- | ------------------------------------------------------------- | ------------------------- | ----------------------------------- |
@@ -50,10 +53,14 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange SE | RTM Aug 2025 SU 1              | [![][KB]](https://support.microsoft.com/en-gb/servicing/exchange/server/hotfix/2025/description-of-the-security-update-for-microsoft-exchange-server-subscription-edition-rtm-august-12)  [![][Blog]](https://techcommunity.microsoft.com/blog/exchange/released-august-2025-exchange-server-security-updates/4441596)    | ![][Security Update]   | 2025-08-12     | 15.02.2562.020 | 17003  | 13243   | 16763         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2025] ![][OS2022] ![][OS2019] |
 | Exchange SE | RTM                            | [![][Blog]](https://techcommunity.microsoft.com/blog/exchange/exchange-server-subscription-edition-se-is-now-available/4424924)                                                                                                                                                                                           | ![][RTM]               | 2025-07-01     | 15.02.2562.017 | 17003  | 13243   | 16763         | ![][Net481] ![][Net48] | ![][OS2025] ![][OS2022] ![][OS2019] ![][OS2016] ![][OS2012R2] | ![][OS2016] ![][OS2012R2] | ![][OS2025] ![][OS2022] ![][OS2019] |
 
+</EnhancedTable>
+
 ## Exchange 2019
 
 :::warning[END-OF-LIFE]
 :::
+
+<EnhancedTable>
 
 | Product       | Display Name                 | Ref                                                                                                                                                                                   | Type                   | Release Date | Version        | Schema | Default | Configuration | .Net                   | AD OS                                                         | FFL                       | EX OS                               |
 | ------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------ | -------------- | ------ | ------- | ------------- | ---------------------- | ------------------------------------------------------------- | ------------------------- | ----------------------------------- |
@@ -152,10 +159,14 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange 2019 | RTM                          |                                                                                                                                                                                       | ![][RTM]               | 2018-10-22   | 15.02.0221.012 | 17000  | 13236   | 16751         | ![][Net472]            | ![][OS2019] ![][OS2016] ![][OS2012R2]                         | ![][OS2016] ![][OS2012R2] | ![][OS2019]                         |
 | Exchange 2019 | Prev                         |                                                                                                                                                                                       | ![][Prerelease]        | 2018-07-24   | 15.02.0196.000 | 15332  | 13236   | 16213         | ![][Net472]            | ![][OS2019] ![][OS2016] ![][OS2012R2]                         | ![][OS2016] ![][OS2012R2] | ![][OS2019]                         |
 
+</EnhancedTable>
+
 ## Exchange 2016
 
 :::warning[END-OF-LIFE]
 :::
+
+<EnhancedTable>
 
 | Product       | Display Name                 | Ref                                                                                                                                                                                   | Type                   | Release Date | Version        | Schema | Default | Configuration | .Net                                | AD OS                                                                                | FFL                                                                         | EX OS                                      |
 | ------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------ | -------------- | ------ | ------- | ------------- | ----------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | ------------------------------------------ |
@@ -242,10 +253,14 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange 2016 | RTM                          |                                                                                                                                                                                       | ![][RTM]               | 2015-10-01   | 15.01.0225.042 | 15317  | 13236   | 16210         | ![][Net452]                         | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] ![][OS2008SP2] ![][OS2003SP2] | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2] ![][OS2008] ![][OS2003] | ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] |
 | Exchange 2016 | Prev                         |                                                                                                                                                                                       | ![][Prerelease]        | 2015-07-22   | 15.01.0225.016 | 15317  | 13236   | 16041         | ![][Net452]                         | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] ![][OS2008SP2] ![][OS2003SP2] | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2] ![][OS2008] ![][OS2003] | ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] |
 
+</EnhancedTable>
+
 ## Exchange 2013
 
 :::warning[END-OF-LIFE]
 :::
+
+<EnhancedTable>
 
 | Product       | Display Name  | Ref                                                                                                   | Type                   | Release Date | Version        | Schema | Default | Configuration | .Net                                            | AD OS                                                                                | FFL                                                                         | EX OS                                                     |
 | ------------- | ------------- | ----------------------------------------------------------------------------------------------------- | ---------------------- | ------------ | -------------- | ------ | ------- | ------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | --------------------------------------------------------- |
@@ -292,10 +307,14 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange 2013 | CU1           |                                                                                                       | ![][Cumulative Update] | 2013-04-02   | 15.00.0620.029 | 15254  | 13236   | 15614         | ![][Net45]                                      | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] ![][OS2008SP2] ![][OS2003SP2] | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2] ![][OS2008] ![][OS2003] | ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] ![][OS2008SP2] |
 | Exchange 2013 | RTM           |                                                                                                       | ![][RTM]               | 2012-12-03   | 15.00.0516.032 | 15137  | 13236   | 15449         | ![][Net45]                                      | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] ![][OS2008SP2] ![][OS2003SP2] | ![][OS2016] ![][OS2012R2] ![][OS2012] ![][OS2008R2] ![][OS2008] ![][OS2003] | ![][OS2012R2] ![][OS2012] ![][OS2008R2SP1] ![][OS2008SP2] |
 
+</EnhancedTable>
+
 ## Exchange 2010
 
 :::warning[END-OF-LIFE]
 :::
+
+<EnhancedTable>
 
 | Product       | Display Name          | Ref                                                                                                   | Type               | Release Date | Version        | Schema | Default | Configuration | .Net                                           | AD OS                                                                                | FFL                                                                         | EX OS                                                     |
 | ------------- | --------------------- | ----------------------------------------------------------------------------------------------------- | ------------------ | ------------ | -------------- | ------ | ------- | ------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | --------------------------------------------------------- |
@@ -362,10 +381,14 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange 2010 | RU1                   |                                                                                                       | ![][Rollup Update] | 2009-12-09   | 14.0.682.1     | 14622  | 12639   | 12640         |                                                |                                                                                      |                                                                             |                                                           |
 | Exchange 2010 | RTM                   |                                                                                                       | ![][RTM]           | 2009-11-09   | 14.0.639.21    | 14622  | 12639   | 12640         |                                                |                                                                                      |                                                                             |                                                           |
 
+</EnhancedTable>
+
 ## Exchange Server 2007
 
 :::warning[END-OF-LIFE]
 :::
+
+<EnhancedTable>
 
 | Product              | Display Name | Ref                                                                                                   | Type               | Release Date | Version        | Schema | Default | Configuration | .Net       | AD OS | FFL | EX OS                   |
 | -------------------- | ------------ | ----------------------------------------------------------------------------------------------------- | ------------------ | ------------ | -------------- | ------ | ------- | ------------- | ---------- | ----- | --- | ----------------------- |
@@ -421,10 +444,14 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange Server 2007 | RU1          |                                                                                                       | ![][Rollup Update] | 2007-04-17   | 8.0.708.3      | 10637  | 10628   | 10666         | ![][Net20] |       |     |                         |
 | Exchange Server 2007 | RTM          |                                                                                                       | ![][RTM]           | 2007-03-08   | 8.0.685.25     | 10637  | 10628   | 10666         | ![][Net20] |       |     | ![][OS2003] ![][OS2008] |
 
+</EnhancedTable>
+
 ## Exchange Server 2003
 
 :::warning[END-OF-LIFE]
 :::
+
+<EnhancedTable>
 
 | Product              | Display Name | Ref | Type              | Release Date | Version     | Schema | Default | Configuration | .Net       | AD OS | FFL | EX OS                      |
 | -------------------- | ------------ | --- | ----------------- | ------------ | ----------- | ------ | ------- | ------------- | ---------- | ----- | --- | -------------------------- |
@@ -434,6 +461,8 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange Server 2003 | SP1          |     | ![][Service Pack] | 2004-05-25   | 6.5.7226    | 6870   | 6936    | 6903          | ![][Net11] |       |     | ![][OS2003] ![][OS2000SP4] |
 | Exchange Server 2003 | RTM          |     | ![][RTM]          | 2003-09-28   | 6.5.6944    | 6870   | 6936    | 6903          | ![][Net11] |       |     | ![][OS2003] ![][OS2000SP4] |
 
+</EnhancedTable>
+
 ## Exchange Server 2000
 
 :::warning[END-OF-LIFE]
@@ -441,6 +470,8 @@ This is the most complete Exchange version database available online - bookmark 
 
 :::info[.NET has not been released yet]
 :::
+
+<EnhancedTable>
 
 | Product              | Display Name | Ref | Type              | Release Date | Version    | Schema | Default | Configuration | .Net    | AD OS | FFL | EX OS       |
 | -------------------- | ------------ | --- | ----------------- | ------------ | ---------- | ------ | ------- | ------------- | ------- | ----- | --- | ----------- |
@@ -454,6 +485,8 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange Server 2000 | SP1          |     | ![][Service Pack] | 2001-06-21   | 6.0.4712   | 4397   | 4406    | ![][NA]       | ![][NA] |       |     | ![][OS2000] |
 | Exchange Server 2000 | RTM          |     | ![][RTM]          | 2000-11-29   | 6.0.4417   | 4397   | 4406    | ![][NA]       | ![][NA] |       |     | ![][OS2000] |
 
+</EnhancedTable>
+
 ## Exchange Server 5.5
 
 :::warning[END-OF-LIFE]
@@ -465,6 +498,8 @@ This is the most complete Exchange version database available online - bookmark 
 :::info[.NET has not been released yet]
 :::
 
+<EnhancedTable>
+
 | Product             | Display Name | Ref | Type              | Release Date | Version  | Schema  | Default | Configuration | .Net    | AD OS   | FFL     | EX OS |
 | ------------------- | ------------ | --- | ----------------- | ------------ | -------- | ------- | ------- | ------------- | ------- | ------- | ------- | ----- |
 | Exchange Server 5.5 | SP4          |     | ![][Service Pack] | 2000-11-01   | 5.5.2653 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] |       |
@@ -472,6 +507,8 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange Server 5.5 | SP2          |     | ![][Service Pack] | 1998-12-23   | 5.5.2448 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] |       |
 | Exchange Server 5.5 | SP1          |     | ![][Service Pack] | 1998-08-05   | 5.5.2232 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] |       |
 | Exchange Server 5.5 | RTM          |     | ![][RTM]          | 1998-02-03   | 5.5.1960 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] |       |
+
+</EnhancedTable>
 
 ## Exchange Server 5.0
 
@@ -484,11 +521,15 @@ This is the most complete Exchange version database available online - bookmark 
 :::info[.NET has not been released yet]
 :::
 
+<EnhancedTable>
+
 | Product             | Display Name | Ref | Type              | Release Date | Version  | Schema  | Default | Configuration | .Net    | AD OS   | FFL     | EX OS       |
 | ------------------- | ------------ | --- | ----------------- | ------------ | -------- | ------- | ------- | ------------- | ------- | ------- | ------- | ----------- |
 | Exchange Server 5.0 | SP2          |     | ![][Service Pack] | 1998-02-19   | 5.0.1460 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] | ![][OSNT40] |
 | Exchange Server 5.0 | SP1          |     | ![][Service Pack] | 1997-06-18   | 5.0.1458 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] | ![][OSNT40] |
 | Exchange Server 5.0 | RTM          |     | ![][RTM]          | 1997-05-23   | 5.0.1457 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] | ![][OSNT40] |
+
+</EnhancedTable>
 
 ## Exchange Server 4.0
 
@@ -501,6 +542,8 @@ This is the most complete Exchange version database available online - bookmark 
 :::info[.NET has not been released yet]
 :::
 
+<EnhancedTable>
+
 | Product             | Display Name | Ref | Type              | Release Date | Version | Schema  | Default | Configuration | .Net    | AD OS   | FFL     | EX OS        |
 | ------------------- | ------------ | --- | ----------------- | ------------ | ------- | ------- | ------- | ------------- | ------- | ------- | ------- | ------------ |
 | Exchange Server 4.0 | SP5          |     | ![][Service Pack] | 1997-05-05   | 4.0.996 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] | ![][OSNT351] |
@@ -509,6 +552,8 @@ This is the most complete Exchange version database available online - bookmark 
 | Exchange Server 4.0 | SP2          |     | ![][Service Pack] | 1997-07-19   | 4.0.993 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] | ![][OSNT351] |
 | Exchange Server 4.0 | SP1          |     | ![][Service Pack] | 1997-05-01   | 4.0.838 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] | ![][OSNT351] |
 | Exchange Server 4.0 | RTM          |     | ![][RTM]          | 1996-06-11   | 4.0.837 | ![][NA] | ![][NA] | ![][NA]       | ![][NA] | ![][NA] | ![][NA] | ![][OSNT351] |
+
+</EnhancedTable>
 
 ---
 

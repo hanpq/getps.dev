@@ -1,0 +1,101 @@
+﻿.wrapper {
+    margin: 1.5rem 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.filterInput {
+    flex: 0 1 280px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 6px;
+    background: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+}
+
+.count {
+    font-size: 0.75rem;
+    color: var(--ifm-color-emphasis-600);
+    white-space: nowrap;
+}
+
+.tableScroll {
+    overflow-x: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+    border: 1px solid var(--ifm-table-border-color);
+    border-radius: 6px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.table th,
+.table td {
+    padding: 3px 8px;
+    border: 1px solid var(--ifm-table-border-color);
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: var(--ifm-table-stripe-background);
+}
+
+.table tbody tr:hover {
+    background-color: var(--ifm-color-emphasis-200);
+}
+
+.th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--ifm-table-head-background, var(--ifm-background-surface-color));
+    cursor: pointer;
+    user-select: none;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.th:hover {
+    background: var(--ifm-color-emphasis-200);
+}
+
+.thLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.sortIndicator {
+    font-size: 0.65rem;
+    color: var(--ifm-color-primary);
+}
+
+.latestRow {
+    box-shadow: inset 3px 0 0 var(--ifm-color-success);
+}
+
+/* Compact any shields.io badge images rendered inside table cells */
+.wrapper table img {
+    height: 14px;
+    vertical-align: middle;
+    margin: 0 1px;
+}
+
+.wrapper table a {
+    white-space: nowrap;
+}

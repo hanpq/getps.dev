@@ -4,6 +4,7 @@ import MDXComponents from '@theme-original/MDXComponents';
 import Comments from '@site/src/components/Comments';
 import Button from '@site/src/components/Button';
 import Timeline from '@site/src/components/Timeline';
+import EnhancedTable from '@site/src/components/EnhancedTable';
 
 export default {
     // Re-use the default mapping
@@ -11,4 +12,5 @@ export default {
     Comments,
     Button,
     Timeline,
+    EnhancedTable,
 };
