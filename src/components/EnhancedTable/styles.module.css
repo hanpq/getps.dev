@@ -82,7 +82,7 @@
 
 /* Compact any shields.io badge images rendered inside table cells */
 .wrapper table img {
-    height: 16px;
+    height: 17px;
     /* <-- adjust badge size here (try 16px, 18px, 20px, etc.) */
     vertical-align: middle;
     margin: 0 1px;
