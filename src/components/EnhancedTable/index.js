@@ -38,13 +38,22 @@ export default function EnhancedTable({ children }) {
 
         const headerCells = Array.from(table.querySelectorAll('thead th'));
         const parsedHeaders = headerCells.map((th) => th.textContent.trim());
-
-        // Measure natural column widths while the original table still uses
-        // auto layout, so we can lock in the same proportions on the fixed-layout table.
-        const tableWidth = table.getBoundingClientRect().width || 1;
-        const widths = headerCells.map((th) => (th.getBoundingClientRect().width / tableWidth) * 100);
-
         const bodyRows = Array.from(table.querySelectorAll('tbody tr'));
+
+        // Measure the widest cell per column across the full dataset (while the
+        // original table still uses auto layout) so the fixed-layout table gets
+        // the same natural proportions but stays stable when rows are filtered.
+        const maxWidths = headerCells.map((th) => th.getBoundingClientRect().width);
+        bodyRows.forEach((tr) => {
+            Array.from(tr.children).forEach((td, idx) => {
+                if (idx < maxWidths.length) {
+                    maxWidths[idx] = Math.max(maxWidths[idx], td.getBoundingClientRect().width);
+                }
+            });
+        });
+        const totalWidth = maxWidths.reduce((a, b) => a + b, 0) || 1;
+        const widths = maxWidths.map((w) => (w / totalWidth) * 100);
+
         const parsedRows = bodyRows.map((tr) => {
             const cells = Array.from(tr.children).map((td) => ({
                 html: td.innerHTML,
