@@ -36,7 +36,8 @@
 }
 
 .table {
-    width: 100%;
+    display: table;
+    width: 100% !important;
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
