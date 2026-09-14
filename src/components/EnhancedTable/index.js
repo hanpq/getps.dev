@@ -28,6 +28,7 @@ export default function EnhancedTable({ children }) {
     const originalRef = useRef(null);
     const [headers, setHeaders] = useState([]);
     const [rows, setRows] = useState([]);
+    const [colWidths, setColWidths] = useState([]);
     const [ready, setReady] = useState(false);
     const [filter, setFilter] = useState('');
 
@@ -37,6 +38,11 @@ export default function EnhancedTable({ children }) {
 
         const headerCells = Array.from(table.querySelectorAll('thead th'));
         const parsedHeaders = headerCells.map((th) => th.textContent.trim());
+
+        // Measure natural column widths while the original table still uses
+        // auto layout, so we can lock in the same proportions on the fixed-layout table.
+        const tableWidth = table.getBoundingClientRect().width || 1;
+        const widths = headerCells.map((th) => (th.getBoundingClientRect().width / tableWidth) * 100);
 
         const bodyRows = Array.from(table.querySelectorAll('tbody tr'));
         const parsedRows = bodyRows.map((tr) => {
@@ -49,6 +55,7 @@ export default function EnhancedTable({ children }) {
         });
 
         setHeaders(parsedHeaders);
+        setColWidths(widths);
         setRows(parsedRows);
         setReady(true);
     }, [children]);
@@ -81,6 +88,11 @@ export default function EnhancedTable({ children }) {
                     </div>
                     <div className={styles.tableScroll}>
                         <table className={styles.table}>
+                            <colgroup>
+                                {colWidths.map((w, idx) => (
+                                    <col key={idx} style={{ width: `${w}%` }} />
+                                ))}
+                            </colgroup>
                             <thead>
                                 <tr>
                                     {headers.map((h, idx) => (
