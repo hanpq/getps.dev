@@ -70,29 +70,9 @@
 }
 
 .th {
-    position: sticky;
-    top: var(--ifm-navbar-height, 60px);
-    z-index: 1;
     background: var(--ifm-table-head-background, var(--ifm-background-surface-color));
-    cursor: pointer;
-    user-select: none;
     text-align: left;
     white-space: nowrap;
-}
-
-.th:hover {
-    background: var(--ifm-color-emphasis-200);
-}
-
-.thLabel {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
-}
-
-.sortIndicator {
-    font-size: 0.65rem;
-    color: var(--ifm-color-primary);
 }
 
 .latestRow {

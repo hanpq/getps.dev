@@ -18,13 +18,11 @@ function cellText(td) {
     return [text, imgLabels].filter(Boolean).join(' ');
 }
 
-const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-
 /**
  * Progressively enhances a markdown table (passed as children) with a compact
- * layout plus client-side sorting and filtering. The original table is what
- * renders during SSR/no-JS, so content and SEO are unaffected; authors keep
- * editing plain markdown tables.
+ * layout plus client-side filtering. The original table is what renders during
+ * SSR/no-JS, so content and SEO are unaffected; authors keep editing plain
+ * markdown tables.
  */
 export default function EnhancedTable({ children }) {
     const originalRef = useRef(null);
@@ -32,7 +30,6 @@ export default function EnhancedTable({ children }) {
     const [rows, setRows] = useState([]);
     const [ready, setReady] = useState(false);
     const [filter, setFilter] = useState('');
-    const [sort, setSort] = useState({ col: -1, dir: 'asc' });
 
     useEffect(() => {
         const table = originalRef.current?.querySelector('table');
@@ -58,28 +55,9 @@ export default function EnhancedTable({ children }) {
 
     const visibleRows = useMemo(() => {
         const needle = filter.trim().toLowerCase();
-        let result = rows;
-        if (needle) {
-            result = rows.filter((r) => r.cells.some((c) => c.text.toLowerCase().includes(needle)));
-        }
-        if (sort.col >= 0) {
-            result = [...result].sort((a, b) => {
-                const av = a.cells[sort.col]?.text ?? '';
-                const bv = b.cells[sort.col]?.text ?? '';
-                const cmp = collator.compare(av, bv);
-                return sort.dir === 'asc' ? cmp : -cmp;
-            });
-        }
-        return result;
-    }, [rows, filter, sort]);
-
-    function handleSort(colIndex) {
-        setSort((prev) => {
-            if (prev.col !== colIndex) return { col: colIndex, dir: 'asc' };
-            if (prev.dir === 'asc') return { col: colIndex, dir: 'desc' };
-            return { col: -1, dir: 'asc' };
-        });
-    }
+        if (!needle) return rows;
+        return rows.filter((r) => r.cells.some((c) => c.text.toLowerCase().includes(needle)));
+    }, [rows, filter]);
 
     return (
         <div className={styles.wrapper}>
@@ -106,18 +84,8 @@ export default function EnhancedTable({ children }) {
                             <thead>
                                 <tr>
                                     {headers.map((h, idx) => (
-                                        <th
-                                            key={idx}
-                                            onClick={() => handleSort(idx)}
-                                            className={styles.th}
-                                            title="Click to sort"
-                                        >
-                                            <span className={styles.thLabel}>
-                                                {h}
-                                                <span className={styles.sortIndicator}>
-                                                    {sort.col === idx ? (sort.dir === 'asc' ? ' \u25B2' : ' \u25BC') : ''}
-                                                </span>
-                                            </span>
+                                        <th key={idx} className={styles.th}>
+                                            {h}
                                         </th>
                                     ))}
                                 </tr>
