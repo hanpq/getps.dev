@@ -33,7 +33,7 @@ This is the most complete Exchange version database available online - bookmark 
 
 :::danger[DANGER]
 
-Installation of October 2026 updates for Windows Server - KB5126646 (Windows Server 2025), KB5126655 (Windows Server 2022) or KB5126651 (Windows Server 2019) - can cause Exchange Server OWA to fail with an error MapiExceptionMdbOffline: Unable to make connection to the server. (hr=0x80004005, ec=1142) with event ID 1006 logged in the Application Log, as well as growing email queues. Installation of October 2026 Exchange updates is not required for issues to occur. 
+Installation of October 2026 updates for Windows Server - KB5126646 (Windows Server 2025), KB5126655 (Windows Server 2022) or KB5126651 (Windows Server 2019) - can cause Exchange Server OWA to fail with an error MapiExceptionMdbOffline: Unable to make connection to the server. (hr=0x80004005, ec=1142) with event ID 1006 logged in the Application Log, as well as growing email queues. Installation of October 2026 Exchange updates is not required for issues to occur.
 
 :::
 
@@ -608,9 +608,9 @@ ESU Program ended in October 2026, this means October 2026 SU was the last patch
     - Custom configuration preservation
     - Windows Server Core support
     - Block external access to Exchange admin center (EAC) and the Exchange Management Shell (EMS)
-    - Modern authentication support for pure on-premises environmants
+    - Modern authentication support for pure on-premises environments
     - Improved search infrastructure
-    - Faster, more reliable failovers
+    - Faster, more reliable failover
     - Metacache database
     - Support for up to 256GB of memory and 48 CPU cores
     - Dynamic database cache
@@ -620,9 +620,11 @@ ESU Program ended in October 2026, this means October 2026 SU was the last patch
 ## Frequently Asked Questions
 
 ### How do I check my Exchange Server version?
+
 Run `Get-ExchangeServer | ft Name, Edition, AdminDisplayVersion` in Exchange Management Shell to get your current Exchange version and build number.
 
 ### What's the difference between CU, SU, and HU updates?
+
 - **CU (Cumulative Update)**: Major updates with new features and fixes
 - **SU (Security Update)**: Security-focused patches released monthly  
 - **HU (Hotfix Update)**: Bug fixes between regular update cycles
