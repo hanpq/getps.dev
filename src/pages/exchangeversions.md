@@ -66,6 +66,9 @@ Installation of October 2026 updates for Windows Server - KB5126646 (Windows Ser
 ## Exchange 2019
 
 :::warning[END-OF-LIFE]
+
+No more security updates will be provided after October 2026.
+
 :::
 
 <EnhancedTable>
@@ -174,6 +177,9 @@ Installation of October 2026 updates for Windows Server - KB5126646 (Windows Ser
 ## Exchange 2016
 
 :::warning[END-OF-LIFE]
+
+No more security updates will be provided after October 2026.
+
 :::
 
 <EnhancedTable>
