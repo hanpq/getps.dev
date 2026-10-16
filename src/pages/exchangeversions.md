@@ -67,7 +67,7 @@ Installation of October 2026 updates for Windows Server - KB5126646 (Windows Ser
 
 :::warning[END-OF-LIFE]
 
-No more security updates will be provided after October 2026.
+ESU Program ended in October 2026, this means October 2026 SU was the last patch released for Exchange 2019.
 
 :::
 
@@ -178,7 +178,7 @@ No more security updates will be provided after October 2026.
 
 :::warning[END-OF-LIFE]
 
-No more security updates will be provided after October 2026.
+ESU Program ended in October 2026, this means October 2026 SU was the last patch released for Exchange 2016.
 
 :::
 
