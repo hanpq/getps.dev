@@ -35,6 +35,8 @@ This is the most complete Exchange version database available online - bookmark 
 
 Installation of October 2026 updates for Windows Server - KB5126646 (Windows Server 2025), KB5126655 (Windows Server 2022) or KB5126651 (Windows Server 2019) - can cause Exchange Server OWA to fail with an error MapiExceptionMdbOffline: Unable to make connection to the server. (hr=0x80004005, ec=1142) with event ID 1006 logged in the Application Log, as well as growing email queues. Installation of October 2026 Exchange updates is not required for issues to occur.
 
+A workaround has been published here [Exchange Team Blog: Exchange Server may become unstable](https://techcommunity.microsoft.com/blog/exchange/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-/4565382)
+
 :::
 
 ## Exchange SE
