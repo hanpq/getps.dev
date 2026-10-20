@@ -9,6 +9,8 @@ hide_table_of_contents: true
 
 # Complete Microsoft Exchange Server Version History & Build Numbers
 
+*Last updated: 2026-10-19*
+
 The definitive, most comprehensive Exchange Server version reference available anywhere. This page contains the complete history of Microsoft Exchange Server versions, build numbers, release dates, and compatibility matrices from Exchange Server 4.0 (1996) through the latest Exchange Server Subscription Edition (2025).
 
 ## What You'll Find Here
