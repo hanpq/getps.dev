@@ -2,7 +2,7 @@
 
 The _Targets_ property stores the used logging targets, it's where you define where to route your messages.
 
-Keys of the hashtable depends on the target you are configuring. The module ships with 12 targets but you can write your own for specific usage.
+Keys of the hashtable depends on the target you are configuring. The module ships with several built-in targets, and you can write your own for specific usage.
 
 When adding a target with `Add-LoggingTarget`, the `-Configuration` parameter accepts a hashtable where additional configuration items can be specified. Each target have its own set of items that can be configured. See the Target specific documentation for further information about the available options.
 
