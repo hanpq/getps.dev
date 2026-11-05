@@ -522,13 +522,13 @@ ESU Program ended in October 2026, this means October 2026 SU was the last patch
 
 <EnhancedTable>
 
-| Prod | Name | Ref | Type              | Release Date | Version  | Schema  | Default | Conf    | AD OS   | FFL     | EX OS        |
-| ---- | ---- | --- | ----------------- | ------------ | -------- | ------- | ------- | ------- | ------- | ------- | ------------ |
-| 5.5  | SP4  |     | ![][Service Pack] | 2000-11-01   | 5.5.2653 | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][Missing] |
-| 5.5  | SP3  |     | ![][Service Pack] | 1999-09-09   | 5.5.2650 | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][Missing] |
-| 5.5  | SP2  |     | ![][Service Pack] | 1998-12-23   | 5.5.2448 | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][Missing] |
-| 5.5  | SP1  |     | ![][Service Pack] | 1998-08-05   | 5.5.2232 | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][Missing] |
-| 5.5  | RTM  |     | ![][RTM]          | 1998-02-03   | 5.5.1960 | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][NA] | ![][Missing] |
+| Prod | Name | Ref | Type              | Release Date | Version  | EX OS        |
+| ---- | ---- | --- | ----------------- | ------------ | -------- | ------------ |
+| 5.5  | SP4  |     | ![][Service Pack] | 2000-11-01   | 5.5.2653 | ![][Missing] |
+| 5.5  | SP3  |     | ![][Service Pack] | 1999-09-09   | 5.5.2650 | ![][Missing] |
+| 5.5  | SP2  |     | ![][Service Pack] | 1998-12-23   | 5.5.2448 | ![][Missing] |
+| 5.5  | SP1  |     | ![][Service Pack] | 1998-08-05   | 5.5.2232 | ![][Missing] |
+| 5.5  | RTM  |     | ![][RTM]          | 1998-02-03   | 5.5.1960 | ![][Missing] |
 
 </EnhancedTable>
 
