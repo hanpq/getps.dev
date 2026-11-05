@@ -1,0 +1,90 @@
+---
+id: Get-TypeConstructor
+title: Get-TypeConstructor
+description: Help page for the Powershell "Get-TypeConstructor" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Gets the constructors for a .NET type.
+
+## SYNTAX
+
+```powershell
+Get-TypeConstructor [-TypeName] <Type> [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Returns the constructors defined for the specified .NET type, including
+each constructor's parameter types and names.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-TypeConstructor -TypeName ([datetime])
+```
+
+Lists the constructors available for the DateTime type.
+
+## PARAMETERS
+
+### -TypeName
+
+The .NET type to inspect, such as [datetime].
+
+```yaml
+Type: Type
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### psTypeMemberConstructor
+
+## NOTES
+Source: https://github.com/jdhitsolutions/PSScriptTools/
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

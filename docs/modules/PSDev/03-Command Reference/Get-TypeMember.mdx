@@ -1,0 +1,191 @@
+---
+id: Get-TypeMember
+title: Get-TypeMember
+description: Help page for the Powershell "Get-TypeMember" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Gets members of a .NET type or object.
+
+## SYNTAX
+
+### typename (Default)
+
+```powershell
+Get-TypeMember [-TypeName] <Type> [-StaticOnly] [-EnumOnly] [-MemberType <String>] [-MemberName <String>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### inputobject
+
+```powershell
+Get-TypeMember -InputObject <Object> [-StaticOnly] [-EnumOnly] [-MemberType <String>] [-MemberName <String>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Returns information about members such as properties, methods, events,
+and fields.
+Specify a type or pipe an object to inspect its type.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-TypeMember -TypeName ([string]) -MemberType Property
+```
+
+Lists the properties of the String type.
+
+### EXAMPLE 2
+
+```powershell
+'text' | Get-TypeMember -MemberName Length
+```
+
+Gets the Length member from the type of the input string.
+
+## PARAMETERS
+
+### -TypeName
+
+The .NET type to inspect, such as [string].
+
+```yaml
+Type: Type
+Parameter Sets: typename
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+
+An object to inspect.
+Accepts input from the pipeline.
+
+```yaml
+Type: Object
+Parameter Sets: inputobject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -StaticOnly
+
+Returns static members.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnumOnly
+
+Returns properties whose types are enumerations.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MemberType
+
+Limits results to members of the specified type: Property, Method,
+Event, or Field.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MemberName
+
+Limits results to members whose names match this wildcard pattern.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### psTypeMember
+
+## NOTES
+Source: https://github.com/jdhitsolutions/PSScriptTools/
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

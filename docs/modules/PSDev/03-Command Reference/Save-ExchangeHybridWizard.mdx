@@ -1,0 +1,119 @@
+---
+id: Save-ExchangeHybridWizard
+title: Save-ExchangeHybridWizard
+description: Help page for the Powershell "Save-ExchangeHybridWizard" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Downloads and packages the Exchange Hybrid Wizard.
+
+## SYNTAX
+
+```powershell
+Save-ExchangeHybridWizard [[-StartUrl] <String>] [[-OutputDir] <String>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Resolves the wizard's ClickOnce deployment files, downloads them into
+the output directory, and creates a ZIP archive beside that directory.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Save-ExchangeHybridWizard
+```
+
+Downloads the Exchange Hybrid Wizard into .\HybridWizard and creates
+.\HybridWizard.zip.
+
+### EXAMPLE 2
+
+```powershell
+Save-ExchangeHybridWizard -OutputDir C:\Downloads\HybridWizard
+```
+
+Saves the wizard files to C:\Downloads\HybridWizard and creates the
+corresponding ZIP archive.
+
+## PARAMETERS
+
+### -StartUrl
+
+The URL used to start the wizard download.
+Defaults to
+https://aka.ms/hybridwizard.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: Https://aka.ms/hybridwizard
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutputDir
+
+The directory where the wizard files are saved.
+A ZIP archive named
+&lt;OutputDir&gt;.zip is created alongside it.
+Defaults to .\HybridWizard.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: .\HybridWizard
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

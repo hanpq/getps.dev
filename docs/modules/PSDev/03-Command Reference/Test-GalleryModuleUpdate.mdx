@@ -1,0 +1,144 @@
+---
+id: Test-GalleryModuleUpdate
+title: Test-GalleryModuleUpdate
+description: Help page for the Powershell "Test-GalleryModuleUpdate" command
+keywords:
+  - Powershell
+  - PSDev
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Checks whether installed PowerShell Gallery modules have updates available.
+
+## SYNTAX
+
+```powershell
+Test-GalleryModuleUpdate [-Name] <String> [-Version] <Version> [-NeedUpdateOnly]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Checks the PowerShell Gallery for a newer version of each module provided
+through the pipeline.
+It uses URL resolution to determine the latest
+published version.
+
+By default, returns an object for every module with its current version,
+latest version, and whether an update is available.
+Use -NeedUpdateOnly
+to return only modules that need an update.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-InstalledModule | Where-Object Repository -eq PSGallery | Test-GalleryModuleUpdate
+```
+
+Checks all installed modules from PSGallery for newer versions.
+
+### EXAMPLE 2
+
+```powershell
+Get-InstalledModule | Where-Object Repository -eq PSGallery | Test-GalleryModuleUpdate -NeedUpdateOnly
+```
+
+Returns only installed modules from PSGallery that have newer versions.
+
+## PARAMETERS
+
+### -Name
+
+The module name.
+Accepts the Name property from Get-InstalledModule
+through the pipeline.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Version
+
+The installed module version.
+Accepts the Version property from
+Get-InstalledModule through the pipeline.
+
+```yaml
+Type: Version
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -NeedUpdateOnly
+
+Returns only modules for which a newer version is available in the
+PowerShell Gallery.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### PSCustomObject with ModuleName, CurrentVersion, LatestVersion, and
+
+### NeedsUpdate properties.
+## NOTES
+Source attribution: IDERA (https://community.idera.com/).
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.
