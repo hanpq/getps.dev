@@ -1,0 +1,156 @@
+---
+id: Merge-IMPerson
+title: Merge-IMPerson
+description: Help page for the Powershell "Merge-IMPerson" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Merges duplicate person records.
+
+## SYNTAX
+
+```powershell
+Merge-IMPerson [[-Session] <ImmichSession>] [-ToPersonID] <String[]> [-FromPersonID] <String[]>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Combines multiple person entries when face recognition creates duplicates.
+The target person persists while source persons are merged into it.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Merge-IMPerson -ToPersonID 'bf973405-3f2a-48d2-a687-2ed4167164be' -FromPersonID '9c4e0006-3a2b-4967-94b6-7e8bb8490a12'
+```
+
+Merges source person into target person.
+
+## PARAMETERS
+
+### -Session
+
+Optional session object for multi-instance connections.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ToPersonID
+
+Target person ID that will remain after merge.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FromPersonID
+
+Source person ID(s) to merge into target.
+Supports multiple IDs.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+Supports -WhatIf and -Confirm for safety.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

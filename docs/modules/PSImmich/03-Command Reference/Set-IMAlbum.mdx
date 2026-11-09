@@ -1,0 +1,280 @@
+---
+id: Set-IMAlbum
+title: Set-IMAlbum
+description: Help page for the Powershell "Set-IMAlbum" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Updates an Immich album
+
+## SYNTAX
+
+```powershell
+Set-IMAlbum [[-Session] <ImmichSession>] [-Id] <String[]> [[-AddAssets] <String[]>]
+ [[-RemoveAssets] <String[]>] [[-AlbumName] <String>] [[-AlbumThumbnailAssetId] <String>]
+ [[-Description] <String>] [[-IsActivityEnabled] <Boolean>] [[-Order] <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Updates various properties of an Immich album including name, description, thumbnail, activity settings,
+and manages assets within the album.
+Supports adding and removing assets in a single operation.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Set-IMAlbum -Id 'album-uuid' -Description 'Family vacation photos from summer 2024'
+```
+
+Updates the album description.
+
+### EXAMPLE 2
+
+```powershell
+Set-IMAlbum -Id 'album-uuid' -AddAssets @('asset1-uuid', 'asset2-uuid')
+```
+
+Adds two assets to the album.
+
+### EXAMPLE 3
+
+```powershell
+Set-IMAlbum -Id 'album-uuid' -AlbumName 'Vacation 2024' -IsActivityEnabled:$true
+```
+
+Renames the album and enables the activity feed.
+
+### EXAMPLE 4
+
+```powershell
+Set-IMAlbum -Id 'album-uuid' -AddAssets @('new-asset') -RemoveAssets @('old-asset')
+```
+
+Adds one asset and removes another in a single operation.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID(s) of the album(s) to update.
+Accepts pipeline input and multiple values.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: ids, albumId
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -AddAssets
+
+An array of asset UUIDs to add to the album.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveAssets
+
+An array of asset UUIDs to remove from the album.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlbumName
+
+The new name for the album.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlbumThumbnailAssetId
+
+The UUID of an asset to use as the album thumbnail.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+
+The new description for the album.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsActivityEnabled
+
+Specifies whether the activity feed should be enabled for the album.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Order
+
+Defines the sort order for assets in the album.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before making changes.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,175 @@
+---
+id: Remove-IMFace
+title: Remove-IMFace
+description: Help page for the Powershell "Remove-IMFace" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Removes face detections from Immich
+
+## SYNTAX
+
+```powershell
+Remove-IMFace [[-Session] <ImmichSession>] [-Id] <String[]> [-Force] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Deletes face detections identified by their IDs.
+Optionally can be force deleted to bypass normal deletion checks.
+Use this to clean up incorrect face detections or remove faces that should not be tracked.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-IMFace -Id 'face-uuid'
+```
+
+Removes the specified face detection with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+@('face1-uuid', 'face2-uuid') | Remove-IMFace -Force
+```
+
+Force removes multiple face detections via pipeline without confirmation.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMFace -Id 'asset-uuid' | Where-Object {$_.person -eq $null} | Remove-IMFace
+```
+
+Removes all unidentified face detections from an asset.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID(s) of the face detection(s) to remove.
+Accepts pipeline input and multiple values.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Force
+
+Force delete the face detection, bypassing normal deletion checks.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing face detections.
+Use caution with the -Force parameter as it bypasses safety checks.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

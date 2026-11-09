@@ -1,0 +1,165 @@
+---
+id: Add-IMActivity
+title: Add-IMActivity
+description: Help page for the Powershell "Add-IMActivity" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Adds a new activity to an Immich album
+
+## SYNTAX
+
+```powershell
+Add-IMActivity [[-Session] <ImmichSession>] [-AlbumId] <String> [[-AssetId] <String>] [[-Comment] <String>]
+ [[-Type] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Adds a new activity (comment or like) to an Immich album or specific asset within an album.
+Activities provide a way to interact with and comment on media in shared albums.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Add-IMActivity -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -Comment 'Amazing sunset!' -Type 'comment'
+```
+
+Adds a comment to the specified album.
+
+### EXAMPLE 2
+
+```powershell
+Add-IMActivity -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -AssetId 'a4908e1f-697f-4d7b-9330-93b5eabe3baf' -Type 'like'
+```
+
+Adds a like to a specific asset within the album.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlbumId
+
+The UUID of the album to add the activity to.
+Accepts pipeline input.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -AssetId
+
+The UUID of a specific asset to add the activity to.
+If not specified, the activity applies to the album level.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Comment
+
+The comment text to add.
+Required when Type is 'comment'.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+The type of activity to add.
+Valid values are 'comment' or 'like'.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

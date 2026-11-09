@@ -1,0 +1,240 @@
+---
+id: New-IMFace
+title: New-IMFace
+description: Help page for the Powershell "New-IMFace" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Creates a new face detection for an asset
+
+## SYNTAX
+
+```powershell
+New-IMFace [[-Session] <ImmichSession>] [-AssetId] <String> [-PersonId] <String> [-X] <Int32> [-Y] <Int32>
+ [-Width] <Int32> [-Height] <Int32> [-ImageWidth] <Int32> [-ImageHeight] <Int32>
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Creates a new face that has not been discovered by facial recognition.
+The content of the bounding box is considered a face.
+This is useful for manually marking faces that the automatic face detection might have missed.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+New-IMFace -AssetId 'asset-uuid' -PersonId 'person-uuid' -X 100 -Y 150 -Width 200 -Height 250 -ImageWidth 1920 -ImageHeight 1080
+```
+
+Creates a new face detection at the specified coordinates for the given asset and person.
+
+### EXAMPLE 2
+
+```powershell
+$FaceData = @{
+    AssetId = 'asset-uuid'
+    PersonId = 'person-uuid'
+    X = 100
+    Y = 150
+    Width = 200
+    Height = 250
+    ImageWidth = 1920
+    ImageHeight = 1080
+}
+New-IMFace @FaceData
+```
+
+Creates a face detection using parameter splatting.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AssetId
+
+The UUID of the asset to create a face detection for.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersonId
+
+The UUID of the person this face belongs to.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -X
+
+The X coordinate of the top-left corner of the face bounding box.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 4
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Y
+
+The Y coordinate of the top-left corner of the face bounding box.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 5
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Width
+
+The width of the face bounding box.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 6
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Height
+
+The height of the face bounding box.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 7
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ImageWidth
+
+The width of the full image.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 8
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ImageHeight
+
+The height of the full image.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 9
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+All coordinate and dimension parameters are required.
+The bounding box coordinates should be relative to the full image dimensions.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

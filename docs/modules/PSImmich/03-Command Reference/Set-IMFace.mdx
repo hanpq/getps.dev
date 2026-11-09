@@ -1,0 +1,177 @@
+---
+id: Set-IMFace
+title: Set-IMFace
+description: Help page for the Powershell "Set-IMFace" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Reassigns a face detection to a different person
+
+## SYNTAX
+
+```powershell
+Set-IMFace [[-Session] <ImmichSession>] [-PersonId] <String> [-FaceId] <String>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Reassigns a face detection to another person by updating the person association.
+This is useful for correcting misidentified faces or organizing face detections under the correct person.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Set-IMFace -PersonId 'person-uuid' -FaceId 'face-uuid'
+```
+
+Reassigns the specified face detection to the target person.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMFace -Id 'asset-uuid' | Where-Object {$_.person -eq $null} |
+ForEach-Object { Set-IMFace -PersonId 'target-person-uuid' -FaceId $_.id }
+```
+
+Finds all unidentified faces in an asset and assigns them to a specific person.
+
+### EXAMPLE 3
+
+```powershell
+$FaceIds = @('face1-uuid', 'face2-uuid', 'face3-uuid')
+$FaceIds | ForEach-Object { Set-IMFace -PersonId 'person-uuid' -FaceId $_ }
+```
+
+Reassigns multiple face detections to the same person.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersonId
+
+The UUID of the person to assign the face to.
+This is the target person who will be associated with the face.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FaceId
+
+The UUID of the face detection to reassign.
+This face will be moved from its current person association to the specified person.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before reassigning faces.
+The operation moves the face from its current person association (if any) to the specified person.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

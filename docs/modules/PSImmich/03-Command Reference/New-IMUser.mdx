@@ -1,0 +1,202 @@
+---
+id: New-IMUser
+title: New-IMUser
+description: Help page for the Powershell "New-IMUser" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Creates a new Immich user account.
+
+## SYNTAX
+
+```powershell
+New-IMUser [[-Session] <ImmichSession>] [-Email] <String> [[-Notify] <Boolean>] [-Name] <String>
+ [-Password] <SecureString> [[-QuotaSizeInBytes] <Int64>] [[-ShouldChangePassword] <Boolean>]
+ [[-StorageLabel] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Adds new user with email, name, and notification preferences.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+$Password = Read-Host -Prompt 'Password' -AsSecureString
+New-IMUser -Email 'testuser@domain.com' -Name 'Test User' -Password $Password
+```
+
+Creates new Immich user
+
+## PARAMETERS
+
+### -Session
+
+Optional session object for multi-instance connections.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Email
+
+User email address for login.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Notify
+
+Send notification to user about account creation.
+Enabled by default.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Display name for the user account.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Password
+
+Defines the password for the user
+
+```yaml
+Type: SecureString
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -QuotaSizeInBytes
+
+Defines quota for the user
+
+```yaml
+Type: Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ShouldChangePassword
+
+Defines that the user must change password on the next login
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StorageLabel
+
+Defines the users storage label
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

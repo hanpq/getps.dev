@@ -1,0 +1,137 @@
+---
+id: Get-IMQueue
+title: Get-IMQueue
+description: Help page for the Powershell "Get-IMQueue" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves Immich queue information
+
+## SYNTAX
+
+### list (Default)
+
+```powershell
+Get-IMQueue [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### name
+
+```powershell
+Get-IMQueue [-Session <ImmichSession>] -Name <String[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves information about one or more queues from Immich.
+Queues handle background processing
+tasks like thumbnail generation, metadata extraction, face detection, and more.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMQueue
+```
+
+Retrieves information for all queues.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMQueue -Name thumbnailGeneration
+```
+
+Retrieves information for the thumbnail generation queue.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMQueue -Name faceDetection, facialRecognition
+```
+
+Retrieves information for multiple specific queues.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+The name of a specific queue to retrieve.
+When not specified, returns all queues.
+Valid queue names include: thumbnailGeneration, metadataExtraction, videoConversion,
+faceDetection, facialRecognition, smartSearch, duplicateDetection, backgroundTask,
+storageTemplateMigration, migration, search, sidecar, library, notifications, backupDatabase, ocr, workflow
+
+```yaml
+Type: String[]
+Parameter Sets: name
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This function requires admin privileges.
+Queue information includes status, job counts, and processing statistics.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

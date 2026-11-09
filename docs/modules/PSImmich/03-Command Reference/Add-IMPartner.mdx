@@ -1,0 +1,104 @@
+---
+id: Add-IMPartner
+title: Add-IMPartner
+description: Help page for the Powershell "Add-IMPartner" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Adds a user as a sharing partner.
+
+## SYNTAX
+
+```powershell
+Add-IMPartner [[-Session] <ImmichSession>] [-SharedWithId] <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Creates a partnership relationship allowing asset sharing between users.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Add-IMPartner -SharedWithId 'bf973405-3f2a-48d2-a687-2ed4167164be'
+```
+
+Adds the specified user as a sharing partner.
+
+## PARAMETERS
+
+### -Session
+
+Optional session object for multi-instance connections.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SharedWithId
+
+User ID to add as partner.
+Must be valid GUID format.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

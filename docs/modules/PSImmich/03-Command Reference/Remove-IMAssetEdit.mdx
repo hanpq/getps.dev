@@ -1,0 +1,149 @@
+---
+id: Remove-IMAssetEdit
+title: Remove-IMAssetEdit
+description: Help page for the Powershell "Remove-IMAssetEdit" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Removes all non-destructive edits from an Immich asset
+
+## SYNTAX
+
+```powershell
+Remove-IMAssetEdit [[-Session] <ImmichSession>] [-Id] <String> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Removes every edit action (crop, rotate, mirror) stored for an asset, restoring the asset to its original appearance.
+The original file is not modified.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-IMAssetEdit -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Removes all edits from the specified asset after confirmation.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAsset -TagId 'vacation-tag' | Remove-IMAssetEdit -Confirm:$false
+```
+
+Removes all edits from every asset with a specific tag without confirmation.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID of the asset whose edits to remove.
+Accepts pipeline input.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing edits.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

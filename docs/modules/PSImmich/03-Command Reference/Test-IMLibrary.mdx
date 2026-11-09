@@ -1,0 +1,179 @@
+---
+id: Test-IMLibrary
+title: Test-IMLibrary
+description: Help page for the Powershell "Test-IMLibrary" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Validates an Immich library configuration.
+
+## SYNTAX
+
+```powershell
+Test-IMLibrary [[-Session] <ImmichSession>] [-Id] <String[]> [[-ExclusionPatterns] <String[]>]
+ [[-ImportPaths] <String[]>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+The Test-IMLibrary function validates the configuration of an Immich library by checking
+the accessibility and validity of import paths, exclusion patterns, and other settings.
+This validation helps ensure that library configurations are correct and that the
+specified paths are accessible to the Immich server.
+
+The function can validate multiple libraries simultaneously and supports pipeline input
+for batch validation operations.
+Validation results indicate whether the library
+configuration is valid and highlight any potential issues.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Test-IMLibrary -Id 'bf973405-3f2a-48d2-a687-2ed4167164be'
+```
+
+Validates the library configuration for the specified library ID.
+
+### EXAMPLE 2
+
+```powershell
+Test-IMLibrary -Id 'bf973405-3f2a-48d2-a687-2ed4167164be' -ImportPaths @('/photos', '/videos')
+```
+
+Validates the library and specifically tests the accessibility of the provided import paths.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMLibrary | Test-IMLibrary
+```
+
+Validates all libraries by processing library objects from the pipeline.
+
+### EXAMPLE 4
+
+```powershell
+Test-IMLibrary -Id 'bf973405-3f2a-48d2-a687-2ed4167164be' -ExclusionPatterns @('*.tmp', '.*')
+```
+
+Validates the library configuration and tests specific exclusion patterns for correctness.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+Specifies the unique identifier(s) of the library to validate.
+Must be valid GUID format.
+Accepts pipeline input by value and by property name for batch validation operations.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -ExclusionPatterns
+
+Specifies file and folder exclusion patterns to validate.
+These patterns are checked
+for syntax correctness and potential conflicts with import paths.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ImportPaths
+
+Specifies the import paths to validate.
+The function checks whether these paths
+are accessible to the Immich server and properly configured for asset importing.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+Library validation helps identify configuration issues before they affect import operations.
+Regular validation is recommended when modifying library settings or server configurations.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,173 @@
+---
+id: Remove-IMAlbumUser
+title: Remove-IMAlbumUser
+description: Help page for the Powershell "Remove-IMAlbumUser" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Removes users from an Immich album
+
+## SYNTAX
+
+```powershell
+Remove-IMAlbumUser [[-Session] <ImmichSession>] [-AlbumId] <String> [-UserId] <String[]>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Removes one or more users from an Immich album, revoking their access to the shared album.
+This action cannot be undone and the users will lose access immediately.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-IMAlbumUser -AlbumId 'album-uuid' -UserId 'user-uuid'
+```
+
+Removes a specific user from the album with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+@('user1-uuid', 'user2-uuid') | Remove-IMAlbumUser -AlbumId 'album-uuid'
+```
+
+Removes multiple users from the album via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Remove-IMAlbumUser -AlbumId 'album-uuid' -UserId 'user-uuid' -Confirm:$false
+```
+
+Removes the user without confirmation prompt.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlbumId
+
+The UUID of the album to remove users from.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserId
+
+The UUID(s) of the user(s) to remove from the album.
+Accepts pipeline input and multiple values.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: id
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing users from albums.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

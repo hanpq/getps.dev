@@ -1,0 +1,179 @@
+---
+id: Remove-IMAuthSession
+title: Remove-IMAuthSession
+description: Help page for the Powershell "Remove-IMAuthSession" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Removes authenticated sessions from Immich
+
+## SYNTAX
+
+### list (Default)
+
+```powershell
+Remove-IMAuthSession [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Remove-IMAuthSession [-Session <ImmichSession>] -id <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Removes one or more authenticated sessions from Immich.
+When no specific session ID is provided,
+all sessions except the current one will be removed.
+This is useful for security purposes or
+when cleaning up old sessions.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-IMAuthSession
+```
+
+Removes all authenticated sessions except the current one with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+Remove-IMAuthSession -Id 'session-uuid'
+```
+
+Removes a specific authenticated session with confirmation prompt.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAuthSession | Where-Object {$_.deviceType -eq 'mobile'} | Remove-IMAuthSession
+```
+
+Removes all mobile device sessions via pipeline.
+
+### EXAMPLE 4
+
+```powershell
+Remove-IMAuthSession -Confirm:$false
+```
+
+Removes all sessions except current without confirmation prompt.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -id
+
+The UUID(s) of specific authenticated session(s) to remove.
+Accepts pipeline input and multiple values.
+If not specified, all sessions except the current one will be removed.
+
+```yaml
+Type: String[]
+Parameter Sets: id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing sessions.
+The current session cannot be removed and will be preserved even when removing all sessions.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

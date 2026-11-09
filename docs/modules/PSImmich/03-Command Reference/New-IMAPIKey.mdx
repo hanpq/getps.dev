@@ -1,0 +1,137 @@
+---
+id: New-IMAPIKey
+title: New-IMAPIKey
+description: Help page for the Powershell "New-IMAPIKey" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Creates a new Immich API key
+
+## SYNTAX
+
+```powershell
+New-IMAPIKey [[-Session] <ImmichSession>] [-Name] <String> [[-Permission] <String[]>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Creates a new API key for programmatic access to the Immich server.
+API keys can be assigned specific
+permissions to control access to different parts of the API.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+New-IMAPIKey -Name 'Automation Script'
+```
+
+Creates a new API key with full permissions named 'Automation Script'.
+
+### EXAMPLE 2
+
+```powershell
+New-IMAPIKey -Name 'Read Only Access' -Permission 'asset.read','album.read','library.read'
+```
+
+Creates a new API key with limited read-only permissions.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+The name for the new API key.
+This should be descriptive to help identify the key's purpose.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Permission
+
+The permissions to assign to the API key.
+Defaults to 'all' for full access.
+Can specify multiple granular permissions
+such as 'asset.read', 'album.create', etc.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: All
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+The API key secret is only displayed once upon creation.
+Store it securely as it cannot be retrieved later.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

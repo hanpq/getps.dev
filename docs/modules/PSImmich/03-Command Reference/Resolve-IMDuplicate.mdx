@@ -1,0 +1,189 @@
+---
+id: Resolve-IMDuplicate
+title: Resolve-IMDuplicate
+description: Help page for the Powershell "Resolve-IMDuplicate" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Resolves duplicate asset groups in Immich
+
+## SYNTAX
+
+```powershell
+Resolve-IMDuplicate [[-Session] <ImmichSession>] [-DuplicateId] <String> [-KeepAssetId] <String[]>
+ [-TrashAssetId] <String[]> [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Resolves one or more duplicate groups by specifying which assets to keep and which to move to the trash.
+Immich synchronizes metadata across the kept assets and trashes the others.
+Use Get-IMDuplicate to find the
+duplicate groups and their suggested assets to keep.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMDuplicate | ForEach-Object {
+    $Group = $PSItem
+    $Trash = $Group.Assets.Id | Where-Object { $PSItem -notin $Group.SuggestedKeepAssetIds }
+    Resolve-IMDuplicate -DuplicateId $Group.DuplicateId -KeepAssetId $Group.SuggestedKeepAssetIds -TrashAssetId $Trash
+}
+```
+
+Resolves each duplicate group by keeping the suggested assets and trashing the rest.
+
+### EXAMPLE 2
+
+```powershell
+Resolve-IMDuplicate -DuplicateId '5b0bbb8d-3a3e-4f46-a1ab-0e7a2a7f3c11' -KeepAssetId 'a1f0c6f2-1d43-4c1b-9d7e-2b0a6c3f8e10' -TrashAssetId 'b2e1d7a3-2e54-4d2c-8e8f-3c1b7d4f9f21' -WhatIf
+```
+
+Shows what would be resolved without changing anything.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DuplicateId
+
+The UUID of the duplicate group to resolve.
+Accepts pipeline input by property name, so Get-IMDuplicate can be piped in.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -KeepAssetId
+
+The UUID(s) of the assets in the group to keep.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TrashAssetId
+
+The UUID(s) of the assets in the group to move to the trash.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before trashing assets.
+Trashed assets
+can be restored from the Immich trash.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

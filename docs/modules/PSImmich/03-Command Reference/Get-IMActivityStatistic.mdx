@@ -1,0 +1,132 @@
+---
+id: Get-IMActivityStatistic
+title: Get-IMActivityStatistic
+description: Help page for the Powershell "Get-IMActivityStatistic" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves activity statistics for an Immich album
+
+## SYNTAX
+
+```powershell
+Get-IMActivityStatistic [[-Session] <ImmichSession>] [-AlbumId] <String> [[-AssetId] <String>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves statistical information about activities in an Immich album, such as the number of comments
+and likes.
+Can provide statistics for the entire album or for a specific asset.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMActivityStatistic -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Retrieves activity statistics for the entire album.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMActivityStatistic -AlbumId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -AssetId 'a4908e1f-697f-4d7b-9330-93b5eabe3baf'
+```
+
+Retrieves activity statistics for a specific asset within the album.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlbumId
+
+The UUID of the album to retrieve activity statistics for.
+Accepts pipeline input.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -AssetId
+
+The UUID of a specific asset to retrieve activity statistics for.
+If specified, returns statistics only for this asset.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

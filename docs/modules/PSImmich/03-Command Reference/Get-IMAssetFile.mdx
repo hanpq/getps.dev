@@ -1,0 +1,211 @@
+---
+id: Get-IMAssetFile
+title: Get-IMAssetFile
+description: Help page for the Powershell "Get-IMAssetFile" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves the files stored for Immich assets
+
+## SYNTAX
+
+### asset (Default)
+
+```powershell
+Get-IMAssetFile [-Session <ImmichSession>] -AssetId <String> [-IsEdited <Boolean>] [-IsProgressive <Boolean>]
+ [-IsTransparent <Boolean>] [-Type <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMAssetFile [-Session <ImmichSession>] -Id <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves the stored files of an asset, such as the original, preview, thumbnail, sidecar or encoded video files.
+Use -AssetId to list all files of an asset, optionally filtered by type or edit state, or -Id to retrieve a single file.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMAssetFile -AssetId 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Lists all stored files of the specified asset.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAssetFile -AssetId 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -Type preview
+```
+
+Lists only the preview files of the specified asset.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAssetFile -Id '5a1f5a4e-2f1e-4b8e-9d0f-6c1d2e3f4a5b'
+```
+
+Retrieves a single asset file by its ID.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AssetId
+
+The UUID of the asset whose files to list.
+
+```yaml
+Type: String
+Parameter Sets: asset
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsEdited
+
+Only return files that belong to an edited version of the asset.
+
+```yaml
+Type: Boolean
+Parameter Sets: asset
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsProgressive
+
+Only return progressive files.
+
+```yaml
+Type: Boolean
+Parameter Sets: asset
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsTransparent
+
+Only return files with transparency.
+
+```yaml
+Type: Boolean
+Parameter Sets: asset
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+Only return files of the specified type.
+
+```yaml
+Type: String
+Parameter Sets: asset
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID of the asset file to retrieve.
+Accepts pipeline input.
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,96 @@
+---
+id: Get-IMDatabaseBackup
+title: Get-IMDatabaseBackup
+description: Help page for the Powershell "Get-IMDatabaseBackup" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Lists Immich database backups
+
+## SYNTAX
+
+```powershell
+Get-IMDatabaseBackup [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves the database backups stored on the Immich server, including their file names, sizes and time zones.
+Use the file names with Save-IMDatabaseBackup or Remove-IMDatabaseBackup.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMDatabaseBackup
+```
+
+Lists all database backups on the Immich server.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMDatabaseBackup | Sort-Object -Property filesize -Descending | Select-Object -First 1
+```
+
+Shows the largest database backup.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

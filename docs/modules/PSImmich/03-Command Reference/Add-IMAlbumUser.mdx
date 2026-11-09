@@ -1,0 +1,191 @@
+---
+id: Add-IMAlbumUser
+title: Add-IMAlbumUser
+description: Help page for the Powershell "Add-IMAlbumUser" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Adds users to an Immich album
+
+## SYNTAX
+
+```powershell
+Add-IMAlbumUser [[-Session] <ImmichSession>] [-AlbumId] <String> [-UserId] <String[]> [[-Role] <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Adds one or more users to an Immich album with specified roles.
+This enables album sharing and collaboration.
+Users can be assigned as either editors (can modify) or viewers (read-only access).
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Add-IMAlbumUser -AlbumId 'album-uuid' -UserId 'user-uuid' -Role 'editor'
+```
+
+Adds a user to the album with editor permissions.
+
+### EXAMPLE 2
+
+```powershell
+@('user1-uuid', 'user2-uuid') | Add-IMAlbumUser -AlbumId 'album-uuid' -Role 'viewer'
+```
+
+Adds multiple users to the album with viewer permissions via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMUser | Where-Object {$_.name -like 'family*'} | Add-IMAlbumUser -AlbumId 'album-uuid' -Role 'viewer'
+```
+
+Adds all users with names starting with 'family' to the album as viewers.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlbumId
+
+The UUID of the album to add users to.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserId
+
+The UUID(s) of the user(s) to add to the album.
+Accepts pipeline input and multiple values.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: id
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Role
+
+The role to assign to the user(s).
+Valid values are 'editor' (can modify album) or 'viewer' (read-only access).
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: Viewer
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before adding users to albums.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

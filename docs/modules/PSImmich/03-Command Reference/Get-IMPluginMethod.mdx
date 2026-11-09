@@ -1,0 +1,236 @@
+---
+id: Get-IMPluginMethod
+title: Get-IMPluginMethod
+description: Help page for the Powershell "Get-IMPluginMethod" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves Immich plugin methods
+
+## SYNTAX
+
+```powershell
+Get-IMPluginMethod [[-Session] <ImmichSession>] [[-Id] <String>] [[-Name] <String>] [[-Title] <String>]
+ [[-Description] <String>] [[-PluginName] <String>] [[-PluginVersion] <String>] [[-Trigger] <String>]
+ [[-Type] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves the plugin methods available on the Immich server.
+Methods are the actions that installed plugins expose for use in workflows.
+The list can be filtered by name, plugin, trigger and workflow type.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMPluginMethod
+```
+
+Retrieves all plugin methods available to the current user.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMPluginMethod -Trigger 'AssetCreate'
+```
+
+Retrieves the plugin methods that can be used in workflows triggered by asset creation.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMPluginMethod -PluginName 'my-plugin' -Type 'AssetV1'
+```
+
+Retrieves the AssetV1 methods provided by the plugin named 'my-plugin'.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+Filter the method list by plugin method ID (UUID).
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Filter the method list by method name.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Title
+
+Filter the method list by method title.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+
+Filter the method list by method description.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PluginName
+
+Filter the method list by the name of the plugin that provides the method.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PluginVersion
+
+Filter the method list by the version of the plugin that provides the method.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Trigger
+
+Filter the method list by workflow trigger.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+Filter the method list by workflow type.
+Applied after the list is retrieved, against each method's types.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

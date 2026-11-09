@@ -1,0 +1,281 @@
+---
+id: Import-IMAsset
+title: Import-IMAsset
+description: Help page for the Powershell "Import-IMAsset" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Imports media files as Immich assets
+
+## SYNTAX
+
+```powershell
+Import-IMAsset [[-Session] <ImmichSession>] [-FilePath] <FileInfo[]> [[-Duration] <String>] [-isArchived]
+ [-isFavorite] [-isOffline] [-isReadOnly] [-isVisible] [[-libraryId] <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Uploads media files (photos and videos) to Immich, creating new assets.
+Uses unified HttpClient
+implementation for reliable cross-platform multipart uploads with metadata and status options.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Import-IMAsset -FilePath 'C:\Photos\vacation.jpg'
+```
+
+Imports a single photo to Immich.
+
+### EXAMPLE 2
+
+```powershell
+Get-ChildItem '*.jpg' | Import-IMAsset -IsFavorite
+```
+
+Imports all JPG files in the current directory and marks them as favorites.
+
+### EXAMPLE 3
+
+```powershell
+Import-IMAsset -FilePath 'C:\Videos\movie.mp4' -Duration '00:02:30' -LibraryId 'library-uuid'
+```
+
+Imports a video with specified duration to a specific library.
+
+### EXAMPLE 4
+
+```powershell
+@('photo1.jpg', 'photo2.jpg') | Import-IMAsset -IsArchived:$true
+```
+
+Imports multiple photos and archives them immediately.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilePath
+
+The path(s) to the media file(s) to upload.
+Accepts pipeline input and multiple files.
+
+```yaml
+Type: FileInfo[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Duration
+
+The duration for video assets, if applicable.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isArchived
+
+Specifies whether the imported asset should be archived upon upload.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isFavorite
+
+Specifies whether the imported asset should be marked as a favorite.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isOffline
+
+Specifies whether the imported asset should be marked as offline.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isReadOnly
+
+Specifies whether the imported asset should be marked as read-only.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -isVisible
+
+Specifies whether the imported asset should be visible in the timeline.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -libraryId
+
+The UUID of the library to upload the asset to.
+If not specified, uses the default library.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+Uses System.Net.Http.HttpClient for reliable multipart uploads across all PowerShell editions.
+This cmdlet supports ShouldProcess and will prompt for confirmation before uploading files.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

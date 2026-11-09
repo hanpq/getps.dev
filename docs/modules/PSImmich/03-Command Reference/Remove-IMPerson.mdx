@@ -1,0 +1,171 @@
+---
+id: Remove-IMPerson
+title: Remove-IMPerson
+description: Help page for the Powershell "Remove-IMPerson" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Removes people from Immich
+
+## SYNTAX
+
+```powershell
+Remove-IMPerson [[-Session] <ImmichSession>] [-Ids] <String[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Removes one or more people from Immich.
+This function uses the bulk delete endpoint
+to efficiently remove multiple people.
+When people are removed, all associated face
+detections and person data will be permanently deleted.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Remove-IMPerson -Ids 'person-uuid'
+```
+
+Removes the specified person with confirmation prompt.
+
+### EXAMPLE 2
+
+```powershell
+@('person1-uuid', 'person2-uuid') | Remove-IMPerson
+```
+
+Removes multiple people via pipeline.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMPerson | Where-Object {$_.name -eq ''} | Remove-IMPerson -Confirm:$false
+```
+
+Removes all unnamed people without confirmation prompts.
+
+### EXAMPLE 4
+
+```powershell
+Remove-IMPerson -Ids 'person-uuid' -WhatIf
+```
+
+Shows what would be removed without actually performing the deletion.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ids
+
+The UUID(s) of the person/people to remove.
+Accepts pipeline input and multiple values.
+These are the person IDs returned by Get-IMPerson.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: id
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before removing people.
+Removing a person will permanently delete all associated face detections and person data.
+This action cannot be undone.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

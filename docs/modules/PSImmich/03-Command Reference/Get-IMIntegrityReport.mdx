@@ -1,0 +1,179 @@
+---
+id: Get-IMIntegrityReport
+title: Get-IMIntegrityReport
+description: Help page for the Powershell "Get-IMIntegrityReport" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves Immich storage integrity reports
+
+## SYNTAX
+
+### report (Default)
+
+```powershell
+Get-IMIntegrityReport [-Session <ImmichSession>] -Type <String> [-Cursor <String>] [-Limit <Int32>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### summary
+
+```powershell
+Get-IMIntegrityReport [-Session <ImmichSession>] [-Summary] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves the storage integrity report items for one report type, or the summary counts for all report types.
+Report types are untracked_file, missing_file and checksum_mismatch.
+The report output includes the next cursor when more items are available; pass it to -Cursor to retrieve the next page.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMIntegrityReport -Summary
+```
+
+Retrieves the number of untracked, missing and checksum mismatch items.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMIntegrityReport -Type 'missing_file' -Limit 50
+```
+
+Retrieves the first page of missing file report items.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMIntegrityReport -Type 'untracked_file' | Select-Object -ExpandProperty items
+```
+
+Retrieves the untracked file report items.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+The integrity report type to list.
+
+```yaml
+Type: String
+Parameter Sets: report
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Cursor
+
+The cursor from a previous page of results, used to retrieve the next page.
+
+```yaml
+Type: String
+Parameter Sets: report
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Limit
+
+The maximum number of report items to return in one page.
+
+```yaml
+Type: Int32
+Parameter Sets: report
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Summary
+
+Retrieves the number of items for each integrity report type instead of the report items.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: summary
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,117 @@
+---
+id: Get-IMDuplicate
+title: Get-IMDuplicate
+description: Help page for the Powershell "Get-IMDuplicate" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves duplicate assets from Immich
+
+## SYNTAX
+
+```powershell
+Get-IMDuplicate [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Identifies and retrieves information about duplicate assets in the Immich library.
+This helps
+users identify redundant files that may be taking up unnecessary storage space.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMDuplicate
+```
+
+Retrieves all duplicate assets in the library.
+
+### EXAMPLE 2
+
+```powershell
+$duplicates = Get-IMDuplicate
+$duplicates | Measure-Object | Select-Object -ExpandProperty Count
+```
+
+Counts the total number of duplicate asset groups found.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMDuplicate | ForEach-Object { Write-Host "Duplicate group with $($_.assets.Count) assets" }
+```
+
+Displays information about each duplicate group.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMDuplicate | Where-Object {$_.assets.Count -gt 2} | Select-Object -First 5
+```
+
+Retrieves the first 5 duplicate groups that have more than 2 assets.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+Duplicate detection is based on file content hash, not filename or metadata.
+This function returns duplicate groups, where each group contains multiple assets with identical content.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

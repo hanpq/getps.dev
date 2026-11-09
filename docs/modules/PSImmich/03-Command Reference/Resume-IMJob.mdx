@@ -1,0 +1,144 @@
+---
+id: Resume-IMJob
+title: Resume-IMJob
+description: Help page for the Powershell "Resume-IMJob" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Resumes suspended Immich background jobs
+
+## SYNTAX
+
+```powershell
+Resume-IMJob [[-Session] <ImmichSession>] [-Job] <String[]> [-Force] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Resumes processing of previously suspended job types in Immich.
+This allows the job queues
+to continue processing pending items and accept new jobs.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Resume-IMJob -Job 'thumbnailGeneration'
+```
+
+Resumes thumbnail generation processing.
+
+### EXAMPLE 2
+
+```powershell
+Resume-IMJob -Job 'videoConversion'
+```
+
+Resumes video conversion jobs.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMJob | Where-Object {$_.isPaused} | ForEach-Object { Resume-IMJob -Job $_.name }
+```
+
+Resumes all job types whose queues are paused.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Job
+
+The type of job to resume.
+Valid values include thumbnailGeneration, metadataExtraction,
+videoConversion, faceDetection, and other background job types.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+
+Retained for compatibility.
+The queues API has no force option, so this parameter has no effect and a warning is written.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+Use this cmdlet to resume jobs that were previously suspended with Suspend-IMJob.
+Monitor job status with Get-IMJob to verify jobs are processing normally after resuming.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,165 @@
+---
+id: Get-IMWorkflowLog
+title: Get-IMWorkflowLog
+description: Help page for the Powershell "Get-IMWorkflowLog" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves run logs of an Immich workflow
+
+## SYNTAX
+
+```powershell
+Get-IMWorkflowLog [[-Session] <ImmichSession>] [-Id] <String> [[-Before] <DateTime>] [[-Limit] <Int32>]
+ [[-Result] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves the log entries recording past runs of a workflow.
+Logs are only written for workflows with logging enabled.
+Note: Workflow functionality is in Alpha state as of Immich v3.3.6.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMWorkflowLog -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Retrieves all log entries for the specified workflow.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMWorkflowLog -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -Result 'error' -Limit 10
+```
+
+Retrieves the ten most recent failed runs of the workflow.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID of the workflow whose logs to retrieve.
+Accepts pipeline input.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Before
+
+Only return log entries recorded before this date and time.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Limit
+
+The maximum number of log entries to return.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Result
+
+Only return log entries with the specified result.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This feature is in Alpha state and may be subject to changes in future Immich versions.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

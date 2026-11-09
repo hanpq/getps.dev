@@ -1,0 +1,147 @@
+---
+id: Get-IMAlbumMapMarker
+title: Get-IMAlbumMapMarker
+description: Help page for the Powershell "Get-IMAlbumMapMarker" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves the map markers for the assets in an Immich album
+
+## SYNTAX
+
+```powershell
+Get-IMAlbumMapMarker [[-Session] <ImmichSession>] [-Id] <String> [[-Key] <String>] [[-Slug] <String>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves the geographic markers (asset ID, latitude and longitude, and location details)
+for the assets that have GPS data in an album.
+Assets without location data are not returned.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMAlbumMapMarker -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Retrieves the map markers for all geotagged assets in the specified album.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAlbum -Name 'Holiday' | Get-IMAlbumMapMarker
+```
+
+Retrieves the map markers for the album named Holiday.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID of the album to retrieve map markers for.
+Accepts pipeline input.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Key
+
+The shared link key that grants access to the album, if accessing it through a shared link.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Slug
+
+The shared link slug that grants access to the album, if accessing it through a shared link.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

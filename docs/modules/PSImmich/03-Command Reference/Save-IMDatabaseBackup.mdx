@@ -1,0 +1,131 @@
+---
+id: Save-IMDatabaseBackup
+title: Save-IMDatabaseBackup
+description: Help page for the Powershell "Save-IMDatabaseBackup" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Downloads Immich database backups to local storage
+
+## SYNTAX
+
+```powershell
+Save-IMDatabaseBackup [[-Session] <ImmichSession>] [-Filename] <String> [-Path] <DirectoryInfo>
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Downloads a database backup from the Immich server to a local directory.
+The file keeps the name it has on the server.
+Use Get-IMDatabaseBackup to find the file names.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Save-IMDatabaseBackup -Filename 'immich-db-backup-20260101T000000-v3.3.6-pg14.sql.gz' -Path 'C:\Backups'
+```
+
+Downloads the specified database backup to the C:\Backups directory.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMDatabaseBackup | Save-IMDatabaseBackup -Path 'C:\Backups'
+```
+
+Downloads all database backups on the server to a local folder.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filename
+
+The file name of the database backup to download.
+Accepts pipeline input, for example from Get-IMDatabaseBackup.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Path
+
+The local directory where the downloaded backup will be saved.
+
+```yaml
+Type: DirectoryInfo
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

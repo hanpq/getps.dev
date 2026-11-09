@@ -1,0 +1,281 @@
+---
+id: Get-IMAsset
+title: Get-IMAsset
+description: Help page for the Powershell "Get-IMAsset" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves Immich assets
+
+## SYNTAX
+
+### list (Default)
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### random
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] [-Random] [-Count <Int32>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### personid
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] -PersonId <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### tagid
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] -TagId <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMAsset [-Session <ImmichSession>] -Id <String> [-Key <String>] [-Slug <String>] [-IncludeOCR]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Retrieves assets from the Immich server using various criteria.
+Supports retrieving specific assets by ID,
+random assets, assets by device, person, or tag associations, and general asset searches.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMAsset
+```
+
+Retrieves all assets using the default search.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMAsset -Id '550e8400-e29b-41d4-a716-446655440000'
+```
+
+Retrieves a specific asset by its UUID.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMAsset -Random -Count 5
+```
+
+Retrieves 5 random assets from the library.
+
+### EXAMPLE 4
+
+```powershell
+Get-IMAsset -PersonId '550e8400-e29b-41d4-a716-446655440001'
+```
+
+Retrieves all assets associated with a specific person.
+
+### EXAMPLE 5
+
+```powershell
+Get-IMAsset -TagId 'tag-uuid'
+```
+
+Retrieves all assets tagged with the specified tag.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Random
+
+Specifies that random assets should be retrieved instead of a specific asset.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: random
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+
+The number of random assets to return when using -Random.
+Default is 1, maximum is 1000.
+
+```yaml
+Type: Int32
+Parameter Sets: random
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersonId
+
+The UUID of a person to retrieve associated assets.
+
+```yaml
+Type: String
+Parameter Sets: personid
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TagId
+
+The UUID of a tag to retrieve assets with that tag.
+
+```yaml
+Type: String
+Parameter Sets: tagid
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID of a specific asset to retrieve.
+Accepts pipeline input.
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Key
+
+An optional API key for shared link access when retrieving assets.
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Slug
+
+An optional slug for shared link access when retrieving assets.
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeOCR
+
+Include OCR data for the asset when retrieving by Id.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,355 @@
+---
+id: Set-IMAsset
+title: Set-IMAsset
+description: Help page for the Powershell "Set-IMAsset" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Updates Immich asset properties and associations
+
+## SYNTAX
+
+### batch (Default)
+
+```powershell
+Set-IMAsset [-Session <ImmichSession>] -Id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
+ [-Latitude <Int32>] [-Longitude <Int32>] [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>]
+ [-RemoveTag <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Set-IMAsset [-Session <ImmichSession>] -Id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
+ [-Latitude <Int32>] [-Longitude <Int32>] [-Description <String>] [-AddToAlbum <String>]
+ [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>] [-AddToMemory <String>]
+ [-RemoveFromMemory <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Updates various properties of Immich assets including metadata, location, favorites status, and manages
+associations with albums, tags, faces, and memories.
+Supports batch operations on multiple assets.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Set-IMAsset -Id 'asset-uuid' -IsFavorite:$true
+```
+
+Marks the specified asset as a favorite.
+
+### EXAMPLE 2
+
+```powershell
+Set-IMAsset -Id 'asset-uuid' -AddTag 'tag-uuid'
+```
+
+Adds a tag to the specified asset.
+
+### EXAMPLE 3
+
+```powershell
+Set-IMAsset -Id 'asset-uuid' -Latitude 40.7128 -Longitude -74.0060 -Description 'New York City'
+```
+
+Updates the location and description for the asset.
+
+### EXAMPLE 4
+
+```powershell
+@('asset1-uuid', 'asset2-uuid') | Set-IMAsset -AddToAlbum 'album-uuid'
+```
+
+Adds multiple assets to an album via pipeline.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+The UUID(s) of the asset(s) to update.
+Accepts pipeline input and multiple values.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: ids
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -DateTimeOriginal
+
+The original date and time when the asset was created/taken.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsFavorite
+
+Specifies whether the asset should be marked as a favorite.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Latitude
+
+The latitude coordinate for the asset's location.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Longitude
+
+The longitude coordinate for the asset's location.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+
+A description or caption for the asset.
+
+```yaml
+Type: String
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddToAlbum
+
+The UUID of an album to add the asset(s) to.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveFromAlbum
+
+The UUID of an album to remove the asset(s) from.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddTag
+
+The UUID of a tag to add to the asset(s).
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveTag
+
+The UUID of a tag to remove from the asset(s).
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddToMemory
+
+The UUID of a memory to add the asset(s) to.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoveFromMemory
+
+The UUID of a memory to remove the asset(s) from.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet supports ShouldProcess and will prompt for confirmation before making changes.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

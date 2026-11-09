@@ -1,0 +1,209 @@
+---
+id: Add-IMPersonAccess
+title: Add-IMPersonAccess
+description: Help page for the Powershell "Add-IMPersonAccess" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Shares people with other users
+
+## SYNTAX
+
+### Person (Default)
+
+```powershell
+Add-IMPersonAccess [-Session <ImmichSession>] -PersonId <String[]> -SharedWithId <String[]> -Role <String>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Everyone
+
+```powershell
+Add-IMPersonAccess [-Session <ImmichSession>] [-Everyone] -SharedWithId <String[]> -Role <String>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Gives the specified users access to people with the specified role.
+Existing access
+for the same users is updated to the new role.
+Use -PersonId to share specific people,
+or -Everyone to share all people owned by the current user.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Add-IMPersonAccess -PersonId 'bf973405-3f2a-48d2-a687-2ed4167164be' -SharedWithId '9c4e0006-3a2b-4967-94b6-7e8bb8490a12' -Role read
+```
+
+Gives the user read access to the specified person.
+
+### EXAMPLE 2
+
+```powershell
+Add-IMPersonAccess -Everyone -SharedWithId '9c4e0006-3a2b-4967-94b6-7e8bb8490a12' -Role write
+```
+
+Gives the user write access to all people owned by the current user.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersonId
+
+The UUID(s) of the person/people to share.
+Accepts multiple values.
+
+```yaml
+Type: String[]
+Parameter Sets: Person
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Everyone
+
+Share all people owned by the current user instead of specific people.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Everyone
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SharedWithId
+
+The UUID(s) of the user(s) to give access to.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Role
+
+The access role to grant: read, write or admin.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+Supports -WhatIf and -Confirm.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,178 @@
+---
+id: Set-IMQueue
+title: Set-IMQueue
+description: Help page for the Powershell "Set-IMQueue" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Updates Immich queue settings
+
+## SYNTAX
+
+```powershell
+Set-IMQueue [[-Session] <ImmichSession>] [-Name] <String> [-IsPaused] <Boolean>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Updates the configuration of a specific queue, such as pausing or resuming queue processing.
+This is useful for temporarily stopping processing tasks or managing system resources.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Set-IMQueue -Name thumbnailGeneration -IsPaused $true
+```
+
+Pauses the thumbnail generation queue.
+
+### EXAMPLE 2
+
+```powershell
+Set-IMQueue -Name faceDetection -IsPaused $false
+```
+
+Resumes the face detection queue.
+
+### EXAMPLE 3
+
+```powershell
+@('thumbnailGeneration', 'videoConversion') | Set-IMQueue -IsPaused $true
+```
+
+Pauses multiple queues via pipeline input.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+The name of the queue to update.
+Required parameter.
+Valid queue names include: thumbnailGeneration, metadataExtraction, videoConversion,
+faceDetection, facialRecognition, smartSearch, duplicateDetection, backgroundTask,
+storageTemplateMigration, migration, search, sidecar, library, notifications, backupDatabase, ocr, workflow
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -IsPaused
+
+Whether the queue should be paused (true) or active (false).
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This function requires admin privileges.
+Pausing a queue will prevent new jobs from being processed
+but will not stop currently running jobs.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

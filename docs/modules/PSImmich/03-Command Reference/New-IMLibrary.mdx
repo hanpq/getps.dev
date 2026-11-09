@@ -1,0 +1,199 @@
+---
+id: New-IMLibrary
+title: New-IMLibrary
+description: Help page for the Powershell "New-IMLibrary" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Creates a new Immich library for asset management.
+
+## SYNTAX
+
+```powershell
+New-IMLibrary [[-Session] <ImmichSession>] [-Name] <String> [[-ExclusionPatterns] <String[]>]
+ [[-ImportPaths] <String[]>] [[-OwnerId] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+The New-IMLibrary function creates a new library in Immich for organizing and managing
+digital assets.
+Libraries define collections of assets with specific import paths,
+exclusion patterns, and ownership settings.
+Each library can monitor designated
+directories and automatically import new assets according to configured rules.
+
+Libraries provide a way to organize assets from different sources or with different
+access requirements, such as personal photos, family albums, or professional archives.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+New-IMLibrary -Name 'Family Photos' -ImportPaths '/mnt/photos/family'
+```
+
+Creates a new library named 'Family Photos' that monitors the '/mnt/photos/family' directory.
+
+### EXAMPLE 2
+
+```powershell
+New-IMLibrary -Name 'Professional Archive' -ImportPaths @('/storage/work', '/backup/projects') -ExclusionPatterns @('*.tmp', '.*')
+```
+
+Creates a library with multiple import paths and exclusion patterns for temporary and hidden files.
+
+### EXAMPLE 3
+
+```powershell
+New-IMLibrary -Name 'User Collection' -ImportPaths '/home/user/pictures' -OwnerId 'bf973405-3f2a-48d2-a687-2ed4167164be'
+```
+
+Creates a library with a specific owner assigned by user ID.
+
+### EXAMPLE 4
+
+```powershell
+$library = New-IMLibrary -Name 'Mobile Uploads' -ImportPaths '/uploads/mobile'
+Write-Output "Created library: $($library.name) with ID: $($library.id)"
+```
+
+Creates a library and captures the returned library object for further processing.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define a immich session object to use.
+This is useful when you are connected to more than one immich instance.
+
+-Session $Session
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Specifies the display name for the new library.
+This name appears in the Immich
+interface and should clearly identify the library's purpose or content source.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExclusionPatterns
+
+Defines file and folder patterns to exclude from library scanning.
+These patterns
+help filter out unwanted files such as system files, temporary files, or specific
+file types that should not be imported as assets.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ImportPaths
+
+Specifies the file system paths that the library should monitor for assets.
+These paths define the directories from which the library will import photos,
+videos, and other supported media files.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OwnerId
+
+Specifies the user ID of the library owner.
+The owner has administrative control
+over the library settings and can manage access permissions for other users.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+After creating a library, use Sync-IMLibrary to initiate the initial scan and
+import of existing assets from the configured import paths.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

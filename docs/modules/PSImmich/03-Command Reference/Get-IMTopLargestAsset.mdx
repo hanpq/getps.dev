@@ -1,0 +1,130 @@
+---
+id: Get-IMTopLargestAsset
+title: Get-IMTopLargestAsset
+description: Help page for the Powershell "Get-IMTopLargestAsset" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves the largest assets from Immich
+
+## SYNTAX
+
+```powershell
+Get-IMTopLargestAsset [[-Session] <ImmichSession>] [[-Size] <Int32>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Gets the top largest assets by file size from your Immich library.
+This is a convenience
+function that calls the large-assets search API without any filters to return the
+biggest files in your collection.
+Results include file size information and can be
+easily sorted or filtered as needed.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMTopLargestAsset
+```
+
+Returns the top 100 largest assets in your library.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMTopLargestAsset -Size 50
+```
+
+Returns the top 50 largest assets.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMTopLargestAsset | Sort-Object exifInfo.fileSizeInByte -Descending | Select-Object -First 10
+```
+
+Gets the largest assets and sorts them by actual file size, showing the top 10.
+
+## PARAMETERS
+
+### -Session
+
+Optionally define an Immich session object to use.
+This is useful when you are connected to more than one Immich instance.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Size
+
+Maximum number of assets to return.
+Defaults to 100, maximum is 1000.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: 100
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+This cmdlet is a simplified interface to the large-assets search endpoint.
+For more advanced filtering by date, location, type, etc., use the full search functionality available in other cmdlets.
+The results include full asset metadata including exifInfo.fileSizeInByte for precise size information.
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.
