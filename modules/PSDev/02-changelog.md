@@ -7,7 +7,46 @@ title: Changelog
 The format is based on and uses the types of changes according to [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.1](https://github.com/hanpq/PSDev/compare/v1.8.0...v1.8.1) (2026-11-05)
+
+### Bug Fixes
+
+* trigger beta release ([69a60f5](https://github.com/hanpq/PSDev/commit/69a60f572f4578677da1debdde12605f9407a1d7))
+
+* correct spelling of Docusaurus in RequiredModules.psd1 ([8743788](https://github.com/hanpq/PSDev/commit/874378859e3830e2019b33e5109a679750e1642b))
+
+## [1.8.1-beta002](https://github.com/hanpq/PSDev/compare/v1.8.1-beta001...v1.8.1-beta002) (2026-11-05)
+
+
+### Bug Fixes
+
+* trigger beta release ([69a60f5](https://github.com/hanpq/PSDev/commit/69a60f572f4578677da1debdde12605f9407a1d7))
+
+## [1.8.1-beta001](https://github.com/hanpq/PSDev/compare/v1.8.0...v1.8.1-beta001) (2026-11-05)
+
+
+### Bug Fixes
+
+* correct spelling of Docusaurus in RequiredModules.psd1 ([8743788](https://github.com/hanpq/PSDev/commit/874378859e3830e2019b33e5109a679750e1642b))
+
 ## [Unreleased]
+
+### Added
+
+- Added `Get-PostNordNextDelivery` to look up upcoming delivery dates.
+- Added `Test-GalleryModuleUpdate` to check PowerShell Gallery modules for updates.
+- Added commands to inspect .NET type members, constructors, and method signatures.
+- Added `Start-LogTail` for color-coded live log monitoring.
+- Added `Save-ExchangeHybridWizard` to download and package the wizard.
+
+### Changed
+
+- `New-Password` now uses a cryptographic random number generator in PowerShell Core.
+- Added usage help and examples for the new commands.
+
+### Fixed
+
+- Corrected the default memorable password format to match its documented pattern.
 
 ## [1.8.0] - 2024-10-30
 
@@ -132,4 +171,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Removed debug-string tests because of incompatibility with Windows Powershell. New tests should be created.
-

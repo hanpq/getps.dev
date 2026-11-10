@@ -13,6 +13,8 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
+Converts between various data transfer speed metrics.
+
 ## SYNTAX
 
 ### Bps
@@ -129,7 +131,31 @@ Convert-Metric -Gbit <Double> [-ShortUnits] [-Round] [-RoundMethod <String>]
 
 ## DESCRIPTION
 
-Function that converts speed metrics
+Convert-Metric is a utility function for converting between bytes, bits, kilobytes, megabytes, gigabytes per second, minute, or hour.
+It supports both bits and bytes, and can handle conversions for per-second, per-minute, and per-hour rates.
+The function can round results using either standard rounding or a custom scaling method, and can output results with short or descriptive unit names.
+
+Supported input metrics:
+    - Bytes per second (Bps)
+    - Bytes per minute (Bpm)
+    - Bytes per hour (Bph)
+    - Bits per second (Bit)
+    - Kilobytes per second (Kbps)
+    - Kilobytes per minute (Kbpm)
+    - Kilobytes per hour (Kbph)
+    - Kilobits per second (Kbit)
+    - Megabytes per second (Mbps)
+    - Megabytes per minute (Mbpm)
+    - Megabytes per hour (Mbph)
+    - Megabits per second (Mbit)
+    - Gigabytes per second (Gbps)
+    - Gigabytes per minute (Gbpm)
+    - Gigabytes per hour (Gbph)
+    - Gigabits per second (Gbit)
+
+Output is an ordered dictionary containing all supported metrics, either with short units (e.g.
+"MBps") or descriptive names (e.g.
+"MB per sec").
 
 ## EXAMPLES
 
@@ -491,12 +517,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Collections.Specialized.OrderedDictionary
+### [System.Collections.Specialized.OrderedDictionary]
 
+### An ordered dictionary with converted metric values.
 ## NOTES
+Author: Hannes Palmquist
+Copyright (c) Hannes Palmquist.
+All rights reserved.
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSDev)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.
