@@ -113,6 +113,13 @@ Get-IMServer [-Session <ImmichSession>] [-VersionCheck] [-ProgressAction <Action
 Get-IMServer [-Session <ImmichSession>] [-Ping] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
+### versioncheckstate
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-VersionCheckState] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
 ## DESCRIPTION
 
 Gets detailed server properties including version, features, statistics, and configuration.
@@ -435,6 +442,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -VersionCheckState
+
+Retrieves the state of the last server version check, including the checked time and the latest release version found.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: versioncheckstate
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProgressAction
 
 \{\{ Fill ProgressAction Description \}\}
@@ -463,6 +486,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

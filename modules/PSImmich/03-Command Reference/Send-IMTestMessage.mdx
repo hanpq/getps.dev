@@ -20,7 +20,7 @@ Sends a test SMTP message to validate email notification configuration.
 ```powershell
 Send-IMTestMessage [[-Session] <ImmichSession>] [[-enabled] <Boolean>] [-from] <String> [-replyto] <String>
  [-hostname] <String> [[-ignoreCert] <Boolean>] [-Password] <SecureString> [[-port] <Int32>]
- [[-username] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [[-Secure] <Boolean>] [[-username] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -217,6 +217,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Secure
+
+Controls whether the SMTP connection uses TLS/SSL from the start.
+Defaults to $false.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -username
 
 Specifies the username for SMTP server authentication.
@@ -229,7 +246,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -266,6 +283,6 @@ Successful test messages indicate that the SMTP settings are correct and functio
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

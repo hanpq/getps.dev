@@ -20,13 +20,14 @@ Retrieves Immich workflows
 ### list (Default)
 
 ```powershell
-Get-IMWorkflow [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMWorkflow [-Session <ImmichSession>] [-Name <String>] [-Description <String>] [-Enabled <Boolean>]
+ [-Logging <Boolean>] [-Trigger <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### id
 
 ```powershell
-Get-IMWorkflow [-Session <ImmichSession>] -Id <String> [-ProgressAction <ActionPreference>]
+Get-IMWorkflow [-Session <ImmichSession>] -Id <String> [-Share] [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
@@ -49,12 +50,28 @@ Retrieves all workflows available to the current user.
 ### EXAMPLE 2
 
 ```powershell
+Get-IMWorkflow -Trigger 'AssetCreate' -Enabled:$true
+```
+
+Retrieves enabled workflows that run when an asset is created.
+
+### EXAMPLE 3
+
+```powershell
+Get-IMWorkflow -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db' -Share
+```
+
+Retrieves the shareable representation of a workflow.
+
+### EXAMPLE 4
+
+```powershell
 Get-IMWorkflow -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
 ```
 
 Retrieves a specific workflow by its ID.
 
-### EXAMPLE 3
+### EXAMPLE 5
 
 ```powershell
 'workflow1-uuid', 'workflow2-uuid' | Get-IMWorkflow
@@ -81,6 +98,91 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Name
+
+Filters the workflow list by name.
+Only applies to the list parameter set.
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+
+Filters the workflow list by description.
+Only applies to the list parameter set.
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Enabled
+
+Filters the workflow list by enabled state.
+Only applies to the list parameter set.
+
+```yaml
+Type: Boolean
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Logging
+
+Filters the workflow list by whether run results are logged.
+Only applies to the list parameter set.
+
+```yaml
+Type: Boolean
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Trigger
+
+Filters the workflow list by trigger type.
+Only applies to the list parameter set.
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 
 The UUID of a specific workflow to retrieve.
@@ -95,6 +197,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Share
+
+Retrieves the shareable representation of the workflow specified by Id instead of the workflow itself.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: id
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -128,6 +246,6 @@ This feature is in Alpha state and may be subject to changes in future Immich ve
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

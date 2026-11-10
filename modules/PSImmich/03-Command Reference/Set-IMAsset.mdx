@@ -22,7 +22,7 @@ Updates Immich asset properties and associations
 ```powershell
 Set-IMAsset [-Session <ImmichSession>] -Id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
  [-Latitude <Int32>] [-Longitude <Int32>] [-AddToAlbum <String>] [-RemoveFromAlbum <String>] [-AddTag <String>]
- [-RemoveTag <String>] [-AddToFace <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
+ [-RemoveTag <String>] [-AddToMemory <String>] [-RemoveFromMemory <String>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -31,9 +31,8 @@ Set-IMAsset [-Session <ImmichSession>] -Id <String[]> [-DateTimeOriginal <String
 ```powershell
 Set-IMAsset [-Session <ImmichSession>] -Id <String[]> [-DateTimeOriginal <String>] [-IsFavorite <Boolean>]
  [-Latitude <Int32>] [-Longitude <Int32>] [-Description <String>] [-AddToAlbum <String>]
- [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>] [-AddToFace <String>]
- [-AddToMemory <String>] [-RemoveFromMemory <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-RemoveFromAlbum <String>] [-AddTag <String>] [-RemoveTag <String>] [-AddToMemory <String>]
+ [-RemoveFromMemory <String>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -256,22 +255,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AddToFace
-
-The UUID of a face to associate the asset(s) with.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -AddToMemory
 
 The UUID of a memory to add the asset(s) to.
@@ -367,6 +350,6 @@ This cmdlet supports ShouldProcess and will prompt for confirmation before makin
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

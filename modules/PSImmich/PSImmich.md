@@ -7,7 +7,7 @@ title: PSImmich
 This project has adopted the following policies [![CodeOfConduct](https://img.shields.io/badge/Code%20Of%20Conduct-gray)](https://github.com/hanpq/PSImmich/blob/main/.github/CODE_OF_CONDUCT.md) [![Contributing](https://img.shields.io/badge/Contributing-gray)](https://github.com/hanpq/PSImmich/blob/main/.github/CONTRIBUTING.md) [![Security](https://img.shields.io/badge/Security-gray)](https://github.com/hanpq/PSImmich/blob/main/.github/SECURITY.md) 
 
 ## Project status
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hanpq/PSImmich/build.yml?branch=main&label=build&logo=github)](https://github.com/hanpq/PSImmich/actions/workflows/build.yml) [![Codecov](https://img.shields.io/codecov/c/github/hanpq/PSImmich?logo=codecov&token=qJqWlwMAiD)](https://codecov.io/gh/hanpq/PSImmich) [![Platform](https://img.shields.io/powershellgallery/p/PSImmich?logo=ReasonStudios)](https://img.shields.io/powershellgallery/p/PSImmich) [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PSImmich?label=downloads)](https://www.powershellgallery.com/packages/PSImmich) [![License](https://img.shields.io/github/license/hanpq/PSImmich)](https://github.com/hanpq/PSImmich/blob/main/LICENSE) [![docs](https://img.shields.io/badge/docs-getps.dev-blueviolet)](https://www.getps.dev/modules/PSImmich) [![changelog](https://img.shields.io/badge/changelog-getps.dev-blueviolet)](https://github.com/hanpq/PSImmich/blob/main/CHANGELOG.md) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/hanpq/PSImmich?label=version&sort=semver) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/hanpq/PSImmich?include_prereleases&label=prerelease&sort=semver) ![Static Badge](https://img.shields.io/badge/80%25%20(131%2F172)-green?label=API%20Coverage) ![Static Badge2](https://img.shields.io/badge/1946-green?label=Unit%2FQuality%2FIntegration%20tests)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hanpq/PSImmich/ci.yml?branch=main&label=build&logo=github)](https://github.com/hanpq/PSImmich/actions/workflows/ci.yml) [![Codecov](https://img.shields.io/codecov/c/github/hanpq/PSImmich?logo=codecov&token=qJqWlwMAiD)](https://codecov.io/gh/hanpq/PSImmich) [![Platform](https://img.shields.io/powershellgallery/p/PSImmich?logo=ReasonStudios)](https://img.shields.io/powershellgallery/p/PSImmich) [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PSImmich?label=downloads)](https://www.powershellgallery.com/packages/PSImmich) [![License](https://img.shields.io/github/license/hanpq/PSImmich)](https://github.com/hanpq/PSImmich/blob/main/LICENSE) [![docs](https://img.shields.io/badge/docs-getps.dev-blueviolet)](https://getps.dev/modules/PSImmich/getstarted) [![changelog](https://img.shields.io/badge/changelog-getps.dev-blueviolet)](https://github.com/hanpq/PSImmich/blob/main/CHANGELOG.md) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/hanpq/PSImmich?label=version&sort=semver) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/hanpq/PSImmich?include_prereleases&label=prerelease&sort=semver) ![Static Badge](https://img.shields.io/badge/80%25%20(131%2F172)-green?label=API%20Coverage)
 
 
 ## About
@@ -75,180 +75,14 @@ Add-IMAssetTag     Add-IMMyProfilePicture    Add-IMPartner      Add-IMSharedLink
 
 ## Available commands
 
-Below is a reference of the available command. For documentation about each command please see the [docs](https://www.getps.dev/modules/PSImmich)
+For documentation about each command please see the [docs](https://getps.dev/modules/PSImmich)
 
-### Activity
+## Versioning
 
-- Add-IMActivity
-- Get-IMActivity
-- Get-IMActivityStatistic
-- Remove-IMActivity
+PSImmich follows Immich's versioning scheme to indicate compatibility:
 
-### Album
+- **Major.Minor versions match Immich** - PSImmich 2.3.x is developed and tested against Immich 2.3.x
+- **Patch version starts with Immich's patch number** - If Immich releases 2.3.1, PSImmich starts at 2.3.1  
+- **Subsequent PSImmich releases increment the patch** - Additional PSImmich updates become 2.3.2, 2.3.3, etc. until the next Immich version is released.
 
-- Add-IMAlbumUser
-- Get-IMAlbum
-- Get-IMAlbumCount
-- New-IMAlbum
-- Remove-IMAlbum
-- Remove-IMAlbumUser
-- Rename-IMAlbum
-- Set-IMAlbum
-- Set-IMAlbumUser
-
-### API key
-
-- Get-IMAPIKey
-- New-IMAPIKey
-- Remove-IMAPIKey
-- Set-IMAPIKey
-
-### Asset
-
-- Export-IMAssetThumbnail
-- Get-IMAsset
-- Get-IMAssetMemoryLane
-- Get-IMAssetStatistic
-- Import-IMAsset
-- Remove-IMAsset
-- Restore-IMAsset
-- Save-IMAsset
-- Set-IMAsset
-- Start-IMAVideoTranscode
-- Update-IMAssetMetadata
-- Update-IMAssetThumbnail
-
-### Audit
-
-- Get-IMAuditDelete
-
-### Auth
-
-- Test-IMAccessToken
-
-### AuthSession
-
-- Get-IMAuthSession
-- Remove-IMAuthSession
-
-### Face
-
-- Get-IMFace
-
-### FileReport
-
-- Get-IMFileChecksum
-
-### Job
-
-- Clear-IMJob
-- Get-IMJob
-- Resume-IMJob
-- Start-IMJob
-- Suspend-IMJob
-
-### Library
-
-- Get-IMLibrary
-- New-IMLibrary
-- Remove-IMLibrary
-- Remove-IMOfflineLibraryFile
-- Set-IMLibrary
-- Sync-IMLibrary
-- Test-IMLibrary
-
-### Map
-
-- Get-IMMapMarker
-- Get-IMMapStyle
-
-### Memories
-
-- Get-IMMemory
-- New-IMMemory
-- Remove-IMMemory
-- Set-IMMemory
-
-### Notification
-
-- Send-IMTestMessage
-
-### Partner
-
-- Add-IMPartner
-- Get-IMPartner
-- Remove-IMPartner
-- Set-IMPartner
-
-### Person
-
-- Export-IMPersonThumbnail
-- Get-IMPerson
-- Merge-IMPerson
-- New-IMPerson
-- Set-IMPerson
-
-### Search
-
-- Find-IMAsset
-- Find-IMCity
-- Find-IMExploreData
-- Find-IMPerson
-- Find-IMPlace
-
-### ServerConfig
-
-- Get-IMConfig
-- Set-IMConfig
-
-### ServerInfo
-
-- Get-IMServer
-- Get-IMServerConfig
-- Get-IMServerFeature
-- Get-IMServerStatistic
-- Get-IMServerStorage
-- Get-IMServerVersion
-- Get-IMSupportedMediaType
-- Get-IMTheme
-- Test-IMPing
-
-### Session
-
-- Connect-Immich
-- Disconnect-Immich
-- Get-IMSession
-- Invoke-ImmichMethod
-
-### SharedLink
-
-- Add-IMSharedLinkAsset
-- Get-IMSharedLink
-- New-IMSharedLink
-- Remove-IMSharedLink
-- Remove-IMSharedLinkAsset
-- Set-IMSharedLink
-
-### Tag
-
-- Add-IMAssetTag
-- Get-IMTag
-- New-IMTag
-- Remove-IMAssetTag
-- Remove-IMTag
-- Rename-IMTag
-
-### Timeline
-
-- Get-IMTimeBucket
-
-### User
-
-- Add-IMMyProfilePicture
-- Export-IMProfilePicture
-- Get-IMUser
-- New-IMUser
-- Remove-IMMyProfilePicture
-- Remove-IMUser
-- Restore-IMUser
-- Set-IMUser
+This ensures you can easily identify which Immich version is supported by checking the first two version numbers.

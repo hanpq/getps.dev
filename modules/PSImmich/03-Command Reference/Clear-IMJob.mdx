@@ -46,14 +46,6 @@ Clear-IMJob -Job 'faceDetection' -FailedOnly
 
 Clears only failed jobs from the face detection queue.
 
-### EXAMPLE 3
-
-```powershell
-Clear-IMJob -Job 'metadataExtraction' -Force
-```
-
-Forcibly clears the metadata extraction job queue.
-
 ## PARAMETERS
 
 ### -Session
@@ -94,6 +86,8 @@ Accept wildcard characters: False
 ### -FailedOnly
 
 Clears only failed jobs from the queue, leaving completed and pending jobs intact.
+This uses the deprecated
+jobs API because the queues API cannot clear failed jobs without also clearing the queue.
 
 ```yaml
 Type: SwitchParameter
@@ -109,7 +103,8 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the operation to proceed without additional confirmation for potentially disruptive actions.
+Retained for compatibility.
+The queues API has no force option, so this parameter has no effect and a warning is written.
 
 ```yaml
 Type: SwitchParameter
@@ -154,6 +149,6 @@ The FailedOnly parameter is recommended for routine maintenance.
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

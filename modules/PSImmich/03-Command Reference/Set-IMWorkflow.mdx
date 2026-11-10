@@ -19,7 +19,7 @@ Updates an Immich workflow
 
 ```powershell
 Set-IMWorkflow [[-Session] <ImmichSession>] [-Id] <String[]> [[-Name] <String>] [[-Description] <String>]
- [[-TriggerType] <String>] [[-Enabled] <Boolean>] [[-Actions] <Hashtable[]>] [[-Filters] <Hashtable[]>]
+ [[-Trigger] <String>] [[-Enabled] <Boolean>] [[-Logging] <Boolean>] [[-Steps] <Hashtable[]>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -50,10 +50,10 @@ Disables the workflow.
 ### EXAMPLE 3
 
 ```powershell
-Set-IMWorkflow -Id 'workflow-uuid' -Name 'New Workflow Name' -TriggerType 'schedule'
+Set-IMWorkflow -Id 'workflow-uuid' -Name 'New Workflow Name' -Trigger 'AssetTagged'
 ```
 
-Renames the workflow and changes its trigger type.
+Renames the workflow and changes its trigger.
 
 ## PARAMETERS
 
@@ -123,9 +123,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TriggerType
+### -Trigger
 
-The trigger type for the workflow.
+The trigger for the workflow.
 This determines when the workflow will be executed.
 
 ```yaml
@@ -156,25 +156,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Actions
+### -Logging
 
-An array of workflow action objects that define what the workflow will do when triggered.
+Specifies whether run results of the workflow are logged.
 
 ```yaml
-Type: Hashtable[]
+Type: Boolean
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 7
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Filters
+### -Steps
 
-An array of workflow filter objects that define the conditions for workflow execution.
+An array of step hashtables.
+Each step requires a 'method' and a 'config' hashtable, and may include 'enabled'.
+Replaces all existing steps of the workflow.
 
 ```yaml
 Type: Hashtable[]
@@ -249,9 +251,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 This cmdlet supports ShouldProcess and will prompt for confirmation before making changes.
 This feature is in Alpha state and may be subject to changes in future Immich versions.
+Uses the PUT /workflows/\{id\} endpoint, which is marked deprecated by the Immich API without a replacement in 3.3.6.
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

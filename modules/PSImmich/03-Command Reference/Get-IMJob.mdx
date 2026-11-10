@@ -23,9 +23,13 @@ Get-IMJob [[-Session] <ImmichSession>] [-ProgressAction <ActionPreference>] [<Co
 
 ## DESCRIPTION
 
-Retrieves information about all background jobs in Immich, including their status, progress,
-and queue information.
+Retrieves information about all background job queues in Immich, including their paused state and
+job statistics.
 This helps monitor system processing and job performance.
+
+Uses the queues API (GET /queues).
+Each queue is returned with its name, isPaused flag and a
+statistics object, replacing the deprecated jobs API shape that exposed jobCounts.
 
 ## EXAMPLES
 
@@ -35,24 +39,24 @@ This helps monitor system processing and job performance.
 Get-IMJob
 ```
 
-Retrieves information about all background jobs.
+Retrieves information about all background job queues.
 
 ### EXAMPLE 2
 
 ```powershell
 $jobs = Get-IMJob
-$jobs | Where-Object {$_.jobCounts.active -gt 0}
+$jobs | Where-Object {$_.statistics.active -gt 0}
 ```
 
-Gets jobs that are currently active.
+Gets job queues that are currently active.
 
 ### EXAMPLE 3
 
 ```powershell
-Get-IMJob | Format-Table name, @{Name='Active';Expression={$_.jobCounts.active}}, @{Name='Waiting';Expression={$_.jobCounts.waiting}}
+Get-IMJob | Format-Table name, isPaused, @{Name='Active';Expression={$_.statistics.active}}, @{Name='Waiting';Expression={$_.statistics.waiting}}
 ```
 
-Displays job information in a formatted table showing active and waiting job counts.
+Displays queue information in a formatted table showing active and waiting job counts.
 
 ## PARAMETERS
 
@@ -99,10 +103,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Job information includes queue status, active jobs, waiting jobs, and completed job counts for each job type.
+Queue information includes the paused state, active, waiting, completed, delayed, failed and paused job counts for each job type.
+Breaking change: the output no longer includes jobCounts.
+Use statistics instead.
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

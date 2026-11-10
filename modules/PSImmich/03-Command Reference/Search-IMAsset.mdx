@@ -13,39 +13,77 @@ hide_table_of_contents: false
 
 ## SYNOPSIS
 
-Searches assets using AI content analysis.
+Searches assets using metadata filters or AI-based smart search.
 
 ## SYNTAX
 
+### Metadata (Default)
+
 ```powershell
-Search-IMAsset [[-Session] <ImmichSession>] [[-City] <String>] [[-Country] <String>]
- [[-CreatedAfter] <DateTime>] [[-CreatedBefore] <DateTime>] [[-DeviceId] <String>] [[-Visibility] <String>]
- [[-OCR] <String>] [[-IsEncoded] <Boolean>] [[-IsFavorite] <Boolean>] [[-IsMotion] <Boolean>]
- [[-IsNotInAlbum] <Boolean>] [[-IsOffline] <Boolean>] [[-LensModel] <String>] [[-LibraryId] <String>]
- [[-AlbumIds] <String[]>] [[-Make] <String>] [[-Model] <String>] [[-Language] <String>]
- [[-PersonIds] <String[]>] [-Query] <String> [[-Rating] <Int32>] [[-Size] <Int32>] [[-State] <String>]
- [[-TagIds] <String[]>] [[-TakenAfter] <DateTime>] [[-TakenBefore] <DateTime>] [[-TrashedAfter] <DateTime>]
- [[-TrashedBefore] <DateTime>] [[-Type] <String>] [[-UpdatedAfter] <DateTime>] [[-UpdatedBefore] <DateTime>]
- [[-WithDeleted] <Boolean>] [[-WithEXIF] <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Search-IMAsset [-Session <ImmichSession>] [-Smart] [-Order <String>] [-WithPeople <Boolean>]
+ [-WithStacked <Boolean>] [-WithEXIF <Boolean>] [-Size <Int32>] [-City <String>] [-Country <String>]
+ [-State <String>] [-Make <String>] [-Model <String>] [-LensModel <String>] [-Checksum <String>]
+ [-EncodedVideoPath <String>] [-Id <String>] [-LibraryId <String>] [-OCR <String>] [-OriginalFileName <String>]
+ [-OriginalPath <String>] [-Rating <Int32>] [-Visibility <String>] [-Type <String>] [-IsEncoded <Boolean>]
+ [-IsFavorite <Boolean>] [-IsMotion <Boolean>] [-IsOffline <Boolean>] [-IsNotInAlbum] [-AlbumIds <String[]>]
+ [-PersonIds <String[]>] [-TagIds <String[]>] [-CreatedAfter <DateTime>] [-CreatedBefore <DateTime>]
+ [-TakenAfter <DateTime>] [-TakenBefore <DateTime>] [-UpdatedAfter <DateTime>] [-UpdatedBefore <DateTime>]
+ [-TrashedAfter <DateTime>] [-TrashedBefore <DateTime>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### Smart
+
+```powershell
+Search-IMAsset [-Session <ImmichSession>] [-Smart] -Query <String> [-Language <String>] [-WithEXIF <Boolean>]
+ [-Size <Int32>] [-City <String>] [-Country <String>] [-State <String>] [-Make <String>] [-Model <String>]
+ [-LensModel <String>] [-Checksum <String>] [-EncodedVideoPath <String>] [-Id <String>] [-LibraryId <String>]
+ [-OCR <String>] [-OriginalFileName <String>] [-OriginalPath <String>] [-Rating <Int32>] [-Visibility <String>]
+ [-Type <String>] [-IsEncoded <Boolean>] [-IsFavorite <Boolean>] [-IsMotion <Boolean>] [-IsOffline <Boolean>]
+ [-IsNotInAlbum] [-AlbumIds <String[]>] [-PersonIds <String[]>] [-TagIds <String[]>] [-CreatedAfter <DateTime>]
+ [-CreatedBefore <DateTime>] [-TakenAfter <DateTime>] [-TakenBefore <DateTime>] [-UpdatedAfter <DateTime>]
+ [-UpdatedBefore <DateTime>] [-TrashedAfter <DateTime>] [-TrashedBefore <DateTime>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Uses machine learning to find assets by visual content, faces, objects, and OCR text.
-Results may vary based on model accuracy.
-For metadata searches, use Find-IMAsset.
+By default, searches asset metadata using the Immich metadata search.
+Filter
+parameters are sent in the SearchFilter object.
+Multiple values for the
+AlbumIds, PersonIds and TagIds parameters match assets that have any of the
+given values.
+
+With -Smart, uses machine learning to find assets by visual content, faces,
+objects and OCR text.
+Smart search requires -Query.
+Results depend on model
+accuracy.
+
+Date parameters are inclusive: CreatedAfter, TakenAfter, UpdatedAfter and
+TrashedAfter match values on or after the date; the *Before parameters match
+values on or before the date.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-Search-IMAsset -Query 'Road'
+Search-IMAsset -Type VIDEO -IsFavorite $true
 ```
 
-Searches for assets matching content Road.
+Returns favorite videos using metadata search.
 
 ### EXAMPLE 2
+
+```powershell
+Search-IMAsset -Smart -Query 'Road'
+```
+
+Searches for assets matching the content 'Road' using smart search.
+
+### EXAMPLE 3
 
 ```powershell
 Search-IMAsset -OCR 'birthday party'
@@ -65,8 +103,142 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Smart
+
+Uses smart (AI) search instead of metadata search.
+Requires -Query.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Query
+
+Natural-language query for smart search.
+Only valid with -Smart.
+
+```yaml
+Type: String
+Parameter Sets: Smart
+Aliases: SearchString
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Language
+
+Language of the smart search query.
+Only valid with -Smart.
+
+```yaml
+Type: String
+Parameter Sets: Smart
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Order
+
+Sort direction for metadata search: asc or desc.
+Not valid with -Smart.
+
+```yaml
+Type: String
+Parameter Sets: Metadata
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithPeople
+
+Include people in the results.
+Metadata search only.
+
+```yaml
+Type: Boolean
+Parameter Sets: Metadata
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithStacked
+
+Include stacked assets in the results.
+Metadata search only.
+
+```yaml
+Type: Boolean
+Parameter Sets: Metadata
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithEXIF
+
+Include EXIF data in the results.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Size
+
+Number of items per page of results sent to the server.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -81,7 +253,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -97,47 +269,15 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CreatedAfter
+### -State
 
-Include assets created after this date.
-
-```yaml
-Type: DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreatedBefore
-
-Include assets created before this date.
-
-```yaml
-Type: DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceId
-
-Filter by device identifier.
+Filter by state name.
 
 ```yaml
 Type: String
@@ -145,15 +285,15 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Visibility
+### -Make
 
-Asset visibility: archive, timeline, hidden, or locked.
+Filter by camera make.
 
 ```yaml
 Type: String
@@ -161,7 +301,103 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Model
+
+Filter by camera model.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LensModel
+
+Filter by lens model.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Checksum
+
+Filter by file checksum.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncodedVideoPath
+
+Filter by encoded video path.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+Filter by asset id.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LibraryId
+
+Filter by library id.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -177,7 +413,87 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OriginalFileName
+
+Filter by original file name.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OriginalPath
+
+Filter by original file path.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Rating
+
+Filter by rating, from -1 to 5.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Visibility
+
+Asset visibility: archive, timeline, hidden, or locked.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+
+Asset type: IMAGE, VIDEO, AUDIO or OTHER.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -193,7 +509,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: Named
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -201,7 +517,7 @@ Accept wildcard characters: False
 
 ### -IsFavorite
 
-Favorite filter
+Filter by favorite status.
 
 ```yaml
 Type: Boolean
@@ -209,7 +525,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: Named
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -217,7 +533,7 @@ Accept wildcard characters: False
 
 ### -IsMotion
 
-Motion filter
+Filter by motion photo status.
 
 ```yaml
 Type: Boolean
@@ -225,23 +541,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 11
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsNotInAlbum
-
-Not in Album filter
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 12
+Position: Named
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -249,7 +549,7 @@ Accept wildcard characters: False
 
 ### -IsOffline
 
-Offline filter
+Filter by offline status.
 
 ```yaml
 Type: Boolean
@@ -257,47 +557,31 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 13
+Position: Named
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LensModel
+### -IsNotInAlbum
 
-Lens model filter
+Filter to assets that are in no album ($true) or in at least one album ($false).
 
 ```yaml
-Type: String
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 14
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LibraryId
-
-Library id filter
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 15
-Default value: None
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AlbumIds
 
-Album id filter (array of UUIDs)
+Match assets in any of the given album ids.
 
 ```yaml
 Type: String[]
@@ -305,55 +589,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 16
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Make
-
-Make filter
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 17
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Model
-
-Model filter
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 18
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Language
-
-Language filter
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 19
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -361,7 +597,7 @@ Accept wildcard characters: False
 
 ### -PersonIds
 
-Person id filter
+Match assets containing any of the given person ids.
 
 ```yaml
 Type: String[]
@@ -369,71 +605,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 20
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Query
-
-Query filter
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: SearchString
-
-Required: True
-Position: 21
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Rating
-
-Rating filter
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 22
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Size
-
-Size of rest call page
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 23
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -State
-
-State filter
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 24
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -441,7 +613,7 @@ Accept wildcard characters: False
 
 ### -TagIds
 
-Tag id filter
+Match assets with any of the given tag ids.
 
 ```yaml
 Type: String[]
@@ -449,7 +621,39 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 25
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CreatedAfter
+
+Include assets created on or after this date.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CreatedBefore
+
+Include assets created on or before this date.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -457,7 +661,7 @@ Accept wildcard characters: False
 
 ### -TakenAfter
 
-Taken after filter
+Include assets taken on or after this date.
 
 ```yaml
 Type: DateTime
@@ -465,7 +669,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 26
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -473,7 +677,7 @@ Accept wildcard characters: False
 
 ### -TakenBefore
 
-Taken before filter
+Include assets taken on or before this date.
 
 ```yaml
 Type: DateTime
@@ -481,55 +685,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 27
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TrashedAfter
-
-Trashed after filter
-
-```yaml
-Type: DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 28
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TrashedBefore
-
-Trashed before filter
-
-```yaml
-Type: DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 29
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Type
-
-Type filter
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 30
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -537,7 +693,7 @@ Accept wildcard characters: False
 
 ### -UpdatedAfter
 
-Updated after filter
+Include assets updated on or after this date.
 
 ```yaml
 Type: DateTime
@@ -545,7 +701,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 31
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -553,7 +709,7 @@ Accept wildcard characters: False
 
 ### -UpdatedBefore
 
-Updated before filter
+Include assets updated on or before this date.
 
 ```yaml
 Type: DateTime
@@ -561,40 +717,40 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 32
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WithDeleted
+### -TrashedAfter
 
-Deleted filter
+Include assets trashed on or after this date.
 
 ```yaml
-Type: Boolean
+Type: DateTime
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 33
-Default value: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WithEXIF
+### -TrashedBefore
 
-Exif filter
+Include assets trashed on or before this date.
 
 ```yaml
-Type: Boolean
+Type: DateTime
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 34
-Default value: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -625,10 +781,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Requires machine learning models to be enabled and trained.
+Smart search requires machine learning models to be enabled and trained.
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

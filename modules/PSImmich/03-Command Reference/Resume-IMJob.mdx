@@ -41,18 +41,18 @@ Resumes thumbnail generation processing.
 ### EXAMPLE 2
 
 ```powershell
-Resume-IMJob -Job 'videoConversion' -Force
+Resume-IMJob -Job 'videoConversion'
 ```
 
-Forcibly resumes video conversion jobs.
+Resumes video conversion jobs.
 
 ### EXAMPLE 3
 
 ```powershell
-Get-IMJob | Where-Object {$_.jobCounts.paused -gt 0} | ForEach-Object { Resume-IMJob -Job $_.name }
+Get-IMJob | Where-Object {$_.isPaused} | ForEach-Object { Resume-IMJob -Job $_.name }
 ```
 
-Resumes all job types that have paused jobs.
+Resumes all job types whose queues are paused.
 
 ## PARAMETERS
 
@@ -93,7 +93,8 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the resumption without additional confirmation.
+Retained for compatibility.
+The queues API has no force option, so this parameter has no effect and a warning is written.
 
 ```yaml
 Type: SwitchParameter
@@ -138,6 +139,6 @@ Monitor job status with Get-IMJob to verify jobs are processing normally after r
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

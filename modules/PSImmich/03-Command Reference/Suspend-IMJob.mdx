@@ -42,10 +42,10 @@ Suspends thumbnail generation processing.
 ### EXAMPLE 2
 
 ```powershell
-Suspend-IMJob -Job 'videoConversion' -Force
+Suspend-IMJob -Job 'videoConversion'
 ```
 
-Forcibly suspends video conversion jobs.
+Suspends video conversion jobs.
 
 ### EXAMPLE 3
 
@@ -94,7 +94,8 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the suspension without additional confirmation.
+Retained for compatibility.
+The queues API has no force option, so this parameter has no effect and a warning is written.
 
 ```yaml
 Type: SwitchParameter
@@ -140,6 +141,6 @@ Suspending jobs is useful during maintenance windows or when system resources ar
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

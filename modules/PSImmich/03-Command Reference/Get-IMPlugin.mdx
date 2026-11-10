@@ -20,7 +20,8 @@ Retrieves Immich plugins
 ### list (Default)
 
 ```powershell
-Get-IMPlugin [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMPlugin [-Session <ImmichSession>] [-Name <String>] [-Title <String>] [-Version <String>]
+ [-Description <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### id
@@ -32,8 +33,7 @@ Get-IMPlugin [-Session <ImmichSession>] -Id <String> [-ProgressAction <ActionPre
 ## DESCRIPTION
 
 Retrieves one or more plugins from the Immich server.
-Can retrieve all plugins or a specific plugin by ID.
-Note: Plugin functionality is in Alpha state as of Immich v2.3.1.
+Can retrieve all plugins, optionally filtered, or a specific plugin by ID.
 
 ## EXAMPLES
 
@@ -97,6 +97,70 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -Name
+
+Filter the plugin list by plugin name.
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Title
+
+Filter the plugin list by plugin title.
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Version
+
+Filter the plugin list by plugin version.
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+
+Filter the plugin list by plugin description.
+
+```yaml
+Type: String
+Parameter Sets: list
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProgressAction
 
 \{\{ Fill ProgressAction Description \}\}
@@ -123,10 +187,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-This feature is in Alpha state and may be subject to changes in future Immich versions.
-
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

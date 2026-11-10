@@ -18,9 +18,9 @@ Creates a new Immich workflow
 ## SYNTAX
 
 ```powershell
-New-IMWorkflow [[-Session] <ImmichSession>] [-Name] <String> [[-Description] <String>]
- [[-TriggerType] <String>] [[-Enabled] <Boolean>] [[-Actions] <Hashtable[]>] [[-Filters] <Hashtable[]>]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+New-IMWorkflow [[-Session] <ImmichSession>] [-Name] <String> [[-Description] <String>] [-Trigger] <String>
+ [[-Enabled] <Boolean>] [[-Logging] <Boolean>] [[-Steps] <Hashtable[]>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +35,7 @@ Note: Workflow functionality is in Alpha state as of Immich v2.3.1.
 ### EXAMPLE 1
 
 ```powershell
-New-IMWorkflow -Name 'Auto Tag Photos' -Description 'Automatically tag uploaded photos'
+New-IMWorkflow -Name 'Auto Tag Photos' -Trigger 'AssetCreate' -Description 'Automatically tag uploaded photos'
 ```
 
 Creates a new workflow with basic information.
@@ -43,7 +43,7 @@ Creates a new workflow with basic information.
 ### EXAMPLE 2
 
 ```powershell
-New-IMWorkflow -Name 'Process Videos' -TriggerType 'upload' -Enabled:$false
+New-IMWorkflow -Name 'Process Videos' -Trigger 'AssetTagged' -Enabled:$false
 ```
 
 Creates a new workflow that is initially disabled.
@@ -100,17 +100,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TriggerType
+### -Trigger
 
-The trigger type for the workflow.
+The trigger for the workflow.
 This determines when the workflow will be executed.
+Required by the Immich API.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 4
 Default value: None
 Accept pipeline input: False
@@ -134,25 +135,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Actions
+### -Logging
 
-An array of workflow action objects that define what the workflow will do when triggered.
+Specifies whether run results of the workflow are logged.
 
 ```yaml
-Type: Hashtable[]
+Type: Boolean
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: @()
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Filters
+### -Steps
 
-An array of workflow filter objects that define the conditions for workflow execution.
+An array of step hashtables.
+Each step requires a 'method' (plugin method name) and a 'config' hashtable,
+and may include 'enabled' (boolean).
 
 ```yaml
 Type: Hashtable[]
@@ -161,7 +164,7 @@ Aliases:
 
 Required: False
 Position: 7
-Default value: @()
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -193,10 +196,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 This feature is in Alpha state and may be subject to changes in future Immich versions.
-Workflows can be created with empty filters and actions for later configuration.
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -20,17 +20,20 @@ Retrieves timeline time buckets.
 ### list (Default)
 
 ```powershell
-Get-IMTimeBucket [-Session <ImmichSession>] [-albumId <String>] [-isFavorite <Boolean>] [-isTrashed <Boolean>]
- [-order <String>] [-personId <String>] [-userId <String>] [-withPartners <Boolean>] [-withStacked <Boolean>]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMTimeBucket [-Session <ImmichSession>] [-AlbumId <String>] [-Bbox <String>] [-IsFavorite <Boolean>]
+ [-IsTrashed <Boolean>] [-Key <String>] [-Order <String>] [-OrderBy <String>] [-PersonId <String>]
+ [-Slug <String>] [-TagId <String>] [-UserId <String>] [-Visibility <String>] [-WithCoordinates <Boolean>]
+ [-WithPartners <Boolean>] [-WithStacked <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### timebucket
 
 ```powershell
-Get-IMTimeBucket [-Session <ImmichSession>] [-albumId <String>] [-isFavorite <Boolean>] [-isTrashed <Boolean>]
- [-order <String>] [-personId <String>] -timeBucket <String> [-userId <String>] [-withPartners <Boolean>]
- [-withStacked <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-IMTimeBucket [-Session <ImmichSession>] [-AlbumId <String>] [-Bbox <String>] [-IsFavorite <Boolean>]
+ [-IsTrashed <Boolean>] [-Key <String>] [-Order <String>] [-OrderBy <String>] [-PersonId <String>]
+ [-Slug <String>] [-TagId <String>] -TimeBucket <String> [-UserId <String>] [-Visibility <String>]
+ [-WithCoordinates <Boolean>] [-WithPartners <Boolean>] [-WithStacked <Boolean>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +68,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -albumId
+### -AlbumId
 
 Filter by album ID.
 
@@ -81,7 +84,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isFavorite
+### -Bbox
+
+Bounding box filter (west,south,east,north) for asset coordinates.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsFavorite
 
 Filter by favorite status.
 
@@ -97,7 +116,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -isTrashed
+### -IsTrashed
 
 Filter by trash status.
 
@@ -113,7 +132,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -order
+### -Key
+
+Shared link key for access.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Order
 
 Sort order for results.
 
@@ -124,12 +159,28 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Asc
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -personId
+### -OrderBy
+
+Field used to order assets: takenAt or createdAt.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PersonId
 
 Filter by person ID.
 
@@ -145,9 +196,41 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -timeBucket
+### -Slug
 
-Timebucket
+Shared link slug for access.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TagId
+
+Filter by tag ID.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TimeBucket
+
+Time bucket to retrieve assets for (uses the single-bucket endpoint).
 
 ```yaml
 Type: String
@@ -161,9 +244,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -userId
+### -UserId
 
-UserId filter
+Filter by user ID.
 
 ```yaml
 Type: String
@@ -177,9 +260,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -withPartners
+### -Visibility
 
-With partners filter
+Filter by visibility: archive, timeline, hidden, or locked.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithCoordinates
+
+Only include assets with coordinates.
 
 ```yaml
 Type: Boolean
@@ -193,9 +292,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -withStacked
+### -WithPartners
 
-With stacked filter
+Include assets from partners.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WithStacked
+
+Include stacked assets.
 
 ```yaml
 Type: Boolean
@@ -237,6 +352,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -66,10 +66,10 @@ Retrieves all libraries owned by a specific user.
 ### EXAMPLE 4
 
 ```powershell
-Get-IMLibrary | Where-Object {$_.type -eq 'EXTERNAL'}
+Get-IMLibrary | Where-Object {$_.assetCount -gt 0}
 ```
 
-Retrieves only external libraries (those that scan existing folders).
+Retrieves only libraries that contain assets.
 
 ## PARAMETERS
 
@@ -167,10 +167,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Libraries can be either UPLOAD (for uploading new assets) or EXTERNAL (for scanning existing folders).
-
 ## RELATED LINKS
 
-## EDIT THIS DOC 
+## EDIT THIS DOC
 
-This page was auto-generated from the powershell command comment based help. To edit the content of this page, update the script file comment based help on github [Github](https://github.com/hanpq/PSImmich)
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.
