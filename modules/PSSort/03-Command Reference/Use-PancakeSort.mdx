@@ -1,0 +1,108 @@
+---
+id: Use-PancakeSort
+title: Use-PancakeSort
+description: Help page for the Powershell "Use-PancakeSort" command
+keywords:
+  - Powershell
+  - PSSort
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Use-PancakeSort [-InputObject] <Object> [-ReturnDiagnostics] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+This function sorts objects using the pancake sort algorithm.
+The only allowed operation is to
+flip (reverse) a prefix of the array.
+For every pass the largest remaining item is flipped to
+the front and then flipped into its final position.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+3,2,1 | Use-PancakeSort
+```
+
+Sorts the array using pancake sort
+
+## PARAMETERS
+
+### -InputObject
+
+Defines input objects to sort
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ReturnDiagnostics
+
+Specifies that instead of returning the sorted array, an object containing sort diagnostic data will be return.
+The sorted array will stored as an property of that object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### System.Collections.ArrayList
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.

@@ -1,0 +1,125 @@
+---
+id: Use-BucketSort
+title: Use-BucketSort
+description: Help page for the Powershell "Use-BucketSort" command
+keywords:
+  - Powershell
+  - PSSort
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Use-BucketSort [-InputObject] <Double[]> [[-BucketCount] <Int32>] [-ReturnDiagnostics]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+This function sorts numbers using the bucket sort algorithm.
+The value range is divided into a
+number of buckets, every item is distributed into the bucket matching its value and every bucket
+is then sorted individually using insertion sort before the buckets are concatenated.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+3,2,1 | Use-BucketSort
+```
+
+Sorts the array using bucket sort
+
+## PARAMETERS
+
+### -InputObject
+
+Defines input objects to sort.
+Only numeric values are supported.
+
+```yaml
+Type: Double[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -BucketCount
+
+Specifies the number of buckets to distribute the items into.
+Defaults to the number of items.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReturnDiagnostics
+
+Specifies that instead of returning the sorted array, an object containing sort diagnostic data will be return.
+The sorted array will stored as an property of that object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### System.Collections.ArrayList
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.
