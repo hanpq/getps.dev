@@ -55,6 +55,13 @@ Get-IMServer [-Session <ImmichSession>] [-Configuration] [-ProgressAction <Actio
  [<CommonParameters>]
 ```
 
+### publicconfiguration
+
+```powershell
+Get-IMServer [-Session <ImmichSession>] [-PublicConfiguration] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
 ### appliedsystemconfiguration
 
 ```powershell
@@ -162,6 +169,14 @@ Gets current system configuration as raw JSON.
 ### EXAMPLE 5
 
 ```powershell
+Get-IMServer -PublicConfiguration
+```
+
+Gets the server's public configuration.
+
+### EXAMPLE 6
+
+```powershell
 Get-IMServer -Ping
 ```
 
@@ -203,7 +218,7 @@ Accept wildcard characters: False
 
 ### -Version
 
-Retrieves server version information in a formatted object.
+Retrieves the server version and its independent feature level in a formatted object.
 
 ```yaml
 Type: SwitchParameter
@@ -272,6 +287,22 @@ Retrieves server configuration settings.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: configuration
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicConfiguration
+
+Retrieves the public configuration, including passkey and map availability.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: publicconfiguration
 Aliases:
 
 Required: False
@@ -381,6 +412,7 @@ Accept wildcard characters: False
 ### -Theme
 
 Retrieves server theme configuration.
+Requires permission to read admin configuration.
 
 ```yaml
 Type: SwitchParameter

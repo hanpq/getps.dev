@@ -1,0 +1,122 @@
+---
+id: Get-IMPasskey
+title: Get-IMPasskey
+description: Help page for the Powershell "Get-IMPasskey" command
+keywords:
+  - Powershell
+  - PSImmich
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+Retrieves passkeys for the current user.
+
+## SYNTAX
+
+### list (Default)
+
+```powershell
+Get-IMPasskey [-Session <ImmichSession>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### id
+
+```powershell
+Get-IMPasskey [-Session <ImmichSession>] -Id <String[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+Lists the current user's passkeys or retrieves specific passkeys by ID.
+Responses are returned as received so nullable fields are preserved.
+Requires the passkey.read permission.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+Get-IMPasskey
+```
+
+Lists passkeys for the current user.
+
+### EXAMPLE 2
+
+```powershell
+Get-IMPasskey -Id 'bde7ceba-f301-4e9e-87a2-163937a2a3db'
+```
+
+Retrieves one passkey.
+
+## PARAMETERS
+
+### -Session
+
+Optional Immich session to use instead of the default session.
+
+```yaml
+Type: ImmichSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+
+UUIDs of passkeys to retrieve.
+Accepts values or objects from the pipeline.
+
+```yaml
+Type: String[]
+Parameter Sets: id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.
