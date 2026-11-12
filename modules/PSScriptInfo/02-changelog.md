@@ -7,6 +7,19 @@ title: Changelog
 The format is based on and uses the types of changes according to [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.2](https://github.com/hanpq/PSScriptInfo/compare/v1.4.0...v1.4.2) (2026-11-12)
+
+### Miscellaneous Chores
+
+* prepare 1.4.2-beta001 release ([fa56ad6](https://github.com/hanpq/PSScriptInfo/commit/fa56ad6c693ee14db97784b1a2a81ceede7a9fda))
+
+## [1.4.2-beta001](https://github.com/hanpq/PSScriptInfo/compare/v1.4.0...v1.4.2-beta001) (2026-11-12)
+
+
+### Miscellaneous Chores
+
+* prepare 1.4.2-beta001 release ([fa56ad6](https://github.com/hanpq/PSScriptInfo/commit/fa56ad6c693ee14db97784b1a2a81ceede7a9fda))
+
 ## [Unreleased]
 
 ## [1.4.0] - 2023-01-12
@@ -84,4 +97,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### other
 
 - First version
-

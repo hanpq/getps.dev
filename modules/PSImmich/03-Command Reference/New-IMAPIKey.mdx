@@ -88,6 +88,8 @@ The permissions to assign to the API key.
 Defaults to 'all' for full access.
 Can specify multiple granular permissions
 such as 'asset.read', 'album.create', etc.
+Values match the Immich 3.4 permission enum; older permission names
+that are absent from that enum are not accepted.
 
 ```yaml
 Type: String[]

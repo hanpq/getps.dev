@@ -1,0 +1,111 @@
+---
+id: Use-CountingSort
+title: Use-CountingSort
+description: Help page for the Powershell "Use-CountingSort" command
+keywords:
+  - Powershell
+  - PSSort
+  - Help
+  - Documentation
+hide_title: false
+hide_table_of_contents: false
+---
+
+## SYNOPSIS
+
+## SYNTAX
+
+```powershell
+Use-CountingSort [-InputObject] <Int32[]> [-ReturnDiagnostics] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+This function sorts integers using the counting sort algorithm.
+The number of occurrences of
+every distinct value is counted and the counts are then used to place every item directly at its
+correct position.
+Since this is a non comparison based algorithm no comparisons are made and
+that counter will remain zero.
+The swap counter is used to count item writes instead.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+```powershell
+3,2,1 | Use-CountingSort
+```
+
+Sorts the array using counting sort
+
+## PARAMETERS
+
+### -InputObject
+
+Defines input objects to sort.
+Only integer values are supported.
+
+```yaml
+Type: Int32[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ReturnDiagnostics
+
+Specifies that instead of returning the sorted array, an object containing sort diagnostic data will be return.
+The sorted array will stored as an property of that object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+
+\{\{ Fill ProgressAction Description \}\}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### System.Collections.ArrayList
+
+## NOTES
+
+## RELATED LINKS
+
+## EDIT THIS DOC
+
+This page was auto-generated from PowerShell comment-based help. To edit this page, update the corresponding command help in the module source repository.
